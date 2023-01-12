@@ -1,2 +1,19 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import type { PageData } from './$types';
+	export let data: PageData;
+</script>
+
+<ul class="ul">
+	{#each data.items as item}
+		<li>
+			<p class="text-red-500 text-xl">{item.name}</p>
+		</li>
+	{/each}
+</ul>
+
+<style lang="scss">
+	@use '../styles/variables.scss';
+	ul {
+		background-color: variables.$lightBlue;
+	}
+</style>
