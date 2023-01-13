@@ -6,14 +6,13 @@
 <ul class="ul">
 	{#each data.items as item}
 		<li>
-			<p class="text-red-500 text-xl">{item.name}</p>
+			<p class="text-xl text-red-500">{item.name}</p>
 		</li>
 	{/each}
 </ul>
 
 <style lang="scss">
-	@use '../styles/variables.scss';
 	ul {
-		background-color: variables.$lightBlue;
+		background-color: $white;
 	}
 </style>
