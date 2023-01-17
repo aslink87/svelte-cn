@@ -1,70 +1,81 @@
 <script>
-	export let navLinks = [
-		{
-			name: 'About',
-			path: '/about',
-			class: 'about',
-			auth: false,
-			mobile: true,
-			mobileOnly: false,
-		},
-		{
-			name: 'Services',
-			path: '/assistance',
-			class: 'services',
-			auth: false,
-			mobile: true,
-			mobileOnly: false,
-		},
-		{
-			name: 'Support Us',
-			path: '/support',
-			class: 'support',
-			auth: false,
-			mobile: true,
-			mobileOnly: false,
-		},
-	];
+	import { navLinks } from './links';
 </script>
 
-<nav>
-	<div data-testid="nav" class="nav">
-		<ul class="nav-ul">
-			{#each navLinks as link}
-				<li>
-					<p>{link.name}</p>
-				</li>
-			{/each}
-		</ul>
+<nav data-testid="nav">
+	<div class="img-container">
+		<img loading="lazy" src="/images/logo.png" alt="Christian Neighbors logo" />
 	</div>
+	<div class="branding">
+		<h1>Christian</h1>
+		<h1>Neighbors</h1>
+	</div>
+	<ul>
+		{#each navLinks as link}
+			<li>
+				<a href={link.path}>{link.name}</a>
+			</li>
+		{/each}
+	</ul>
 </nav>
 
 <style lang="scss">
-	@use '../../styles/variables.scss';
 	nav {
-		padding: 0 3em;
-		width: 100%;
 		position: fixed;
-		display: -webkit-flex;
 		display: flex;
-		-webkit-align-items: center;
-		align-items: center;
-		background-color: variables.$white;
-		color: variables.$darkBlue;
+		overflow: hidden;
+		width: 100%;
+		justify-content: space-between;
+		background-color: $white;
+		color: $dark-blue;
+		border-bottom: solid 2px $deep-blue;
 		height: 4rem;
-		border-bottom: 3px solid variables.$darkBlue;
-		z-index: 200;
+		z-index: 2;
 
-		li {
-			box-sizing: border-box;
-			text-align: center;
+		.img-container {
+			max-width: 70px;
+			padding-left: 3em;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.branding {
+			display: flex;
+			gap: 0.5em;
+
+			h1 {
+				margin: auto 0;
+				color: $deep-blue;
+				@include h1-primary;
+			}
+
+			h1:last-of-type {
+				color: $light-blue;
+			}
+		}
+
+		ul {
+			display: flex;
 			margin: auto 0;
+			padding-right: 3em;
+			li {
+				list-style-type: none;
+				margin: auto 0;
 
-			p {
-				margin: 0 0.3em 0 1em;
-				font-size: 1.2rem;
-				&:hover {
-					border-bottom: solid 2x variables.$darkBlue;
+				a {
+					text-decoration: none;
+					color: $deep-blue;
+					margin: 0 0.3em 0 1em;
+					font-size: 1.2rem;
+					font-family: Inter-Regular;
+					&:hover {
+						color: $light-blue;
+					}
+					&:active {
+						border-bottom: solid 2px $yellow;
+					}
 				}
 			}
 		}
