@@ -1,5 +1,5 @@
 <script>
-  import { signIn } from '@auth/sveltekit/client';
+  import { signIn, signOut } from '@auth/sveltekit/client';
   import { page } from '$app/stores';
   import { navLinks } from './links';
 </script>
@@ -19,8 +19,11 @@
       </li>
     {/each}
   </ul>
-  {#if $page.data.session}
-    <p class="my-4 text-center">{$page.data.session.user?.name ?? 'User'} logged in</p>
+  {#if $page.data.session?.user?.email === 'adam.slinkman@gmail.com'}
+    <p class="my-4 text-center">Thanks for logging in Adam</p>
+    <button on:click={() => signOut()} class="cursor-pointer btn variant-filled-primary">
+      <p>Logout</p>
+    </button>
   {:else}
     <button on:click={() => signIn('google')} class="cursor-pointer btn variant-filled-primary">
       <p>Login</p>

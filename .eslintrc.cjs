@@ -52,5 +52,6 @@ module.exports = {
     'import/prefer-default-export': 0,
     'import/extentions': 0,
     'import/first': 0,
+    'no-param-reassign': 0,
   },
 };
