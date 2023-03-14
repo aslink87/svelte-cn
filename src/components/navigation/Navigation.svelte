@@ -1,5 +1,8 @@
 <script>
+  import { signIn } from '@auth/sveltekit/client';
   import { navLinks } from './links';
+
+  let loading = false;
 </script>
 
 <nav data-testid="nav">
@@ -17,6 +20,20 @@
       </li>
     {/each}
   </ul>
+  <button
+    on:click|once={function loginClick() {
+      this.disabled = true;
+      loading = true;
+      signIn('google');
+    }}
+    class="btn variant-filled-primary cursor-pointer"
+  >
+    {#if loading}
+      <p>loading</p>
+    {:else}
+      <p>Login</p>
+    {/if}
+  </button>
 </nav>
 
 <style lang="scss">
