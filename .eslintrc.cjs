@@ -10,9 +10,29 @@ module.exports = {
   ],
   plugins: ['import-no-duplicates-prefix-resolved-path', 'svelte3', '@typescript-eslint'],
   ignorePatterns: ['*.cjs'],
-  overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
+  overrides: [
+    {
+      files: ['*.svelte'],
+      processor: 'svelte3/svelte3',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+      },
+      rules: {
+        'import/no-named-as-default': 0,
+        'import/no-named-as-default-member': 0,
+      },
+    },
+  ],
   settings: {
     'svelte3/typescript': () => require('typescript'),
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.cjs', '.js', '.ts'],
+    },
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
+    },
   },
   parserOptions: {
     sourceType: 'module',
@@ -30,7 +50,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 0,
     'import/no-mutable-exports': 0,
     'import/prefer-default-export': 0,
-    'no-restricted-imports': ['warn', { paths: ['$env/static/private'] }],
     'import/extentions': 0,
+    'import/first': 0,
   },
 };

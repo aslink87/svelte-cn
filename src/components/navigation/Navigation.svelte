@@ -1,8 +1,7 @@
 <script>
   import { signIn } from '@auth/sveltekit/client';
+  import { page } from '$app/stores';
   import { navLinks } from './links';
-
-  let loading = false;
 </script>
 
 <nav data-testid="nav">
@@ -20,20 +19,13 @@
       </li>
     {/each}
   </ul>
-  <button
-    on:click|once={function loginClick() {
-      this.disabled = true;
-      loading = true;
-      signIn('google');
-    }}
-    class="btn variant-filled-primary cursor-pointer"
-  >
-    {#if loading}
-      <p>loading</p>
-    {:else}
+  {#if $page.data.session}
+    <p class="my-4 text-center">{$page.data.session.user?.name ?? 'User'} logged in</p>
+  {:else}
+    <button on:click={() => signIn('google')} class="cursor-pointer btn variant-filled-primary">
       <p>Login</p>
-    {/if}
-  </button>
+    </button>
+  {/if}
 </nav>
 
 <style lang="scss">

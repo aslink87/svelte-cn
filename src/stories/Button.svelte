@@ -9,7 +9,7 @@
   /**
    * What background color to use
    */
-  export let backgroundColor: string | undefined = undefined;
+  export let backgroundColor: string | undefined;
   /**
    * How large should the button be?
    */
@@ -17,7 +17,7 @@
   /**
    * Button contents
    */
-  export let label: string = '';
+  export let label = '';
 
   $: mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
 
