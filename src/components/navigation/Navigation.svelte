@@ -1,83 +1,83 @@
 <script>
-	import { navLinks } from './links';
+  import { navLinks } from './links';
 </script>
 
 <nav data-testid="nav">
-	<div class="img-container">
-		<img loading="lazy" src="/images/logo.png" alt="Christian Neighbors logo" />
-	</div>
-	<div class="branding">
-		<h1>Christian</h1>
-		<h1>Neighbors</h1>
-	</div>
-	<ul>
-		{#each navLinks as link}
-			<li>
-				<a href={link.path}>{link.name}</a>
-			</li>
-		{/each}
-	</ul>
+  <div class="img-container">
+    <img loading="lazy" src="/images/logo.png" alt="Christian Neighbors logo" />
+  </div>
+  <div class="branding">
+    <h1>Christian</h1>
+    <h1>Neighbors</h1>
+  </div>
+  <ul>
+    {#each navLinks as link}
+      <li>
+        <a href={link.path}>{link.name}</a>
+      </li>
+    {/each}
+  </ul>
 </nav>
 
 <style lang="scss">
-	nav {
-		position: fixed;
-		display: flex;
-		overflow: hidden;
-		width: 100%;
-		justify-content: space-between;
-		background-color: $white;
-		color: $dark-blue;
-		border-bottom: solid 2px $deep-blue;
-		height: 4rem;
-		z-index: 2;
+  nav {
+    position: fixed;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    justify-content: space-between;
+    background-color: $white;
+    color: $dark-blue;
+    border-bottom: solid 2px $deep-blue;
+    height: 4rem;
+    z-index: 2;
 
-		.img-container {
-			max-width: 70px;
-			padding-left: 3em;
+    .img-container {
+      max-width: 70px;
+      padding-left: 3em;
 
-			img {
-				width: 100%;
-			}
-		}
+      img {
+        width: 100%;
+      }
+    }
 
-		.branding {
-			display: flex;
-			gap: 0.5em;
+    .branding {
+      display: flex;
+      gap: 0.5em;
 
-			h1 {
-				margin: auto 0;
-				color: $deep-blue;
-				@include h1-primary;
-			}
+      h1 {
+        margin: auto 0;
+        color: $deep-blue;
+        @include h1-primary;
+      }
 
-			h1:last-of-type {
-				color: $light-blue;
-			}
-		}
+      h1:last-of-type {
+        color: $light-blue;
+      }
+    }
 
-		ul {
-			display: flex;
-			margin: auto 0;
-			padding-right: 3em;
-			li {
-				list-style-type: none;
-				margin: auto 0;
+    ul {
+      display: flex;
+      margin: auto 0;
+      padding-right: 3em;
+      li {
+        list-style-type: none;
+        margin: auto 0;
 
-				a {
-					text-decoration: none;
-					color: $deep-blue;
-					margin: 0 0.3em 0 1em;
-					font-size: 1.2rem;
-					font-family: Inter-Regular;
-					&:hover {
-						color: $light-blue;
-					}
-					&:active {
-						border-bottom: solid 2px $yellow;
-					}
-				}
-			}
-		}
-	}
+        a {
+          text-decoration: none;
+          color: $deep-blue;
+          margin: 0 0.3em 0 1em;
+          font-size: 1.2rem;
+          font-family: Inter-Regular;
+          &:hover {
+            color: $light-blue;
+          }
+          &:active {
+            border-bottom: solid 2px $yellow;
+          }
+        }
+      }
+    }
+  }
 </style>

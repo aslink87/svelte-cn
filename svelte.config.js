@@ -5,20 +5,20 @@ import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
-	// for more information about preprocessors
-	preprocess: [
-		preprocess({
-			scss: {
-				prependData: "@import './src/styles/globals.scss';",
-			},
-		}),
-		vitePreprocess(),
-	],
+  // Consult https://kit.svelte.dev/docs/integrations#preprocessors
+  // for more information about preprocessors
+  preprocess: [
+    preprocess({
+      scss: {
+        prependData: "@import './src/styles/globals.scss';",
+      },
+    }),
+    vitePreprocess(),
+  ],
 
-	kit: {
-		adapter: adapter(),
-	},
+  kit: {
+    adapter: adapter(),
+  },
 };
 
 export default config;
