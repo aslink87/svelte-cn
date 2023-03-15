@@ -12,6 +12,7 @@ const prisma = new PrismaClient();
 const handleAuth = (async (...args) => {
   const [{ event }] = args;
   return SvelteKitAuth({
+    debug: true,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - PrismaAdapter will later be exported from lib directory
     adapter: PrismaAdapter(prisma),
@@ -34,6 +35,16 @@ const handleAuth = (async (...args) => {
         event.locals.session = session;
         return session;
       },
+    },
+    session: {
+      strategy: 'database',
+      generateSessionToken: () => {
+        return crypto.randomUUID();
+      },
+      // idle session expire time
+      maxAge: 30 * 24 * 60 * 60,
+      // throttle how frequently to write to DB to extend session
+      updateAge: 24 * 60 * 60,
     },
   })(...args);
 }) satisfies Handle;
