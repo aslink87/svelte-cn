@@ -3,11 +3,8 @@ import { sequence } from '@sveltejs/kit/hooks';
 import { SvelteKitAuth } from '@auth/sveltekit';
 import Google from '@auth/core/providers/google';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import { PrismaClient } from '@prisma/client';
-// import prisma from './lib/db.server';
 import { config } from '$/lib/config.server';
-
-const prisma = new PrismaClient();
+import prismaClient from './lib/db.server';
 
 const handleAuth = (async (...args) => {
   const [{ event }] = args;
@@ -15,7 +12,7 @@ const handleAuth = (async (...args) => {
     debug: true,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - PrismaAdapter will later be exported from lib directory
-    adapter: PrismaAdapter(prisma),
+    adapter: PrismaAdapter(prismaClient),
     providers: [
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore - Google will later be reworked using new auth flow

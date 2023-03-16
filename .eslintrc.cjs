@@ -10,6 +10,7 @@ module.exports = {
   ],
   plugins: ['import-no-duplicates-prefix-resolved-path', 'svelte3', '@typescript-eslint'],
   ignorePatterns: ['*.cjs'],
+  // these rules are applied to .svelte files as they are causing unnecessary bugs
   overrides: [
     {
       files: ['*.svelte'],
