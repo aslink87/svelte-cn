@@ -9,7 +9,6 @@ import prismaClient from './lib/db.server';
 const handleAuth = (async (...args) => {
   const [{ event }] = args;
   return SvelteKitAuth({
-    debug: true,
     adapter: PrismaAdapter(prismaClient),
     providers: [
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment

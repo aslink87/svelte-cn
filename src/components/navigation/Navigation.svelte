@@ -20,7 +20,7 @@
     {/each}
   </ul>
   {#if $page.data.session?.user?.email === 'adam.slinkman@gmail.com'}
-    <p class="my-4 text-center">Thanks for logging in Adam</p>
+    <p>Thanks for logging in Adam</p>
     <button on:click={() => signOut()} class="cursor-pointer btn variant-filled-primary">
       <p>Logout</p>
     </button>
@@ -28,9 +28,6 @@
     <button on:click={() => signIn('google')} class="cursor-pointer btn variant-filled-primary">
       <p>Login</p>
     </button>
-  {/if}
-  {#if $page.data.session?.user?.settings}
-    <p>{$page.data.session.user.settings.approved}</p>
   {/if}
 </nav>
 
@@ -93,6 +90,16 @@
           }
         }
       }
+    }
+
+    p {
+      margin: auto 0;
+    }
+
+    button {
+      @include btnPrimary;
+      height: 1.5rem;
+      margin: auto 1em auto 0;
     }
   }
 </style>
