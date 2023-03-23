@@ -28,6 +28,7 @@
     "./tests/**/*.ts",
     "./tests/**/*.js",
     "./tests/**/*.svete",
+    "./types/**/*.ts",
     "*.cjs",
     ".*.cjs",
     "*.js",

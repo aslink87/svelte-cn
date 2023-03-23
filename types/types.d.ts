@@ -1,4 +1,4 @@
-import type { Session as OGSession, DefaultSession, User as OGUser } from '@auth/core/types';
+import type { Session as OGSession, User as OGUser } from '@auth/core/types';
 import type { UserSettings } from '@prisma/client';
 import { SvelteKitAuthConfig as OGSvelteKitAuthConfig } from '@auth/sveltekit';
 import type { CustomAdapter } from '$lib/prisma/client';

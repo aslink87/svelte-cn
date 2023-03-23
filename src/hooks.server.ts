@@ -2,7 +2,7 @@ import { redirect, type Handle } from '@sveltejs/kit';
 import { sequence } from '@sveltejs/kit/hooks';
 import { SvelteKitAuth } from '@auth/sveltekit';
 import Google from '@auth/core/providers/google';
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import PrismaAdapter from '$/lib/prisma/client';
 import { config } from '$/lib/config.server';
 import prismaClient from './lib/db.server';
 
@@ -10,8 +10,6 @@ const handleAuth = (async (...args) => {
   const [{ event }] = args;
   return SvelteKitAuth({
     debug: true,
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore - PrismaAdapter will later be exported from lib directory
     adapter: PrismaAdapter(prismaClient),
     providers: [
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -25,12 +23,24 @@ const handleAuth = (async (...args) => {
     trustHost: true,
     callbacks: {
       async session({ session, user }) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         session.user = {
           name: user.name,
           email: user.email,
+          settings: user.settings,
         };
         event.locals.session = session;
         return session;
+      },
+    },
+    events: {
+      async createUser(message) {
+        await prismaClient.userSettings.create({
+          data: {
+            userId: message.user.id,
+          },
+        });
       },
     },
     session: {
@@ -49,7 +59,6 @@ const handleAuth = (async (...args) => {
 const protectedHandle = (async ({ event, resolve }) => {
   await event.locals.getSession();
   if (!event.locals.session && event.route.id?.includes('protected')) {
-    // eslint-disable-next-line @typescript-eslint/no-throw-literal
     throw redirect(302, '/');
   }
   return resolve(event);

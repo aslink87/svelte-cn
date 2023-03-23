@@ -29,6 +29,9 @@
       <p>Login</p>
     </button>
   {/if}
+  {#if $page.data.session?.user?.settings}
+    <p>{$page.data.session.user.settings.approved}</p>
+  {/if}
 </nav>
 
 <style lang="scss">

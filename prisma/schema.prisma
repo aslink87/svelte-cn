@@ -45,7 +45,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  userSettings  UserSettings?
+  settings  UserSettings?
 }
 
 model UserSettings {
