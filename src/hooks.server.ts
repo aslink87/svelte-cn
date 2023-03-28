@@ -57,7 +57,7 @@ const handleAuth = (async (...args) => {
 
 const protectedHandle = (async ({ event, resolve }) => {
   await event.locals.getSession();
-  if (!event.locals.session && event.route.id?.includes('protected')) {
+  if (!event.locals.session.user?.settings.approved && event.route.id?.includes('protected')) {
     throw redirect(302, '/');
   }
   return resolve(event);
