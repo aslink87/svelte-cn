@@ -1,6 +1,4 @@
 <script>
-  import { signIn, signOut } from '@auth/sveltekit/client';
-  import { page } from '$app/stores';
   import { navLinks } from './links';
 </script>
 
@@ -19,16 +17,6 @@
       </li>
     {/each}
   </ul>
-  {#if $page.data.session?.user?.email === 'adam.slinkman@gmail.com'}
-    <p>Thanks for logging in Adam</p>
-    <button on:click={() => signOut()} class="cursor-pointer btn variant-filled-primary">
-      <p>Logout</p>
-    </button>
-  {:else}
-    <button on:click={() => signIn('google')} class="cursor-pointer btn variant-filled-primary">
-      <p>Login</p>
-    </button>
-  {/if}
 </nav>
 
 <style lang="scss">
@@ -90,16 +78,6 @@
           }
         }
       }
-    }
-
-    p {
-      margin: auto 0;
-    }
-
-    button {
-      @include btnPrimary;
-      height: 1.5rem;
-      margin: auto 1em auto 0;
     }
   }
 </style>

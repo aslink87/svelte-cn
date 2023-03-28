@@ -1,11 +1,13 @@
 <script>
   import Navigation from '../components/navigation/Navigation.svelte';
+  import Footer from '../components/footer/Footer.svelte';
 </script>
 
 <Navigation />
 <main class="main">
   <slot />
 </main>
+<Footer />
 
 <style lang="scss">
   main {
