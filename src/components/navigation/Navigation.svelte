@@ -1,6 +1,4 @@
 <script>
-  import { signIn, signOut } from '@auth/sveltekit/client';
-  import { page } from '$app/stores';
   import { navLinks } from './links';
 </script>
 
@@ -14,21 +12,11 @@
   </div>
   <ul>
     {#each navLinks as link}
-      <li>
+      <button>
         <a href={link.path}>{link.name}</a>
-      </li>
+      </button>
     {/each}
   </ul>
-  {#if $page.data.session?.user?.email === 'adam.slinkman@gmail.com'}
-    <p class="my-4 text-center">Thanks for logging in Adam</p>
-    <button on:click={() => signOut()} class="cursor-pointer btn variant-filled-primary">
-      <p>Logout</p>
-    </button>
-  {:else}
-    <button on:click={() => signIn('google')} class="cursor-pointer btn variant-filled-primary">
-      <p>Login</p>
-    </button>
-  {/if}
 </nav>
 
 <style lang="scss">
@@ -72,9 +60,10 @@
       display: flex;
       margin: auto 0;
       padding-right: 3em;
-      li {
-        list-style-type: none;
+      button {
         margin: auto 0;
+        border: none;
+        background: none;
 
         a {
           text-decoration: none;

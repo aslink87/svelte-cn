@@ -8,6 +8,7 @@
       "$app": ["./node_modules/@sveltejs/kit/types"],
       "$app/*": ["./node_modules/@sveltejs/kit/types/ambient.d.ts"]
     },
+    "outDir": ".svelte-kit/output",
     "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,
@@ -20,6 +21,7 @@
   // "files": ["svelte.config.js", "vite.config.js", "playwright.config.ts"],
   "include": [
     "./.svelte-kit/ambient.d.ts",
+    ".svelte-kit/ambient.d.ts",
     "./.svelte-kit/types/**/$types.d.ts",
     "./src/**/*.ts",
     "./src/**/*.js",
@@ -27,6 +29,7 @@
     "./tests/**/*.ts",
     "./tests/**/*.js",
     "./tests/**/*.svete",
+    "./types/**/*.ts",
     "*.cjs",
     ".*.cjs",
     "*.js",

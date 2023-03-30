@@ -5,7 +5,9 @@ import { resolve } from 'path';
 const config: UserConfig = {
   plugins: [sveltekit()],
   test: {
-    include: ['src/**/*.{test,spec}.{js,ts}'],
+    include: ['src/**/*.{test,spec}.{js,ts}', 'tests/*.{test,spec}.{js,ts}'],
+    globals: true,
+    environment: 'jsdom',
   },
   resolve: {
     alias: {
