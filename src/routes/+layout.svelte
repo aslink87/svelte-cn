@@ -4,7 +4,7 @@
 </script>
 
 <Navigation />
-<main class="main">
+<main class="main" data-testid="main">
   <slot />
 </main>
 <Footer />
