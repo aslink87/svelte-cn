@@ -2,13 +2,17 @@
   // TODO: setup types using zod
   export let data: { id: string; users: { name: string; settings: { approved: boolean } }[] };
 
-  async function register(event: Event) {
-    const form = event.target as HTMLFormElement;
-    const submitData = new FormData(form);
-
+  async function approve(name: string) {
     await fetch('/api/register', {
       method: 'POST',
-      body: submitData,
+      body: JSON.stringify({ name }),
+    });
+  }
+
+  async function remove(name: string) {
+    await fetch('/api/unregister', {
+      method: 'POST',
+      body: JSON.stringify({ name }),
     });
   }
 </script>
@@ -18,21 +22,20 @@
   <div class="user-management">
     <h2>Registered Users</h2>
     <p>Approve for admin access?</p>
-    <form on:submit|preventDefault={register}>
-      <ul>
-        {#each data.users as user}
-          <li>
-            <label for="name">Name:</label>
-            <input type="text" name="name" value={user.name} />
-            {#if !user.settings.approved}
-              <button>Approve</button>
-            {:else}
-              <p>Already Approved</p>
-            {/if}
-          </li>
-        {/each}
-      </ul>
-    </form>
+    <p>Careful not to lock yourself out by removing your own access!</p>
+    <ul>
+      {#each data.users as user}
+        <li>
+          <label for="name">Name:</label>
+          <input type="text" name="name" value={user.name} />
+          {#if !user.settings.approved}
+            <button on:click={() => approve(user.name)}>Approve</button>
+          {:else}
+            <button on:click={() => remove(user.name)}>Remove Approval</button>
+          {/if}
+        </li>
+      {/each}
+    </ul>
   </div>
 </section>
 
