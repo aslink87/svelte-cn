@@ -7,8 +7,8 @@
     <img loading="lazy" src="/images/logo.png" alt="Christian Neighbors logo" />
   </div>
   <div class="branding">
-    <h1>Christian</h1>
-    <h1>Neighbors</h1>
+    <h1>Company</h1>
+    <h1>Name</h1>
   </div>
   <ul>
     {#each navLinks as link}

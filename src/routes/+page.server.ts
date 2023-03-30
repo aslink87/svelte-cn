@@ -4,12 +4,12 @@ export const load = (async () => {
   return {
     items: [
       {
-        name: 'im done',
+        name: "here's some page data",
         valid: true,
         awesome: true,
       },
       {
-        name: 'okay',
+        name: "here's some more page data",
         valid: false,
         awesome: true,
       },
