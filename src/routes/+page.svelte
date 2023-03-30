@@ -1,7 +1,13 @@
 <script lang="ts">
   import type { PageData } from './$types';
+  import { seo } from '$lib/stores/Seo';
 
   export let data: PageData;
+
+  seo.set({
+    title: 'Company Name',
+    description: 'Company Name',
+  });
 </script>
 
 <ul class="ul">

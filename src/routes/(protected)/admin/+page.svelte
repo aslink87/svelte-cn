@@ -1,6 +1,11 @@
 <script lang="ts">
-  // TODO: setup types using zod
+  import { seo } from '$lib/stores/Seo';
   export let data: { id: string; users: { name: string; settings: { approved: boolean } }[] };
+
+  seo.set({
+    title: 'Admin | Company',
+    description: 'Admin Page for Company',
+  });
 
   async function approve(name: string) {
     await fetch('/api/register', {
