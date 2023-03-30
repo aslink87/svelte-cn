@@ -12,9 +12,9 @@
   </div>
   <ul>
     {#each navLinks as link}
-      <li>
+      <button>
         <a href={link.path}>{link.name}</a>
-      </li>
+      </button>
     {/each}
   </ul>
 </nav>
@@ -60,9 +60,10 @@
       display: flex;
       margin: auto 0;
       padding-right: 3em;
-      li {
-        list-style-type: none;
+      button {
         margin: auto 0;
+        border: none;
+        background: none;
 
         a {
           text-decoration: none;

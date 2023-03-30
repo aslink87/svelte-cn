@@ -21,6 +21,16 @@ module.exports = {
       rules: {
         'import/no-named-as-default': 0,
         'import/no-named-as-default-member': 0,
+        'import/no-extraneous-dependencies': 0,
+        'import/extensions': 0,
+        'import/newline-after-import': 0,
+        'import/first': 0,
+        'import/no-duplicates': 0,
+        'import/no-mutable-exports': 0,
+        'import/no-unresolved': 0,
+        'import/prefer-default-export': 0,
+        'import/order': 0,
+        '@typescript-eslint/no-use-before-define': 0,
       },
     },
   ],
@@ -54,5 +64,6 @@ module.exports = {
     'import/extentions': 0,
     'import/first': 0,
     'no-param-reassign': 0,
+    'no-restricted-imports': ['error', { paths: ['$env/static/private'] }],
   },
 };
