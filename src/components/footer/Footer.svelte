@@ -4,7 +4,7 @@
 </script>
 
 <div data-testid="footer-wrapper">
-  {#if $page.data.session?.user?.email === 'adam.slinkman@gmail.com'}
+  {#if $page.data.session?.user}
     <p>Thanks for logging in {$page.data.session.user.name}</p>
     <button on:click={() => signOut()} class="cursor-pointer btn variant-filled-primary">
       <p>Logout</p>

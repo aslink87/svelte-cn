@@ -10,6 +10,9 @@ module.exports = {
     name: '@storybook/sveltekit',
     options: {},
   },
+  svelteOptions: {
+    preprocess: import('../svelte.config.js').preprocess,
+  },
   docs: {
     autodocs: 'tag',
   },

@@ -9,6 +9,8 @@ export default {
   },
 };
 
+// TODO: implement $app/stores with storybook
+
 const Template = () => ({});
 
-export const NavStory = Template.bind({});
+export const FooterStory = Template.bind({});

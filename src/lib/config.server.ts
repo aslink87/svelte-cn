@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod';
+// eslint-disable-next-line import/extensions
 import * as environment from '$env/static/private';
 
 export const ServerConfigSchema = z.object({

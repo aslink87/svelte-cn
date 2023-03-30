@@ -64,6 +64,6 @@ module.exports = {
     'import/extentions': 0,
     'import/first': 0,
     'no-param-reassign': 0,
-    'no-restricted-imports': ['error', { paths: ['$env/static/private'] }],
+    // 'no-restricted-imports': ['error', { paths: ['$env/static/private'] }],
   },
 };
