@@ -1,8 +1,16 @@
 <script>
+  import { seo } from '$lib/stores/Seo';
   import Navigation from '../components/navigation/Navigation.svelte';
   import Footer from '../components/footer/Footer.svelte';
+  import Seo from './SEO.svelte';
+
+  seo.set({
+    title: 'Company Name',
+    description: 'Company Name',
+  });
 </script>
 
+<Seo title={$seo.title} description={$seo.description} />
 <Navigation />
 <main class="main" data-testid="main">
   <slot />
