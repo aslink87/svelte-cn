@@ -1,8 +1,8 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import type { UserConfig } from 'vite';
+import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
-const config: UserConfig = {
+export default defineConfig(({ mode }) => ({
   plugins: [sveltekit()],
   test: {
     include: ['src/**/*.{test,spec}.{js,ts}', 'tests/*.{test,spec}.{js,ts}'],
@@ -12,9 +12,7 @@ const config: UserConfig = {
   resolve: {
     alias: {
       $: resolve('./src'),
-      $fonts: resolve('./static/fonts'),
+      $fonts: mode === 'production' ? './static/fonts' : '../fonts',
     },
   },
-};
-
-export default config;
+}));
