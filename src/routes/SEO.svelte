@@ -38,7 +38,7 @@
   />
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://company.com" />
-  <meta property="og:title" content="Home - Company Name" />
-  <meta property="og:site_name" content="Company Name" />
+  <meta property="og:url" content="https://christianneighbors.org" />
+  <meta property="og:title" content="Home - Christian Neighbors" />
+  <meta property="og:site_name" content="Christian Neighbors" />
 </svelte:head>

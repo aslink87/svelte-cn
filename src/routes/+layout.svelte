@@ -5,8 +5,8 @@
   import Seo from './SEO.svelte';
 
   seo.set({
-    title: 'Company Name',
-    description: 'Company Name',
+    title: 'Christian Neighbors',
+    description: 'Christian Neighbors',
   });
 </script>
 

@@ -3,8 +3,8 @@
   export let data: { id: string; users: { name: string; settings: { approved: boolean } }[] };
 
   seo.set({
-    title: 'Admin | Company',
-    description: 'Admin Page for Company',
+    title: 'Admin | CN',
+    description: 'Admin Page for Christian Neighbors',
   });
 
   async function approve(name: string) {
