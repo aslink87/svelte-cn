@@ -11,10 +11,12 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "test:unit": "vitest",
+    "test:unit-nowatch": "vitest run",
     "lint": "prettier --plugin-search-dir . '!./docker-data' --check . && eslint .",
     "format": "prettier --plugin-search-dir . '!./docker-data' --write .",
     "storybook": "storybook dev -p 6006 -c .storybook watch-scss",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@auth/core": "^0.2.5",
@@ -50,6 +52,7 @@
     "eslint-plugin-import-no-duplicates-prefix-resolved-path": "^2.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-svelte3": "^4.0.0",
+    "husky": "^8.0.3",
     "jsdom": "^21.1.1",
     "postcss": "^8.4.21",
     "postcss-load-config": "^4.0.1",
