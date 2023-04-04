@@ -12,6 +12,7 @@ const config: UserConfig = {
   resolve: {
     alias: {
       $: resolve('./src'),
+      $fonts: resolve('./static/fonts'),
     },
   },
 };
