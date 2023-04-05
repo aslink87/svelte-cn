@@ -3,13 +3,13 @@
 </script>
 
 <nav data-testid="nav">
-  <div class="img-container">
+  <a class="img-container" href="/">
     <img loading="lazy" src="/images/logo.png" alt="Christian Neighbors logo" />
-  </div>
-  <div class="branding">
+  </a>
+  <a class="branding" href="/">
     <h1>Christian</h1>
     <h1>Neighbors</h1>
-  </div>
+  </a>
   <ul>
     {#each navLinks as link}
       <button>
@@ -44,6 +44,7 @@
     .branding {
       display: flex;
       gap: 0.5em;
+      text-decoration: none;
 
       h1 {
         margin: auto 0;
