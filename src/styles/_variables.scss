@@ -37,6 +37,14 @@ $warning: red;
   text-align: center;
 }
 
+@mixin component {
+  @include center;
+  margin: 0.3rem 1rem;
+  background: $white;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
 @mixin h1-primary {
   font-family: Inter-Bold;
   font-size: 32px;

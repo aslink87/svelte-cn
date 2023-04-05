@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { PageData } from './$types';
   import { seo } from '$lib/stores/Seo';
+  import Template from '../components/template/Template.svelte';
 
   export let data: PageData;
 
@@ -17,6 +18,8 @@
     </li>
   {/each}
 </ul>
+<Template />
+<Template />
 
 <style lang="scss">
   ul {
