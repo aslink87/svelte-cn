@@ -1,9 +1,10 @@
 <script lang="ts">
-  import type { PageData } from './$types';
+  // import type { PageData } from './$types';
   import { seo } from '$lib/stores/Seo';
-  import Template from '../components/template/Template.svelte';
+  import Template from '$/components/template/Template.svelte';
+  import Hero from '$/components/hero/Hero.svelte';
 
-  export let data: PageData;
+  // export let data: PageData;
 
   seo.set({
     title: 'Christian Neighbors',
@@ -11,18 +12,18 @@
   });
 </script>
 
-<ul class="ul">
-  {#each data.items as item}
-    <li>
-      <p class="text-xl text-red-500">{item.name}</p>
-    </li>
-  {/each}
-</ul>
-<Template />
+<!-- <ul class="ul"> -->
+<!--   {#each data.items as item} -->
+<!--     <li> -->
+<!--       <p class="text-xl text-red-500">{item.name}</p> -->
+<!--     </li> -->
+<!--   {/each} -->
+<!-- </ul> -->
+<Hero />
 <Template />
 
 <style lang="scss">
-  ul {
-    background-color: $white;
-  }
+  // ul {
+  //   background-color: $white;
+  // }
 </style>
