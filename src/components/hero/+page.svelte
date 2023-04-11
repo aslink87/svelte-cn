@@ -24,7 +24,7 @@
     @include center;
     text-align: center;
     color: $white;
-    padding-top: 2rem;
+    padding: 2rem 0;
 
     h1 {
       @include h1-primary;

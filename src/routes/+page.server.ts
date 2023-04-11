@@ -7,7 +7,7 @@ export async function load() {
     },
   });
   if (!hero) {
-    return '';
+    return { title: 'Not found', content: 'Not found' };
   }
   return { hero };
 }

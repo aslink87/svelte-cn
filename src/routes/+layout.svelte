@@ -21,16 +21,11 @@
   main {
     background-color: $deep-blue;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
     box-sizing: border-box;
-    min-height: 100vh;
     padding-top: 3rem;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     box-sizing: border-box;
-    overflow: scroll;
     text-decoration: none;
   }
   :global(body) {

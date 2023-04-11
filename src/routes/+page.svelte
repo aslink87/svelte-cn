@@ -2,6 +2,7 @@
   import { seo } from '$lib/stores/Seo';
   import type { HeroType } from '$/types';
   import Hero from '$/components/hero/+page.svelte';
+  import Showcase from '$/components/showcase/+page.svelte';
 
   interface IData {
     hero: HeroType;
@@ -18,20 +19,19 @@
 <section class="index">
   <div class="bg">
     <Hero data={data.hero} />
+    <Showcase />
   </div>
 </section>
 
 <style lang="scss">
   section {
-    height: 100vh;
     background-image: url('/images/cnShop2.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 
     .bg {
-      height: 100vh;
-      background-color: rgba($color: $deep-blue, $alpha: 0.9);
+      background-color: rgba($color: $deep-blue, $alpha: 0.8);
     }
   }
 </style>
