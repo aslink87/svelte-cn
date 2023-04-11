@@ -1,10 +1,13 @@
 <script lang="ts">
-  // import type { PageData } from './$types';
   import { seo } from '$lib/stores/Seo';
-  import Template from '$/components/template/Template.svelte';
-  import Hero from '$/components/hero/Hero.svelte';
+  import type { HeroType } from '$/types';
+  import Hero from '$/components/hero/+page.svelte';
 
-  // export let data: PageData;
+  interface IData {
+    hero: HeroType;
+  }
+
+  export let data: IData;
 
   seo.set({
     title: 'Christian Neighbors',
@@ -12,18 +15,23 @@
   });
 </script>
 
-<!-- <ul class="ul"> -->
-<!--   {#each data.items as item} -->
-<!--     <li> -->
-<!--       <p class="text-xl text-red-500">{item.name}</p> -->
-<!--     </li> -->
-<!--   {/each} -->
-<!-- </ul> -->
-<Hero />
-<Template />
+<section class="index">
+  <div class="bg">
+    <Hero data={data.hero} />
+  </div>
+</section>
 
 <style lang="scss">
-  // ul {
-  //   background-color: $white;
-  // }
+  section {
+    height: 100vh;
+    background-image: url('/images/cnShop2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    .bg {
+      height: 100vh;
+      background-color: rgba($color: $deep-blue, $alpha: 0.9);
+    }
+  }
 </style>

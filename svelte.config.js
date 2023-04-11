@@ -1,5 +1,4 @@
 import adapter from '@sveltejs/adapter-auto';
-// eslint-disable-next-line import/no-unresolved
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import preprocess from 'svelte-preprocess';
 

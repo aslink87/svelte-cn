@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
   import { signIn, signOut } from '@auth/sveltekit/client';
   import { page } from '$app/stores';
 </script>
 
-<section data-testid="footer">
+<footer data-testid="footer">
   <div class="svg">
     <div class="footer-wrapper">
       <div class="left-container">
@@ -66,10 +66,10 @@
       </div>
     </div>
   </div>
-</section>
+</footer>
 
 <style lang="scss">
-  section {
+  footer {
     background-color: $deep-blue;
 
     .svg {
@@ -92,7 +92,7 @@
           display: flex;
           align-self: baseline;
           flex-wrap: wrap;
-          margin: auto 0 1rem 0;
+          margin: auto 0 2rem 0;
 
           p {
             width: 100%;
@@ -116,7 +116,7 @@
           }
         }
         .center-container {
-          margin: auto 10% 1rem 0;
+          margin: auto 15% 2rem 0;
           display: flex;
           flex-wrap: wrap;
           flex-flow: row;

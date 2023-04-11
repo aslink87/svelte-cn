@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { seo } from '$lib/stores/Seo';
   import Navigation from '../components/navigation/Navigation.svelte';
   import Footer from '../components/footer/Footer.svelte';
@@ -37,8 +37,10 @@
     font-family: Inter-Regular, 'Segoe UI Mono', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
       'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 14px;
+    color: $white;
     width: 100%;
     margin: 0;
     box-sizing: border-box;
+    font-size: 18px;
   }
 </style>

@@ -54,3 +54,12 @@ model UserSettings {
   user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId      String      @unique @db.Uuid
 }
+
+model Hero {
+  id          String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String
+  content     String
+  link        String?
+  image       String?
+  video       String?
+}

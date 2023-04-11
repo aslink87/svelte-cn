@@ -1,18 +1,13 @@
-import type { PageServerLoad } from './$types';
+import prismaClient from '$lib/db.server';
 
-export const load = (async () => {
-  return {
-    items: [
-      {
-        name: "here's some page data",
-        valid: true,
-        awesome: true,
-      },
-      {
-        name: "here's some more page data",
-        valid: false,
-        awesome: true,
-      },
-    ],
-  };
-}) satisfies PageServerLoad;
+export async function load() {
+  const hero = await prismaClient.hero.findUnique({
+    where: {
+      id: '9d5a8c19-6464-4763-b532-2817c4bb2033',
+    },
+  });
+  if (!hero) {
+    return '';
+  }
+  return { hero };
+}

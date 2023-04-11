@@ -1,11 +1,11 @@
 import { render, screen, cleanup } from '@testing-library/svelte';
 import '@testing-library/jest-dom';
-import Hero from './Hero.svelte';
+import Hero from './+page.svelte';
 
 afterEach(() => cleanup());
 
 async function renderHero() {
-  const section = render(Hero);
+  const section = render(Hero, { data: { title: 'test title' } });
 
   await new Promise(setImmediate);
 
@@ -15,5 +15,5 @@ async function renderHero() {
 test('should render Hero section', async () => {
   await renderHero();
 
-  expect(screen.getByText('hello')).toBeInTheDocument();
+  expect(screen.getByText('Latest News')).toBeInTheDocument();
 });
