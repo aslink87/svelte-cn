@@ -28,9 +28,19 @@
       link: '/',
     },
   ];
+
+  let y: number;
 </script>
 
+<svelte:window bind:scrollY={y} />
+
 <section class="showcase">
+  <img
+    style="transform: translateY({y * 0.2}px)"
+    class="banner"
+    src="/images/foodbank.png"
+    alt="Christian Neighbors"
+  />
   <h1>What We Do</h1>
   <h2 class="heading">
     Our Mission is to provide local families in need with Food, Emergency Financial Assistance and
@@ -62,6 +72,18 @@
     height: fit-content;
     margin-bottom: 0;
 
+    .banner {
+      position: absolute;
+      left: 0;
+      height: 95%;
+      width: 90%;
+      margin: 3rem 5rem;
+      object-fit: cover;
+      pointer-events: none;
+      opacity: 0.2;
+      border-radius: 5px;
+    }
+
     h1 {
       @include h1-primary;
     }
@@ -72,7 +94,7 @@
 
     .heading {
       @include h2-primary;
-      background-color: rgba($color: $deep-blue, $alpha: 0.2);
+      background-color: $deep-blue;
       border-radius: 5px;
     }
 
@@ -93,6 +115,8 @@
         text-align: left;
 
         .card-content {
+          background-color: $white;
+          border-radius: 40px;
           position: relative;
           text-align: center;
           display: inline-grid;

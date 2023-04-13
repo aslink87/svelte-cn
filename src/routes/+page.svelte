@@ -3,6 +3,7 @@
   import type { HeroType } from '$/types';
   import Hero from '$/components/hero/Hero.svelte';
   import Showcase from '$/components/showcase/Showcase.svelte';
+  import HomeLower from '$/components/home_lower/Home_Lower.svelte';
 
   interface IData {
     hero: HeroType;
@@ -20,15 +21,16 @@
   <div class="bg">
     <Hero data={data.hero} />
     <Showcase />
+    <HomeLower />
   </div>
 </section>
 
 <style lang="scss">
   section {
-    background-image: url('/images/cnShop2.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    // background-image: url('/images/cnShop2.jpg');
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: contain;
 
     .bg {
       background-color: rgba($color: $deep-blue, $alpha: 0.8);
