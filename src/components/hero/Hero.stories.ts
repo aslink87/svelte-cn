@@ -1,3 +1,4 @@
+import type { HeroType } from '$/types';
 import HeroComponent from './Hero.svelte';
 
 export default {
@@ -9,6 +10,19 @@ export default {
   },
 };
 
-const Template = () => ({});
+const Template = (args: { data: HeroType }) => ({
+  Component: HeroComponent,
+  props: args,
+});
 
 export const HeroComponentStory = Template.bind({});
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore storybook is annoying
+HeroComponentStory.args = {
+  data: {
+    title: 'Hero Title',
+    content: 'Hero Content',
+    link: 'https://www.google.com',
+  },
+};

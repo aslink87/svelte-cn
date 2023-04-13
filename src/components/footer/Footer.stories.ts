@@ -11,6 +11,31 @@ export default {
 
 // TODO: implement $app/stores with storybook
 
-const Template = () => ({});
+const Template = (args: any) => ({
+  Component: Footer,
+  props: args,
+});
 
 export const FooterStory = Template.bind({});
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore storybook is annoying
+FooterStory.args = {
+  page: {
+    data: {
+      session: {
+        user: {
+          id: 'id',
+          name: 'user',
+          accounts: [],
+          sessions: [],
+          settings: {
+            userSettings: {
+              approved: true,
+            },
+          },
+        },
+      },
+    },
+  },
+};

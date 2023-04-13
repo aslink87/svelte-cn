@@ -1,4 +1,4 @@
-import ShowcaseComponent from './+page.svelte';
+import ShowcaseComponent from './Showcase.svelte';
 
 export default {
   title: 'Components/Showcase',

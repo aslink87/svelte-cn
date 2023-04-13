@@ -1,8 +1,8 @@
 <script lang="ts">
   import { seo } from '$lib/stores/Seo';
   import type { HeroType } from '$/types';
-  import Hero from '$/components/hero/+page.svelte';
-  import Showcase from '$/components/showcase/+page.svelte';
+  import Hero from '$/components/hero/Hero.svelte';
+  import Showcase from '$/components/showcase/Showcase.svelte';
 
   interface IData {
     hero: HeroType;

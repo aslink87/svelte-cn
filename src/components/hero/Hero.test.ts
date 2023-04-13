@@ -1,6 +1,6 @@
 import { render, screen, cleanup } from '@testing-library/svelte';
 import '@testing-library/jest-dom';
-import Hero from './+page.svelte';
+import Hero from './Hero.svelte';
 
 afterEach(() => cleanup());
 
