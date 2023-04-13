@@ -11,6 +11,7 @@ export default {
 
 // TODO: implement $app/stores with storybook
 
+// eslint-disable-next-line
 const Template = (args: any) => ({
   Component: Footer,
   props: args,
