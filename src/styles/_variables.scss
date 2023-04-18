@@ -55,3 +55,71 @@ $warning: red;
   font-family: Inter-Bold;
   font-size: 24px;
 }
+
+@mixin xs {
+  @media (max-width: 639px) {
+    h1 {
+      font-size: 1em;
+    }
+    h2 {
+      font-size: 0.8em;
+    }
+    p {
+      font-size: 0.8em;
+      max-width: 90%;
+      margin: auto;
+    }
+    a {
+      font-size: 0.8em;
+    }
+    ul {
+      font-size: 0.8em;
+      max-width: 90%;
+    }
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: 640px) and (max-width: 767px) {
+    h1 {
+      font-size: 1.5em;
+    }
+    h2 {
+      font-size: 1.2em;
+    }
+    p {
+      font-size: 1em;
+      max-width: 90%;
+      margin: auto;
+    }
+    a {
+      font-size: 1em;
+    }
+    ul {
+      font-size: 1em;
+      max-width: 90%;
+      padding-left: 0;
+      margin: auto;
+    }
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
