@@ -107,9 +107,6 @@
       background-color: $deep-blue;
       border-radius: 5px;
 
-      @include xs {
-        font-size: 18px;
-      }
       @include sm {
         font-size: 18px;
       }

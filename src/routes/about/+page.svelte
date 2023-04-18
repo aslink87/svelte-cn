@@ -95,7 +95,7 @@
     @include center;
     text-align: center;
     color: $white;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
 
     h1 {
       @include h1-primary;
@@ -138,6 +138,7 @@
       max-width: 60em;
       margin: 2rem auto;
       text-align: left;
+      padding: 0;
 
       h2 {
         @include h2-primary;
@@ -166,6 +167,14 @@
       margin: 2rem auto 4rem auto;
       grid-template-columns: 30% 30% 30%;
       list-style-type: none;
+      padding: 0;
+
+      @include xs {
+        grid-template-columns: 100%;
+      }
+      @include sm {
+        grid-template-columns: 50% 50%;
+      }
 
       li {
         padding: 20px;
@@ -186,6 +195,10 @@
     padding: 2rem;
     margin-bottom: 0;
 
+    @include xs {
+      padding: 1rem 0;
+    }
+
     ul {
       @include center;
       list-style-type: none;
@@ -194,6 +207,7 @@
       width: 80%;
       margin: auto;
       gap: 2em 3em;
+      padding: 0;
 
       li {
         width: 300px;
@@ -201,6 +215,10 @@
         background-color: $deep-blue;
         border-radius: 20px;
         box-shadow: 0 4px 8px 0 rgba($black, 0.2);
+
+        @include xs {
+          height: 500px;
+        }
 
         img {
           width: 100%;
