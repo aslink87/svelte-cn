@@ -15,4 +15,15 @@ export default defineConfig(({ mode }) => ({
       $fonts: mode === 'production' ? './static/fonts' : '../fonts',
     },
   },
+  svelte: {
+    // ignore unused css selectors - see https://github.com/sveltejs/svelte/issues/1594#issuecomment-546775545
+    // eslint-disable-next-line
+    // @ts-ignore
+    onwarn: (warning, handler) => {
+      const { code } = warning;
+      if (code === 'css-unused-selector') return;
+
+      handler(warning);
+    },
+  },
 }));
