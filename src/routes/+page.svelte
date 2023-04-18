@@ -33,7 +33,7 @@
     // background-size: contain;
 
     .bg {
-      background-color: rgba($color: $deep-blue, $alpha: 0.8);
+      background-color: $deep-blue;
     }
   }
 </style>

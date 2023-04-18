@@ -27,7 +27,7 @@
       subheading: 'Directory',
       content:
         'Feel free to call us at (269)685-4166 or email our office at info@christianneighbors.org. To reach a specific employee at Christian Neighbors please see our directory here...',
-      link: '/',
+      link: '/about#staff',
     },
     {
       heading: 'Events',
@@ -98,7 +98,7 @@
           <div class="card-right__content">
             <h2>{card.subheading}</h2>
             <p>{card.content}</p>
-            <button>{card.subheading}</button>
+            <a href={card.link}>{card.subheading}</a>
           </div>
         </div>
       {/each}
@@ -159,8 +159,9 @@
             padding: 0 1rem;
             max-width: 50em;
 
-            button {
+            a {
               @include btnPrimary;
+              width: 100px;
             }
           }
         }
