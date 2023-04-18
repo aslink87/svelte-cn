@@ -82,6 +82,16 @@
       pointer-events: none;
       opacity: 0.2;
       border-radius: 5px;
+
+      @include xs {
+        display: none;
+      }
+      @include sm {
+        display: none;
+      }
+      @include md {
+        display: none;
+      }
     }
 
     h1 {
@@ -96,6 +106,13 @@
       @include h2-primary;
       background-color: $deep-blue;
       border-radius: 5px;
+
+      @include xs {
+        font-size: 18px;
+      }
+      @include sm {
+        font-size: 18px;
+      }
     }
 
     .card-wrapper {
@@ -119,10 +136,9 @@
           border-radius: 40px;
           position: relative;
           text-align: center;
-          display: inline-grid;
+          display: flex;
           width: 100%;
           height: 100%;
-          grid-template-columns: 33% 66%;
 
           .content-left {
             background-color: rgba($color: $gray, $alpha: 1);
@@ -132,6 +148,7 @@
             height: 400px;
 
             img {
+              margin: auto 1rem;
               max-height: 250px;
               border-radius: 10px;
               box-shadow: -3px -3px 5px rgba($deep-blue, 0.5), 3px 3px 5px rgba($deep-blue, 0.2);
@@ -154,6 +171,93 @@
               margin: 2rem auto 0 auto;
             }
           }
+
+          @include xs {
+            display: flex;
+            flex-wrap: wrap;
+
+            .content-left {
+              width: 100%;
+              height: fit-content;
+              border-bottom-left-radius: 0;
+              border-top-right-radius: 38px;
+
+              img {
+                height: 150px;
+              }
+            }
+
+            .content-right {
+              height: fit-content;
+              padding-bottom: 1rem;
+            }
+          }
+          @include sm {
+            display: flex;
+            flex-wrap: wrap;
+
+            .content-left {
+              width: 100%;
+              max-width: unset;
+              height: fit-content;
+              border-bottom-left-radius: 0;
+              border-top-right-radius: 38px;
+
+              img {
+                height: 200px;
+              }
+            }
+
+            .content-right {
+              height: fit-content;
+              padding-bottom: 1rem;
+            }
+          }
+          @include md {
+            display: flex;
+            flex-wrap: wrap;
+
+            .content-left {
+              width: 100%;
+              max-width: unset;
+              height: fit-content;
+              border-bottom-left-radius: 0;
+              border-top-right-radius: 38px;
+
+              img {
+                height: 300px;
+              }
+            }
+
+            .content-right {
+              height: fit-content;
+              padding-bottom: 1rem;
+            }
+          }
+
+          @include lg {
+            .content-left {
+              min-width: 400px;
+            }
+          }
+
+          @include xl {
+            .content-left {
+              min-width: 400px;
+            }
+          }
+        }
+        @include xs {
+          height: fit-content;
+          width: 100%;
+        }
+        @include sm {
+          height: fit-content;
+          width: 100%;
+        }
+        @include md {
+          height: fit-content;
+          width: 100%;
         }
       }
     }

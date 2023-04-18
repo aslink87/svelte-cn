@@ -120,6 +120,16 @@
         flex-flow: row;
         gap: 2rem;
 
+        @include xs {
+          flex-flow: column;
+        }
+        @include sm {
+          flex-flow: column;
+        }
+        @include md {
+          flex-flow: column;
+        }
+
         .card-left {
           width: 12rem;
           padding: 0 1rem;
@@ -130,6 +140,26 @@
           gap: 2rem;
           border-right: 2px solid $white;
 
+          @include xs {
+            flex-flow: row;
+            flex-wrap: wrap;
+            width: 100%;
+            border: none;
+            margin: auto;
+          }
+          @include sm {
+            flex-flow: row;
+            width: 100%;
+            border: none;
+            margin: auto;
+          }
+          @include md {
+            flex-flow: row;
+            width: 100%;
+            border: none;
+            margin: auto;
+          }
+
           li {
             list-style-type: none;
 
@@ -139,6 +169,10 @@
               border: none;
               color: $white;
               cursor: pointer;
+
+              @include xs {
+                font-size: 18px;
+              }
             }
           }
         }
@@ -148,16 +182,53 @@
           text-align: left;
           display: none;
 
+          @include xs {
+            flex-flow: column;
+          }
+          @include sm {
+            flex-flow: column;
+          }
+          @include md {
+            flex-flow: column;
+          }
+          @include lg {
+            flex-flow: column;
+          }
+
           img {
             height: 400px;
             max-width: 700px;
             object-fit: cover;
             margin-right: 1rem;
+
+            @include xs {
+              margin-right: 0;
+              object-fit: contain;
+            }
+            @include sm {
+              margin-right: 0;
+            }
+            @include md {
+              margin-right: 0;
+            }
           }
 
           .card-right__content {
             padding: 0 1rem;
             max-width: 50em;
+
+            @include xs {
+              text-align: center;
+              a {
+                margin: 1rem auto;
+              }
+            }
+            @include sm {
+              text-align: center;
+              a {
+                margin: 1rem auto;
+              }
+            }
 
             a {
               @include btnPrimary;
@@ -165,6 +236,13 @@
             }
           }
         }
+      }
+
+      @include xs {
+        width: 100%;
+      }
+      @include sm {
+        width: 100%;
       }
     }
   }

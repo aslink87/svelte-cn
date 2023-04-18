@@ -104,6 +104,8 @@
 
         @include xs {
           flex-wrap: wrap;
+          margin: 0;
+          padding: 0 1rem;
         }
 
         @include sm {

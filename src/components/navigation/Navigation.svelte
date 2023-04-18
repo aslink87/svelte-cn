@@ -79,6 +79,15 @@
       img {
         width: 100%;
       }
+
+      @include xs {
+        padding-left: 0;
+        margin-left: 40%;
+      }
+      @include sm {
+        padding-left: 0;
+        margin-left: 40%;
+      }
     }
 
     .branding {
@@ -124,7 +133,7 @@
     }
     .mobile-menu {
       display: flex;
-      width: 30%;
+      width: 10%;
       height: 100%;
       justify-content: flex-end;
       margin-right: 1rem;
@@ -145,6 +154,12 @@
           background: $deep-blue;
           transition: all 0.2s linear;
         }
+      }
+    }
+
+    @include md {
+      .branding {
+        display: flex;
       }
     }
 
