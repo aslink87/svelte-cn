@@ -23,4 +23,12 @@ export const navLinks = [
     mobile: true,
     mobileOnly: false,
   },
+  {
+    name: 'Donate',
+    path: '/',
+    class: 'donate',
+    auth: false,
+    mobile: true,
+    mobileOnly: true,
+  },
 ];

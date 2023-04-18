@@ -1,8 +1,9 @@
 <script lang="ts">
   import { seo } from '$lib/stores/Seo';
+  import Seo from './SEO.svelte';
   import Navigation from '../components/navigation/Navigation.svelte';
   import Footer from '../components/footer/Footer.svelte';
-  import Seo from './SEO.svelte';
+  import { navLinks } from '$/components/navigation/links';
 
   seo.set({
     title: 'Christian Neighbors',
@@ -16,6 +17,17 @@
   <slot />
 </main>
 <Footer />
+<section class="mobile-menu" id="mobile-menu">
+  <ul>
+    {#each navLinks as link}
+      {#if link.mobile}
+        <li>
+          <a href={link.path}><h2>{link.name}</h2></a>
+        </li>
+      {/if}
+    {/each}
+  </ul>
+</section>
 
 <style lang="scss">
   main {
@@ -37,5 +49,31 @@
     margin: 0;
     box-sizing: border-box;
     font-size: 18px;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    max-width: 45em;
+    top: 4rem;
+    bottom: 0;
+    text-align: center;
+    background-color: $gray;
+    z-index: 300;
+    right: -100%;
+    transition: right 0.3s ease-in-out;
+
+    ul {
+      padding: 2em 4em;
+      list-style-type: none;
+
+      a {
+        text-decoration: none;
+      }
+
+      h2 {
+        @include h2-primary;
+        color: $white;
+      }
+    }
   }
 </style>

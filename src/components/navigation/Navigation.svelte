@@ -1,5 +1,36 @@
 <script lang="ts">
   import { navLinks } from './links';
+
+  // Retrieve mobileToggle state from store
+  // TODO: Currently this store is unneccesary. If it continues to be unneccesary, remove it.
+  import { mobileToggle } from '$lib/stores/Mobile';
+
+  let mobileMenuOpen = false;
+
+  function handleMobileToggle() {
+    mobileToggle.update((n) => !n);
+
+    mobileMenuOpen = !mobileMenuOpen;
+
+    const middle = document.getElementById('center-bar');
+    if (middle) middle.style.display = mobileMenuOpen ? 'none' : 'block';
+    const bottom = document.getElementById('bottom-bar');
+    if (bottom) {
+      bottom.style.transform = mobileMenuOpen ? 'rotate(90deg)' : 'rotate(0deg)';
+    }
+    const top = document.getElementById('top-bar');
+    if (top) {
+      top.style.transform = mobileMenuOpen
+        ? 'translateY(5px) translateX(6px)'
+        : 'translateY(0px) translateX(0px)';
+      top.style.width = mobileMenuOpen ? '1.2rem' : '2rem';
+    }
+
+    const drawer = document.getElementById('mobile-menu');
+    if (drawer) {
+      drawer.style.right = mobileMenuOpen ? '0%' : '-100%';
+    }
+  }
 </script>
 
 <nav data-testid="nav">
@@ -12,11 +43,20 @@
   </a>
   <ul>
     {#each navLinks as link}
-      <button>
-        <a href={link.path}>{link.name}</a>
-      </button>
+      {#if !link.mobileOnly}
+        <button>
+          <a href={link.path}>{link.name}</a>
+        </button>
+      {/if}
     {/each}
   </ul>
+  <div class="mobile-menu">
+    <button on:click={handleMobileToggle} id="mobile-toggle">
+      <span id="top-bar" />
+      <span id="center-bar" />
+      <span id="bottom-bar" />
+    </button>
+  </div>
 </nav>
 
 <style lang="scss">
@@ -42,7 +82,7 @@
     }
 
     .branding {
-      display: flex;
+      display: none;
       gap: 0.5em;
       text-decoration: none;
 
@@ -58,9 +98,10 @@
     }
 
     ul {
-      display: flex;
+      display: none;
       margin: auto 0;
       padding-right: 3em;
+
       button {
         margin: auto 0;
         border: none;
@@ -79,6 +120,54 @@
             border-bottom: solid 2px $yellow;
           }
         }
+      }
+    }
+    .mobile-menu {
+      display: flex;
+      width: 30%;
+      height: 100%;
+      justify-content: flex-end;
+      margin-right: 1rem;
+      align-items: center;
+
+      button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        cursor: pointer;
+        height: 40px;
+        background: none;
+        border: none;
+
+        span {
+          width: 2rem;
+          height: 3px;
+          background: $deep-blue;
+          transition: all 0.2s linear;
+        }
+      }
+    }
+
+    @include lg {
+      ul {
+        display: flex;
+      }
+      .branding {
+        display: flex;
+      }
+      .mobile-menu {
+        display: none;
+      }
+    }
+    @include xl {
+      ul {
+        display: flex;
+      }
+      .branding {
+        display: flex;
+      }
+      .mobile-menu {
+        display: none;
       }
     }
   }
