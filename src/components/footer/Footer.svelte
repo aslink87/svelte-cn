@@ -157,6 +157,11 @@
           }
         }
 
+        @media (min-width: 1280px) and (max-width: 1599px) {
+          .spacer {
+            width: 30%;
+          }
+        }
         @media (min-width: 1600px) and (max-width: 1799px) {
           .spacer {
             width: 40%;
@@ -211,6 +216,16 @@
           @include sm {
             padding-bottom: 1rem;
             margin: auto;
+          }
+          @include md {
+            padding-bottom: 1rem;
+            margin: auto;
+            gap: 1rem;
+          }
+          @include lg {
+            padding-bottom: 1rem;
+            margin: auto;
+            gap: 1rem;
           }
         }
       }

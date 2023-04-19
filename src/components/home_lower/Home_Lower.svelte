@@ -112,7 +112,7 @@
     padding: 5rem 0;
 
     .card-wrapper {
-      width: 80%;
+      width: 90%;
       margin: auto;
       .card {
         display: flex;
@@ -131,38 +131,49 @@
 
         .card-left {
           width: 12rem;
-          padding: 0 1rem;
           margin: auto 0;
           text-align: left;
           display: flex;
           flex-flow: column;
           gap: 2rem;
           border-right: 2px solid $white;
+          padding-left: 0;
 
           @include xs {
-            flex-flow: row;
-            flex-wrap: wrap;
+            @include center;
+            flex-flow: column;
+            gap: 1rem;
             width: 100%;
             border: none;
             margin: auto;
+            border: none;
           }
           @include sm {
+            @include center;
             flex-flow: row;
             width: 100%;
             border: none;
             margin: auto;
           }
           @include md {
+            @include center;
             flex-flow: row;
             width: 100%;
             border: none;
             margin: auto;
           }
           @include lg {
-            width: 14rem;
+            padding: 0 1rem;
+            li {
+              margin-left: -20px;
+            }
           }
           @include xl {
+            padding: 0 1rem;
             width: 18rem;
+            li {
+              margin-left: -20px;
+            }
           }
 
           li {
@@ -172,7 +183,6 @@
               @include h2-primary;
               background: none;
               border: none;
-              color: $white;
               cursor: pointer;
             }
           }
@@ -191,6 +201,7 @@
           }
           @include md {
             flex-flow: column;
+            @include center;
           }
           @include lg {
             flex-flow: column;
@@ -204,6 +215,7 @@
 
             @include xs {
               margin-right: 0;
+              height: 200px;
               object-fit: contain;
             }
             @include sm {
@@ -230,6 +242,11 @@
                 margin: 1rem auto;
               }
             }
+            @include md {
+              a {
+                margin: 1rem auto;
+              }
+            }
 
             a {
               @include btn-primary;
@@ -244,6 +261,9 @@
       }
       @include sm {
         width: 100%;
+      }
+      @include md {
+        width: 90%;
       }
     }
   }
