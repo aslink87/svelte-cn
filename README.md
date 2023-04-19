@@ -30,8 +30,9 @@ npm run dev -- --open
 # spin-up local postgres docker container to store data
 docker-compose up -d
 
-# initialize DB using prisma schema file and start prisma studio
+# initialize DB using prisma schema file, seed db with initial data, and start prisma studio
 npx prisma migrate dev
+npx prisma db seed
 npx prisma studio
 
 # run storybook for UI development

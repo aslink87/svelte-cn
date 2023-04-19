@@ -18,7 +18,6 @@
     "sourceMap": true,
     "strict": true
   },
-  // "files": ["svelte.config.js", "vite.config.js", "playwright.config.ts"],
   "include": [
     "./.svelte-kit/ambient.d.ts",
     ".svelte-kit/ambient.d.ts",
@@ -30,6 +29,7 @@
     "./tests/**/*.js",
     "./tests/**/*.svete",
     "./types/**/*.ts",
+    "./prisma/**/*.ts",
     "*.cjs",
     ".*.cjs",
     "*.js",
