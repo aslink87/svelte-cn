@@ -130,7 +130,7 @@ export async function load() {
       img: '/images/staff/adam.png',
       name: 'Adam Slinkman',
       title: 'IT Manager',
-      content: 'Adam maintains the technology infrastructure and develops internal software.',
+      content: 'Adam manages the technology infrastructure and develops internal software.',
       email: 'adam@slinkman.net',
       ext: 109,
     },

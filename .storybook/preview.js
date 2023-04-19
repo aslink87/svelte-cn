@@ -1,11 +1,11 @@
 import '../src/styles/globals.scss';
 
 const BREAKPOINTS_INT = {
-  xs: 480,
-  sm: 767,
-  md: 1023,
-  lg: 1279,
-  xl: 1500,
+  xs: 400,
+  sm: 700,
+  md: 900,
+  lg: 1100,
+  xl: 1300,
 };
 
 const customViewports = Object.fromEntries(

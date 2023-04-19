@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => ({
       const { code } = warning;
       if (code === 'css-unused-selector') return;
 
-      handler(warning);
+      if (handler) handler(warning);
     },
   },
 }));

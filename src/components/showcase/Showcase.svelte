@@ -75,9 +75,9 @@
     .banner {
       position: absolute;
       left: 0;
-      height: 95%;
+      height: 90%;
       width: 90%;
-      margin: 3rem 5rem;
+      margin: 2rem 5rem;
       object-fit: cover;
       pointer-events: none;
       opacity: 0.2;

@@ -159,6 +159,12 @@
             border: none;
             margin: auto;
           }
+          @include lg {
+            width: 14rem;
+          }
+          @include xl {
+            width: 18rem;
+          }
 
           li {
             list-style-type: none;
