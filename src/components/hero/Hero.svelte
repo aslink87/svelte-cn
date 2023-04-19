@@ -4,7 +4,7 @@
   export let data: HeroType;
 </script>
 
-<section class="hero">
+<section class="hero" data-testid="hero">
   <h1>Latest News</h1>
   <h2>{data.title}</h2>
   <p>{data.content}</p>

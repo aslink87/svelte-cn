@@ -79,7 +79,7 @@
   }
 </script>
 
-<section class="home-lower">
+<section class="home-lower" data-testid="home-lower">
   <div class="card-wrapper">
     <div class="card">
       <ul class="card-left">
@@ -184,6 +184,7 @@
               background: none;
               border: none;
               cursor: pointer;
+              color: $white;
             }
           }
         }

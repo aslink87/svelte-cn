@@ -4,11 +4,6 @@
   import Navigation from '../components/navigation/Navigation.svelte';
   import Footer from '../components/footer/Footer.svelte';
   import { navLinks } from '$/components/navigation/links';
-
-  seo.set({
-    title: 'Christian Neighbors',
-    description: 'Christian Neighbors',
-  });
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />

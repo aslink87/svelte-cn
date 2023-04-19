@@ -1,10 +1,11 @@
 <script lang="ts">
+  import Seo from '../../SEO.svelte';
   import { seo } from '$lib/stores/Seo';
   import { page } from '$app/stores';
   export let data: { id: string; users: { name: string; settings: { approved: boolean } }[] };
 
   seo.set({
-    title: 'Admin | CN',
+    title: 'CN - Admin',
     description: 'Admin Page for Christian Neighbors',
   });
 
@@ -23,6 +24,7 @@
   }
 </script>
 
+<Seo title={$seo.title} description={$seo.description} />
 <section class="admin">
   <h1>Hello from Admin page</h1>
   {#if $page.data.session?.user?.settings.manager}

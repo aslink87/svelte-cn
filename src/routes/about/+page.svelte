@@ -1,5 +1,6 @@
 <script lang="ts">
   import { seo } from '$lib/stores/Seo';
+  import Seo from '../SEO.svelte';
   import type {
     AboutPageMissionDataType,
     AboutPageFiveCsType,
@@ -22,7 +23,8 @@
   });
 </script>
 
-<section class="about-mission">
+<Seo title={$seo.title} description={$seo.description} />
+<section class="about-mission" data-testid="about-mission">
   <h1>{data.missionData.title}</h1>
   <h2>{data.missionData.subtitle}</h2>
   <ul class="first-list">
@@ -37,7 +39,7 @@
   </ul>
 </section>
 
-<section class="about-fivecs">
+<section class="about-fivecs" data-testid="about-fivecs">
   <h1>{data.fiveCs.title}</h1>
   <ul>
     {#each data.fiveCs.items as item}
@@ -49,7 +51,7 @@
   </ul>
 </section>
 
-<section class="about-leadership">
+<section class="about-leadership" data-testid="about-leadership">
   <h2>Our Board</h2>
   <ul>
     {#each data.leadership.board as item}
@@ -70,7 +72,7 @@
   </ul>
 </section>
 
-<section class="about-staff" id="staff">
+<section class="about-staff" id="staff" data-testid="about-staff">
   <h1>Meet the Staff</h1>
   <ul>
     {#each data.staff as item}

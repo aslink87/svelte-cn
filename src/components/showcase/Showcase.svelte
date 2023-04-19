@@ -34,7 +34,7 @@
 
 <svelte:window bind:scrollY={y} />
 
-<section class="showcase">
+<section class="showcase" data-testid="showcase">
   <img
     style="transform: translateY({y * 0.2}px)"
     class="banner"

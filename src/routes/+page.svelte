@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Seo from './SEO.svelte';
   import { seo } from '$lib/stores/Seo';
   import type { HeroType } from '$/types';
   import Hero from '$/components/hero/Hero.svelte';
@@ -17,6 +18,7 @@
   });
 </script>
 
+<Seo title={$seo.title} description={$seo.description} />
 <section class="index">
   <div class="bg">
     <Hero data={data.hero} />
