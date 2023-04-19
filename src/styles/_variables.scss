@@ -12,7 +12,7 @@ $black: #010a15;
 $gray: #5c7793;
 $warning: red;
 
-@mixin btnPrimary {
+@mixin btn-primary {
   padding: 0.2rem 1rem;
   border: 0;
   border-radius: 10px;
@@ -47,64 +47,83 @@ $warning: red;
 }
 
 @mixin h1-primary {
+  max-width: 60em;
+  margin: auto;
   font-family: Inter-Bold;
   font-size: 32px;
+  @include xs {
+    font-size: 22px;
+  }
+  @include sm {
+    font-size: 26px;
+  }
 }
 
 @mixin h2-primary {
+  max-width: 60em;
+  margin: auto;
   font-family: Inter-Bold;
   font-size: 24px;
   @include xs {
     font-size: 18px;
   }
+  @include sm {
+    font-size: 20px;
+  }
+}
+
+@mixin p {
+  max-width: 60em;
+  margin: auto;
+  @include xs {
+    font-size: 14px;
+    max-width: 90%;
+    margin: auto;
+  }
+  @include sm {
+    font-size: 16px;
+    max-width: 90%;
+    margin: auto;
+  }
+}
+
+@mixin ul {
+  padding-left: 0;
+  list-style-type: none;
+  max-width: 60em;
+  margin: auto;
+  @include xs {
+    font-size: 14px;
+    max-width: 90%;
+    margin: auto;
+  }
+  @include sm {
+    font-size: 16px;
+    max-width: 90%;
+    margin: auto;
+  }
+}
+
+@mixin a {
+  color: $white;
+  @include xs {
+    font-size: 14px;
+    max-width: 90%;
+  }
+  @include sm {
+    font-size: 16px;
+    max-width: 90%;
+  }
 }
 
 @mixin xs {
   @media (max-width: 639px) {
-    h1 {
-      font-size: 1em;
-    }
-    h2 {
-      font-size: 18px;
-    }
-    p {
-      font-size: 0.8em;
-      max-width: 90%;
-      margin: auto;
-    }
-    a {
-      font-size: 0.8em;
-    }
-    ul {
-      font-size: 0.8em;
-      max-width: 90%;
-    }
     @content;
   }
 }
 
 @mixin sm {
   @media (min-width: 640px) and (max-width: 767px) {
-    h1 {
-      font-size: 1.5em;
-    }
-    h2 {
-      font-size: 1.2em;
-    }
-    p {
-      font-size: 1em;
-      max-width: 90%;
-      margin: auto;
-    }
-    a {
-      font-size: 1em;
-    }
-    ul {
-      font-size: 1em;
-      max-width: 90%;
-      padding-left: 0;
-      margin: auto;
-    }
     @content;
   }
 }

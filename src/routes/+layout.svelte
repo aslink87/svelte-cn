@@ -43,12 +43,11 @@
   :global(body) {
     font-family: Inter-Regular, 'Segoe UI Mono', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
       'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     color: $white;
     width: 100%;
     margin: 0;
     box-sizing: border-box;
-    font-size: 18px;
   }
 
   .mobile-menu {

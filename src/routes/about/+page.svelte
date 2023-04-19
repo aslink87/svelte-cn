@@ -93,8 +93,6 @@
 <style lang="scss">
   .about-mission {
     @include center;
-    text-align: center;
-    color: $white;
     padding: 2rem 1rem;
 
     h1 {
@@ -103,14 +101,13 @@
 
     h2 {
       @include h2-primary;
-      margin: auto;
-      max-width: 60em;
+      margin-top: 1rem;
     }
 
     ul {
+      @include ul;
+      margin-top: 2rem !important;
       list-style-type: disc;
-      max-width: 60em;
-      margin: 2rem auto;
       text-align: left;
 
       &:first-of-type {
@@ -125,20 +122,15 @@
     @include center;
     background-color: rgba($color: $gray, $alpha: 0.6);
     text-align: center;
-    color: $white;
     padding: 2rem;
-    margin-bottom: 0;
 
     h1 {
       @include h1-primary;
     }
 
     ul {
-      list-style-type: none;
-      max-width: 60em;
-      margin: 2rem auto;
+      @include ul;
       text-align: left;
-      padding: 0;
 
       h2 {
         @include h2-primary;
@@ -152,19 +144,23 @@
   .about-leadership {
     @include center;
     text-align: center;
-    color: $white;
     padding: 2rem 0;
 
     h2 {
       @include h2-primary;
+      @include xs {
+        margin: 1rem auto;
+      }
+      @include sm {
+      }
     }
 
     ul {
       @include center;
+      @include ul;
       display: grid;
       gap: 10px;
       width: 80%;
-      margin: 2rem auto 4rem auto;
       grid-template-columns: 30% 30% 30%;
       list-style-type: none;
       padding: 0;
@@ -191,7 +187,6 @@
     @include center;
     background-color: rgba($color: $gray, $alpha: 0.6);
     text-align: center;
-    color: $white;
     padding: 2rem;
     margin-bottom: 0;
 
@@ -201,13 +196,10 @@
 
     ul {
       @include center;
-      list-style-type: none;
+      @include ul;
       display: flex;
       flex-wrap: wrap;
-      width: 80%;
-      margin: auto;
       gap: 2em 3em;
-      padding: 0;
 
       li {
         width: 300px;
@@ -217,7 +209,7 @@
         box-shadow: 0 4px 8px 0 rgba($black, 0.2);
 
         @include xs {
-          height: 500px;
+          height: 600px;
         }
 
         img {
@@ -227,7 +219,7 @@
         }
 
         a {
-          @include btnPrimary;
+          @include btn-primary;
           background-color: rgba($color: $gray, $alpha: 0.6);
           font-size: 14px;
           margin: auto 1rem;

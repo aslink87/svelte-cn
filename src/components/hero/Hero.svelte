@@ -22,8 +22,6 @@
 <style lang="scss">
   section {
     @include center;
-    text-align: center;
-    color: $white;
     padding: 2rem 1rem;
 
     h1 {
@@ -35,13 +33,11 @@
     }
 
     p {
-      max-width: 60em;
-      margin: auto;
+      @include p;
     }
 
     a {
-      color: $white;
-      font-size: 14px;
+      @include a;
     }
 
     img {

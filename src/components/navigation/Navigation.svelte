@@ -140,6 +140,7 @@
       align-items: center;
 
       button {
+        margin: auto;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;

@@ -109,7 +109,6 @@
 <style lang="scss">
   section {
     @include center;
-    color: $white;
     padding: 5rem 0;
 
     .card-wrapper {
@@ -175,10 +174,6 @@
               border: none;
               color: $white;
               cursor: pointer;
-
-              @include xs {
-                font-size: 18px;
-              }
             }
           }
         }
@@ -237,7 +232,7 @@
             }
 
             a {
-              @include btnPrimary;
+              @include btn-primary;
               width: 100px;
             }
           }

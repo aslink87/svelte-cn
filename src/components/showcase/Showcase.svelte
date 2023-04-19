@@ -106,10 +106,6 @@
       @include h2-primary;
       background-color: $deep-blue;
       border-radius: 5px;
-
-      @include sm {
-        font-size: 18px;
-      }
     }
 
     .card-wrapper {
@@ -142,13 +138,14 @@
             border-top-left-radius: 38px;
             border-bottom-left-radius: 38px;
             max-width: 25rem;
-            height: 400px;
+            display: flex;
+            flex-flow: column;
 
             img {
               margin: auto 1rem;
               max-height: 250px;
+              object-fit: scale-down;
               border-radius: 10px;
-              box-shadow: -3px -3px 5px rgba($deep-blue, 0.5), 3px 3px 5px rgba($deep-blue, 0.2);
             }
           }
 
@@ -157,15 +154,15 @@
             margin: auto 0;
 
             p {
-              width: 80%;
-              margin: auto;
-              font-size: 20px;
+              @include p;
+              margin: auto 1rem;
             }
 
             a {
-              @include btnPrimary;
-              width: fit-content;
+              @include btn-primary;
+              @include a;
               margin: 2rem auto 0 auto;
+              width: fit-content;
             }
           }
 
@@ -185,6 +182,7 @@
             }
 
             .content-right {
+              width: 100%;
               height: fit-content;
               padding-bottom: 1rem;
             }

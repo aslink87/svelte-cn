@@ -54,22 +54,22 @@
 
     h1 {
       @include h1-primary;
-      color: $white;
     }
 
     h2 {
-      color: $white;
+      margin: 1rem auto !important;
+      @include h2-primary;
     }
 
     p {
-      color: $white;
+      @include p;
     }
 
     ul {
-      color: $white;
-      padding: 0;
+      @include ul;
 
       li {
+        margin: 1rem auto;
         display: flex;
         gap: 1em;
         justify-content: center;
@@ -77,7 +77,7 @@
         text-transform: capitalize;
 
         button {
-          @include btnPrimary;
+          @include btn-primary;
           height: 2em;
           margin: auto 0;
         }

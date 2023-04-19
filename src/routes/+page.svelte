@@ -27,11 +27,6 @@
 
 <style lang="scss">
   section {
-    // background-image: url('/images/cnShop2.jpg');
-    // background-repeat: no-repeat;
-    // background-position: center;
-    // background-size: contain;
-
     .bg {
       background-color: $deep-blue;
     }
