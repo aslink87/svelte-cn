@@ -1,5 +1,6 @@
 <script lang="ts">
   import { seo } from '$lib/stores/Seo';
+  import { page } from '$app/stores';
   export let data: { id: string; users: { name: string; settings: { approved: boolean } }[] };
 
   seo.set({
@@ -24,24 +25,26 @@
 
 <section class="admin">
   <h1>Hello from Admin page</h1>
-  <div class="user-management">
-    <h2>Registered Users</h2>
-    <p>Approve for admin access?</p>
-    <p>Careful not to lock yourself out by removing your own access!</p>
-    <ul>
-      {#each data.users as user}
-        <li>
-          <label for="name">Name:</label>
-          <input type="text" name="name" value={user.name} />
-          {#if !user.settings.approved}
-            <button on:click={() => approve(user.name)}>Approve</button>
-          {:else}
-            <button on:click={() => remove(user.name)}>Remove Approval</button>
-          {/if}
-        </li>
-      {/each}
-    </ul>
-  </div>
+  {#if $page.data.session?.user?.settings.manager}
+    <div class="user-management">
+      <h2>Registered Users</h2>
+      <p>Approve for admin access?</p>
+      <p>Careful not to lock yourself out by removing your own access!</p>
+      <ul>
+        {#each data.users as user}
+          <li>
+            <label for="name">Name:</label>
+            <input type="text" name="name" value={user.name} />
+            {#if !user.settings.approved}
+              <button on:click={() => approve(user.name)}>Approve</button>
+            {:else}
+              <button on:click={() => remove(user.name)}>Remove Approval</button>
+            {/if}
+          </li>
+        {/each}
+      </ul>
+    </div>
+  {/if}
 </section>
 
 <style lang="scss">

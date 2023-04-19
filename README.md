@@ -41,9 +41,9 @@ npm run storybook
 
 ## First user
 
-This template allows visitors to login via Google auth. Page administrators can assign new users as page admins via the '/admin' route. However, the first admin user must be assigned admin access via a database update through Prisma.
+This template allows visitors to login via Google auth. Users have two possible roles: 1. Approved users that are able to edit the app, and 2) User managers that are able to edit approved user permissions. User managers can assign new users as page admins via the '/admin' route. However, the first admin user must be assigned as a user manager via a database update through Prisma.
 
-After starting the app login with your Google account to create your user. Then using prisma studio edit your userSettings to set 'approved' to true. Then you'll be able to access the admin page.
+After starting the app login with your Google account to create your user. Then using prisma studio edit your userSettings to set 'approved' and 'manager' to true. Then you'll be able to access the admin page, and approve other new users.
 
 ## Building
 
