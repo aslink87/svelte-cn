@@ -67,6 +67,8 @@
       h2 {
         @include h2-primary;
         color: $white;
+        font-size: 24px !important;
+        margin: 2rem auto;
       }
     }
   }

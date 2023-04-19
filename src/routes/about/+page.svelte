@@ -150,11 +150,7 @@
 
     h2 {
       @include h2-primary;
-      @include xs {
-        margin: 1rem auto;
-      }
-      @include sm {
-      }
+      margin: 2rem auto 1rem auto;
     }
 
     ul {

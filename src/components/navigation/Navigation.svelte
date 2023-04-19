@@ -31,6 +31,27 @@
       drawer.style.right = mobileMenuOpen ? '0%' : '-100%';
     }
   }
+
+  function showDropdown(link: string) {
+    const allDropdowns = document.getElementsByClassName('dd');
+
+    for (let i = 0; i < allDropdowns.length; i += 1) {
+      // eslint-disable-next-line
+      // @ts-ignore
+      allDropdowns.item(i).style.display = 'none';
+    }
+
+    const dropdown = document.getElementById(link);
+    if (dropdown) {
+      dropdown.style.display = 'block';
+    }
+  }
+  function hideDropdown(link: string) {
+    const dropdown = document.getElementById(link);
+    if (dropdown) {
+      dropdown.style.display = 'none';
+    }
+  }
 </script>
 
 <nav data-testid="nav">
@@ -44,9 +65,20 @@
   <ul>
     {#each navLinks as link}
       {#if !link.mobileOnly}
-        <button>
-          <a href={link.path}>{link.name}</a>
-        </button>
+        <li on:mouseenter={() => showDropdown(link.class)}>
+          <a href={link.path} class={link.class}>{link.name}</a>
+        </li>
+        {#if link.dropdown && link.dropdown.length > 0}
+          <div
+            class={`dropdown-${link.name} dd`}
+            id={link.name.toLowerCase().split(' ')[0]}
+            on:mouseleave={() => hideDropdown(link.class)}
+          >
+            {#each link.dropdown as item}
+              <a href={item.path}>{item.name}</a>
+            {/each}
+          </div>
+        {/if}
       {/if}
     {/each}
   </ul>
@@ -63,7 +95,6 @@
   nav {
     position: fixed;
     display: flex;
-    overflow: hidden;
     width: 100%;
     justify-content: space-between;
     background-color: $white;
@@ -111,7 +142,8 @@
       margin: auto 0;
       padding-right: 3em;
 
-      button {
+      li {
+        list-style-type: none;
         margin: auto 0;
         border: none;
         background: none;
@@ -127,6 +159,42 @@
           }
           &:active {
             border-bottom: solid 2px $yellow;
+          }
+        }
+      }
+
+      .dropdown-About {
+        top: 3.5rem;
+        @extend %dropdown;
+      }
+      .dropdown-Services {
+        @extend %dropdown;
+      }
+      .dropdown-Support {
+        top: 3.5rem;
+        right: 1rem;
+        @extend %dropdown;
+      }
+
+      %dropdown {
+        display: none;
+        position: absolute;
+        background-color: $deep-blue;
+        min-width: 160px;
+        font-size: 0.8rem;
+        border-radius: 5px;
+        box-shadow: 0px 0px 8px 0px $light-blue;
+        z-index: 3;
+
+        a {
+          @include a;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+
+          &:hover {
+            color: $yellow;
           }
         }
       }
