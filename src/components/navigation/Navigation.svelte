@@ -6,6 +6,8 @@
   import { mobileToggle } from '$lib/stores/Mobile';
 
   let mobileMenuOpen = false;
+  let about = false;
+  let support = false;
 
   function handleMobileToggle() {
     mobileToggle.update((n) => !n);
@@ -35,12 +37,14 @@
   function showDropdown(link: string) {
     const allDropdowns = document.getElementsByClassName('dd');
 
+    // hide any open dropdowns
     for (let i = 0; i < allDropdowns.length; i += 1) {
       // eslint-disable-next-line
       // @ts-ignore
       allDropdowns.item(i).style.display = 'none';
     }
 
+    // show the dropdown for the link that was hovered
     const dropdown = document.getElementById(link);
     if (dropdown) {
       dropdown.style.display = 'block';
@@ -48,9 +52,14 @@
   }
   function hideDropdown(link: string) {
     const dropdown = document.getElementById(link);
-    if (dropdown) {
-      dropdown.style.display = 'none';
-    }
+    setTimeout(() => {
+      if (dropdown && !about && link === 'about') {
+        dropdown.style.display = 'none';
+      }
+      if (dropdown && !support && link === 'support') {
+        dropdown.style.display = 'none';
+      }
+    }, 500);
   }
 </script>
 
@@ -65,20 +74,30 @@
   <ul>
     {#each navLinks as link}
       {#if !link.mobileOnly}
-        <li on:mouseenter={() => showDropdown(link.class)}>
+        <li
+          on:mouseenter={() => showDropdown(link.class)}
+          on:mouseleave={() => hideDropdown(link.class)}
+        >
           <a href={link.path} class={link.class}>{link.name}</a>
+          {#if link.dropdown && link.dropdown.length > 0}
+            <div
+              class={`dropdown-${link.name} dd`}
+              id={link.name.toLowerCase().split(' ')[0]}
+              on:mouseenter={() => {
+                if (link.name.toLowerCase().split(' ')[0] === 'about') about = true;
+                if (link.name.toLowerCase().split(' ')[0] === 'support') support = true;
+              }}
+              on:mouseleave={() => {
+                if (link.name.toLowerCase().split(' ')[0] === 'about') about = false;
+                if (link.name.toLowerCase().split(' ')[0] === 'support') support = false;
+              }}
+            >
+              {#each link.dropdown as item}
+                <a href={item.path}>{item.name}</a>
+              {/each}
+            </div>
+          {/if}
         </li>
-        {#if link.dropdown && link.dropdown.length > 0}
-          <div
-            class={`dropdown-${link.name} dd`}
-            id={link.name.toLowerCase().split(' ')[0]}
-            on:mouseleave={() => hideDropdown(link.class)}
-          >
-            {#each link.dropdown as item}
-              <a href={item.path}>{item.name}</a>
-            {/each}
-          </div>
-        {/if}
       {/if}
     {/each}
   </ul>
@@ -161,40 +180,38 @@
             border-bottom: solid 2px $yellow;
           }
         }
-      }
+        .dropdown-About {
+          top: 3.5rem;
+          @extend %dropdown;
+        }
+        .dropdown-Services {
+          @extend %dropdown;
+        }
+        .dropdown-Support {
+          top: 3.5rem;
+          right: 1rem;
+          @extend %dropdown;
+        }
+        %dropdown {
+          display: none;
+          position: absolute;
+          background-color: $deep-blue;
+          min-width: 160px;
+          border-radius: 5px;
+          box-shadow: 0px 0px 8px 0px $light-blue;
+          z-index: 3;
 
-      .dropdown-About {
-        top: 3.5rem;
-        @extend %dropdown;
-      }
-      .dropdown-Services {
-        @extend %dropdown;
-      }
-      .dropdown-Support {
-        top: 3.5rem;
-        right: 1rem;
-        @extend %dropdown;
-      }
+          a {
+            @include a;
+            font-size: 0.8rem;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
 
-      %dropdown {
-        display: none;
-        position: absolute;
-        background-color: $deep-blue;
-        min-width: 160px;
-        font-size: 0.8rem;
-        border-radius: 5px;
-        box-shadow: 0px 0px 8px 0px $light-blue;
-        z-index: 3;
-
-        a {
-          @include a;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-          text-align: left;
-
-          &:hover {
-            color: $yellow;
+            &:hover {
+              color: $yellow;
+            }
           }
         }
       }

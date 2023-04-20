@@ -152,6 +152,7 @@
           .content-right {
             color: $dark-blue;
             margin: auto 0;
+            width: 90%;
 
             p {
               @include p;
@@ -172,6 +173,7 @@
 
             .content-left {
               width: 100%;
+              max-width: unset;
               height: fit-content;
               border-bottom-left-radius: 0;
               border-top-right-radius: 38px;
@@ -206,6 +208,7 @@
             .content-right {
               height: fit-content;
               padding-bottom: 1rem;
+              margin: auto;
             }
           }
           @include md {
@@ -227,12 +230,18 @@
             .content-right {
               height: fit-content;
               padding-bottom: 1rem;
+              margin: auto;
             }
           }
 
           @include lg {
             .content-left {
               min-width: 400px;
+            }
+            .content-right {
+              p {
+                text-align: left;
+              }
             }
           }
 
@@ -259,6 +268,11 @@
 
     h2 {
       @include h2-primary;
+    }
+
+    @include xs {
+      margin: 0;
+      padding: 0.5rem;
     }
   }
 </style>
