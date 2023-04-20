@@ -21,3 +21,10 @@ test('admin page to redirect to home', async ({ page }) => {
 
   expect(title).toBe('Christian Neighbors');
 });
+
+test('faq page has correct title', async ({ page }) => {
+  await page.goto('/faq');
+  const title = await page.title();
+
+  expect(title).toBe('CN - Faq');
+});

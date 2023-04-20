@@ -9,7 +9,7 @@ export const navLinks = [
     dropdown: [
       { name: 'Newsletter', path: '/newsletter' },
       { name: 'Calendar', path: '/calendar' },
-      { name: 'FAQs', path: '/faqs' },
+      { name: 'FAQs', path: '/faq' },
       { name: 'Blog', path: '/blog' },
     ],
   },
@@ -34,6 +34,14 @@ export const navLinks = [
     name: 'Donate',
     path: '/',
     class: 'donate',
+    auth: false,
+    mobile: true,
+    mobileOnly: true,
+  },
+  {
+    name: 'FAQs',
+    path: '/faq',
+    class: 'faq',
     auth: false,
     mobile: true,
     mobileOnly: true,

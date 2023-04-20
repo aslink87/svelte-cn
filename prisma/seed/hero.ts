@@ -11,7 +11,7 @@ export async function seed(prismaClient: PrismaClient) {
         title: hero.title,
         content: hero.content,
         link: hero.link,
-        image: null,
+        image: hero.image,
         video: null,
       };
     }),

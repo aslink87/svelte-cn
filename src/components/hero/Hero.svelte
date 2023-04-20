@@ -12,7 +12,7 @@
     <a href={data.link}>{data.link.split('.').slice(1).join('.')}</a>
   {/if}
   {#if data?.image}
-    <img src="/images/cnShop2.jpg" alt="Christian Neighbors News" />
+    <img src={data.image} alt="Christian Neighbors News" />
   {/if}
   {#if data?.video}
     <a href={data.video}>Video Link</a>
@@ -23,6 +23,10 @@
   section {
     @include center;
     padding: 2rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    gap: 2rem;
 
     h1 {
       @include h1-primary;
@@ -42,6 +46,9 @@
 
     img {
       max-height: 300px;
+      max-width: 800px;
+      object-fit: scale-down;
+      border-radius: 5px;
     }
   }
 </style>
