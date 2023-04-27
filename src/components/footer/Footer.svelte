@@ -169,7 +169,7 @@
         }
         @media (min-width: 1800px) {
           .spacer {
-            width: 45%;
+            width: calc(90% - 50rem);
           }
         }
 

@@ -49,3 +49,10 @@ export type NewsletterType = {
   doc: string;
   index: number;
 };
+
+export type CalendarType = {
+  img?: string;
+  alt?: string;
+  content: string;
+  link?: string;
+};
