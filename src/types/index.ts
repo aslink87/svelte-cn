@@ -42,3 +42,10 @@ export type AboutPageStaffType = {
   email?: string;
   ext?: number;
 };
+
+export type NewsletterType = {
+  date: string;
+  title: string;
+  doc: string;
+  index: number;
+};

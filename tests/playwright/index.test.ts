@@ -28,3 +28,10 @@ test('faq page has correct title', async ({ page }) => {
 
   expect(title).toBe('CN - Faq');
 });
+
+test('newsletter page has correct title', async ({ page }) => {
+  await page.goto('/newsletter');
+  const title = await page.title();
+
+  expect(title).toBe('CN - Newsletter');
+});
