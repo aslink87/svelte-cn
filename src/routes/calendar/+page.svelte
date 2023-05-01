@@ -143,6 +143,12 @@
   section {
     @include center;
     padding: 5rem 0;
+    min-height: 100vh;
+
+    h1 {
+      @include h1-primary;
+      margin-bottom: 2rem;
+    }
 
     .dynamic {
       @include component;
@@ -231,6 +237,7 @@
             max-width: 700px;
             object-fit: cover;
             margin-right: 1rem;
+            border-radius: 5px;
 
             @include xs {
               display: none;
