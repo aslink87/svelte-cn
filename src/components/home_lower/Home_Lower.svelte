@@ -36,7 +36,7 @@
       subheading: 'Calendar',
       content:
         "Throughout the year we host many events that may interest you. A few include the Reflection of Hope Auction, PATH Walk, or many Soup Suppers. To see what's upcoming view our calendar...",
-      link: '/',
+      link: '/calendar',
     },
   ];
 
@@ -74,7 +74,6 @@
       button.classList.add('active');
       button.style.color = `#6979c1`;
       if (button.classList.contains('selector')) button.style.marginLeft = '10px';
-      // button.style.fontSize = '28px';
     }
   }
 </script>
