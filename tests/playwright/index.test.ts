@@ -42,3 +42,10 @@ test('calendar page has correct title', async ({ page }) => {
 
   expect(title).toBe('CN - Calendar');
 });
+
+test('services page has correct title', async ({ page }) => {
+  await page.goto('/services');
+  const title = await page.title();
+
+  expect(title).toBe('CN - Services');
+});

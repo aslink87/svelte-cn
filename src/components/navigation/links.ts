@@ -15,7 +15,7 @@ export const navLinks = [
   },
   {
     name: 'Services',
-    path: '/assistance',
+    path: '/services',
     class: 'services',
     auth: false,
     mobile: true,
