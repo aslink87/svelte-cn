@@ -3,6 +3,7 @@ import { PrismaClient } from '@prisma/client';
 import { seed as heroSeed } from './hero';
 import { seed as newsletterSeed } from './newsletter';
 import { seed as calendarSeed } from './calendar';
+import { seed as supperSeed } from './supper';
 
 const prismaClient = new PrismaClient();
 
@@ -12,6 +13,7 @@ async function main() {
     await heroSeed(prismaClient);
     await newsletterSeed(prismaClient);
     await calendarSeed(prismaClient);
+    await supperSeed(prismaClient);
   } catch (e) {
     console.log(e);
     exitStatus = 1;

@@ -5,5 +5,11 @@ export async function load() {
   if (!calendar) {
     return null;
   }
-  return { calendar };
+
+  const supper = await prismaClient.supper.findFirst();
+  if (!supper) {
+    return null;
+  }
+
+  return { calendar, supper };
 }

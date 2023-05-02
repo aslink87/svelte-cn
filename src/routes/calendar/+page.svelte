@@ -9,7 +9,7 @@
     description: 'Christian Neighbors - Calendar',
   });
 
-  export let data: { calendar: CalendarType | null };
+  export let data: { calendar: CalendarType | null; supper: { img: string; alt: string } | null };
 
   interface ICards {
     heading: string;
@@ -32,8 +32,8 @@
     },
     {
       heading: 'Soup Suppers',
-      img: '/images/soupSupper.jpg',
-      alt: 'Soup Suppers',
+      img: '',
+      alt: '',
       content:
         'Our Soup Suppers are generally held between September through May. They are a fundraising event for Christian Neighbors hosted by our wonderful church partners to raise funds that go directly to our food pantry to help fight hunger within our community. Come enjoy a wonderful meal to help support a great cause! More information can be found on our calendar, in the attached flyer, and on our social media.',
       link: '',
@@ -49,6 +49,10 @@
       label: '',
     },
   ];
+
+  // if soup supper image and alt are provided, update cards
+  if (data.supper?.img) cards[1].img = data.supper.img;
+  if (data.supper?.alt) cards[1].alt = data.supper.alt;
 
   onMount(() => {
     const firstCard = document.getElementById('0');
