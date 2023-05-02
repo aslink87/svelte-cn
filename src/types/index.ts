@@ -4,6 +4,7 @@ export type HeroType = {
   link?: string;
   image?: string;
   video?: string;
+  doc?: string;
 };
 
 export type AboutPageMissionDataType = {
@@ -55,4 +56,13 @@ export type CalendarType = {
   alt?: string;
   content: string;
   link?: string;
+};
+
+export type BlogType = {
+  author: string;
+  date: string;
+  title: string;
+  content: string;
+  img?: string;
+  caption?: string;
 };

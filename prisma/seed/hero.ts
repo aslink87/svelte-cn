@@ -13,6 +13,7 @@ export async function seed(prismaClient: PrismaClient) {
         link: hero.link,
         image: hero.image,
         video: null,
+        doc: hero.doc,
       };
     }),
   });

@@ -11,6 +11,11 @@
   {#if data?.link}
     <a href={data.link}>{data.link.split('.').slice(1).join('.')}</a>
   {/if}
+  {#if data?.doc}
+    <a href={`http://localhost:5173${data.doc}`} data-sveltekit-preload-data target="_blank"
+      >Click Here</a
+    >
+  {/if}
   {#if data?.image}
     <img src={data.image} alt="Christian Neighbors News" />
   {/if}

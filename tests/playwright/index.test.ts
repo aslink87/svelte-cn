@@ -63,3 +63,10 @@ test('church partners page has correct title', async ({ page }) => {
 
   expect(title).toBe('CN - Churches');
 });
+
+test('blog page has correct title', async ({ page }) => {
+  await page.goto('/blog');
+  const title = await page.title();
+
+  expect(title).toBe('CN - Blog');
+});

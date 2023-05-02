@@ -63,6 +63,7 @@ model Hero {
   link        String?
   image       String?
   video       String?
+  doc         String?
 }
 
 // Newsletter pdf component
@@ -109,4 +110,14 @@ model Needs {
 model PantryCalendar {
   id          String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   img         String
+}
+
+model Blog {
+  id          String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  author      String
+  date      String
+  title       String
+  content     String
+  img         String?
+  caption     String?
 }
