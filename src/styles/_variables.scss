@@ -92,12 +92,18 @@ $warning: red;
   list-style-type: none;
   max-width: 60em;
   margin: auto;
+
   @include xs {
     font-size: 14px;
     max-width: 90%;
     margin: auto;
   }
   @include sm {
+    font-size: 16px;
+    max-width: 90%;
+    margin: auto;
+  }
+  @include md {
     font-size: 16px;
     max-width: 90%;
     margin: auto;
