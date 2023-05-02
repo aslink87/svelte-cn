@@ -104,3 +104,9 @@ model Needs {
   item8       String?
   item9       String?
 }
+
+// pantry calendar image
+model PantryCalendar {
+  id          String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  img         String
+}

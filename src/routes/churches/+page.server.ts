@@ -1,4 +1,11 @@
+import prismaClient from '$lib/db.server';
+
 export async function load() {
+  const calendar = await prismaClient.pantryCalendar.findFirst();
+  if (!calendar) {
+    return null;
+  }
+
   const data = [
     {
       link: 'https://maps.google.com/maps?q=7925+N+6th+St,+Kalamazoo&hl=en&sll=37.0625,-95.677068&sspn=46.495626,63.984375&t=h&hnear=7925+N+6th+St,+Kalamazoo+Township,+Michigan+49009&z=16',
@@ -110,5 +117,5 @@ export async function load() {
     },
   ];
 
-  return { data };
+  return { calendar, data };
 }

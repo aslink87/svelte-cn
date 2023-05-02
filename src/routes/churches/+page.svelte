@@ -7,7 +7,20 @@
     description: 'Christian Neighbors - Church Partners',
   });
 
+  function displayCalendar() {
+    const calendar = document.getElementById('calendar');
+
+    if (calendar) {
+      if (calendar.style.display === 'none') {
+        calendar.style.display = 'block';
+      } else if (calendar.style.display === 'block') {
+        calendar.style.display = 'none';
+      }
+    }
+  }
+
   interface IData {
+    calendar: { img: string };
     data: { link: string; caption: string }[];
   }
 
@@ -18,8 +31,18 @@
 <section class="churches" data-testid="churches">
   <h1>Church Partners</h1>
   <h2>Important Calendars</h2>
-  <p>Soup Supper Calendar</p>
-  <p>Quarterly Food Pantry Calendar</p>
+  <a href="/calendar">Soup Supper Calendar</a>
+  <button on:click={displayCalendar}>Quarterly Food Pantry Calendar</button>
+  <div class="pantry-calendar">
+    {#if data.calendar}
+      <img
+        src={data.calendar.img}
+        alt="quarterly pantry calendar"
+        style="display: none"
+        id="calendar"
+      />
+    {/if}
+  </div>
   <h2>Would you like someone to come speak to your church?</h2>
   <p>
     Contact <a href="mailto:ehoffman@christianneighbors.org">Eric Hoffman</a> or call 269-685-4166 ext
@@ -54,6 +77,11 @@
       @include a;
     }
 
+    button {
+      @include btn-primary;
+      margin: 1rem auto;
+    }
+
     ul {
       @include center;
       @include ul;
@@ -85,6 +113,28 @@
 
         a {
           text-decoration: none;
+        }
+      }
+    }
+
+    .pantry-calendar {
+      @include center;
+      display: flex;
+
+      img {
+        margin: auto 1rem;
+        max-height: 800px;
+        object-fit: scale-down;
+        border-radius: 10px;
+
+        @include xs {
+          width: 90%;
+        }
+        @include sm {
+          height: 400px;
+        }
+        @include md {
+          height: 500px;
         }
       }
     }
