@@ -23,7 +23,7 @@
   const cards: ICards[] = [
     {
       heading: 'Annual Reflection of Hope Auction',
-      img: '/images/auction.png',
+      img: '/images/auction2.jpg',
       alt: 'Dinner Auction',
       content:
         'Each year we host a fun Reflection of Hope Auction event that is our main source of funds for emergency relief to prevent homelessness and loss of utilities in our neighborhood.',
@@ -31,17 +31,8 @@
       label: '',
     },
     {
-      heading: 'Christmas in July',
-      img: '/images/xmasinjuly.png',
-      alt: 'Christmas in July',
-      content:
-        'Christmas in July is held on the fourth Thursday in July at Four Roses Café. The proceeds from this fun and lively event will help fund our food pantry to prevent hunger in our community.',
-      link: '',
-      label: '',
-    },
-    {
       heading: 'Soup Suppers',
-      img: '/images/suppers.png',
+      img: '/images/soupSupper.jpg',
       alt: 'Soup Suppers',
       content:
         'Our Soup Suppers are generally held between September through May. They are a fundraising event for Christian Neighbors hosted by our wonderful church partners to raise funds that go directly to our food pantry to help fight hunger within our community. Come enjoy a wonderful meal to help support a great cause! More information can be found on our calendar, in the attached flyer, and on our social media.',
@@ -50,7 +41,7 @@
     },
     {
       heading: 'PATH Walk',
-      img: '/images/path.png',
+      img: '/images/path.jpg',
       alt: 'PATH Walk',
       content:
         'Our Soup Suppers are generally held between September through May. They are a fundraising event for Christian Neighbors hosted by our wonderful church partners to raise funds that go directly to our food pantry to help fight hunger within our community. Come enjoy a wonderful meal to help support a great cause! More information can be found on our calendar, in the attached flyer, and on our social media.',
@@ -116,13 +107,11 @@
             >Annual Reflection of Hope Auction</button
           >
         </li>
+        <li />
         <li>
-          <button class="selector" id="5" on:click={() => handleClick(1)}>Christmas in July</button>
+          <button class="selector" id="5" on:click={() => handleClick(1)}>Soup Suppers</button>
         </li>
-        <li>
-          <button class="selector" id="6" on:click={() => handleClick(2)}>Soup Suppers</button>
-        </li>
-        <li><button class="selector" id="7" on:click={() => handleClick(3)}>PATH Walk</button></li>
+        <li><button class="selector" id="6" on:click={() => handleClick(2)}>PATH Walk</button></li>
       </ul>
       {#each cards as card, index}
         <div class="card-body" id={`${index}`}>
@@ -150,6 +139,26 @@
       margin-bottom: 2rem;
     }
 
+    img {
+      height: 400px;
+      max-width: 700px;
+      object-fit: cover;
+      margin-right: 1rem;
+      border-radius: 5px;
+
+      @include xs {
+        display: none;
+      }
+      @include sm {
+        margin-right: 0;
+        height: 200px;
+        object-fit: contain;
+      }
+      @include md {
+        margin-right: 0;
+      }
+    }
+
     .dynamic {
       @include component;
       background-color: rgba($color: $gray, $alpha: 0.6);
@@ -157,6 +166,10 @@
       flex-flow: column;
       flex-wrap: wrap;
       margin-bottom: 3rem;
+
+      a {
+        @include a;
+      }
     }
 
     .card-wrapper {
@@ -212,6 +225,7 @@
           text-align: left;
           display: none;
           flex-flow: column;
+          justify-content: center;
 
           @include xs {
             flex-flow: column;
@@ -230,26 +244,6 @@
           }
           @include xl {
             flex-flow: row;
-          }
-
-          img {
-            height: 400px;
-            max-width: 700px;
-            object-fit: cover;
-            margin-right: 1rem;
-            border-radius: 5px;
-
-            @include xs {
-              display: none;
-            }
-            @include sm {
-              margin-right: 0;
-              height: 200px;
-              object-fit: contain;
-            }
-            @include md {
-              margin-right: 0;
-            }
           }
 
           .card-right__content {
