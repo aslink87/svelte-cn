@@ -36,7 +36,7 @@ export const navLinks = [
     auth: false,
     mobile: true,
     mobileOnly: false,
-    dropdown: [{ name: 'Church Partner', path: '/partners' }],
+    dropdown: [{ name: 'Church Partners', path: '/churches' }],
   },
   {
     name: 'FAQs',
