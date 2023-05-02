@@ -95,7 +95,7 @@
       background-color: $white;
 
       .footer-wrapper {
-        width: 100%;
+        width: 90%;
         margin: 0 2rem;
         display: flex;
         color: $dark-blue;
@@ -161,6 +161,9 @@
           .spacer {
             width: 30%;
           }
+          .right-container {
+            margin-top: 1rem !important;
+          }
         }
         @media (min-width: 1600px) and (max-width: 1799px) {
           .spacer {
@@ -224,7 +227,7 @@
           }
           @include lg {
             padding-bottom: 1rem;
-            margin: auto;
+            margin-top: 1rem;
             gap: 1rem;
           }
         }

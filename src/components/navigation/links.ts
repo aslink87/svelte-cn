@@ -1,5 +1,13 @@
 export const navLinks = [
   {
+    name: 'Donate',
+    path: '/donate',
+    class: 'donate',
+    auth: false,
+    mobile: true,
+    mobileOnly: false,
+  },
+  {
     name: 'About',
     path: '/about',
     class: 'about',
@@ -29,14 +37,6 @@ export const navLinks = [
     mobile: true,
     mobileOnly: false,
     dropdown: [{ name: 'Church Partner', path: '/partners' }],
-  },
-  {
-    name: 'Donate',
-    path: '/',
-    class: 'donate',
-    auth: false,
-    mobile: true,
-    mobileOnly: true,
   },
   {
     name: 'FAQs',

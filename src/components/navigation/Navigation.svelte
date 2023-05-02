@@ -167,6 +167,16 @@
         border: none;
         background: none;
 
+        &:nth-child(1) {
+          a {
+            @include btn-primary;
+            &:hover {
+              color: $white;
+              box-shadow: none;
+            }
+          }
+        }
+
         a {
           text-decoration: none;
           color: $deep-blue;
