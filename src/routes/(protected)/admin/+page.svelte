@@ -49,6 +49,11 @@
       <Frontpage />
     {/if}
   </div>
+  {#if $page.form?.message === 'success'}
+    <h2>Updated</h2>
+  {:else if $page.form?.message === 'failed'}
+    <h2>Failed to update</h2>
+  {/if}
 </section>
 
 <style lang="scss">
