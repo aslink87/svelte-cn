@@ -2,101 +2,88 @@
   import Seo from '../../SEO.svelte';
   import { seo } from '$lib/stores/Seo';
   import { page } from '$app/stores';
-  export let data: { id: string; users: { name: string; settings: { approved: boolean } }[] };
+  import type { AdminPageType } from '$/types';
+  import { signOut } from '@auth/sveltekit/client';
+  import Users from '$/components/admin/Users.svelte';
+  import Frontpage from '$/components/admin/Frontpage.svelte';
 
   seo.set({
     title: 'CN - Admin',
     description: 'Admin Page for Christian Neighbors',
   });
 
-  async function approve(name: string) {
-    await fetch('/api/register', {
-      method: 'POST',
-      body: JSON.stringify({ name }),
-    });
+  const links = {
+    admins: false,
+    frontpage: false,
+  };
+
+  function handleNavClick(index: string) {
+    for (let i = 0; i < Object.keys(links).length; i += 1) {
+      links[Object.keys(links)[i] as keyof typeof links] = false;
+    }
+
+    links[index as keyof typeof links] = !links[index as keyof typeof links];
   }
 
-  async function remove(name: string) {
-    await fetch('/api/unregister', {
-      method: 'POST',
-      body: JSON.stringify({ name }),
-    });
-  }
+  export let data: AdminPageType;
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
 <section class="admin">
-  <h1>Hello from Admin page</h1>
-  {#if $page.data.session?.user?.settings.manager}
-    <div class="user-management">
-      <h2>Registered Users</h2>
-      <p>Approve for admin access?</p>
-      <p>Careful not to lock yourself out by removing your own access!</p>
-      <ul>
-        {#each data.users as user}
-          <li>
-            <label for="name">Name:</label>
-            <input type="text" name="name" value={user.name} />
-            {#if !user.settings.approved}
-              <button on:click={() => approve(user.name)}>Approve</button>
-            {:else}
-              <button on:click={() => remove(user.name)}>Remove Approval</button>
-            {/if}
-          </li>
-        {/each}
-      </ul>
-    </div>
-  {/if}
+  <nav>
+    <button on:click={() => signOut()}>
+      <p>Logout</p>
+    </button>
+    {#each data.links as link}
+      <button on:click={() => handleNavClick(link)}>
+        {link}
+      </button>
+    {/each}
+  </nav>
+  <div class="admin-body">
+    <h1>Hello from Admin page</h1>
+    {#if $page.data.session?.user?.settings.manager && links.admins}
+      <Users data={data.users} />
+    {/if}
+    {#if links.frontpage}
+      <Frontpage />
+    {/if}
+  </div>
 </section>
 
 <style lang="scss">
   section {
     @include center;
-    padding: 2em 0;
+    min-height: 100vh;
 
-    h1 {
-      @include h1-primary;
-    }
+    nav {
+      position: fixed;
+      width: 10rem;
+      height: 100vh;
+      z-index: 2;
+      top: 0;
+      background-color: rgba($color: $gray, $alpha: 0.6);
+      padding: 2rem 0;
 
-    h2 {
-      margin: 1rem auto !important;
-      @include h2-primary;
-    }
-
-    p {
-      @include p;
-    }
-
-    ul {
-      @include ul;
-
-      li {
-        margin: 1rem auto;
-        display: flex;
-        gap: 1em;
-        justify-content: center;
-        list-style-type: none;
+      button {
+        @include p;
+        background: none;
+        border: none;
         text-transform: capitalize;
+        font-size: 24px;
+        color: $white;
+        margin: 0.5rem 0;
 
-        button {
-          @include btn-primary;
-          height: 2em;
-          margin: auto 0;
+        &:hover {
+          color: $light-blue;
         }
+      }
+    }
 
-        label {
-          margin: auto 0;
-          display: none;
-        }
-
-        input {
-          background: none;
-          color: $white;
-          border: none;
-          text-align: left;
-          width: 8em;
-          overflow-x: scroll;
-        }
+    .admin-body {
+      padding-left: 10rem;
+      h1 {
+        @include h1-primary;
       }
     }
   }

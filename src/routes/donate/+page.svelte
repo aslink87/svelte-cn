@@ -128,6 +128,7 @@
 
     iframe {
       width: 50rem;
+      min-height: 25rem;
       overflow: scroll;
 
       @include md {

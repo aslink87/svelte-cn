@@ -5,9 +5,12 @@ export async function load() {
   const users = await prismaClient.user.findMany({
     include: { settings: true },
   });
+
+  const links = ['frontpage', 'admins'];
   if (users) {
     return {
       users,
+      links,
     };
   }
   // TODO: handle errors

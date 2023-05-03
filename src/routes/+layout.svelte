@@ -2,13 +2,18 @@
   import Navigation from '../components/navigation/Navigation.svelte';
   import Footer from '../components/footer/Footer.svelte';
   import { navLinks } from '$/components/navigation/links';
+  import { page } from '$app/stores';
 </script>
 
-<Navigation />
+{#if $page.url.pathname !== '/admin'}
+  <Navigation />
+{/if}
 <main class="main" data-testid="main">
   <slot />
 </main>
-<Footer />
+{#if $page.url.pathname !== '/admin'}
+  <Footer />
+{/if}
 <section class="mobile-menu" id="mobile-menu">
   <ul>
     {#each navLinks as link}

@@ -66,3 +66,12 @@ export type BlogType = {
   img?: string;
   caption?: string;
 };
+
+export type AdminPageType = {
+  users: {
+    id: string;
+    name: string;
+    settings: { approved: boolean };
+  }[];
+  links: string[];
+};
