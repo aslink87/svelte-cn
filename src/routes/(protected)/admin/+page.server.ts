@@ -24,18 +24,18 @@ export const actions = {
   hero: async ({ request }: RequestEvent) => {
     const data = await request.formData();
     const submitData: HeroType = {
-      title: data.get('title')?.toString() ?? '',
-      content: data.get('content')?.toString() ?? '',
-      link: data.get('link')?.toString() ?? '',
-      image: data.get('image')?.toString() ?? '',
-      video: data.get('video')?.toString() ?? '',
+      title: data.get('title')?.toString().trim() ?? '',
+      content: data.get('content')?.toString().trim() ?? '',
+      link: data.get('link')?.toString().trim() ?? '',
+      image: '',
+      video: data.get('video')?.toString().trim() ?? '',
       doc: '',
     };
 
     // if doc is submitted, verify type, save it to the server, and add the path to the database
     const submittedDoc: File | null = data.get('doc') as File;
     if (submittedDoc && submittedDoc.type === 'application/pdf') {
-      const doc: File = data.get('doc') as File;
+      const doc: File = submittedDoc;
       const filePath = path.join(
         process.cwd(),
         'static',
@@ -44,8 +44,26 @@ export const actions = {
         `${crypto.randomUUID()}.${(doc as Blob).type.split('/')[1]}`
       );
       await fs.writeFile(filePath, Buffer.from(await (doc as Blob).arrayBuffer()));
-      const trimmedFilePath = filePath.replace(process.cwd(), '');
+      const trimmedFilePath = filePath.replace(process.cwd(), '').replace('static', '');
       submitData.doc = trimmedFilePath;
+    }
+
+    const submittedImage: File | null = data.get('image') as File;
+    if (
+      submittedImage &&
+      (submittedImage.type === 'image/jpeg' || submittedImage.type === 'image/png')
+    ) {
+      const image: File = submittedImage;
+      const filePath = path.join(
+        process.cwd(),
+        'static',
+        'uploads',
+        'hero',
+        `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`
+      );
+      await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
+      const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/static', '');
+      submitData.image = trimmedFilePath;
     }
 
     try {

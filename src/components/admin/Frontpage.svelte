@@ -22,12 +22,21 @@
       value: 'link',
       data: '',
     },
-    { text: 'Image', type: 'text', required: false, length: 0, value: 'image', data: '' },
+    { text: 'Image', type: 'image', required: false, length: 0, value: 'image', data: '' },
     { text: 'Video link', type: 'text', required: false, length: 0, value: 'video', data: '' },
     { text: 'PDF', type: 'file', required: false, length: 0, value: 'doc', data: '' },
   ];
 
   let data: HeroType = {
+    title: '',
+    content: '',
+    link: '',
+    image: '',
+    video: '',
+    doc: '',
+  };
+
+  let previewData: HeroType = {
     title: '',
     content: '',
     link: '',
@@ -43,6 +52,15 @@
       content: fields[1].data.trim(),
       link: fields[2].data.trim(),
       image: fields[3].data.trim(),
+      video: fields[4].data.trim(),
+      doc: fields[5].data.trim(),
+    };
+    // pass a placeholder jpg to provide a preview before the image is uploaded
+    previewData = {
+      title: fields[0].data.trim(),
+      content: fields[1].data.trim(),
+      link: fields[2].data.trim(),
+      image: '/images/placeholder.jpg',
       video: fields[4].data.trim(),
       doc: fields[5].data.trim(),
     };
@@ -72,6 +90,16 @@
           required={field.required}
           style={field.required ? 'border: 2px solid red' : ''}
         />
+      {:else if field.type === 'image'}
+        <input
+          bind:value={field.data}
+          name={field.value}
+          type="file"
+          class="file"
+          accept="image/jpeg, image/png"
+          required={field.required}
+          style={field.required ? 'border: 2px solid red' : ''}
+        />
       {:else if field.type === 'file'}
         <input
           bind:value={field.data}
@@ -98,7 +126,7 @@
     {#if data.title}
       <h2 class="preview">Preview</h2>
       <div class="preview-wrapper">
-        <Hero {data} />
+        <Hero data={previewData} />
       </div>
     {/if}
     {#if preview}
