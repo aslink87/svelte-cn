@@ -2,14 +2,26 @@
   import Seo from '../../SEO.svelte';
   import { seo } from '$lib/stores/Seo';
   import { page } from '$app/stores';
-  import type { AdminPageType } from '$/types';
+  import { updated } from '$lib/stores/Admin';
   import { signOut } from '@auth/sveltekit/client';
   import Users from '$/components/admin/Users.svelte';
   import Frontpage from '$/components/admin/Frontpage.svelte';
+  import type { AdminPageType } from '$/types';
 
   seo.set({
     title: 'CN - Admin',
     description: 'Admin Page for Christian Neighbors',
+  });
+
+  // subsribe to updated store, when a child has been updated successfully alert the user and reload the page
+  updated.subscribe((val) => {
+    if (val === true) {
+      alert('Updated');
+      setTimeout(() => {
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
+      }, 1000);
+    }
   });
 
   const links = {
@@ -17,6 +29,7 @@
     frontpage: false,
   };
 
+  // when the user clicks a nav button, set all links to false and the clicked link to true
   function handleNavClick(index: string) {
     for (let i = 0; i < Object.keys(links).length; i += 1) {
       links[Object.keys(links)[i] as keyof typeof links] = false;
@@ -44,16 +57,13 @@
     <h1>Hello from Admin page</h1>
     {#if $page.data.session?.user?.settings.manager && links.admins}
       <Users data={data.users} />
+    {:else if !$page.data.session?.user?.settings.manager && links.admins}
+      <p>You do not have access to this page</p>
     {/if}
     {#if links.frontpage}
       <Frontpage />
     {/if}
   </div>
-  {#if $page.form?.message === 'success'}
-    <h2>Updated</h2>
-  {:else if $page.form?.message === 'failed'}
-    <h2>Failed to update</h2>
-  {/if}
 </section>
 
 <style lang="scss">

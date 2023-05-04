@@ -43,6 +43,7 @@
 
     p {
       @include p;
+      white-space: pre-wrap;
     }
 
     a {

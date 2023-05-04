@@ -31,6 +31,7 @@ module.exports = {
         'import/prefer-default-export': 0,
         'import/order': 0,
         '@typescript-eslint/no-use-before-define': 0,
+        'no-alert': 0,
       },
     },
   ],
