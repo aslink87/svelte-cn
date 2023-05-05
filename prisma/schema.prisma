@@ -69,7 +69,6 @@ model Hero {
 // Newsletter pdf component
 model Newsletter {
   id          String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  date        String
   title       String
   doc         String
   index       Int @unique @default(autoincrement())

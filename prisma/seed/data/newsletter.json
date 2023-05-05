@@ -1,21 +1,18 @@
 [
   {
     "id": "bfa9aa48-0cef-4b5a-acaa-10d247e1d948",
-    "date": "2023-01-01",
     "title": "enews title",
     "doc": "/uploads/newsletter_example.pdf",
     "index": 0
   },
   {
     "id": "2186d4ed-2421-4f90-8ade-f58c0a4451fe",
-    "date": "2023-04-01",
     "title": "first newsletter title",
     "doc": "/uploads/newsletter_example.pdf",
     "index": 1
   },
   {
     "id": "1451b4ba-6d78-4d5c-a8ad-d9d0a53f577d",
-    "date": "2023-07-01",
     "title": "second newsletter title",
     "doc": "/uploads/newsletter_example.pdf",
     "index": 2

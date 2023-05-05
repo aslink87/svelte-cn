@@ -62,6 +62,7 @@
             <button on:click={() => signOut()}>
               <p>Logout</p>
             </button>
+            <a href="/admin">Admin Page</a>
             <p class="welcome">Thanks for logging in {$page.data.session.user.name}</p>
           {:else}
             <button
@@ -202,6 +203,12 @@
 
           .welcome {
             font-size: 10px;
+          }
+
+          a {
+            @include a;
+            color: $dark-blue;
+            font-size: 12px;
           }
 
           h2 {

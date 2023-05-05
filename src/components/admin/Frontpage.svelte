@@ -125,6 +125,8 @@
     <button on:click|preventDefault={handlePreview}>Preview</button>
     {#if data.title}
       <h2 class="preview">Preview</h2>
+      <p>Does this look correct?</p>
+      <p>Placholder images are used.</p>
       <div class="preview-wrapper">
         <Hero data={previewData} />
       </div>

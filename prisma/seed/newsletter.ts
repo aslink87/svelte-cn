@@ -7,7 +7,6 @@ export async function seed(prismaClient: PrismaClient) {
     data: data.map<Newsletter>((newsletter) => {
       return {
         id: newsletter.id,
-        date: newsletter.date,
         title: newsletter.title,
         doc: newsletter.doc,
         index: newsletter.index,

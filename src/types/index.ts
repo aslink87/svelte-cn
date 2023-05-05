@@ -45,7 +45,6 @@ export type AboutPageStaffType = {
 };
 
 export type NewsletterType = {
-  date: string;
   title: string;
   doc: string;
   index: number;
