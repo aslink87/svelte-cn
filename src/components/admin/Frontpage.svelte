@@ -27,6 +27,7 @@
     { text: 'PDF', type: 'file', required: false, length: 0, value: 'doc', data: '' },
   ];
 
+  // data to be sent to the server
   let data: HeroType = {
     title: '',
     content: '',
@@ -36,6 +37,7 @@
     doc: '',
   };
 
+  // preview data to be displayed, separete from data because it uses placeholder images
   let previewData: HeroType = {
     title: '',
     content: '',

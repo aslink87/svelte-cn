@@ -4,29 +4,34 @@
   import Newsletters from '../../routes/newsletter/+page.svelte';
   import type { NewsletterType } from '$/types';
 
+  // initialize values
   const newsletter1 = {
     title: '',
-    doc: '/images/placeholder.jpg',
+    doc: '',
     index: 0,
   };
 
   const newsletter2 = {
     title: '',
-    doc: '/images/placeholder.jpg',
+    doc: '',
     index: 1,
   };
 
   const newsletter3 = {
     title: '',
-    doc: '/images/placeholder.jpg',
+    doc: '',
     index: 2,
   };
 
+  // data to be sent to the server
   let data: NewsletterType[] = [];
+
+  // preview data to be displayed, separete from data because it uses placeholder images
   const previewData: { newsletters: NewsletterType[] } = { newsletters: [] };
 
   let preview = false;
   function handlePreview() {
+    // set data
     data = [newsletter1, newsletter2, newsletter3];
 
     previewData.newsletters = [
