@@ -11,6 +11,7 @@
   import Calendar from '$/components/admin/Calendar.svelte';
   import Blog from '$/components/admin/Blog.svelte';
   import Supper from '$/components/admin/Supper.svelte';
+  import Needs from '$/components/admin/Needs.svelte';
 
   seo.set({
     title: 'CN - Admin',
@@ -35,6 +36,7 @@
     calendar: false,
     blog: false,
     supper: false,
+    pantryneeds: false,
   };
 
   // when the user clicks a nav button, set all links to false and the clicked link to true
@@ -83,6 +85,9 @@
     {/if}
     {#if links.supper}
       <Supper />
+    {/if}
+    {#if links.pantryneeds}
+      <Needs />
     {/if}
   </div>
 </section>

@@ -9,7 +9,7 @@ export async function load() {
     include: { settings: true },
   });
 
-  const links = ['admins', 'frontpage', 'newsletters', 'calendar', 'blog', 'supper'];
+  const links = ['admins', 'frontpage', 'newsletters', 'calendar', 'blog', 'supper', 'pantryneeds'];
   if (users) {
     return {
       users,
@@ -270,6 +270,38 @@ export const actions = {
     try {
       await prismaClient.supper.update({
         where: { id: 'f943f27c-cd19-43cf-be82-a1fcc0350d24' },
+        data: submitData,
+      });
+
+      return { message: 'success' };
+
+      // eslint-disable-next-line
+    } catch (e: any) {
+      const env: string = import.meta.env.MODE;
+      // eslint-disable-next-line no-console
+      if (env === 'development') console.log(e.message);
+      return { message: 'failed' };
+    }
+  },
+
+  needs: async ({ request }: RequestEvent) => {
+    const data = await request.formData();
+    const submitData = {
+      item0: data.get('item0')?.toString().trim() ?? '',
+      item1: data.get('item1')?.toString().trim() ?? '',
+      item2: data.get('item2')?.toString().trim() ?? '',
+      item3: data.get('item3')?.toString().trim() ?? '',
+      item4: data.get('item4')?.toString().trim() ?? '',
+      item5: data.get('item5')?.toString().trim() ?? '',
+      item6: data.get('item6')?.toString().trim() ?? '',
+      item7: data.get('item7')?.toString().trim() ?? '',
+      item8: data.get('item8')?.toString().trim() ?? '',
+      item9: data.get('item9')?.toString().trim() ?? '',
+    };
+
+    try {
+      await prismaClient.needs.update({
+        where: { id: 'e82e4928-142e-4000-b4f8-a04c8643a9cd' },
         data: submitData,
       });
 
