@@ -9,7 +9,16 @@ export async function load() {
     include: { settings: true },
   });
 
-  const links = ['admins', 'frontpage', 'newsletters', 'calendar', 'blog', 'supper', 'pantryneeds'];
+  const links = [
+    'admins',
+    'frontpage',
+    'newsletters',
+    'calendar',
+    'blog',
+    'supper',
+    'pantryneeds',
+    'pantrycalendar',
+  ];
   if (users) {
     return {
       users,
@@ -302,6 +311,47 @@ export const actions = {
     try {
       await prismaClient.needs.update({
         where: { id: 'e82e4928-142e-4000-b4f8-a04c8643a9cd' },
+        data: submitData,
+      });
+
+      return { message: 'success' };
+
+      // eslint-disable-next-line
+    } catch (e: any) {
+      const env: string = import.meta.env.MODE;
+      // eslint-disable-next-line no-console
+      if (env === 'development') console.log(e.message);
+      return { message: 'failed' };
+    }
+  },
+
+  pantrycalendar: async ({ request }: RequestEvent) => {
+    const data = await request.formData();
+    const submitData = {
+      img: '',
+    };
+    // if doc is submitted, verify type, save it to the server, and add the path to the database
+    const submittedImage: File | null = data.get('image') as File;
+    if (
+      submittedImage &&
+      (submittedImage.type === 'image/jpeg' || submittedImage.type === 'image/png')
+    ) {
+      const image: File = submittedImage;
+      const filePath = path.join(
+        process.cwd(),
+        'static',
+        'uploads',
+        'pantrycalendar',
+        `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`
+      );
+      await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
+      const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/static', '');
+      submitData.img = trimmedFilePath;
+    }
+
+    try {
+      await prismaClient.pantryCalendar.update({
+        where: { id: '1925576b-6fde-44f7-8201-76b1ccdfe2f7' },
         data: submitData,
       });
 
