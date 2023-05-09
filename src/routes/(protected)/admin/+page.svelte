@@ -10,6 +10,7 @@
   import Newsletters from '$/components/admin/Newsletters.svelte';
   import Calendar from '$/components/admin/Calendar.svelte';
   import Blog from '$/components/admin/Blog.svelte';
+  import Supper from '$/components/admin/Supper.svelte';
 
   seo.set({
     title: 'CN - Admin',
@@ -33,6 +34,7 @@
     newsletters: false,
     calendar: false,
     blog: false,
+    supper: false,
   };
 
   // when the user clicks a nav button, set all links to false and the clicked link to true
@@ -78,6 +80,9 @@
     {/if}
     {#if links.blog}
       <Blog />
+    {/if}
+    {#if links.supper}
+      <Supper />
     {/if}
   </div>
 </section>

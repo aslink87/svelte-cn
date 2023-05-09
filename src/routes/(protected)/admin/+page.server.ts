@@ -9,7 +9,7 @@ export async function load() {
     include: { settings: true },
   });
 
-  const links = ['admins', 'frontpage', 'newsletters', 'calendar', 'blog'];
+  const links = ['admins', 'frontpage', 'newsletters', 'calendar', 'blog', 'supper'];
   if (users) {
     return {
       users,
@@ -228,6 +228,48 @@ export const actions = {
 
     try {
       await prismaClient.blog.create({
+        data: submitData,
+      });
+
+      return { message: 'success' };
+
+      // eslint-disable-next-line
+    } catch (e: any) {
+      const env: string = import.meta.env.MODE;
+      // eslint-disable-next-line no-console
+      if (env === 'development') console.log(e.message);
+      return { message: 'failed' };
+    }
+  },
+
+  supper: async ({ request }: RequestEvent) => {
+    const data = await request.formData();
+    const submitData = {
+      img: '',
+      alt: data.get('alt')?.toString().trim() ?? '',
+    };
+    // if doc is submitted, verify type, save it to the server, and add the path to the database
+    const submittedImage: File | null = data.get('image') as File;
+    if (
+      submittedImage &&
+      (submittedImage.type === 'image/jpeg' || submittedImage.type === 'image/png')
+    ) {
+      const image: File = submittedImage;
+      const filePath = path.join(
+        process.cwd(),
+        'static',
+        'uploads',
+        'supper',
+        `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`
+      );
+      await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
+      const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/static', '');
+      submitData.img = trimmedFilePath;
+    }
+
+    try {
+      await prismaClient.supper.update({
+        where: { id: 'f943f27c-cd19-43cf-be82-a1fcc0350d24' },
         data: submitData,
       });
 
