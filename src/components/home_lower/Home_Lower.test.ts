@@ -12,20 +12,29 @@ async function renderHomeLower() {
   return section;
 }
 
-test('home lower section should render', async () => {
+test('should render Home Lower section', async () => {
   await renderHomeLower();
 
-  const subHeading = screen.queryAllByText('Support Us')[0];
-  expect(subHeading).toBeInTheDocument();
+  expect(screen.getByText('How to Help')).toBeInTheDocument();
 });
 
-test('home lower section buttons should change displayed content', async () => {
+test('home lower buttons should update displayed content', async () => {
   await renderHomeLower();
 
-  const contactButton = screen.queryByText('Contact Us');
+  // arrange
+  const ids = [0, 1, 2, 3];
+  for (let i = 0; i < ids.length; i += 1) {
+    if (document.getElementById(`${i}`)) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      document.getElementById(`${i}`)!.style.display = 'none';
+    }
+  }
+  const testimoniesDiv = document.getElementById('1');
+  const button = screen.getAllByRole('button').find((b) => b.id === '5');
 
-  await fireEvent.click(contactButton as HTMLButtonElement);
+  // act
+  if (button) await fireEvent.click(button);
 
-  const subHeading = screen.getByRole('heading');
-  expect(subHeading).toHaveTextContent('Directory');
+  // assert
+  expect(testimoniesDiv).toHaveStyle('display: flex');
 });

@@ -57,7 +57,7 @@
     <button on:click={() => signOut()}>
       <p>Logout</p>
     </button>
-    <button><a href="/">Go Home</a></button>
+    <button><a href="/">To website...</a></button>
     {#each data.links as link}
       <button on:click={() => handleNavClick(link)}>
         {link}
@@ -65,7 +65,7 @@
     {/each}
   </nav>
   <div class="admin-body">
-    <h1>Hello from Admin page</h1>
+    <h1>Administration Page</h1>
     {#if $page.data.session?.user?.settings.manager && links.admins}
       <Users data={data.users} />
     {:else if !$page.data.session?.user?.settings.manager && links.admins}
@@ -114,7 +114,7 @@
         text-transform: capitalize;
         font-size: 24px;
         color: $white;
-        margin: 0.5rem 0;
+        margin: 0.8rem 0;
         text-decoration: none;
         width: 100%;
 
@@ -128,6 +128,8 @@
       padding-left: 10rem;
       h1 {
         @include h1-primary;
+        background-color: $white;
+        color: $deep-blue;
       }
     }
   }

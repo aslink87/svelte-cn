@@ -97,42 +97,44 @@
       />
     {/each}
     <button on:click|preventDefault={handlePreview}>Preview</button>
-    <h2 class="preview">Preview</h2>
-    <p>Does this look correct?</p>
-    <div class="preview-wrapper">
-      <ul class="needs-list">
-        {#if previewData.item0}
-          <li>{previewData.item0}</li>
-        {/if}
-        {#if previewData.item1}
-          <li>{previewData.item1}</li>
-        {/if}
-        {#if previewData.item2}
-          <li>{previewData.item2}</li>
-        {/if}
-        {#if previewData.item3}
-          <li>{previewData.item3}</li>
-        {/if}
-        {#if previewData.item4}
-          <li>{previewData.item4}</li>
-        {/if}
-        {#if previewData.item5}
-          <li>{previewData.item5}</li>
-        {/if}
-        {#if previewData.item6}
-          <li>{previewData.item6}</li>
-        {/if}
-        {#if previewData.item7}
-          <li>{previewData.item7}</li>
-        {/if}
-        {#if previewData.item8}
-          <li>{previewData.item8}</li>
-        {/if}
-        {#if previewData.item9}
-          <li>{previewData.item9}</li>
-        {/if}
-      </ul>
-    </div>
+    {#if previewData.item0}
+      <h2 class="preview">Preview</h2>
+      <p>Does this look correct?</p>
+      <div class="preview-wrapper">
+        <ul class="needs-list">
+          {#if previewData.item0}
+            <li>{previewData.item0}</li>
+          {/if}
+          {#if previewData.item1}
+            <li>{previewData.item1}</li>
+          {/if}
+          {#if previewData.item2}
+            <li>{previewData.item2}</li>
+          {/if}
+          {#if previewData.item3}
+            <li>{previewData.item3}</li>
+          {/if}
+          {#if previewData.item4}
+            <li>{previewData.item4}</li>
+          {/if}
+          {#if previewData.item5}
+            <li>{previewData.item5}</li>
+          {/if}
+          {#if previewData.item6}
+            <li>{previewData.item6}</li>
+          {/if}
+          {#if previewData.item7}
+            <li>{previewData.item7}</li>
+          {/if}
+          {#if previewData.item8}
+            <li>{previewData.item8}</li>
+          {/if}
+          {#if previewData.item9}
+            <li>{previewData.item9}</li>
+          {/if}
+        </ul>
+      </div>
+    {/if}
     {#if preview}
       <button formaction="/admin?/needs" on:click={submitHandler}>Submit</button>
     {/if}

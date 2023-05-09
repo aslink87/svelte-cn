@@ -18,7 +18,7 @@
       subheading: 'Testimonies',
       content:
         'We take our responsibility of improving our community very seriously. Check out what some of our supporters and clients have to say about us...',
-      link: '/',
+      link: '/testimonies',
     },
     {
       heading: 'Contact Us',
