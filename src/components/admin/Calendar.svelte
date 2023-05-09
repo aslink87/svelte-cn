@@ -1,27 +1,10 @@
 <script lang="ts">
-  import Hero from '../hero/Hero.svelte';
   import { updated } from '$lib/stores/Admin';
-  import type { HeroType } from '$/types';
+  import type { CalendarType } from '$/types';
   import { enhance } from '$app/forms';
 
   const fields = [
-    { text: 'Title', type: 'text', required: true, length: 5, value: 'title', data: '' },
-    {
-      text: 'Content - what will the body say',
-      type: 'textarea',
-      required: true,
-      length: 5,
-      value: 'content',
-      data: '',
-    },
-    {
-      text: 'Link - must start with "https://www."',
-      type: 'text',
-      required: false,
-      length: 15,
-      value: 'link',
-      data: '',
-    },
+    { text: 'Content', type: 'textarea', required: true, length: 20, value: 'content', data: '' },
     {
       text: 'Image - jpg or png only',
       type: 'image',
@@ -30,55 +13,55 @@
       value: 'image',
       data: '',
     },
-    { text: 'Video link', type: 'text', required: false, length: 0, value: 'video', data: '' },
     {
-      text: 'PDF - will display as a link',
-      type: 'file',
+      text: 'Image Description - a few words describing the img for screen readers',
+      type: 'text',
       required: false,
-      length: 0,
-      value: 'doc',
+      length: 5,
+      value: 'alt',
+      data: '',
+    },
+    {
+      text: 'Link - start with "https://"',
+      type: 'text',
+      required: false,
+      length: 12,
+      value: 'link',
       data: '',
     },
   ];
 
   // data to be sent to the server
-  let data: HeroType = {
-    title: '',
+  let data: CalendarType = {
     content: '',
+    img: '',
+    alt: '',
     link: '',
-    image: '',
-    video: '',
-    doc: '',
   };
 
   // preview data to be displayed, separete from data because it uses placeholder images
-  let previewData: HeroType = {
-    title: '',
+  let previewData: CalendarType = {
     content: '',
+    img: '',
+    alt: '',
     link: '',
-    image: '',
-    video: '',
-    doc: '',
   };
 
   let preview = false;
   function handlePreview() {
     data = {
-      title: fields[0].data.trim(),
-      content: fields[1].data.trim(),
-      link: fields[2].data.trim(),
-      image: fields[3].data.trim(),
-      video: fields[4].data.trim(),
-      doc: fields[5].data.trim(),
+      content: fields[0].data.trim(),
+      img: fields[1].data.trim(),
+      alt: fields[2].data.trim(),
+      link: fields[3].data.trim(),
     };
+
     // pass a placeholder jpg to provide a preview before the image is uploaded
     previewData = {
-      title: fields[0].data.trim(),
-      content: fields[1].data.trim(),
-      link: fields[2].data.trim(),
-      image: '/images/placeholder.jpg',
-      video: fields[4].data.trim(),
-      doc: fields[5].data.trim(),
+      content: fields[0].data.trim(),
+      img: '/images/placeholder.jpg',
+      alt: fields[2].data.trim(),
+      link: fields[3].data.trim(),
     };
 
     preview = true;
@@ -90,8 +73,8 @@
 </script>
 
 <section class="admin-frontpage">
-  <h2>Homepage News Section</h2>
-  <p>Would you like to update the homepage news section found at the top of the page?</p>
+  <h2>Calendar Top Section</h2>
+  <p>Would you like to update the calendar news section found at the top of the page?</p>
   <p>Required fields have a red border.</p>
   <p>After editing click 'preview' to view your changes before submitting.</p>
   <form method="POST" use:enhance>
@@ -116,16 +99,6 @@
           required={field.required}
           style={field.required ? 'border: 2px solid red' : ''}
         />
-      {:else if field.type === 'file'}
-        <input
-          bind:value={field.data}
-          name={field.value}
-          type="file"
-          class="file"
-          accept="application/pdf"
-          required={field.required}
-          style={field.required ? 'border: 2px solid red' : ''}
-        />
       {:else}
         <input
           bind:value={field.data}
@@ -139,16 +112,29 @@
       {/if}
     {/each}
     <button on:click|preventDefault={handlePreview}>Preview</button>
-    {#if data.title}
+    {#if data.content}
       <h2 class="preview">Preview</h2>
       <p>Does this look correct?</p>
-      <p>Placholder images are used.</p>
+      <p>Placeholder images are used.</p>
       <div class="preview-wrapper">
-        <Hero data={previewData} />
+        <h1>Upcoming Events</h1>
+        <div class="dynamic">
+          {#if previewData.content}
+            {#if previewData.img}
+              <img src={previewData.img} alt={previewData.alt} />
+            {/if}
+            <div class="preview-content">
+              <p>{previewData.content}</p>
+              {#if previewData.link}
+                <a href={previewData.link}>{previewData.link.split('.').slice(1).join('.')}</a>
+              {/if}
+            </div>
+          {/if}
+        </div>
       </div>
     {/if}
     {#if preview}
-      <button formaction="/admin?/hero" on:click={submitHandler}>Submit</button>
+      <button formaction="/admin?/calendar" on:click={submitHandler}>Submit</button>
     {/if}
   </form>
 </section>
@@ -169,6 +155,47 @@
       margin-top: 1rem;
       border: 1px solid $gray;
       border-radius: 5px;
+
+      .dynamic {
+        @include component;
+        background-color: rgba($color: $gray, $alpha: 0.6);
+        display: flex;
+        flex-flow: column;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+
+        a {
+          @include a;
+          margin: auto;
+        }
+      }
+      .preview-content {
+        padding: 0 1rem;
+        max-width: 50em;
+
+        @include xs {
+          text-align: center;
+          a {
+            margin: 1rem auto;
+          }
+        }
+        @include sm {
+          text-align: center;
+          a {
+            margin: 1rem auto;
+          }
+        }
+        @include md {
+          a {
+            margin: 1rem auto;
+          }
+        }
+
+        a {
+          @include btn-primary;
+          width: 100px;
+        }
+      }
     }
 
     h2 {

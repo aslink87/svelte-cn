@@ -2,14 +2,14 @@ import { error, type RequestEvent } from '@sveltejs/kit';
 import prismaClient from '$lib/db.server';
 import fs from 'fs/promises';
 import path from 'path';
-import type { HeroType, NewsletterType } from '$/types';
+import type { BlogType, CalendarType, HeroType, NewsletterType } from '$/types';
 
 export async function load() {
   const users = await prismaClient.user.findMany({
     include: { settings: true },
   });
 
-  const links = ['frontpage', 'admins', 'newsletters'];
+  const links = ['admins', 'frontpage', 'newsletters', 'calendar', 'blog'];
   if (users) {
     return {
       users,
@@ -140,6 +140,95 @@ export const actions = {
       await prismaClient.newsletter.update({
         where: { index: 2 },
         data: newsletter3,
+      });
+
+      return { message: 'success' };
+
+      // eslint-disable-next-line
+    } catch (e: any) {
+      const env: string = import.meta.env.MODE;
+      // eslint-disable-next-line no-console
+      if (env === 'development') console.log(e.message);
+      return { message: 'failed' };
+    }
+  },
+
+  calendar: async ({ request }: RequestEvent) => {
+    const data = await request.formData();
+    const submitData: CalendarType = {
+      content: data.get('content')?.toString().trim() ?? '',
+      img: '',
+      alt: data.get('alt')?.toString().trim() ?? '',
+      link: data.get('link')?.toString().trim() ?? '',
+    };
+
+    const submittedImage: File | null = data.get('image') as File;
+    if (
+      submittedImage &&
+      (submittedImage.type === 'image/jpeg' || submittedImage.type === 'image/png')
+    ) {
+      const image: File = submittedImage;
+      const filePath = path.join(
+        process.cwd(),
+        'static',
+        'uploads',
+        'calendar',
+        `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`
+      );
+      await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
+      const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/static', '');
+      submitData.img = trimmedFilePath;
+    }
+
+    try {
+      await prismaClient.calendar.update({
+        where: { id: '20245a5d-5f5f-4518-8c43-d8e39adcfd6f' },
+        data: submitData,
+      });
+
+      return { message: 'success' };
+
+      // eslint-disable-next-line
+    } catch (e: any) {
+      const env: string = import.meta.env.MODE;
+      // eslint-disable-next-line no-console
+      if (env === 'development') console.log(e.message);
+      return { message: 'failed' };
+    }
+  },
+
+  blog: async ({ request }: RequestEvent) => {
+    const data = await request.formData();
+    const submitData: BlogType = {
+      author: data.get('author')?.toString().trim() ?? '',
+      date: data.get('date')?.toString().trim() ?? '',
+      title: data.get('title')?.toString().trim() ?? '',
+      content: data.get('content')?.toString().trim() ?? '',
+      img: '',
+      caption: data.get('alt')?.toString().trim() ?? '',
+    };
+
+    const submittedImage: File | null = data.get('image') as File;
+    if (
+      submittedImage &&
+      (submittedImage.type === 'image/jpeg' || submittedImage.type === 'image/png')
+    ) {
+      const image: File = submittedImage;
+      const filePath = path.join(
+        process.cwd(),
+        'static',
+        'uploads',
+        'blog',
+        `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`
+      );
+      await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
+      const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/static', '');
+      submitData.img = trimmedFilePath;
+    }
+
+    try {
+      await prismaClient.blog.create({
+        data: submitData,
       });
 
       return { message: 'success' };

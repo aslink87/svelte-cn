@@ -8,6 +8,8 @@
   import Frontpage from '$/components/admin/Frontpage.svelte';
   import type { AdminPageType } from '$/types';
   import Newsletters from '$/components/admin/Newsletters.svelte';
+  import Calendar from '$/components/admin/Calendar.svelte';
+  import Blog from '$/components/admin/Blog.svelte';
 
   seo.set({
     title: 'CN - Admin',
@@ -29,6 +31,8 @@
     admins: false,
     frontpage: false,
     newsletters: false,
+    calendar: false,
+    blog: false,
   };
 
   // when the user clicks a nav button, set all links to false and the clicked link to true
@@ -49,7 +53,7 @@
     <button on:click={() => signOut()}>
       <p>Logout</p>
     </button>
-    <button><a href="/">Home</a></button>
+    <button><a href="/">Go Home</a></button>
     {#each data.links as link}
       <button on:click={() => handleNavClick(link)}>
         {link}
@@ -68,6 +72,12 @@
     {/if}
     {#if links.newsletters}
       <Newsletters />
+    {/if}
+    {#if links.calendar}
+      <Calendar />
+    {/if}
+    {#if links.blog}
+      <Blog />
     {/if}
   </div>
 </section>
@@ -96,6 +106,7 @@
         color: $white;
         margin: 0.5rem 0;
         text-decoration: none;
+        width: 100%;
 
         &:hover {
           color: $light-blue;

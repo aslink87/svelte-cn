@@ -94,7 +94,9 @@
   <h1>Upcoming Events</h1>
   <div class="dynamic">
     {#if data.calendar}
-      <img src={data.calendar.img} alt={data.calendar.alt} />
+      {#if data.calendar.img}
+        <img src={data.calendar.img} alt={data.calendar.alt} />
+      {/if}
       <div class="card-right__content">
         <p>{data.calendar.content}</p>
         {#if data.calendar.link}
