@@ -1,6 +1,7 @@
 <script lang="ts">
   import Navigation from '../components/navigation/Navigation.svelte';
   import Footer from '../components/footer/Footer.svelte';
+  import Signup from '../components/signup/Signup.svelte';
   import { navLinks } from '$/components/navigation/links';
   import { page } from '$app/stores';
 </script>
@@ -10,6 +11,7 @@
 {/if}
 <main class="main" data-testid="main">
   <slot />
+  <Signup />
 </main>
 {#if $page.url.pathname !== '/admin'}
   <Footer />
