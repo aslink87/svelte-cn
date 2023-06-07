@@ -17,10 +17,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 18
-      - run: npm ci
-
-      - name: build
-        run: npm run build --if-present
 
       - name: Install OpenVPN
         run: |
@@ -37,12 +33,13 @@ jobs:
         run: sudo openvpn --config config.ovpn --auth-user-pass secret.ovpn --log "vpn.log" --daemon
 
       - name: Deploy to CN Staging server
-        uses: easingthemes/ssh-deploy@main
+        uses: appleboy/ssh-action@v0.1.6
         if: github.ref == 'refs/heads/development'
-        env:
-          SERVER: production
-          SSH_PRIVATE_KEY: ${{ secrets.STAGING_SSH_KEY }}
-          SOURCE: './'
-          REMOTE_HOST: '192.168.20.70'
-          REMOTE_USER: 'cn'
-          TARGET: '/home/cn/website'
+        with:
+          password: ${{ secrets.SSH_PW }}
+          host: 192.168.20.70
+          username: 'cn'
+        script: |
+          cd website
+          whoami
+          ls -al
