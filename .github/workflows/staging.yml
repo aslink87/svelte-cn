@@ -39,7 +39,7 @@ jobs:
           password: ${{ secrets.SSH_PW }}
           host: 192.168.20.70
           username: 'cn'
-        script: |
-          cd website
-          whoami
-          ls -al
+          script: |
+            cd website
+            whoami
+            ls -al
