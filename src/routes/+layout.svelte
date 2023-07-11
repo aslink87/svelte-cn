@@ -11,7 +11,10 @@
 {/if}
 <main class="main" data-testid="main">
   <slot />
-  <Signup />
+  {#if $page.url.pathname !== '/admin'}
+    <Signup />
+  {/if}
+  <div class="ctct-form" data-form-id="04419863-6320-44a0-8a5c-2bd489ba627b" />
 </main>
 {#if $page.url.pathname !== '/admin'}
   <Footer />
@@ -33,7 +36,7 @@
     background-color: $deep-blue;
     margin: 0;
     box-sizing: border-box;
-    padding-top: 3rem;
+    padding-top: 0rem;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     box-sizing: border-box;

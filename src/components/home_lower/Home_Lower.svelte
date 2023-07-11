@@ -9,7 +9,7 @@
       subheading: 'Support Us',
       content:
         'Our Mission is to provide local families in need with Food, Emergency Financial Assistance and Skill Building Education to create Self Sufficiency.',
-      link: '/',
+      link: '/donate',
     },
     {
       heading: 'Testimonies',
