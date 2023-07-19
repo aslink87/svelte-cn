@@ -82,6 +82,7 @@
           {#if link.dropdown && link.dropdown.length > 0}
             <div
               class={`dropdown-${link.name} dd`}
+              data-testid={`dropdown-${link.name}`}
               id={link.name.toLowerCase().split(' ')[0]}
               on:mouseenter={() => {
                 if (link.name.toLowerCase().split(' ')[0] === 'about') about = true;

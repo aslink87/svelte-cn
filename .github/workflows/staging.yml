@@ -41,5 +41,5 @@ jobs:
           username: 'cn'
           script: |
             cd website
-            whoami
-            ls -al
+            git pull
+            npm run build
