@@ -18,7 +18,7 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
-<section class="pantry" data-testid="pantry">
+<section class="pantry" id="pantry" data-testid="pantry">
   <h1>Food Panty Assistance</h1>
   <ul>
     {#each data.pantry as item}
@@ -30,7 +30,7 @@
   </ul>
 </section>
 
-<section class="financial" data-testid="financial">
+<section class="financial" id="financial" data-testid="financial">
   <h1>Financial Assistance</h1>
   <ul>
     {#each data.financial as item}

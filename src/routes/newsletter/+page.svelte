@@ -28,14 +28,14 @@
     <h2>Recent Newsletters</h2>
     {#if firstNewsletter}
       <a
-        href={`http://localhost:5173${firstNewsletter.doc}`}
+        href={`${import.meta.env.VITE_PUBLIC_URL}${firstNewsletter.doc}`}
         data-sveltekit-preload-data
         target="_blank">{firstNewsletter.title}</a
       >
     {/if}
     {#if secondNewsletter}
       <a
-        href={`http://localhost:5173${secondNewsletter.doc}`}
+        href={`${import.meta.env.VITE_PUBLIC_URL}${secondNewsletter.doc}`}
         data-sveltekit-preload-data
         target="_blank">{secondNewsletter.title}</a
       >
