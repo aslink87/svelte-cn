@@ -12,3 +12,4 @@ vite.config.ts.timestamp-*
 /docker-data
 docker-data/*
 !/static/uploads/examples
+build-test
