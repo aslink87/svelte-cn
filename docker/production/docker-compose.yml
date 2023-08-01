@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  cneighbors-frontend-production:
+    build:
+      context: ../../
+      dockerfile: docker/production/Dockerfile
+    image: production/cneighbors:latest
+    ports:
+      - '3003:3000'

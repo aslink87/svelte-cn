@@ -56,4 +56,16 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## Deploying with docker
+
+To create a production version of your app:
+
+```bash
+make build-production
+make start-production
+```
+
+Open [http://localhost:3003](http://localhost:3003)
+
 > This template was inspired by the work of JS content creater 'Coding Garden'. See his repo at listd github
