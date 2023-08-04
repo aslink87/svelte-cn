@@ -1,7 +1,7 @@
-import { error, type RequestEvent } from '@sveltejs/kit';
-import prismaClient from '$lib/db.server';
 import fs from 'fs/promises';
 import path from 'path';
+import { error, type RequestEvent } from '@sveltejs/kit';
+import prismaClient from '$lib/db.server';
 import type { BlogType, CalendarType, HeroType, NewsletterType } from '$/types';
 
 export async function load() {
@@ -25,6 +25,7 @@ export async function load() {
       links,
     };
   }
+  // eslint-disable-next-line @typescript-eslint/no-throw-literal
   throw error(404, 'error');
 }
 

@@ -1,5 +1,6 @@
 .PHONY: build-production
 build-production: ## Build the production docker image.
+	sudo chown -R $$USER:$$GROUP docker-data
 	docker compose -f docker/production/docker-compose.yml build
 
 .PHONY: start-production

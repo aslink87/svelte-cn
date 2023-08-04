@@ -32,6 +32,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@playwright/test": "^1.28.1",
+    "@prisma/client": "^4.15.0-integration-feat-client-esm.27",
     "@storybook/addon-essentials": "^7.0.0-beta.25",
     "@storybook/addon-interactions": "^7.0.0-beta.25",
     "@storybook/addon-links": "^7.0.0-beta.25",
@@ -62,7 +63,7 @@
     "postcss-load-config": "^4.0.1",
     "prettier": "^2.8.0",
     "prettier-plugin-svelte": "^2.8.1",
-    "prisma": "^4.11.0",
+    "prisma": "^4.15.0-integration-feat-client-esm.27",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.57.1",
