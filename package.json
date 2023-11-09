@@ -12,8 +12,8 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "test:unit": "vitest",
     "test:unit-nowatch": "vitest run",
-    "lint": "prettier --plugin-search-dir . '!./docker-data' '!./build-test' --check . && eslint .",
-    "format": "prettier --plugin-search-dir . '!./docker-data' --write .",
+    "lint": "prettier . '!./docker-data' '!./build-test' --check . && eslint .",
+    "format": "prettier . '!./docker-data' --write .",
     "storybook": "storybook dev -p 6006 -c .storybook watch-scss",
     "build-storybook": "storybook build",
     "prepare": "husky install"

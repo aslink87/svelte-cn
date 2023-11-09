@@ -80,6 +80,7 @@
         >
           <a href={link.path} class={link.class}>{link.name}</a>
           {#if link.dropdown && link.dropdown.length > 0}
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div
               class={`dropdown-${link.name} dd`}
               data-testid={`dropdown-${link.name}`}
