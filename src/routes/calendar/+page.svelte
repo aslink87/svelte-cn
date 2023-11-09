@@ -23,7 +23,7 @@
   const cards: ICards[] = [
     {
       heading: 'Annual Reflection of Hope Auction',
-      img: '/images/auction2.jpg',
+      img: '/images/dinnerAuction2.jpg',
       alt: 'Dinner Auction',
       content:
         'Each year we host a fun Reflection of Hope Auction event that is our main source of funds for emergency relief to prevent homelessness and loss of utilities in our neighborhood.',
@@ -131,6 +131,19 @@
         </div>
       {/each}
     </div>
+  </div>
+  <div class="calendar-wrapper">
+    <iframe
+      src="https://calendar.google.com/calendar/embed?wkst=1&bgcolor=%23f5f5f5&ctz=America%2FDetroit&showTabs=1&showNav=1&showTz=0&showCalendars=1&showPrint=0&showDate=1&showTitle=0&src=volunteer%40christianneighbors.org&color=%236979c1"
+      style="border-width:0"
+      frameborder="0"
+      width="100%"
+      height="100%"
+      scrolling="no"
+      title="Education Resource Center Calendar"
+      class="calendar-iframe"
+    />
+    <!-- src="https://calendar.google.com/calendar/embed?wkst=1&bgcolor=%23ffffff&ctz=America%2FDetroit&showTabs=1&showNav=1&showTz=0&showCalendars=0&showPrint=0&showDate=1&showTitle=0&src=dm9sdW50ZWVyQGNocmlzdGlhbm5laWdoYm9ycy5vcmc&color=%23039BE5" -->
   </div>
 </section>
 
@@ -290,6 +303,36 @@
       }
       @include md {
         width: 90%;
+      }
+    }
+
+    .calendar-wrapper {
+      @include center;
+
+      @include xs {
+        width: 800px;
+        height: 600px;
+        margin: auto;
+      }
+      @include sm {
+        width: 800px;
+        height: 600px;
+        margin: auto;
+      }
+      @include md {
+        width: 800px;
+        height: 600px;
+        margin: auto;
+      }
+      @include lg {
+        width: 800px;
+        height: 600px;
+        margin: auto;
+      }
+      @include xl {
+        width: 800px;
+        height: 600px;
+        margin: auto;
       }
     }
   }
