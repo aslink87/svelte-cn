@@ -121,7 +121,9 @@
         height: 400px;
         border-radius: 40px;
         background-color: $white;
-        box-shadow: -6px -6px 20px rgba($deep-blue, 0.5), 6px 6px 20px rgba($deep-blue, 0.2);
+        box-shadow:
+          -6px -6px 20px rgba($deep-blue, 0.5),
+          6px 6px 20px rgba($deep-blue, 0.2);
         text-align: left;
 
         .card-content {

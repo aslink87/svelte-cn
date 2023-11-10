@@ -22,27 +22,17 @@
   ];
 
   // data to be sent to the server
+  // eslint-disable-next-line
   let data = {
     img: '',
     alt: '',
   };
 
-  // preview data to be displayed, separete from data because it uses placeholder images
-  let previewData = {
-    img: '',
-    alt: '',
-  };
-
   let preview = false;
+
   function handlePreview() {
     data = {
       img: fields[0].data.trim(),
-      alt: fields[1].data.trim(),
-    };
-
-    // pass a placeholder jpg to provide a preview before the image is uploaded
-    previewData = {
-      img: '/images/placeholder.jpg',
       alt: fields[1].data.trim(),
     };
 
