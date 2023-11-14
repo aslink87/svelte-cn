@@ -16,6 +16,7 @@
   ];
 
   // data to be sent to the server
+  // eslint-disable-next-line
   let data = {
     item0: '',
     item1: '',
