@@ -21,7 +21,7 @@ const customViewports = Object.fromEntries(
         },
       },
     ];
-  })
+  }),
 );
 
 export const parameters = {
