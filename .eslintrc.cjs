@@ -12,31 +12,6 @@ module.exports = {
   plugins: ['import-no-duplicates-prefix-resolved-path', '@typescript-eslint'],
   ignorePatterns: ['*.cjs'],
   // these rules are applied to .svelte files as they are causing unnecessary bugs
-  overrides: [
-    {
-      files: ['**/*.svelte'],
-      parser: 'svelte-eslint-parser',
-      parserOptions: {
-        parser: '@typescript-eslint/parser',
-      },
-      rules: {
-        'import/no-named-as-default': 0,
-        'import/no-named-as-default-member': 0,
-        'import/no-extraneous-dependencies': 0,
-        'import/extensions': 0,
-        'import/newline-after-import': 0,
-        'import/first': 0,
-        'import/no-duplicates': 0,
-        'import/no-mutable-exports': 0,
-        'import/no-unresolved': 0,
-        'import/prefer-default-export': 0,
-        'import/order': 0,
-        '@typescript-eslint/no-use-before-define': 0,
-        'no-alert': 0,
-        'no-inner-declarations': 0,
-      },
-    },
-  ],
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2020,
@@ -71,4 +46,29 @@ module.exports = {
     'no-param-reassign': 0,
     // 'no-restricted-imports': ['error', { paths: ['$env/static/private'] }],
   },
+  overrides: [
+    {
+      files: ['**/*.svelte'],
+      parser: 'svelte-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+      },
+      rules: {
+        'import/no-named-as-default': 0,
+        'import/no-named-as-default-member': 0,
+        'import/no-extraneous-dependencies': 0,
+        'import/extensions': 0,
+        'import/newline-after-import': 0,
+        'import/first': 0,
+        'import/no-duplicates': 0,
+        'import/no-mutable-exports': 0,
+        'import/no-unresolved': 0,
+        'import/prefer-default-export': 0,
+        'import/order': 0,
+        '@typescript-eslint/no-use-before-define': 0,
+        'no-alert': 0,
+        'no-inner-declarations': 0,
+      },
+    },
+  ],
 };
