@@ -51,7 +51,7 @@
   <script src="https://apis.google.com/js/api.js" on:load={initializeGapi}></script>
 </svelte:head>
 
-<section class="calendar" data-testid="hero">
+<section class="events" data-testid="events">
   <div class="google-api-wrapper">
     {#each events as event}
       <div class="google-api-card">

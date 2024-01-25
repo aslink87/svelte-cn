@@ -1,4 +1,5 @@
 <script lang="ts">
+  import '../app.pcss';
   import Navigation from '../components/navigation/Navigation.svelte';
   import Footer from '../components/footer/Footer.svelte';
   import Signup from '../components/signup/Signup.svelte';
@@ -7,17 +8,17 @@
 </script>
 
 {#if $page.url.pathname !== '/admin'}
-  <Navigation />
+  <Navigation></Navigation>
 {/if}
 <main class="main" data-testid="main">
   <slot />
   {#if $page.url.pathname !== '/admin'}
-    <Signup />
+    <Signup></Signup>
   {/if}
-  <div class="ctct-form" data-form-id="04419863-6320-44a0-8a5c-2bd489ba627b" />
+  <div class="ctct-form" data-form-id="04419863-6320-44a0-8a5c-2bd489ba627b"></div>
 </main>
 {#if $page.url.pathname !== '/admin'}
-  <Footer />
+  <Footer></Footer>
 {/if}
 <section class="mobile-menu" id="mobile-menu">
   <ul>

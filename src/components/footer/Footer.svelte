@@ -67,7 +67,7 @@
           {:else}
             <button
               on:click={() => signIn('google')}
-              class="cursor-pointer btn variant-filled-primary"
+              class="variant-filled-primary btn cursor-pointer"
             >
               <p>Login</p>
             </button>
