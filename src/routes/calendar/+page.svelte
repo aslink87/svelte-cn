@@ -2,6 +2,7 @@
   import { seo } from '$lib/stores/Seo';
   import Seo from '../SEO.svelte';
   import { onMount } from 'svelte';
+  import Events from '$/components/calendar/Events.svelte';
   import type { CalendarType } from '$/types';
 
   seo.set({
@@ -9,7 +10,10 @@
     description: 'Christian Neighbors - Calendar',
   });
 
-  export let data: { calendar: CalendarType | null; supper: { img: string; alt: string } | null };
+  export let data: {
+    calendar: CalendarType | null;
+    supper: { img: string; alt: string } | null;
+  };
 
   interface ICards {
     heading: string;
@@ -54,7 +58,7 @@
   if (data.supper?.img) cards[1].img = data.supper.img;
   if (data.supper?.alt) cards[1].alt = data.supper.alt;
 
-  onMount(() => {
+  onMount(async () => {
     const firstCard = document.getElementById('0');
     if (firstCard) firstCard.style.display = 'flex';
 
@@ -90,6 +94,7 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
+
 <section class="calendar" data-testid="calendar">
   <h1>Upcoming Events</h1>
   <div class="dynamic">
@@ -105,6 +110,7 @@
       </div>
     {/if}
   </div>
+  <Events />
   <div class="card-wrapper">
     <div class="card">
       <ul class="card-nav">
@@ -143,7 +149,6 @@
       title="Education Resource Center Calendar"
       class="calendar-iframe"
     />
-    <!-- src="https://calendar.google.com/calendar/embed?wkst=1&bgcolor=%23ffffff&ctz=America%2FDetroit&showTabs=1&showNav=1&showTz=0&showCalendars=0&showPrint=0&showDate=1&showTitle=0&src=dm9sdW50ZWVyQGNocmlzdGlhbm5laWdoYm9ycy5vcmc&color=%23039BE5" -->
   </div>
 </section>
 

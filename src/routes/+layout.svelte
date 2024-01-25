@@ -36,7 +36,7 @@
     background-color: $deep-blue;
     margin: 0;
     box-sizing: border-box;
-    padding-top: 0rem;
+    padding-top: 3rem;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     box-sizing: border-box;

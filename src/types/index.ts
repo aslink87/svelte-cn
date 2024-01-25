@@ -74,3 +74,28 @@ export type AdminPageType = {
   }[];
   links: string[];
 };
+
+export type CalendarEvent = {
+  description: string;
+  end: {
+    dateTime: string;
+  };
+  htmlLink: string;
+  start: {
+    dateTime: string;
+  };
+  summary: string;
+};
+
+export type GapiType = {
+  client: {
+    calendar: {
+      events: {
+        list: unknown;
+      };
+    };
+    init: unknown;
+  };
+  load: unknown;
+  list: unknown;
+};
