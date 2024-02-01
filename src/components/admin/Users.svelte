@@ -43,51 +43,51 @@
   </div>
 </section>
 
-<style lang="scss">
-  section {
-    @include component;
-    background: none;
-
-    h2 {
-      margin: 1rem auto !important;
-      @include h2-primary;
-    }
-
-    p {
-      @include p;
-    }
-
-    ul {
-      @include ul;
-
-      li {
-        margin: 1rem auto;
-        display: flex;
-        gap: 1em;
-        justify-content: center;
-        list-style-type: none;
-        text-transform: capitalize;
-
-        button {
-          @include btn-primary;
-          height: 2em;
-          margin: auto 0;
-        }
-
-        label {
-          margin: auto 0;
-          display: none;
-        }
-
-        input {
-          background: none;
-          color: $white;
-          border: none;
-          text-align: left;
-          width: 8em;
-          overflow-x: scroll;
-        }
-      }
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     @include component; -->
+<!--     background: none; -->
+<!---->
+<!--     h2 { -->
+<!--       margin: 1rem auto !important; -->
+<!--       @include h2-primary; -->
+<!--     } -->
+<!---->
+<!--     p { -->
+<!--       @include p; -->
+<!--     } -->
+<!---->
+<!--     ul { -->
+<!--       @include ul; -->
+<!---->
+<!--       li { -->
+<!--         margin: 1rem auto; -->
+<!--         display: flex; -->
+<!--         gap: 1em; -->
+<!--         justify-content: center; -->
+<!--         list-style-type: none; -->
+<!--         text-transform: capitalize; -->
+<!---->
+<!--         button { -->
+<!--           @include btn-primary; -->
+<!--           height: 2em; -->
+<!--           margin: auto 0; -->
+<!--         } -->
+<!---->
+<!--         label { -->
+<!--           margin: auto 0; -->
+<!--           display: none; -->
+<!--         } -->
+<!---->
+<!--         input { -->
+<!--           background: none; -->
+<!--           color: $white; -->
+<!--           border: none; -->
+<!--           text-align: left; -->
+<!--           width: 8em; -->
+<!--           overflow-x: scroll; -->
+<!--         } -->
+<!--       } -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

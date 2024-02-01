@@ -152,193 +152,193 @@
   </div>
 </section>
 
-<style lang="scss">
-  section {
-    @include center;
-    padding: 5rem 0;
-    min-height: 100vh;
-
-    h1 {
-      @include h1-primary;
-      margin-bottom: 2rem;
-    }
-
-    img {
-      height: 400px;
-      max-width: 700px;
-      object-fit: cover;
-      margin-right: 1rem;
-      border-radius: 5px;
-
-      @include xs {
-        display: none;
-      }
-      @include sm {
-        margin-right: 0;
-        height: 200px;
-        object-fit: contain;
-      }
-      @include md {
-        margin-right: 0;
-      }
-    }
-
-    .dynamic {
-      @include component;
-      background-color: rgba($color: $gray, $alpha: 0.6);
-      display: flex;
-      flex-flow: column;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
-
-      a {
-        @include a;
-      }
-    }
-
-    .card-wrapper {
-      width: 90%;
-      margin: auto;
-      .card {
-        display: flex;
-        flex-flow: column;
-        gap: 2rem;
-
-        @include xs {
-          flex-flow: column;
-        }
-        @include sm {
-          flex-flow: column;
-        }
-        @include md {
-          flex-flow: column;
-        }
-
-        .card-nav {
-          width: 90%;
-          margin: auto;
-          text-align: center;
-          display: flex;
-          flex-flow: row;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 2rem;
-          padding-left: 0;
-          padding-bottom: 2rem;
-          border-bottom: $white 2px solid;
-
-          li {
-            list-style-type: none;
-
-            button {
-              @include h2-primary;
-              background: none;
-              border: none;
-              cursor: pointer;
-              color: $white;
-            }
-          }
-
-          @include xs {
-            gap: 1rem;
-          }
-        }
-
-        .card-body {
-          padding: 0 1rem;
-          text-align: left;
-          display: none;
-          flex-flow: column;
-          justify-content: center;
-
-          @include xs {
-            flex-flow: column;
-          }
-          @include sm {
-            flex-flow: column;
-            @include center;
-          }
-          @include md {
-            flex-flow: column;
-            @include center;
-          }
-          @include lg {
-            flex-flow: column;
-            @include center;
-          }
-          @include xl {
-            flex-flow: row;
-          }
-
-          .card-right__content {
-            padding: 0 1rem;
-            max-width: 50em;
-
-            @include xs {
-              text-align: center;
-              a {
-                margin: 1rem auto;
-              }
-            }
-            @include sm {
-              text-align: center;
-              a {
-                margin: 1rem auto;
-              }
-            }
-            @include md {
-              a {
-                margin: 1rem auto;
-              }
-            }
-
-            a {
-              @include btn-primary;
-              width: 100px;
-            }
-          }
-        }
-      }
-
-      @include xs {
-        width: 100%;
-      }
-      @include sm {
-        width: 100%;
-      }
-      @include md {
-        width: 90%;
-      }
-    }
-
-    .calendar-wrapper {
-      @include center;
-
-      @include xs {
-        width: 800px;
-        height: 600px;
-        margin: auto;
-      }
-      @include sm {
-        width: 800px;
-        height: 600px;
-        margin: auto;
-      }
-      @include md {
-        width: 800px;
-        height: 600px;
-        margin: auto;
-      }
-      @include lg {
-        width: 800px;
-        height: 600px;
-        margin: auto;
-      }
-      @include xl {
-        width: 800px;
-        height: 600px;
-        margin: auto;
-      }
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     @include center; -->
+<!--     padding: 5rem 0; -->
+<!--     min-height: 100vh; -->
+<!---->
+<!--     h1 { -->
+<!--       @include h1-primary; -->
+<!--       margin-bottom: 2rem; -->
+<!--     } -->
+<!---->
+<!--     img { -->
+<!--       height: 400px; -->
+<!--       max-width: 700px; -->
+<!--       object-fit: cover; -->
+<!--       margin-right: 1rem; -->
+<!--       border-radius: 5px; -->
+<!---->
+<!--       @include xs { -->
+<!--         display: none; -->
+<!--       } -->
+<!--       @include sm { -->
+<!--         margin-right: 0; -->
+<!--         height: 200px; -->
+<!--         object-fit: contain; -->
+<!--       } -->
+<!--       @include md { -->
+<!--         margin-right: 0; -->
+<!--       } -->
+<!--     } -->
+<!---->
+<!--     .dynamic { -->
+<!--       @include component; -->
+<!--       background-color: rgba($color: $gray, $alpha: 0.6); -->
+<!--       display: flex; -->
+<!--       flex-flow: column; -->
+<!--       flex-wrap: wrap; -->
+<!--       margin-bottom: 3rem; -->
+<!---->
+<!--       a { -->
+<!--         @include a; -->
+<!--       } -->
+<!--     } -->
+<!---->
+<!--     .card-wrapper { -->
+<!--       width: 90%; -->
+<!--       margin: auto; -->
+<!--       .card { -->
+<!--         display: flex; -->
+<!--         flex-flow: column; -->
+<!--         gap: 2rem; -->
+<!---->
+<!--         @include xs { -->
+<!--           flex-flow: column; -->
+<!--         } -->
+<!--         @include sm { -->
+<!--           flex-flow: column; -->
+<!--         } -->
+<!--         @include md { -->
+<!--           flex-flow: column; -->
+<!--         } -->
+<!---->
+<!--         .card-nav { -->
+<!--           width: 90%; -->
+<!--           margin: auto; -->
+<!--           text-align: center; -->
+<!--           display: flex; -->
+<!--           flex-flow: row; -->
+<!--           flex-wrap: wrap; -->
+<!--           justify-content: center; -->
+<!--           gap: 2rem; -->
+<!--           padding-left: 0; -->
+<!--           padding-bottom: 2rem; -->
+<!--           border-bottom: $white 2px solid; -->
+<!---->
+<!--           li { -->
+<!--             list-style-type: none; -->
+<!---->
+<!--             button { -->
+<!--               @include h2-primary; -->
+<!--               background: none; -->
+<!--               border: none; -->
+<!--               cursor: pointer; -->
+<!--               color: $white; -->
+<!--             } -->
+<!--           } -->
+<!---->
+<!--           @include xs { -->
+<!--             gap: 1rem; -->
+<!--           } -->
+<!--         } -->
+<!---->
+<!--         .card-body { -->
+<!--           padding: 0 1rem; -->
+<!--           text-align: left; -->
+<!--           display: none; -->
+<!--           flex-flow: column; -->
+<!--           justify-content: center; -->
+<!---->
+<!--           @include xs { -->
+<!--             flex-flow: column; -->
+<!--           } -->
+<!--           @include sm { -->
+<!--             flex-flow: column; -->
+<!--             @include center; -->
+<!--           } -->
+<!--           @include md { -->
+<!--             flex-flow: column; -->
+<!--             @include center; -->
+<!--           } -->
+<!--           @include lg { -->
+<!--             flex-flow: column; -->
+<!--             @include center; -->
+<!--           } -->
+<!--           @include xl { -->
+<!--             flex-flow: row; -->
+<!--           } -->
+<!---->
+<!--           .card-right__content { -->
+<!--             padding: 0 1rem; -->
+<!--             max-width: 50em; -->
+<!---->
+<!--             @include xs { -->
+<!--               text-align: center; -->
+<!--               a { -->
+<!--                 margin: 1rem auto; -->
+<!--               } -->
+<!--             } -->
+<!--             @include sm { -->
+<!--               text-align: center; -->
+<!--               a { -->
+<!--                 margin: 1rem auto; -->
+<!--               } -->
+<!--             } -->
+<!--             @include md { -->
+<!--               a { -->
+<!--                 margin: 1rem auto; -->
+<!--               } -->
+<!--             } -->
+<!---->
+<!--             a { -->
+<!--               @include btn-primary; -->
+<!--               width: 100px; -->
+<!--             } -->
+<!--           } -->
+<!--         } -->
+<!--       } -->
+<!---->
+<!--       @include xs { -->
+<!--         width: 100%; -->
+<!--       } -->
+<!--       @include sm { -->
+<!--         width: 100%; -->
+<!--       } -->
+<!--       @include md { -->
+<!--         width: 90%; -->
+<!--       } -->
+<!--     } -->
+<!---->
+<!--     .calendar-wrapper { -->
+<!--       @include center; -->
+<!---->
+<!--       @include xs { -->
+<!--         width: 800px; -->
+<!--         height: 600px; -->
+<!--         margin: auto; -->
+<!--       } -->
+<!--       @include sm { -->
+<!--         width: 800px; -->
+<!--         height: 600px; -->
+<!--         margin: auto; -->
+<!--       } -->
+<!--       @include md { -->
+<!--         width: 800px; -->
+<!--         height: 600px; -->
+<!--         margin: auto; -->
+<!--       } -->
+<!--       @include lg { -->
+<!--         width: 800px; -->
+<!--         height: 600px; -->
+<!--         margin: auto; -->
+<!--       } -->
+<!--       @include xl { -->
+<!--         width: 800px; -->
+<!--         height: 600px; -->
+<!--         margin: auto; -->
+<!--       } -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

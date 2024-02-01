@@ -26,37 +26,37 @@
   {/if}
 </section>
 
-<style lang="scss">
-  section {
-    @include center;
-    padding: 2rem 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    flex-flow: column;
-    gap: 2rem;
-
-    h1 {
-      @include h1-primary;
-    }
-
-    h2 {
-      @include h2-primary;
-    }
-
-    p {
-      @include p;
-      white-space: pre-wrap;
-    }
-
-    a {
-      @include a;
-    }
-
-    img {
-      max-height: 300px;
-      max-width: 800px;
-      object-fit: scale-down;
-      border-radius: 5px;
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     @include center; -->
+<!--     padding: 2rem 1rem; -->
+<!--     display: flex; -->
+<!--     flex-wrap: wrap; -->
+<!--     flex-flow: column; -->
+<!--     gap: 2rem; -->
+<!---->
+<!--     h1 { -->
+<!--       @include h1-primary; -->
+<!--     } -->
+<!---->
+<!--     h2 { -->
+<!--       @include h2-primary; -->
+<!--     } -->
+<!---->
+<!--     p { -->
+<!--       @include p; -->
+<!--       white-space: pre-wrap; -->
+<!--     } -->
+<!---->
+<!--     a { -->
+<!--       @include a; -->
+<!--     } -->
+<!---->
+<!--     img { -->
+<!--       max-height: 300px; -->
+<!--       max-width: 800px; -->
+<!--       object-fit: scale-down; -->
+<!--       border-radius: 5px; -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

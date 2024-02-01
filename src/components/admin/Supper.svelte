@@ -78,35 +78,35 @@
   </form>
 </section>
 
-<style lang="scss">
-  section {
-    @include component;
-    background: none;
-
-    h2 {
-      @include h2-primary;
-    }
-
-    form {
-      display: flex;
-      flex-flow: column;
-      width: 50%;
-      margin: auto;
-
-      input {
-        height: 1.5rem;
-      }
-
-      label {
-        margin-top: 1rem;
-      }
-
-      button {
-        @include btn-primary;
-        width: 10rem;
-        margin: 1rem auto;
-        background-color: rgba($color: $gray, $alpha: 0.5);
-      }
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     @include component; -->
+<!--     background: none; -->
+<!---->
+<!--     h2 { -->
+<!--       @include h2-primary; -->
+<!--     } -->
+<!---->
+<!--     form { -->
+<!--       display: flex; -->
+<!--       flex-flow: column; -->
+<!--       width: 50%; -->
+<!--       margin: auto; -->
+<!---->
+<!--       input { -->
+<!--         height: 1.5rem; -->
+<!--       } -->
+<!---->
+<!--       label { -->
+<!--         margin-top: 1rem; -->
+<!--       } -->
+<!---->
+<!--       button { -->
+<!--         @include btn-primary; -->
+<!--         width: 10rem; -->
+<!--         margin: 1rem auto; -->
+<!--         background-color: rgba($color: $gray, $alpha: 0.5); -->
+<!--       } -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

@@ -27,10 +27,10 @@
   </div>
 </section>
 
-<style lang="scss">
-  section {
-    .bg {
-      background-color: $deep-blue;
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     .bg { -->
+<!--       background-color: $deep-blue; -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

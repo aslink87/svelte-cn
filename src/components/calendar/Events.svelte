@@ -63,36 +63,36 @@
   </div>
 </section>
 
-<style lang="scss">
-  .google-api-wrapper {
-    display: grid;
-    grid-auto-flow: row;
-    width: 80%;
-    margin: auto;
-    padding: 2rem;
-    gap: 2rem;
-
-    .google-api-card {
-      margin: auto;
-      width: 600px;
-      height: 200px;
-      border-radius: 20px;
-      background-color: $white;
-      box-shadow:
-        -6px -6px 20px rgba($deep-blue, 0.5),
-        6px 6px 20px rgba($deep-blue, 0.2);
-      text-align: center;
-
-      .google-api-card-content {
-        background-color: $white;
-        border-radius: 20px;
-        position: relative;
-        text-align: center;
-        display: flex;
-        width: 100%;
-        height: 100%;
-        color: $deep-blue;
-      }
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   .google-api-wrapper { -->
+<!--     display: grid; -->
+<!--     grid-auto-flow: row; -->
+<!--     width: 80%; -->
+<!--     margin: auto; -->
+<!--     padding: 2rem; -->
+<!--     gap: 2rem; -->
+<!---->
+<!--     .google-api-card { -->
+<!--       margin: auto; -->
+<!--       width: 600px; -->
+<!--       height: 200px; -->
+<!--       border-radius: 20px; -->
+<!--       background-color: $white; -->
+<!--       box-shadow: -->
+<!--         -6px -6px 20px rgba($deep-blue, 0.5), -->
+<!--         6px 6px 20px rgba($deep-blue, 0.2); -->
+<!--       text-align: center; -->
+<!---->
+<!--       .google-api-card-content { -->
+<!--         background-color: $white; -->
+<!--         border-radius: 20px; -->
+<!--         position: relative; -->
+<!--         text-align: center; -->
+<!--         display: flex; -->
+<!--         width: 100%; -->
+<!--         height: 100%; -->
+<!--         color: $deep-blue; -->
+<!--       } -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

@@ -97,45 +97,45 @@
   </div>
 </section>
 
-<style lang="scss">
-  section {
-    @include center;
-    min-height: 100vh;
-
-    nav {
-      position: fixed;
-      width: 10rem;
-      height: 100vh;
-      z-index: 2;
-      top: 0;
-      background-color: rgba($color: $gray, $alpha: 0.6);
-      padding: 2rem 0;
-
-      button,
-      a {
-        @include p;
-        background: none;
-        border: none;
-        text-transform: capitalize;
-        font-size: 24px;
-        color: $white;
-        margin: 0.8rem 0;
-        text-decoration: none;
-        width: 100%;
-
-        &:hover {
-          color: $light-blue;
-        }
-      }
-    }
-
-    .admin-body {
-      padding-left: 10rem;
-      h1 {
-        @include h1-primary;
-        background-color: $white;
-        color: $deep-blue;
-      }
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     @include center; -->
+<!--     min-height: 100vh; -->
+<!---->
+<!--     nav { -->
+<!--       position: fixed; -->
+<!--       width: 10rem; -->
+<!--       height: 100vh; -->
+<!--       z-index: 2; -->
+<!--       top: 0; -->
+<!--       background-color: rgba($color: $gray, $alpha: 0.6); -->
+<!--       padding: 2rem 0; -->
+<!---->
+<!--       button, -->
+<!--       a { -->
+<!--         @include p; -->
+<!--         background: none; -->
+<!--         border: none; -->
+<!--         text-transform: capitalize; -->
+<!--         font-size: 24px; -->
+<!--         color: $white; -->
+<!--         margin: 0.8rem 0; -->
+<!--         text-decoration: none; -->
+<!--         width: 100%; -->
+<!---->
+<!--         &:hover { -->
+<!--           color: $light-blue; -->
+<!--         } -->
+<!--       } -->
+<!--     } -->
+<!---->
+<!--     .admin-body { -->
+<!--       padding-left: 10rem; -->
+<!--       h1 { -->
+<!--         @include h1-primary; -->
+<!--         background-color: $white; -->
+<!--         color: $deep-blue; -->
+<!--       } -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

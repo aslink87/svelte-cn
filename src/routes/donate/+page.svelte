@@ -116,73 +116,73 @@
   </ul>
 </section>
 
-<style lang="scss">
-  section {
-    @include center;
-    padding: 2rem 1rem;
-
-    &:nth-child(2n) {
-      @include component;
-      background-color: rgba($color: $gray, $alpha: 0.6);
-    }
-
-    iframe {
-      width: 50rem;
-      min-height: 25rem;
-      overflow: scroll;
-
-      @include md {
-        width: calc(100% - 2rem);
-      }
-      @include sm {
-        width: calc(100% - 2rem);
-      }
-      @include xs {
-        width: calc(100% - 1rem);
-      }
-    }
-
-    h1 {
-      @include h1-primary;
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      @include h2-primary;
-      margin: 1rem auto;
-    }
-
-    p {
-      @include p;
-    }
-
-    ul {
-      @include ul;
-
-      li {
-        margin-top: 3rem;
-      }
-    }
-  }
-
-  .donate-pantry {
-    .needs-list {
-      li {
-        list-style-type: disc;
-        text-align: left;
-        max-width: 30rem;
-        margin: 0.5rem auto;
-        text-transform: capitalize;
-      }
-    }
-  }
-
-  .donate-legacy {
-    li {
-      list-style-type: disc;
-      text-align: left;
-      max-width: 50rem;
-      margin: 1rem auto;
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     @include center; -->
+<!--     padding: 2rem 1rem; -->
+<!---->
+<!--     &:nth-child(2n) { -->
+<!--       @include component; -->
+<!--       background-color: rgba($color: $gray, $alpha: 0.6); -->
+<!--     } -->
+<!---->
+<!--     iframe { -->
+<!--       width: 50rem; -->
+<!--       min-height: 25rem; -->
+<!--       overflow: scroll; -->
+<!---->
+<!--       @include md { -->
+<!--         width: calc(100% - 2rem); -->
+<!--       } -->
+<!--       @include sm { -->
+<!--         width: calc(100% - 2rem); -->
+<!--       } -->
+<!--       @include xs { -->
+<!--         width: calc(100% - 1rem); -->
+<!--       } -->
+<!--     } -->
+<!---->
+<!--     h1 { -->
+<!--       @include h1-primary; -->
+<!--       margin-bottom: 2rem; -->
+<!--     } -->
+<!---->
+<!--     h2 { -->
+<!--       @include h2-primary; -->
+<!--       margin: 1rem auto; -->
+<!--     } -->
+<!---->
+<!--     p { -->
+<!--       @include p; -->
+<!--     } -->
+<!---->
+<!--     ul { -->
+<!--       @include ul; -->
+<!---->
+<!--       li { -->
+<!--         margin-top: 3rem; -->
+<!--       } -->
+<!--     } -->
+<!--   } -->
+<!---->
+<!--   .donate-pantry { -->
+<!--     .needs-list { -->
+<!--       li { -->
+<!--         list-style-type: disc; -->
+<!--         text-align: left; -->
+<!--         max-width: 30rem; -->
+<!--         margin: 0.5rem auto; -->
+<!--         text-transform: capitalize; -->
+<!--       } -->
+<!--     } -->
+<!--   } -->
+<!---->
+<!--   .donate-legacy { -->
+<!--     li { -->
+<!--       list-style-type: disc; -->
+<!--       text-align: left; -->
+<!--       max-width: 50rem; -->
+<!--       margin: 1rem auto; -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

@@ -78,167 +78,167 @@
   </div>
 </footer>
 
-<style lang="scss">
-  footer {
-    background-color: $deep-blue;
-
-    .svg {
-      @media (min-width: 1600px) {
-        background-image: url('/images/wavesHand.png');
-        aspect-ratio: 2100/300;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        display: flex;
-        position: relative;
-        background-color: transparent;
-      }
-      background-color: $white;
-
-      .footer-wrapper {
-        width: 90%;
-        margin: 0 2rem;
-        display: flex;
-        color: $dark-blue;
-        vertical-align: bottom;
-        justify-content: space-between;
-
-        @include xs {
-          flex-wrap: wrap;
-          margin: 0;
-          padding: 0 1rem;
-        }
-
-        @include sm {
-          flex-wrap: wrap;
-        }
-
-        @include xl {
-          justify-content: normal;
-        }
-
-        .left-container {
-          display: flex;
-          align-self: baseline;
-          flex-wrap: wrap;
-          margin: auto 0 2rem 0;
-
-          p {
-            width: 100%;
-            margin: 0;
-            font-size: 12px;
-          }
-
-          .icon-wrapper {
-            margin-bottom: 1rem;
-            display: flex;
-            gap: 1rem;
-
-            .icon {
-              width: 3rem;
-              fill: $dark-blue;
-
-              &:hover {
-                fill: $yellow;
-                transition: all 0.2s ease-out;
-              }
-            }
-          }
-
-          @include xs {
-            padding-top: 1rem;
-            @include center;
-            margin: auto;
-          }
-
-          @include sm {
-            padding-top: 1rem;
-            @include center;
-            margin: auto;
-          }
-        }
-
-        @media (min-width: 1280px) and (max-width: 1599px) {
-          .spacer {
-            width: 30%;
-          }
-          .right-container {
-            margin-top: 1rem !important;
-          }
-        }
-        @media (min-width: 1600px) and (max-width: 1799px) {
-          .spacer {
-            width: 40%;
-          }
-        }
-        @media (min-width: 1800px) {
-          .spacer {
-            width: calc(90% - 50rem);
-          }
-        }
-
-        .right-container {
-          display: flex;
-          flex-wrap: wrap;
-          flex-flow: row;
-          gap: 2rem;
-          margin: auto 0 2rem 0;
-
-          button {
-            background: none;
-            border: none;
-            color: $dark-blue;
-            cursor: pointer;
-            padding: 0;
-
-            p {
-              font-size: 12px;
-            }
-          }
-
-          p {
-            margin: auto 0;
-            font-size: 14px;
-          }
-
-          .welcome {
-            font-size: 10px;
-          }
-
-          a {
-            @include a;
-            color: $dark-blue;
-            font-size: 12px;
-          }
-
-          h2 {
-            @include h2-primary;
-            margin-bottom: 0.3rem;
-            font-size: 18px;
-          }
-
-          @include xs {
-            padding-bottom: 1rem;
-            margin: auto;
-            flex-wrap: wrap;
-          }
-
-          @include sm {
-            padding-bottom: 1rem;
-            margin: auto;
-          }
-          @include md {
-            padding-bottom: 1rem;
-            margin: auto;
-            gap: 1rem;
-          }
-          @include lg {
-            padding-bottom: 1rem;
-            margin-top: 1rem;
-            gap: 1rem;
-          }
-        }
-      }
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   footer { -->
+<!--     background-color: $deep-blue; -->
+<!---->
+<!--     .svg { -->
+<!--       @media (min-width: 1600px) { -->
+<!--         background-image: url('/images/wavesHand.png'); -->
+<!--         aspect-ratio: 2100/300; -->
+<!--         background-repeat: no-repeat; -->
+<!--         background-position: center; -->
+<!--         background-size: cover; -->
+<!--         display: flex; -->
+<!--         position: relative; -->
+<!--         background-color: transparent; -->
+<!--       } -->
+<!--       background-color: $white; -->
+<!---->
+<!--       .footer-wrapper { -->
+<!--         width: 90%; -->
+<!--         margin: 0 2rem; -->
+<!--         display: flex; -->
+<!--         color: $dark-blue; -->
+<!--         vertical-align: bottom; -->
+<!--         justify-content: space-between; -->
+<!---->
+<!--         @include xs { -->
+<!--           flex-wrap: wrap; -->
+<!--           margin: 0; -->
+<!--           padding: 0 1rem; -->
+<!--         } -->
+<!---->
+<!--         @include sm { -->
+<!--           flex-wrap: wrap; -->
+<!--         } -->
+<!---->
+<!--         @include xl { -->
+<!--           justify-content: normal; -->
+<!--         } -->
+<!---->
+<!--         .left-container { -->
+<!--           display: flex; -->
+<!--           align-self: baseline; -->
+<!--           flex-wrap: wrap; -->
+<!--           margin: auto 0 2rem 0; -->
+<!---->
+<!--           p { -->
+<!--             width: 100%; -->
+<!--             margin: 0; -->
+<!--             font-size: 12px; -->
+<!--           } -->
+<!---->
+<!--           .icon-wrapper { -->
+<!--             margin-bottom: 1rem; -->
+<!--             display: flex; -->
+<!--             gap: 1rem; -->
+<!---->
+<!--             .icon { -->
+<!--               width: 3rem; -->
+<!--               fill: $dark-blue; -->
+<!---->
+<!--               &:hover { -->
+<!--                 fill: $yellow; -->
+<!--                 transition: all 0.2s ease-out; -->
+<!--               } -->
+<!--             } -->
+<!--           } -->
+<!---->
+<!--           @include xs { -->
+<!--             padding-top: 1rem; -->
+<!--             @include center; -->
+<!--             margin: auto; -->
+<!--           } -->
+<!---->
+<!--           @include sm { -->
+<!--             padding-top: 1rem; -->
+<!--             @include center; -->
+<!--             margin: auto; -->
+<!--           } -->
+<!--         } -->
+<!---->
+<!--         @media (min-width: 1280px) and (max-width: 1599px) { -->
+<!--           .spacer { -->
+<!--             width: 30%; -->
+<!--           } -->
+<!--           .right-container { -->
+<!--             margin-top: 1rem !important; -->
+<!--           } -->
+<!--         } -->
+<!--         @media (min-width: 1600px) and (max-width: 1799px) { -->
+<!--           .spacer { -->
+<!--             width: 40%; -->
+<!--           } -->
+<!--         } -->
+<!--         @media (min-width: 1800px) { -->
+<!--           .spacer { -->
+<!--             width: calc(90% - 50rem); -->
+<!--           } -->
+<!--         } -->
+<!---->
+<!--         .right-container { -->
+<!--           display: flex; -->
+<!--           flex-wrap: wrap; -->
+<!--           flex-flow: row; -->
+<!--           gap: 2rem; -->
+<!--           margin: auto 0 2rem 0; -->
+<!---->
+<!--           button { -->
+<!--             background: none; -->
+<!--             border: none; -->
+<!--             color: $dark-blue; -->
+<!--             cursor: pointer; -->
+<!--             padding: 0; -->
+<!---->
+<!--             p { -->
+<!--               font-size: 12px; -->
+<!--             } -->
+<!--           } -->
+<!---->
+<!--           p { -->
+<!--             margin: auto 0; -->
+<!--             font-size: 14px; -->
+<!--           } -->
+<!---->
+<!--           .welcome { -->
+<!--             font-size: 10px; -->
+<!--           } -->
+<!---->
+<!--           a { -->
+<!--             @include a; -->
+<!--             color: $dark-blue; -->
+<!--             font-size: 12px; -->
+<!--           } -->
+<!---->
+<!--           h2 { -->
+<!--             @include h2-primary; -->
+<!--             margin-bottom: 0.3rem; -->
+<!--             font-size: 18px; -->
+<!--           } -->
+<!---->
+<!--           @include xs { -->
+<!--             padding-bottom: 1rem; -->
+<!--             margin: auto; -->
+<!--             flex-wrap: wrap; -->
+<!--           } -->
+<!---->
+<!--           @include sm { -->
+<!--             padding-bottom: 1rem; -->
+<!--             margin: auto; -->
+<!--           } -->
+<!--           @include md { -->
+<!--             padding-bottom: 1rem; -->
+<!--             margin: auto; -->
+<!--             gap: 1rem; -->
+<!--           } -->
+<!--           @include lg { -->
+<!--             padding-bottom: 1rem; -->
+<!--             margin-top: 1rem; -->
+<!--             gap: 1rem; -->
+<!--           } -->
+<!--         } -->
+<!--       } -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

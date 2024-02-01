@@ -34,58 +34,58 @@
   </ul>
 </section>
 
-<style lang="scss">
-  section {
-    @include center;
-    min-height: 100vh;
-    padding: 2rem 1rem;
-
-    h1 {
-      @include h1-primary;
-    }
-
-    ul {
-      padding-left: 0;
-    }
-
-    .blog-meta {
-      text-transform: capitalize;
-      font-size: 0.8rem;
-    }
-
-    .blog {
-      @include center;
-      padding: 1rem 0 1rem 0;
-
-      &:nth-child(1) {
-        background-color: rgba($color: $gray, $alpha: 0.6);
-        border-radius: 5px;
-      }
-
-      h2 {
-        @include h2-primary;
-        text-transform: capitalize;
-        margin: 1rem auto;
-      }
-
-      p {
-        @include p;
-        white-space: pre-wrap;
-      }
-
-      img {
-        margin: 1rem auto;
-        max-height: 500px;
-        object-fit: scale-down;
-        border-radius: 10px;
-
-        @include xs {
-          width: 90%;
-        }
-        @include sm {
-          height: 400px;
-        }
-      }
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     @include center; -->
+<!--     min-height: 100vh; -->
+<!--     padding: 2rem 1rem; -->
+<!---->
+<!--     h1 { -->
+<!--       @include h1-primary; -->
+<!--     } -->
+<!---->
+<!--     ul { -->
+<!--       padding-left: 0; -->
+<!--     } -->
+<!---->
+<!--     .blog-meta { -->
+<!--       text-transform: capitalize; -->
+<!--       font-size: 0.8rem; -->
+<!--     } -->
+<!---->
+<!--     .blog { -->
+<!--       @include center; -->
+<!--       padding: 1rem 0 1rem 0; -->
+<!---->
+<!--       &:nth-child(1) { -->
+<!--         background-color: rgba($color: $gray, $alpha: 0.6); -->
+<!--         border-radius: 5px; -->
+<!--       } -->
+<!---->
+<!--       h2 { -->
+<!--         @include h2-primary; -->
+<!--         text-transform: capitalize; -->
+<!--         margin: 1rem auto; -->
+<!--       } -->
+<!---->
+<!--       p { -->
+<!--         @include p; -->
+<!--         white-space: pre-wrap; -->
+<!--       } -->
+<!---->
+<!--       img { -->
+<!--         margin: 1rem auto; -->
+<!--         max-height: 500px; -->
+<!--         object-fit: scale-down; -->
+<!--         border-radius: 10px; -->
+<!---->
+<!--         @include xs { -->
+<!--           width: 90%; -->
+<!--         } -->
+<!--         @include sm { -->
+<!--           height: 400px; -->
+<!--         } -->
+<!--       } -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

@@ -105,166 +105,166 @@
   </div>
 </section>
 
-<style lang="scss">
-  section {
-    @include center;
-    padding: 5rem 0;
-
-    .card-wrapper {
-      width: 90%;
-      margin: auto;
-      .card {
-        display: flex;
-        flex-flow: row;
-        gap: 2rem;
-
-        @include xs {
-          flex-flow: column;
-        }
-        @include sm {
-          flex-flow: column;
-        }
-        @include md {
-          flex-flow: column;
-        }
-
-        .card-left {
-          width: 12rem;
-          margin: auto 0;
-          text-align: left;
-          display: flex;
-          flex-flow: column;
-          gap: 2rem;
-          border-right: 2px solid $white;
-          padding-left: 0;
-
-          @include xs {
-            @include center;
-            flex-flow: column;
-            gap: 1rem;
-            width: 100%;
-            border: none;
-            margin: auto;
-            border: none;
-          }
-          @include sm {
-            @include center;
-            flex-flow: row;
-            width: 100%;
-            border: none;
-            margin: auto;
-          }
-          @include md {
-            @include center;
-            flex-flow: row;
-            width: 100%;
-            border: none;
-            margin: auto;
-          }
-          @include lg {
-            padding: 0 1rem;
-            li {
-              margin-left: -20px;
-            }
-          }
-          @include xl {
-            padding: 0 1rem;
-            width: 18rem;
-            li {
-              margin-left: -20px;
-            }
-          }
-
-          li {
-            list-style-type: none;
-
-            button {
-              @include h2-primary;
-              background: none;
-              border: none;
-              cursor: pointer;
-              color: $white;
-            }
-          }
-        }
-
-        .card-right {
-          padding: 0 1rem;
-          text-align: left;
-          display: none;
-
-          @include xs {
-            flex-flow: column;
-          }
-          @include sm {
-            flex-flow: column;
-          }
-          @include md {
-            flex-flow: column;
-            @include center;
-          }
-          @include lg {
-            flex-flow: column;
-          }
-
-          img {
-            height: 400px;
-            max-width: 700px;
-            object-fit: cover;
-            margin-right: 1rem;
-
-            @include xs {
-              margin-right: 0;
-              height: 200px;
-              object-fit: contain;
-            }
-            @include sm {
-              margin-right: 0;
-            }
-            @include md {
-              margin-right: 0;
-            }
-          }
-
-          .card-right__content {
-            padding: 0 1rem;
-            max-width: 50em;
-
-            @include xs {
-              text-align: center;
-              a {
-                margin: 1rem auto;
-              }
-            }
-            @include sm {
-              text-align: center;
-              a {
-                margin: 1rem auto;
-              }
-            }
-            @include md {
-              a {
-                margin: 1rem auto;
-              }
-            }
-
-            a {
-              @include btn-primary;
-              width: 100px;
-            }
-          }
-        }
-      }
-
-      @include xs {
-        width: 100%;
-      }
-      @include sm {
-        width: 100%;
-      }
-      @include md {
-        width: 90%;
-      }
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     @include center; -->
+<!--     padding: 5rem 0; -->
+<!---->
+<!--     .card-wrapper { -->
+<!--       width: 90%; -->
+<!--       margin: auto; -->
+<!--       .card { -->
+<!--         display: flex; -->
+<!--         flex-flow: row; -->
+<!--         gap: 2rem; -->
+<!---->
+<!--         @include xs { -->
+<!--           flex-flow: column; -->
+<!--         } -->
+<!--         @include sm { -->
+<!--           flex-flow: column; -->
+<!--         } -->
+<!--         @include md { -->
+<!--           flex-flow: column; -->
+<!--         } -->
+<!---->
+<!--         .card-left { -->
+<!--           width: 12rem; -->
+<!--           margin: auto 0; -->
+<!--           text-align: left; -->
+<!--           display: flex; -->
+<!--           flex-flow: column; -->
+<!--           gap: 2rem; -->
+<!--           border-right: 2px solid $white; -->
+<!--           padding-left: 0; -->
+<!---->
+<!--           @include xs { -->
+<!--             @include center; -->
+<!--             flex-flow: column; -->
+<!--             gap: 1rem; -->
+<!--             width: 100%; -->
+<!--             border: none; -->
+<!--             margin: auto; -->
+<!--             border: none; -->
+<!--           } -->
+<!--           @include sm { -->
+<!--             @include center; -->
+<!--             flex-flow: row; -->
+<!--             width: 100%; -->
+<!--             border: none; -->
+<!--             margin: auto; -->
+<!--           } -->
+<!--           @include md { -->
+<!--             @include center; -->
+<!--             flex-flow: row; -->
+<!--             width: 100%; -->
+<!--             border: none; -->
+<!--             margin: auto; -->
+<!--           } -->
+<!--           @include lg { -->
+<!--             padding: 0 1rem; -->
+<!--             li { -->
+<!--               margin-left: -20px; -->
+<!--             } -->
+<!--           } -->
+<!--           @include xl { -->
+<!--             padding: 0 1rem; -->
+<!--             width: 18rem; -->
+<!--             li { -->
+<!--               margin-left: -20px; -->
+<!--             } -->
+<!--           } -->
+<!---->
+<!--           li { -->
+<!--             list-style-type: none; -->
+<!---->
+<!--             button { -->
+<!--               @include h2-primary; -->
+<!--               background: none; -->
+<!--               border: none; -->
+<!--               cursor: pointer; -->
+<!--               color: $white; -->
+<!--             } -->
+<!--           } -->
+<!--         } -->
+<!---->
+<!--         .card-right { -->
+<!--           padding: 0 1rem; -->
+<!--           text-align: left; -->
+<!--           display: none; -->
+<!---->
+<!--           @include xs { -->
+<!--             flex-flow: column; -->
+<!--           } -->
+<!--           @include sm { -->
+<!--             flex-flow: column; -->
+<!--           } -->
+<!--           @include md { -->
+<!--             flex-flow: column; -->
+<!--             @include center; -->
+<!--           } -->
+<!--           @include lg { -->
+<!--             flex-flow: column; -->
+<!--           } -->
+<!---->
+<!--           img { -->
+<!--             height: 400px; -->
+<!--             max-width: 700px; -->
+<!--             object-fit: cover; -->
+<!--             margin-right: 1rem; -->
+<!---->
+<!--             @include xs { -->
+<!--               margin-right: 0; -->
+<!--               height: 200px; -->
+<!--               object-fit: contain; -->
+<!--             } -->
+<!--             @include sm { -->
+<!--               margin-right: 0; -->
+<!--             } -->
+<!--             @include md { -->
+<!--               margin-right: 0; -->
+<!--             } -->
+<!--           } -->
+<!---->
+<!--           .card-right__content { -->
+<!--             padding: 0 1rem; -->
+<!--             max-width: 50em; -->
+<!---->
+<!--             @include xs { -->
+<!--               text-align: center; -->
+<!--               a { -->
+<!--                 margin: 1rem auto; -->
+<!--               } -->
+<!--             } -->
+<!--             @include sm { -->
+<!--               text-align: center; -->
+<!--               a { -->
+<!--                 margin: 1rem auto; -->
+<!--               } -->
+<!--             } -->
+<!--             @include md { -->
+<!--               a { -->
+<!--                 margin: 1rem auto; -->
+<!--               } -->
+<!--             } -->
+<!---->
+<!--             a { -->
+<!--               @include btn-primary; -->
+<!--               width: 100px; -->
+<!--             } -->
+<!--           } -->
+<!--         } -->
+<!--       } -->
+<!---->
+<!--       @include xs { -->
+<!--         width: 100%; -->
+<!--       } -->
+<!--       @include sm { -->
+<!--         width: 100%; -->
+<!--       } -->
+<!--       @include md { -->
+<!--         width: 90%; -->
+<!--       } -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

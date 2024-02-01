@@ -43,49 +43,49 @@
   </div>
 </section>
 
-<style lang="scss">
-  .newsletter {
-    @include center;
-    padding: 2rem 1rem;
-
-    h1 {
-      @include h1-primary;
-    }
-
-    h2 {
-      @include h2-primary;
-      text-transform: capitalize;
-      margin-top: 2rem;
-    }
-
-    .e-news {
-      object {
-        width: 90%;
-        max-width: 60em;
-        margin: 2rem auto;
-        height: 50em;
-
-        @include xs {
-          height: 25em;
-        }
-
-        @include sm {
-          height: 40em;
-        }
-      }
-    }
-
-    .newsletter-links {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      border-top: 2px solid $white;
-
-      a {
-        text-transform: capitalize;
-        color: $white;
-        margin-top: 1rem;
-      }
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   .newsletter { -->
+<!--     @include center; -->
+<!--     padding: 2rem 1rem; -->
+<!---->
+<!--     h1 { -->
+<!--       @include h1-primary; -->
+<!--     } -->
+<!---->
+<!--     h2 { -->
+<!--       @include h2-primary; -->
+<!--       text-transform: capitalize; -->
+<!--       margin-top: 2rem; -->
+<!--     } -->
+<!---->
+<!--     .e-news { -->
+<!--       object { -->
+<!--         width: 90%; -->
+<!--         max-width: 60em; -->
+<!--         margin: 2rem auto; -->
+<!--         height: 50em; -->
+<!---->
+<!--         @include xs { -->
+<!--           height: 25em; -->
+<!--         } -->
+<!---->
+<!--         @include sm { -->
+<!--           height: 40em; -->
+<!--         } -->
+<!--       } -->
+<!--     } -->
+<!---->
+<!--     .newsletter-links { -->
+<!--       display: flex; -->
+<!--       flex-wrap: wrap; -->
+<!--       flex-direction: column; -->
+<!--       border-top: 2px solid $white; -->
+<!---->
+<!--       a { -->
+<!--         text-transform: capitalize; -->
+<!--         color: $white; -->
+<!--         margin-top: 1rem; -->
+<!--       } -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

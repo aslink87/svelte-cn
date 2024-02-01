@@ -139,93 +139,93 @@
   </form>
 </section>
 
-<style lang="scss">
-  section {
-    @include component;
-    background: none;
-
-    .preview {
-      @include h2-primary;
-      border-top: 1px solid $gray;
-      margin-top: 2rem;
-      padding-top: 2rem;
-    }
-
-    .preview-wrapper {
-      margin-top: 1rem;
-      border: 1px solid $gray;
-      border-radius: 5px;
-
-      .dynamic {
-        @include component;
-        background-color: rgba($color: $gray, $alpha: 0.6);
-        display: flex;
-        flex-flow: column;
-        flex-wrap: wrap;
-        margin-bottom: 3rem;
-
-        a {
-          @include a;
-          margin: auto;
-        }
-      }
-      .preview-content {
-        padding: 0 1rem;
-        max-width: 50em;
-
-        @include xs {
-          text-align: center;
-          a {
-            margin: 1rem auto;
-          }
-        }
-        @include sm {
-          text-align: center;
-          a {
-            margin: 1rem auto;
-          }
-        }
-        @include md {
-          a {
-            margin: 1rem auto;
-          }
-        }
-
-        a {
-          @include btn-primary;
-          width: 100px;
-        }
-      }
-    }
-
-    h2 {
-      @include h2-primary;
-    }
-
-    form {
-      display: flex;
-      flex-flow: column;
-      width: 50%;
-      margin: auto;
-
-      textarea {
-        min-height: 20rem;
-      }
-
-      input {
-        height: 1.5rem;
-      }
-
-      label {
-        margin-top: 1rem;
-      }
-
-      button {
-        @include btn-primary;
-        width: 10rem;
-        margin: 1rem auto;
-        background-color: rgba($color: $gray, $alpha: 0.5);
-      }
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     @include component; -->
+<!--     background: none; -->
+<!---->
+<!--     .preview { -->
+<!--       @include h2-primary; -->
+<!--       border-top: 1px solid $gray; -->
+<!--       margin-top: 2rem; -->
+<!--       padding-top: 2rem; -->
+<!--     } -->
+<!---->
+<!--     .preview-wrapper { -->
+<!--       margin-top: 1rem; -->
+<!--       border: 1px solid $gray; -->
+<!--       border-radius: 5px; -->
+<!---->
+<!--       .dynamic { -->
+<!--         @include component; -->
+<!--         background-color: rgba($color: $gray, $alpha: 0.6); -->
+<!--         display: flex; -->
+<!--         flex-flow: column; -->
+<!--         flex-wrap: wrap; -->
+<!--         margin-bottom: 3rem; -->
+<!---->
+<!--         a { -->
+<!--           @include a; -->
+<!--           margin: auto; -->
+<!--         } -->
+<!--       } -->
+<!--       .preview-content { -->
+<!--         padding: 0 1rem; -->
+<!--         max-width: 50em; -->
+<!---->
+<!--         @include xs { -->
+<!--           text-align: center; -->
+<!--           a { -->
+<!--             margin: 1rem auto; -->
+<!--           } -->
+<!--         } -->
+<!--         @include sm { -->
+<!--           text-align: center; -->
+<!--           a { -->
+<!--             margin: 1rem auto; -->
+<!--           } -->
+<!--         } -->
+<!--         @include md { -->
+<!--           a { -->
+<!--             margin: 1rem auto; -->
+<!--           } -->
+<!--         } -->
+<!---->
+<!--         a { -->
+<!--           @include btn-primary; -->
+<!--           width: 100px; -->
+<!--         } -->
+<!--       } -->
+<!--     } -->
+<!---->
+<!--     h2 { -->
+<!--       @include h2-primary; -->
+<!--     } -->
+<!---->
+<!--     form { -->
+<!--       display: flex; -->
+<!--       flex-flow: column; -->
+<!--       width: 50%; -->
+<!--       margin: auto; -->
+<!---->
+<!--       textarea { -->
+<!--         min-height: 20rem; -->
+<!--       } -->
+<!---->
+<!--       input { -->
+<!--         height: 1.5rem; -->
+<!--       } -->
+<!---->
+<!--       label { -->
+<!--         margin-top: 1rem; -->
+<!--       } -->
+<!---->
+<!--       button { -->
+<!--         @include btn-primary; -->
+<!--         width: 10rem; -->
+<!--         margin: 1rem auto; -->
+<!--         background-color: rgba($color: $gray, $alpha: 0.5); -->
+<!--       } -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

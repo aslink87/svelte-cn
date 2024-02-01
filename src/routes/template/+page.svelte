@@ -27,27 +27,27 @@
   </ul>
 </section>
 
-<style lang="scss">
-  section {
-    @include center;
-    min-height: 100vh;
-    padding: 2rem 1rem;
-
-    h1 {
-      @include h1-primary;
-    }
-
-    h2 {
-      @include h2-primary;
-      margin-top: 1rem;
-    }
-
-    ul {
-      @include ul;
-
-      li {
-        margin-top: 3rem;
-      }
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     @include center; -->
+<!--     min-height: 100vh; -->
+<!--     padding: 2rem 1rem; -->
+<!---->
+<!--     h1 { -->
+<!--       @include h1-primary; -->
+<!--     } -->
+<!---->
+<!--     h2 { -->
+<!--       @include h2-primary; -->
+<!--       margin-top: 1rem; -->
+<!--     } -->
+<!---->
+<!--     ul { -->
+<!--       @include ul; -->
+<!---->
+<!--       li { -->
+<!--         margin-top: 3rem; -->
+<!--       } -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

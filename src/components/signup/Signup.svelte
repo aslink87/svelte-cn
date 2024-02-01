@@ -9,14 +9,14 @@
   >
 </section>
 
-<style lang="scss">
-  section {
-    @include center;
-    padding: 2rem 0;
-
-    a {
-      @include h2-primary;
-      color: inherit;
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     @include center; -->
+<!--     padding: 2rem 0; -->
+<!---->
+<!--     a { -->
+<!--       @include h2-primary; -->
+<!--       color: inherit; -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

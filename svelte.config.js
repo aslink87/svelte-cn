@@ -1,4 +1,3 @@
-// import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import adapter from '@sveltejs/adapter-node';
 import preprocess from 'svelte-preprocess';
@@ -9,9 +8,7 @@ const config = {
   // for more information about preprocessors
   preprocess: [
     preprocess({
-      scss: {
-        prependData: "@import './src/styles/globals.scss';",
-      },
+      postcss: true,
     }),
     vitePreprocess({}),
   ],

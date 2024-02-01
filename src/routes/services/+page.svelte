@@ -67,54 +67,54 @@
   </ul>
 </section>
 
-<style lang="scss">
-  section {
-    @include center;
-    padding: 2rem 1rem;
-
-    h1 {
-      @include h1-primary;
-    }
-
-    h2 {
-      @include h2-primary;
-      margin-top: 1rem;
-    }
-
-    ul {
-      @include ul;
-    }
-
-    p {
-      @include p;
-    }
-  }
-
-  .financial {
-    @include component;
-    background-color: rgba($color: $gray, $alpha: 0.6);
-
-    h2 {
-      margin-top: 2rem;
-    }
-
-    li {
-      text-align: left;
-      list-style-type: disc;
-      max-width: 50rem;
-      margin: 0.7rem auto;
-    }
-  }
-
-  .community {
-    h2 {
-      margin-bottom: 1rem;
-    }
-    li {
-      margin-top: 1.5rem;
-    }
-    a {
-      @include a;
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     @include center; -->
+<!--     padding: 2rem 1rem; -->
+<!---->
+<!--     h1 { -->
+<!--       @include h1-primary; -->
+<!--     } -->
+<!---->
+<!--     h2 { -->
+<!--       @include h2-primary; -->
+<!--       margin-top: 1rem; -->
+<!--     } -->
+<!---->
+<!--     ul { -->
+<!--       @include ul; -->
+<!--     } -->
+<!---->
+<!--     p { -->
+<!--       @include p; -->
+<!--     } -->
+<!--   } -->
+<!---->
+<!--   .financial { -->
+<!--     @include component; -->
+<!--     background-color: rgba($color: $gray, $alpha: 0.6); -->
+<!---->
+<!--     h2 { -->
+<!--       margin-top: 2rem; -->
+<!--     } -->
+<!---->
+<!--     li { -->
+<!--       text-align: left; -->
+<!--       list-style-type: disc; -->
+<!--       max-width: 50rem; -->
+<!--       margin: 0.7rem auto; -->
+<!--     } -->
+<!--   } -->
+<!---->
+<!--   .community { -->
+<!--     h2 { -->
+<!--       margin-bottom: 1rem; -->
+<!--     } -->
+<!--     li { -->
+<!--       margin-top: 1.5rem; -->
+<!--     } -->
+<!--     a { -->
+<!--       @include a; -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->

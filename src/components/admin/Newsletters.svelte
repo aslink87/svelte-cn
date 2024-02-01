@@ -134,53 +134,53 @@
   </form>
 </section>
 
-<style lang="scss">
-  section {
-    @include component;
-    background: none;
-
-    h2 {
-      @include h2-primary;
-    }
-
-    form {
-      @include center;
-      display: flex;
-      flex-flow: column;
-      margin: auto;
-
-      .input-wrapper {
-        border-bottom: 1px solid $gray;
-      }
-
-      input {
-        height: 1.5rem;
-        margin-bottom: 1rem;
-      }
-
-      label {
-        margin: 0.5rem auto;
-      }
-
-      button {
-        @include btn-primary;
-        width: 10rem;
-        margin: 1rem auto;
-        background-color: rgba($color: $gray, $alpha: 0.5);
-      }
-    }
-
-    .preview {
-      @include h2-primary;
-      border-top: 1px solid $gray;
-      margin-top: 2rem;
-      padding-top: 2rem;
-    }
-
-    .preview-wrapper {
-      margin-top: 1rem;
-      border: 1px solid $gray;
-      border-radius: 5px;
-    }
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     @include component; -->
+<!--     background: none; -->
+<!---->
+<!--     h2 { -->
+<!--       @include h2-primary; -->
+<!--     } -->
+<!---->
+<!--     form { -->
+<!--       @include center; -->
+<!--       display: flex; -->
+<!--       flex-flow: column; -->
+<!--       margin: auto; -->
+<!---->
+<!--       .input-wrapper { -->
+<!--         border-bottom: 1px solid $gray; -->
+<!--       } -->
+<!---->
+<!--       input { -->
+<!--         height: 1.5rem; -->
+<!--         margin-bottom: 1rem; -->
+<!--       } -->
+<!---->
+<!--       label { -->
+<!--         margin: 0.5rem auto; -->
+<!--       } -->
+<!---->
+<!--       button { -->
+<!--         @include btn-primary; -->
+<!--         width: 10rem; -->
+<!--         margin: 1rem auto; -->
+<!--         background-color: rgba($color: $gray, $alpha: 0.5); -->
+<!--       } -->
+<!--     } -->
+<!---->
+<!--     .preview { -->
+<!--       @include h2-primary; -->
+<!--       border-top: 1px solid $gray; -->
+<!--       margin-top: 2rem; -->
+<!--       padding-top: 2rem; -->
+<!--     } -->
+<!---->
+<!--     .preview-wrapper { -->
+<!--       margin-top: 1rem; -->
+<!--       border: 1px solid $gray; -->
+<!--       border-radius: 5px; -->
+<!--     } -->
+<!--   } -->
+<!-- </style> -->
