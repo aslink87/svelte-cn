@@ -19,6 +19,15 @@
   src: url('$fonts/Inter-Italic.otf');
 }
 
+@layer components {
+  .btn-primary {
+    @apply variant-filled-primary btn btn-sm bg-primary-500/70 text-white shadow-none hover:text-white;
+  }
+  .center {
+    @apply items-center justify-center text-center;
+  }
+}
+
 :root [data-theme='custom-theme'] {
   --bright-blue: #0f70e9;
   --light-blue: #6979c1;

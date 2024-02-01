@@ -84,11 +84,11 @@
               <li
                 on:mouseenter={() => showDropdown(link.class)}
                 on:mouseleave={() => hideDropdown(link.class)}
-                class="ml-1 mr-5 text-primary-500 first:variant-filled-primary first:btn first:btn-sm first:bg-primary-500/70 first:text-white first:shadow-none hover:text-secondary-500 first:hover:text-white"
+                class="first:btn-primary ml-1 mr-5 text-primary-500 hover:text-secondary-500"
               >
                 <a
                   href={link.path}
-                  class={`${link.class} text-xl active:border-2 active:border-b-tertiary-500 active:text-tertiary-500`}
+                  class={`${link.class} text-xl active:border-2 active:border-b-tertiary-500 active:text-tertiary-500 first:active:border-none first:active:text-white`}
                   data-sveltekit-preload-data="hover">{link.name}</a
                 >
                 {#if link.dropdown && link.dropdown.length > 0}
