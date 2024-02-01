@@ -14,12 +14,14 @@
       <Navigation />
     {/if}
   </svelte:fragment>
-  <div class="w-full px-2 pt-2 md:px-4 lg:px-8">
+  <main
+    class="main m-0 box-border w-full bg-primary-800 px-2 pt-2 text-lg text-white md:px-4 lg:px-8"
+  >
     <slot />
     {#if $page.url.pathname !== '/admin'}
       <Signup></Signup>
     {/if}
-  </div>
+  </main>
 </AppShell>
 <!-- <main class="main" data-testid="main"> -->
 <!--   <slot /> -->
@@ -31,12 +33,17 @@
 {#if $page.url.pathname !== '/admin'}
   <Footer></Footer>
 {/if}
-<section class="mobile-menu" id="mobile-menu">
-  <ul>
+<section
+  class="mobile-menu fixed -right-full bottom-0 top-16 max-w-[45em] bg-surface-600 text-center transition-all duration-200 ease-in-out"
+  id="mobile-menu"
+>
+  <ul class="px-8 py-16">
     {#each navLinks as link}
       {#if link.mobile}
         <li>
-          <a href={link.path}><h2>{link.name}</h2></a>
+          <a href={link.path}
+            ><h2 class="mx-auto my-8 text-2xl font-bold text-white">{link.name}</h2></a
+          >
         </li>
       {/if}
     {/each}

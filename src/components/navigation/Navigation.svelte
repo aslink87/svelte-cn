@@ -3,36 +3,36 @@
 
   // Retrieve mobileToggle state from store
   // TODO: Currently this store is unneccesary. If it continues to be unneccesary, remove it.
-  // import { mobileToggle } from '$lib/stores/Mobile';
+  import { mobileToggle } from '$lib/stores/Mobile';
 
-  // let mobileMenuOpen = false;
+  let mobileMenuOpen = false;
   let about = false;
   let support = false;
 
-  // function handleMobileToggle() {
-  //   mobileToggle.update((n) => !n);
-  //
-  //   mobileMenuOpen = !mobileMenuOpen;
-  //
-  //   const middle = document.getElementById('center-bar');
-  //   if (middle) middle.style.display = mobileMenuOpen ? 'none' : 'block';
-  //   const bottom = document.getElementById('bottom-bar');
-  //   if (bottom) {
-  //     bottom.style.transform = mobileMenuOpen ? 'rotate(90deg)' : 'rotate(0deg)';
-  //   }
-  //   const top = document.getElementById('top-bar');
-  //   if (top) {
-  //     top.style.transform = mobileMenuOpen
-  //       ? 'translateY(5px) translateX(6px)'
-  //       : 'translateY(0px) translateX(0px)';
-  //     top.style.width = mobileMenuOpen ? '1.2rem' : '2rem';
-  //   }
-  //
-  //   const drawer = document.getElementById('mobile-menu');
-  //   if (drawer) {
-  //     drawer.style.right = mobileMenuOpen ? '0%' : '-100%';
-  //   }
-  // }
+  function handleMobileToggle() {
+    mobileToggle.update((n) => !n);
+
+    mobileMenuOpen = !mobileMenuOpen;
+
+    const middle = document.getElementById('center-bar');
+    if (middle) middle.style.display = mobileMenuOpen ? 'none' : 'block';
+    const bottom = document.getElementById('bottom-bar');
+    if (bottom) {
+      bottom.style.transform = mobileMenuOpen ? 'rotate(90deg) translateX(-5px)' : 'rotate(0deg)';
+    }
+    const top = document.getElementById('top-bar');
+    if (top) {
+      top.style.transform = mobileMenuOpen
+        ? 'translateY(2px) translateX(6px)'
+        : 'translateY(0px) translateX(0px)';
+      top.style.width = mobileMenuOpen ? '1.2rem' : '2rem';
+    }
+
+    const drawer = document.getElementById('mobile-menu');
+    if (drawer) {
+      drawer.style.right = mobileMenuOpen ? '0%' : '-100%';
+    }
+  }
 
   function showDropdown(link: string) {
     const allDropdowns = document.getElementsByClassName('dd');
@@ -67,34 +67,34 @@
   <div class="app-bar bg-surface-100-800-token flex h-16 flex-col space-y-4 px-4 shadow-2xl">
     <div class="app-bar-row-main my-auto grid grid-cols-[auto_1fr_auto] items-center gap-4">
       <div class="app-bar-slot-lead flex items-center space-x-4">
-        <a class="img-container my-auto max-w-12" href="/">
+        <a class="img-container my-auto w-12" href="/">
           <img loading="lazy" src="/images/logo.png" alt="Christian Neighbors logo" />
         </a>
       </div>
-      <div class="app-bar-slot-default flex items-center space-x-4">
+      <div class="app-bar-slot-default invisible flex items-center space-x-4 lg:visible">
         <a class="branding mx-auto flex items-center gap-2 text-2xl font-bold" href="/">
           <h1 class="text-primary-600">Christian</h1>
           <h1 class="text-tertiary-600">Neighbors</h1>
         </a>
       </div>
       <div class="app-bar-slot-trail flex flex-none items-center space-x-4">
-        <ul class="my-auto flex pr-12">
+        <ul class="invisible my-auto flex items-center pr-12 lg:visible">
           {#each navLinks as link}
             {#if !link.mobileOnly}
               <li
                 on:mouseenter={() => showDropdown(link.class)}
                 on:mouseleave={() => hideDropdown(link.class)}
-                class="my-0 ml-1 mr-5 list-none border-none bg-none text-primary-500 active:border-2 active:border-b-tertiary-500 active:text-tertiary-500"
+                class="ml-1 mr-5 text-primary-500 first:variant-filled-primary first:btn first:btn-sm first:bg-primary-500/70 first:text-white first:shadow-none hover:text-secondary-500 first:hover:text-white"
               >
                 <a
                   href={link.path}
-                  class={`${link.class} text-xl hover:text-secondary-500 active:border-2 active:border-b-tertiary-500 active:text-tertiary-500`}
-                  >{link.name}</a
+                  class={`${link.class} text-xl active:border-2 active:border-b-tertiary-500 active:text-tertiary-500`}
+                  data-sveltekit-preload-data="hover">{link.name}</a
                 >
                 {#if link.dropdown && link.dropdown.length > 0}
                   <!-- svelte-ignore a11y-no-static-element-interactions -->
                   <div
-                    class={`dropdown-${link.name} dd absolute top-16 hidden min-w-44 rounded bg-primary-500 shadow-sm`}
+                    class={`dropdown-${link.name} dd absolute top-14 hidden min-w-44 rounded bg-primary-500 shadow-sm`}
                     data-testid={`dropdown-${link.name}`}
                     id={link.name.toLowerCase().split(' ')[0]}
                     on:mouseenter={() => {
@@ -119,13 +119,17 @@
             {/if}
           {/each}
         </ul>
-        <!--   <div class="mobile-menu"> -->
-        <!--     <button on:click={handleMobileToggle} id="mobile-toggle"> -->
-        <!--       <span id="top-bar" /> -->
-        <!--       <span id="center-bar" /> -->
-        <!--       <span id="bottom-bar" /> -->
-        <!--     </button> -->
-        <!--   </div> -->
+        <div class="mobile-menu absolute right-4 my-auto flex lg:invisible">
+          <button
+            on:click={handleMobileToggle}
+            id="mobile-toggle"
+            class="m-auto flex h-10 cursor-pointer flex-col justify-evenly border-none bg-none"
+          >
+            <span id="top-bar" class="h-[3px] w-8 bg-primary-900 transition-all ease-linear" />
+            <span id="center-bar" class="h-[3px] w-8 bg-primary-900 transition-all ease-linear" />
+            <span id="bottom-bar" class="h-[3px] w-8 bg-primary-900 transition-all ease-linear" />
+          </button>
+        </div>
       </div>
     </div>
   </div>
