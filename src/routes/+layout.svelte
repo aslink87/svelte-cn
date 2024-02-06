@@ -1,17 +1,42 @@
 <script lang="ts">
   import '../app.pcss';
-  import Navigation from '../components/navigation/Navigation.svelte';
-  import Footer from '../components/footer/Footer.svelte';
-  import Signup from '../components/signup/Signup.svelte';
-  import { navLinks } from '$/components/navigation/links';
   import { page } from '$app/stores';
-  import { AppShell } from '@skeletonlabs/skeleton';
+  import { goto } from '$app/navigation';
+  import { AppShell, Drawer, getDrawerStore, initializeStores } from '@skeletonlabs/skeleton';
+  import Navigation from '$/components/navigation/Navigation.svelte';
+  import Footer from '$/components/footer/Footer.svelte';
+  import Signup from '$/components/signup/Signup.svelte';
+  import { navLinks } from '$/components/navigation/links';
+
+  initializeStores();
+  const drawerStore = getDrawerStore();
+
+  function openDrawer() {
+    drawerStore.open();
+  }
+  function handleMobileRouteClick(path: string) {
+    goto(path);
+    drawerStore.close();
+  }
 </script>
 
+<Drawer>
+  <section class="mobile-menu bottom-0 top-16 h-full bg-surface-600 text-center" id="mobile-menu">
+    <ul class="flex flex-col flex-wrap px-8 py-16">
+      {#each navLinks as link}
+        {#if link.mobile}
+          <button on:click={() => handleMobileRouteClick(link.path)}>
+            <h2 class="mx-auto my-8 text-2xl font-bold text-white">{link.name}</h2>
+          </button>
+        {/if}
+      {/each}
+    </ul>
+  </section>
+</Drawer>
 <AppShell>
   <svelte:fragment slot="header">
     {#if $page.url.pathname !== '/admin'}
-      <Navigation />
+      <Navigation on:toggle={openDrawer} />
     {/if}
   </svelte:fragment>
   <main
@@ -33,22 +58,6 @@
 {#if $page.url.pathname !== '/admin'}
   <Footer></Footer>
 {/if}
-<section
-  class="mobile-menu fixed -right-full bottom-0 top-16 max-w-[45em] bg-surface-600 text-center transition-all duration-200 ease-in-out"
-  id="mobile-menu"
->
-  <ul class="px-8 py-16">
-    {#each navLinks as link}
-      {#if link.mobile}
-        <li>
-          <a href={link.path}
-            ><h2 class="mx-auto my-8 text-2xl font-bold text-white">{link.name}</h2></a
-          >
-        </li>
-      {/if}
-    {/each}
-  </ul>
-</section>
 
 <!-- <style lang="scss"> -->
 <!--   main { -->
