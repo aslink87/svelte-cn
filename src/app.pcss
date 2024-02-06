@@ -5,18 +5,15 @@
 
 @font-face {
   font-family: Inter-Regular;
-  font-style: normal;
   src: url('/fonts/Inter-Regular.otf');
 }
 @font-face {
   font-family: Inter-Bold;
-  font-style: normal;
-  src: url('$fonts/Inter-SemiBold.otf');
+  src: url('/fonts/Inter-Bold.otf');
 }
 @font-face {
   font-family: Inter-Italic;
-  font-style: normal;
-  src: url('$fonts/Inter-Italic.otf');
+  src: url('/fonts/Inter-Italic.otf');
 }
 
 @layer components {
@@ -25,6 +22,10 @@
   }
   .center {
     @apply items-center justify-center text-center;
+  }
+
+  .h1-primary {
+    @apply max-w-[60em] text-3xl font-bold;
   }
 }
 
@@ -42,4 +43,6 @@
   --black: #010a15;
   --gray: #5c7793;
   --warning: red;
+  --theme-font-family-base: Inter-Regular, sans-serif;
+  --theme-font-family-heading: Inter-Bold, sans-serif;
 }

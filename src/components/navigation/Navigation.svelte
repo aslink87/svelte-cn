@@ -72,9 +72,9 @@
         </a>
       </div>
       <div class="app-bar-slot-default invisible flex items-center space-x-4 lg:visible">
-        <a class="branding mx-auto flex items-center gap-2 text-2xl font-bold" href="/">
-          <h1 class="text-primary-600">Christian</h1>
-          <h1 class="text-tertiary-600">Neighbors</h1>
+        <a class="branding mx-auto flex items-center gap-2 text-2xl" href="/">
+          <h1 class="h1-primary text-primary-600">Christian</h1>
+          <h1 class="h1-primary text-surface-500">Neighbors</h1>
         </a>
       </div>
       <div class="app-bar-slot-trail flex flex-none items-center space-x-4">
