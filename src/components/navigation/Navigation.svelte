@@ -32,7 +32,7 @@
   }
 </script>
 
-<header id="nav-header" class="flex-none">
+<header id="nav-header" class="fixed w-full flex-none">
   <div class="app-bar bg-surface-100-800-token flex h-16 flex-col space-y-4 px-4 shadow-2xl">
     <div class="app-bar-row-main my-auto grid grid-cols-[auto_1fr_auto] items-center gap-4">
       <div class="app-bar-slot-lead flex items-center space-x-4">

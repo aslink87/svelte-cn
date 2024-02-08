@@ -39,9 +39,7 @@
       <Navigation on:toggle={openDrawer} />
     {/if}
   </svelte:fragment>
-  <main
-    class="main m-0 box-border w-full bg-primary-800 px-2 pt-2 text-lg text-white md:px-4 lg:px-8"
-  >
+  <main class="main m-0 box-border min-h-full bg-primary-800 px-2 pt-16 text-lg text-white md:px-4">
     <slot />
     {#if $page.url.pathname !== '/admin'}
       <Signup></Signup>
