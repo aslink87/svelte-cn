@@ -47,6 +47,11 @@
       <Signup></Signup>
     {/if}
   </main>
+  <svelte:fragment slot="footer">
+    {#if $page.url.pathname !== '/admin'}
+      <Footer></Footer>
+    {/if}
+  </svelte:fragment>
 </AppShell>
 <!-- <main class="main" data-testid="main"> -->
 <!--   <slot /> -->
@@ -55,9 +60,6 @@
 <!--   {/if} -->
 <!--   <div class="ctct-form" data-form-id="04419863-6320-44a0-8a5c-2bd489ba627b"></div> -->
 <!-- </main> -->
-{#if $page.url.pathname !== '/admin'}
-  <Footer></Footer>
-{/if}
 
 <!-- <style lang="scss"> -->
 <!--   main { -->
