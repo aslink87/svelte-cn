@@ -4,10 +4,10 @@
   export let data: HeroType;
 </script>
 
-<section class="hero center" data-testid="hero">
-  <h1>Latest News</h1>
-  <h2>{data.title}</h2>
-  <p>{data.content}</p>
+<section class="hero center flex flex-col flex-wrap gap-8 pt-8" data-testid="hero">
+  <h1 class="h1-primary">Latest News</h1>
+  <h2 class="h2-primary">{data.title}</h2>
+  <p class="whitespace-pre-wrap">{data.content}</p>
   {#if data?.link}
     <a href={data.link}>{data.link.split('.').slice(1).join('.')}</a>
   {/if}
@@ -15,48 +15,18 @@
     <a
       href={`${import.meta.env.VITE_PUBLIC_URL}${data.doc}`}
       data-sveltekit-preload-data
-      target="_blank">Click Here</a
+      target="_blank"
+      class="variant-glass btn">Click Here</a
     >
   {/if}
   {#if data?.image}
-    <img src={data.image} alt="Christian Neighbors News" />
+    <img
+      class="hidden max-h-[300px] max-w-[800px] rounded object-scale-down md:flex"
+      src={data.image}
+      alt="Christian Neighbors News"
+    />
   {/if}
   {#if data?.video}
     <a href={data.video}>Video Link</a>
   {/if}
 </section>
-
-<!-- <style lang="scss"> -->
-<!--   section { -->
-<!--     @include center; -->
-<!--     padding: 2rem 1rem; -->
-<!--     display: flex; -->
-<!--     flex-wrap: wrap; -->
-<!--     flex-flow: column; -->
-<!--     gap: 2rem; -->
-<!---->
-<!--     h1 { -->
-<!--       @include h1-primary; -->
-<!--     } -->
-<!---->
-<!--     h2 { -->
-<!--       @include h2-primary; -->
-<!--     } -->
-<!---->
-<!--     p { -->
-<!--       @include p; -->
-<!--       white-space: pre-wrap; -->
-<!--     } -->
-<!---->
-<!--     a { -->
-<!--       @include a; -->
-<!--     } -->
-<!---->
-<!--     img { -->
-<!--       max-height: 300px; -->
-<!--       max-width: 800px; -->
-<!--       object-fit: scale-down; -->
-<!--       border-radius: 5px; -->
-<!--     } -->
-<!--   } -->
-<!-- </style> -->
