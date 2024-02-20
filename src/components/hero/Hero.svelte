@@ -7,7 +7,7 @@
 <section class="hero center flex flex-col flex-wrap gap-8 pt-8" data-testid="hero">
   <h1 class="h1-primary">Latest News</h1>
   <h2 class="h2-primary">{data.title}</h2>
-  <p class="whitespace-pre-wrap">{data.content}</p>
+  <p class="p-primary whitespace-pre-wrap">{data.content}</p>
   {#if data?.link}
     <a href={data.link}>{data.link.split('.').slice(1).join('.')}</a>
   {/if}

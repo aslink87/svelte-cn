@@ -115,7 +115,7 @@
           />
           <div class="card-right__content text-center">
             <h2 class="h2-primary mt-6">{card.subheading}</h2>
-            <p class="my-6">{card.content}</p>
+            <p class="p-primary my-6">{card.content}</p>
             <a href={card.link} class="variant-glass btn">{card.subheading}</a>
           </div>
         </div>

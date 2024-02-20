@@ -60,7 +60,7 @@ export async function load() {
       { title: 'Plainwell School Rep', name: 'Matt Montange' },
       { title: 'Otsego School Rep', name: 'Jeff Hasse' },
       { title: 'Business Support', name: 'Karen Darby' },
-      { title: 'Business Support', name: 'Aaron Mithcell' },
+      { title: 'Business Support', name: 'Aaron Mitchell' },
       { title: 'Executive Director', name: 'Terri Shaler' },
     ],
     resourceDevelopment: [

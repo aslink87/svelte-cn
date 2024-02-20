@@ -49,15 +49,15 @@
   {#each cards as card}
     <div class="card-wrapper mx-0 my-8 flex h-fit flex-col items-center justify-between">
       <div
-        class="card w-[80%] max-w-[75rem] rounded-[30px] bg-white text-left shadow-lg shadow-primary-800 lg:h-[400px]"
+        class="card max-w-[75rem] text-left shadow-primary-800 sm:w-[80%] sm:rounded-[30px] sm:bg-white sm:shadow-lg lg:h-[400px]"
       >
         <div
-          class="card-content relative flex h-fit w-full flex-wrap rounded-[30px] bg-white text-center lg:h-full lg:flex-nowrap"
+          class="card-content relative flex h-fit w-full flex-wrap rounded-[30px] text-center sm:bg-white lg:h-full lg:flex-nowrap"
         >
           <div
-            class="content-left flex w-full flex-col rounded-t-3xl bg-surface-500 py-8 lg:min-w-[400px] lg:max-w-[25rem] lg:rounded-s-3xl lg:rounded-tr-none"
+            class="content-left flex w-full flex-col rounded-t-3xl py-8 sm:bg-surface-500 lg:min-w-[400px] lg:max-w-[25rem] lg:rounded-s-3xl lg:rounded-tr-none"
           >
-            <h2 class="h2-primary">{card.heading}</h2>
+            <h2 class="h2-primary text-primary-500 sm:text-white">{card.heading}</h2>
             <img
               class="mx-4 my-auto max-h-[250px] rounded-lg object-scale-down sm:max-h-[200px]"
               src={card.img}
@@ -66,7 +66,7 @@
           </div>
           <div class="content-right my-auto h-fit w-full pb-4 text-primary-500 lg:w-[90%]">
             <h2 class="h2-primary">{card.subheading}</h2>
-            <p class="m-4">{card.content}</p>
+            <p class="p-primary m-4">{card.content}</p>
             <a class="variant-filled-primary btn" href={card.link}>{card.heading}</a>
           </div>
         </div>
