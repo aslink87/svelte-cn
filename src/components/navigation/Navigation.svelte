@@ -25,6 +25,7 @@
     }
 
     if (link === 'services') goto('/services');
+    if (link === 'donate') goto('/donate');
     if (dropdown) {
       if (dropdown.style.display === 'block') dropdown.style.display = 'none';
       else dropdown.style.display = 'block';
