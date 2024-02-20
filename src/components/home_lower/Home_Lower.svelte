@@ -46,8 +46,8 @@
 
     const firstCardButton = document.getElementById('4');
     if (firstCardButton) {
-      firstCardButton.style.color = `#6979c1`;
-      firstCardButton.style.marginLeft = '10px';
+      firstCardButton.style.color = `#5c7793`;
+      firstCardButton.style.fontWeight = '900';
     }
   });
 
@@ -60,7 +60,7 @@
     document.querySelectorAll('button').forEach((el) => {
       if (el?.classList.contains('selector')) {
         el.style.color = 'white';
-        el.style.marginLeft = '0px';
+        el.style.fontWeight = 'inherit';
       }
     });
 
@@ -72,199 +72,54 @@
     const button = document.getElementById(`${index + 4}`);
     if (button) {
       button.classList.add('active');
-      button.style.color = `#6979c1`;
-      if (button.classList.contains('selector')) button.style.marginLeft = '10px';
+      button.style.color = `#5c7793`;
+      button.style.fontWeight = '900';
     }
   }
 </script>
 
-<section class="home-lower" data-testid="home-lower">
-  <div class="card-wrapper">
-    <div class="card">
-      <ul class="card-left">
+<section class="home-lower component" data-testid="home-lower">
+  <div class="card-wrapper mx-auto w-[90%]">
+    <div class="card flex flex-col gap-8 bg-transparent xl:flex-row">
+      <ul
+        class="card-left xs:max-lg:center xl:justify-left mx-auto my-auto flex w-full flex-col justify-center gap-8 sm:flex-row xl:mx-0 xl:w-[18rem] xl:flex-col"
+      >
         <li>
-          <button class="selector" id="4" on:click={() => handleClick(0)}>How to Help</button>
+          <button class="selector h2-primary" id="4" on:click={() => handleClick(0)}
+            >How to Help</button
+          >
         </li>
         <li>
-          <button class="selector" id="5" on:click={() => handleClick(1)}>Testimonies</button>
+          <button class="selector h2-primary" id="5" on:click={() => handleClick(1)}
+            >Testimonies</button
+          >
         </li>
-        <li><button class="selector" id="6" on:click={() => handleClick(2)}>Contact Us</button></li>
-        <li><button class="selector" id="7" on:click={() => handleClick(3)}>Events</button></li>
+        <li>
+          <button class="selector h2-primary" id="6" on:click={() => handleClick(2)}
+            >Contact Us</button
+          >
+        </li>
+        <li>
+          <button class="selector h2-primary" id="7" on:click={() => handleClick(3)}>Events</button>
+        </li>
       </ul>
       {#each cards as card, index}
-        <div class="card-right" id={`${index}`}>
-          <img src={card.img} alt={card.alt} />
-          <div class="card-right__content">
-            <h2>{card.subheading}</h2>
-            <p>{card.content}</p>
-            <a href={card.link}>{card.subheading}</a>
+        <div
+          class="card-right hidden flex-col items-center px-4 py-0 text-left xl:w-[80%] xl:border-l-2 2xl:flex-row 2xl:items-start"
+          id={`${index}`}
+        >
+          <img
+            src={card.img}
+            alt={card.alt}
+            class="h-[200px] max-w-[600px] object-contain sm:h-[400px] sm:object-cover xl:mr-8"
+          />
+          <div class="card-right__content text-center">
+            <h2 class="h2-primary mt-6">{card.subheading}</h2>
+            <p class="my-6">{card.content}</p>
+            <a href={card.link} class="variant-glass btn">{card.subheading}</a>
           </div>
         </div>
       {/each}
     </div>
   </div>
 </section>
-
-<!-- <style lang="scss"> -->
-<!--   section { -->
-<!--     @include center; -->
-<!--     padding: 5rem 0; -->
-<!---->
-<!--     .card-wrapper { -->
-<!--       width: 90%; -->
-<!--       margin: auto; -->
-<!--       .card { -->
-<!--         display: flex; -->
-<!--         flex-flow: row; -->
-<!--         gap: 2rem; -->
-<!---->
-<!--         @include xs { -->
-<!--           flex-flow: column; -->
-<!--         } -->
-<!--         @include sm { -->
-<!--           flex-flow: column; -->
-<!--         } -->
-<!--         @include md { -->
-<!--           flex-flow: column; -->
-<!--         } -->
-<!---->
-<!--         .card-left { -->
-<!--           width: 12rem; -->
-<!--           margin: auto 0; -->
-<!--           text-align: left; -->
-<!--           display: flex; -->
-<!--           flex-flow: column; -->
-<!--           gap: 2rem; -->
-<!--           border-right: 2px solid $white; -->
-<!--           padding-left: 0; -->
-<!---->
-<!--           @include xs { -->
-<!--             @include center; -->
-<!--             flex-flow: column; -->
-<!--             gap: 1rem; -->
-<!--             width: 100%; -->
-<!--             border: none; -->
-<!--             margin: auto; -->
-<!--             border: none; -->
-<!--           } -->
-<!--           @include sm { -->
-<!--             @include center; -->
-<!--             flex-flow: row; -->
-<!--             width: 100%; -->
-<!--             border: none; -->
-<!--             margin: auto; -->
-<!--           } -->
-<!--           @include md { -->
-<!--             @include center; -->
-<!--             flex-flow: row; -->
-<!--             width: 100%; -->
-<!--             border: none; -->
-<!--             margin: auto; -->
-<!--           } -->
-<!--           @include lg { -->
-<!--             padding: 0 1rem; -->
-<!--             li { -->
-<!--               margin-left: -20px; -->
-<!--             } -->
-<!--           } -->
-<!--           @include xl { -->
-<!--             padding: 0 1rem; -->
-<!--             width: 18rem; -->
-<!--             li { -->
-<!--               margin-left: -20px; -->
-<!--             } -->
-<!--           } -->
-<!---->
-<!--           li { -->
-<!--             list-style-type: none; -->
-<!---->
-<!--             button { -->
-<!--               @include h2-primary; -->
-<!--               background: none; -->
-<!--               border: none; -->
-<!--               cursor: pointer; -->
-<!--               color: $white; -->
-<!--             } -->
-<!--           } -->
-<!--         } -->
-<!---->
-<!--         .card-right { -->
-<!--           padding: 0 1rem; -->
-<!--           text-align: left; -->
-<!--           display: none; -->
-<!---->
-<!--           @include xs { -->
-<!--             flex-flow: column; -->
-<!--           } -->
-<!--           @include sm { -->
-<!--             flex-flow: column; -->
-<!--           } -->
-<!--           @include md { -->
-<!--             flex-flow: column; -->
-<!--             @include center; -->
-<!--           } -->
-<!--           @include lg { -->
-<!--             flex-flow: column; -->
-<!--           } -->
-<!---->
-<!--           img { -->
-<!--             height: 400px; -->
-<!--             max-width: 700px; -->
-<!--             object-fit: cover; -->
-<!--             margin-right: 1rem; -->
-<!---->
-<!--             @include xs { -->
-<!--               margin-right: 0; -->
-<!--               height: 200px; -->
-<!--               object-fit: contain; -->
-<!--             } -->
-<!--             @include sm { -->
-<!--               margin-right: 0; -->
-<!--             } -->
-<!--             @include md { -->
-<!--               margin-right: 0; -->
-<!--             } -->
-<!--           } -->
-<!---->
-<!--           .card-right__content { -->
-<!--             padding: 0 1rem; -->
-<!--             max-width: 50em; -->
-<!---->
-<!--             @include xs { -->
-<!--               text-align: center; -->
-<!--               a { -->
-<!--                 margin: 1rem auto; -->
-<!--               } -->
-<!--             } -->
-<!--             @include sm { -->
-<!--               text-align: center; -->
-<!--               a { -->
-<!--                 margin: 1rem auto; -->
-<!--               } -->
-<!--             } -->
-<!--             @include md { -->
-<!--               a { -->
-<!--                 margin: 1rem auto; -->
-<!--               } -->
-<!--             } -->
-<!---->
-<!--             a { -->
-<!--               @include btn-primary; -->
-<!--               width: 100px; -->
-<!--             } -->
-<!--           } -->
-<!--         } -->
-<!--       } -->
-<!---->
-<!--       @include xs { -->
-<!--         width: 100%; -->
-<!--       } -->
-<!--       @include sm { -->
-<!--         width: 100%; -->
-<!--       } -->
-<!--       @include md { -->
-<!--         width: 90%; -->
-<!--       } -->
-<!--     } -->
-<!--   } -->
-<!-- </style> -->

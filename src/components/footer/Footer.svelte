@@ -8,10 +8,10 @@
     class="svg flex aspect-[2100/300] flex-col justify-end max-2xl:bg-white 2xl:bg-[url('/images/wavesHand.png')] 2xl:bg-cover 2xl:bg-center"
   >
     <div
-      class="footer-wrapper mx-8 flex h-fit w-[90%] justify-normal text-primary-500 max-sm:flex-wrap md:mt-8"
+      class="footer-wrapper flex h-fit w-[90%] justify-normal text-primary-500 max-sm:flex-wrap sm:mx-8 md:mt-8"
     >
       <div class="left-container m-8 mx-auto flex flex-col flex-wrap 2xl:justify-end">
-        <div class="icon-wrapper mb-4 flex gap-4">
+        <div class="icon-wrapper mb-4 flex justify-center gap-4">
           <a
             href="https://www.facebook.com/ChristianNeighborsPlainwell/"
             target="_blank"
