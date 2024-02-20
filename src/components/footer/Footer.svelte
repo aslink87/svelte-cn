@@ -10,6 +10,7 @@
     <div
       class="footer-wrapper flex h-fit w-[90%] justify-normal text-primary-500 max-sm:flex-wrap sm:mx-8 md:mt-8"
     >
+      <div class="spacer 2xl:w-5/12" />
       <div class="left-container m-8 mx-auto flex flex-col flex-wrap 2xl:justify-end">
         <div class="icon-wrapper mb-4 flex justify-center gap-4">
           <a
@@ -45,7 +46,6 @@
         </div>
         <p class="text-sm">Christian Neighbors, ©2024</p>
       </div>
-      <div class="spacer 2xl:w-2/5" />
       <div
         class="right-container m-8 mx-auto gap-8 max-md:text-xs sm:flex-wrap md:flex md:flex-row"
       >
