@@ -48,7 +48,7 @@
       img: '/images/path.jpg',
       alt: 'PATH Walk',
       content:
-        'Our Soup Suppers are generally held between September through May. They are a fundraising event for Christian Neighbors hosted by our wonderful church partners to raise funds that go directly to our food pantry to help fight hunger within our community. Come enjoy a wonderful meal to help support a great cause! More information can be found on our calendar, in the attached flyer, and on our social media.',
+        'Our annual PATH Walk is generally held on the first Sunday in October. Walk rotates each year between Plainwell and Otsego. In addition, participants may choose a virtual walk. We walk to bring awareness to hunger issues and to raise funds to prevent them. Stay tuned to our calendar and social media.',
       link: '',
       label: '',
     },
@@ -64,7 +64,7 @@
 
     const firstCardButton = document.getElementById('4');
     if (firstCardButton) {
-      firstCardButton.style.color = `#6979c1`;
+      firstCardButton.style.color = `#5c7793`;
       firstCardButton.style.fontWeight = '900';
     }
   });
@@ -90,7 +90,7 @@
     const button = document.getElementById(`${index + 4}`);
     if (button) {
       button.classList.add('active');
-      button.style.color = `#6979c1`;
+      button.style.color = `#5c7793`;
       button.style.fontWeight = '900';
     }
   }
@@ -119,9 +119,13 @@
       </div>
     {/if}
   </div>
+</section>
+
+<section class="calendar-items center component bg-surface-500/60" data-testid="calendar-card">
   <Events />
 </section>
-<section class="calendar-card center component bg-surface-500/60" data-testid="calendar-card">
+
+<section class="calendar-card center component" data-testid="calendar-card">
   <div class="card-wrapper mx-auto w-[90%]">
     <div class="card flex flex-col gap-8 bg-inherit">
       <ul

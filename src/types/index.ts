@@ -76,6 +76,7 @@ export type AdminPageType = {
 };
 
 export type CalendarEvent = {
+  etag: string;
   description: string;
   end: {
     dateTime: string;
@@ -85,6 +86,51 @@ export type CalendarEvent = {
     dateTime: string;
   };
   summary: string;
+};
+
+export type CalendarTheme = {
+  allDay: string;
+  active: string;
+  bgEvent: string;
+  bgEvents: string;
+  body: string;
+  button: string;
+  buttonGroup: string;
+  calendar: string;
+  compact: string;
+  content: string;
+  day: string;
+  dayHead: string;
+  days: string;
+  event: string;
+  eventBody: string;
+  eventTime: string;
+  eventTitle: string;
+  events: string;
+  extra: string;
+  handle: string;
+  header: string;
+  hiddenScroll: string;
+  highlight: string;
+  icon: string;
+  line: string;
+  lines: string;
+  nowIndicator: string;
+  otherMonth: string;
+  sidebar: string;
+  sidebarTitle: string;
+  today: string;
+  time: string;
+  title: string;
+  toolbar: string;
+  view: string;
+};
+
+export type CalendarEventSource = {
+  id: string;
+  start: string;
+  end: string;
+  title: { html: string };
 };
 
 export type GapiType = {

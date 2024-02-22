@@ -33,6 +33,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
+    "@event-calendar/core": "^2.6.1",
+    "@event-calendar/day-grid": "^2.6.1",
+    "@event-calendar/list": "^2.6.1",
     "@playwright/test": "^1.40.1",
     "@prisma/client": "^5.8.0",
     "@skeletonlabs/skeleton": "^2.7.1",

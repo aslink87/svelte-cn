@@ -66,7 +66,7 @@
           <p><strong>Fri:</strong> Closed</p>
           {#if $page.data.session?.user}
             <button class="text-xs underline" on:click={() => signOut()}>Logout</button>
-            <a href="/admin" class="underline">Admin Page</a>
+            <a href="/admin" class="text-xs underline">Admin Page</a>
             <p class="text-xs">Thanks for logging in {$page.data.session.user.name}</p>
           {:else}
             <button class="text-xs" on:click={() => signIn('google')}>Login</button>
