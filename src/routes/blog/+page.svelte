@@ -16,76 +16,24 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
-<section class="blog-section" data-testid="blog">
-  <h1>Here's What We're Up To</h1>
-  <ul>
+<section class="blog-section center component pt-8" data-testid="blog">
+  <h1 class="h1-primary">Here's What We're Up To</h1>
+  <ul class="mt-8">
     {#each data.blogs as blog}
-      <article class="blog">
+      <article class="blog center px-4 py-8 odd:rounded-lg odd:bg-surface-500/60">
         <header class="blog-header">
-          <p class="blog-meta">
+          <p class="blog-meta text-sm capitalize">
             Posted by {blog.author} on {blog.date}
           </p>
-          <h2>{blog.title}</h2>
+          <h2 class="h2-primary my-4 capitalize">{blog.title}</h2>
         </header>
-        <img src={blog.img} alt={blog.caption} />
-        <p>{blog.content}</p>
+        <img
+          class="mx-auto my-4 w-[90%] max-w-[700px] rounded object-scale-down"
+          src={blog.img}
+          alt={blog.caption}
+        />
+        <p class="p-primary whitespace-pre-wrap">{blog.content}</p>
       </article>
     {/each}
   </ul>
 </section>
-
-<!-- <style lang="scss"> -->
-<!--   section { -->
-<!--     @include center; -->
-<!--     min-height: 100vh; -->
-<!--     padding: 2rem 1rem; -->
-<!---->
-<!--     h1 { -->
-<!--       @include h1-primary; -->
-<!--     } -->
-<!---->
-<!--     ul { -->
-<!--       padding-left: 0; -->
-<!--     } -->
-<!---->
-<!--     .blog-meta { -->
-<!--       text-transform: capitalize; -->
-<!--       font-size: 0.8rem; -->
-<!--     } -->
-<!---->
-<!--     .blog { -->
-<!--       @include center; -->
-<!--       padding: 1rem 0 1rem 0; -->
-<!---->
-<!--       &:nth-child(1) { -->
-<!--         background-color: rgba($color: $gray, $alpha: 0.6); -->
-<!--         border-radius: 5px; -->
-<!--       } -->
-<!---->
-<!--       h2 { -->
-<!--         @include h2-primary; -->
-<!--         text-transform: capitalize; -->
-<!--         margin: 1rem auto; -->
-<!--       } -->
-<!---->
-<!--       p { -->
-<!--         @include p; -->
-<!--         white-space: pre-wrap; -->
-<!--       } -->
-<!---->
-<!--       img { -->
-<!--         margin: 1rem auto; -->
-<!--         max-height: 500px; -->
-<!--         object-fit: scale-down; -->
-<!--         border-radius: 10px; -->
-<!---->
-<!--         @include xs { -->
-<!--           width: 90%; -->
-<!--         } -->
-<!--         @include sm { -->
-<!--           height: 400px; -->
-<!--         } -->
-<!--       } -->
-<!--     } -->
-<!--   } -->
-<!-- </style> -->
