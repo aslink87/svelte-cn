@@ -16,19 +16,25 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
-<section class="newsletter" data-testid="newsletter">
-  <h1>What's Happening</h1>
+<section class="newsletter center component pt-8" data-testid="newsletter">
+  <h1 class="h1-primary">What's Happening</h1>
   {#if enews}
-    <div class="e-news">
-      <h2>{enews.title}</h2>
-      <object title="E-News Preview" type="application/pdf" data={enews.doc} />
+    <div class="e-news mx-auto my-8 w-full max-w-[60em] sm:w-[90%]">
+      <h2 class="h2-primary mt-8 capitalize">{enews.title}</h2>
+      <object
+        class="mx-auto mt-8 h-[25em] w-full sm:h-[55em] sm:w-[80%]"
+        title="E-News Preview"
+        type="application/pdf"
+        data={enews.doc}
+      />
     </div>
   {/if}
-  <div class="newsletter-links">
-    <h2>Recent Newsletters</h2>
+  <div class="newsletter-links mt-4 flex flex-col flex-wrap border-t-2 border-t-white pt-4">
+    <h2 class="h2-primary">Recent Newsletters</h2>
     {#if firstNewsletter}
       <a
         href={`${import.meta.env.VITE_PUBLIC_URL}${firstNewsletter.doc}`}
+        class="my-4 underline"
         data-sveltekit-preload-data
         target="_blank">{firstNewsletter.title}</a
       >
@@ -36,56 +42,10 @@
     {#if secondNewsletter}
       <a
         href={`${import.meta.env.VITE_PUBLIC_URL}${secondNewsletter.doc}`}
+        class="my-4 underline"
         data-sveltekit-preload-data
         target="_blank">{secondNewsletter.title}</a
       >
     {/if}
   </div>
 </section>
-
-<!-- <style lang="scss"> -->
-<!--   .newsletter { -->
-<!--     @include center; -->
-<!--     padding: 2rem 1rem; -->
-<!---->
-<!--     h1 { -->
-<!--       @include h1-primary; -->
-<!--     } -->
-<!---->
-<!--     h2 { -->
-<!--       @include h2-primary; -->
-<!--       text-transform: capitalize; -->
-<!--       margin-top: 2rem; -->
-<!--     } -->
-<!---->
-<!--     .e-news { -->
-<!--       object { -->
-<!--         width: 90%; -->
-<!--         max-width: 60em; -->
-<!--         margin: 2rem auto; -->
-<!--         height: 50em; -->
-<!---->
-<!--         @include xs { -->
-<!--           height: 25em; -->
-<!--         } -->
-<!---->
-<!--         @include sm { -->
-<!--           height: 40em; -->
-<!--         } -->
-<!--       } -->
-<!--     } -->
-<!---->
-<!--     .newsletter-links { -->
-<!--       display: flex; -->
-<!--       flex-wrap: wrap; -->
-<!--       flex-direction: column; -->
-<!--       border-top: 2px solid $white; -->
-<!---->
-<!--       a { -->
-<!--         text-transform: capitalize; -->
-<!--         color: $white; -->
-<!--         margin-top: 1rem; -->
-<!--       } -->
-<!--     } -->
-<!--   } -->
-<!-- </style> -->

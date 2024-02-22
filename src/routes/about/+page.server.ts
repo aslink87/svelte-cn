@@ -128,6 +128,12 @@ export async function load() {
       content: 'Debbie maintains the food pantry',
     },
     {
+      img: '/images/staff/ralph.jpg',
+      name: 'Ralph Woodstock',
+      title: 'Building and Grounds Trustee',
+      content: 'Ralph maintains and improves CN buildings and grounds',
+    },
+    {
       img: '/images/staff/adam.png',
       name: 'Adam Slinkman',
       title: 'IT Manager',
