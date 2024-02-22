@@ -65,6 +65,7 @@
     const firstCardButton = document.getElementById('4');
     if (firstCardButton) {
       firstCardButton.style.color = `#6979c1`;
+      firstCardButton.style.fontWeight = '900';
     }
   });
 
@@ -77,6 +78,7 @@
     document.querySelectorAll('button').forEach((el) => {
       if (el?.classList.contains('selector')) {
         el.style.color = 'white';
+        el.style.fontWeight = 'inherit';
       }
     });
 
@@ -89,47 +91,73 @@
     if (button) {
       button.classList.add('active');
       button.style.color = `#6979c1`;
+      button.style.fontWeight = '900';
     }
   }
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
 
-<section class="calendar" data-testid="calendar">
-  <h1>Upcoming Events</h1>
-  <div class="dynamic">
+<section class="calendar center component pt-8" data-testid="calendar">
+  <h1 class="h1-primary">Upcoming Events</h1>
+  <div class="dynamic component">
     {#if data.calendar}
       {#if data.calendar.img}
-        <img src={data.calendar.img} alt={data.calendar.alt} />
+        <img
+          class="mx-auto my-8 hidden h-[200px] max-w-[700px] rounded object-contain sm:flex md:h-[400px] md:object-cover"
+          src={data.calendar.img}
+          alt={data.calendar.alt}
+        />
       {/if}
-      <div class="card-right__content">
-        <p>{data.calendar.content}</p>
+      <div class="card-right__content flex flex-col flex-wrap py-8">
+        <p class="p-primary whitespace-pre-wrap">{data.calendar.content}</p>
         {#if data.calendar.link}
-          <a href={data.calendar.link}>{data.calendar.link.split('.').slice(1).join('.')}</a>
+          <a class="mt-8 underline" href={data.calendar.link}
+            >{data.calendar.link.split('.').slice(1).join('.')}</a
+          >
         {/if}
       </div>
     {/if}
   </div>
   <Events />
-  <div class="card-wrapper">
-    <div class="card">
-      <ul class="card-nav">
+</section>
+<section class="calendar-card center component bg-surface-500/60" data-testid="calendar-card">
+  <div class="card-wrapper mx-auto w-[90%]">
+    <div class="card flex flex-col gap-8 bg-inherit">
+      <ul
+        class="card-nav m-auto flex w-[90%] flex-row flex-wrap justify-center gap-4 border-b-2 border-b-white pb-8 text-center"
+      >
         <li>
-          <button class="selector" id="4" on:click={() => handleClick(0)}
+          <button class="selector h2-primary" id="4" on:click={() => handleClick(0)}
             >Annual Reflection of Hope Auction</button
           >
         </li>
         <li />
         <li>
-          <button class="selector" id="5" on:click={() => handleClick(1)}>Soup Suppers</button>
+          <button class="selector h2-primary" id="5" on:click={() => handleClick(1)}
+            >Soup Suppers</button
+          >
         </li>
-        <li><button class="selector" id="6" on:click={() => handleClick(2)}>PATH Walk</button></li>
+        <li>
+          <button class="selector h2-primary" id="6" on:click={() => handleClick(2)}
+            >PATH Walk</button
+          >
+        </li>
       </ul>
       {#each cards as card, index}
-        <div class="card-body" id={`${index}`}>
-          <img src={card.img} alt={card.alt} />
-          <div class="card-right__content">
-            <p>{card.content}</p>
+        <div
+          class="card-body hidden flex-col justify-center gap-8 text-left sm:px-4 xl:flex-row"
+          id={`${index}`}
+        >
+          {#if card.img}
+            <img
+              class="mx-auto w-[90%] max-w-[700px] rounded-lg sm:w-[80%]"
+              src={card.img}
+              alt={card.alt}
+            />
+          {/if}
+          <div class="card-right__content max-w-[50em] text-center xl:text-left">
+            <p class="p-primary">{card.content}</p>
             {#if card.link}
               <a href={card.link}>{card.link.split('.').slice(1).join('.')}</a>
             {/if}
@@ -138,207 +166,16 @@
       {/each}
     </div>
   </div>
-  <div class="calendar-wrapper">
-    <iframe
-      src="https://calendar.google.com/calendar/embed?wkst=1&bgcolor=%23f5f5f5&ctz=America%2FDetroit&showTabs=1&showNav=1&showTz=0&showCalendars=1&showPrint=0&showDate=1&showTitle=0&src=volunteer%40christianneighbors.org&color=%236979c1"
-      style="border-width:0"
-      frameborder="0"
-      width="100%"
-      height="100%"
-      scrolling="no"
-      title="Education Resource Center Calendar"
-      class="calendar-iframe"
-    />
-  </div>
+  <!-- <div class="calendar-wrapper"> -->
+  <!--   <iframe -->
+  <!--     src="https://calendar.google.com/calendar/embed?wkst=1&bgcolor=%23f5f5f5&ctz=America%2FDetroit&showTabs=1&showNav=1&showTz=0&showCalendars=1&showPrint=0&showDate=1&showTitle=0&src=volunteer%40christianneighbors.org&color=%236979c1" -->
+  <!--     style="border-width:0" -->
+  <!--     frameborder="0" -->
+  <!--     width="100%" -->
+  <!--     height="100%" -->
+  <!--     scrolling="no" -->
+  <!--     title="Education Resource Center Calendar" -->
+  <!--     class="calendar-iframe" -->
+  <!--   /> -->
+  <!-- </div> -->
 </section>
-
-<!-- <style lang="scss"> -->
-<!--   section { -->
-<!--     @include center; -->
-<!--     padding: 5rem 0; -->
-<!--     min-height: 100vh; -->
-<!---->
-<!--     h1 { -->
-<!--       @include h1-primary; -->
-<!--       margin-bottom: 2rem; -->
-<!--     } -->
-<!---->
-<!--     img { -->
-<!--       height: 400px; -->
-<!--       max-width: 700px; -->
-<!--       object-fit: cover; -->
-<!--       margin-right: 1rem; -->
-<!--       border-radius: 5px; -->
-<!---->
-<!--       @include xs { -->
-<!--         display: none; -->
-<!--       } -->
-<!--       @include sm { -->
-<!--         margin-right: 0; -->
-<!--         height: 200px; -->
-<!--         object-fit: contain; -->
-<!--       } -->
-<!--       @include md { -->
-<!--         margin-right: 0; -->
-<!--       } -->
-<!--     } -->
-<!---->
-<!--     .dynamic { -->
-<!--       @include component; -->
-<!--       background-color: rgba($color: $gray, $alpha: 0.6); -->
-<!--       display: flex; -->
-<!--       flex-flow: column; -->
-<!--       flex-wrap: wrap; -->
-<!--       margin-bottom: 3rem; -->
-<!---->
-<!--       a { -->
-<!--         @include a; -->
-<!--       } -->
-<!--     } -->
-<!---->
-<!--     .card-wrapper { -->
-<!--       width: 90%; -->
-<!--       margin: auto; -->
-<!--       .card { -->
-<!--         display: flex; -->
-<!--         flex-flow: column; -->
-<!--         gap: 2rem; -->
-<!---->
-<!--         @include xs { -->
-<!--           flex-flow: column; -->
-<!--         } -->
-<!--         @include sm { -->
-<!--           flex-flow: column; -->
-<!--         } -->
-<!--         @include md { -->
-<!--           flex-flow: column; -->
-<!--         } -->
-<!---->
-<!--         .card-nav { -->
-<!--           width: 90%; -->
-<!--           margin: auto; -->
-<!--           text-align: center; -->
-<!--           display: flex; -->
-<!--           flex-flow: row; -->
-<!--           flex-wrap: wrap; -->
-<!--           justify-content: center; -->
-<!--           gap: 2rem; -->
-<!--           padding-left: 0; -->
-<!--           padding-bottom: 2rem; -->
-<!--           border-bottom: $white 2px solid; -->
-<!---->
-<!--           li { -->
-<!--             list-style-type: none; -->
-<!---->
-<!--             button { -->
-<!--               @include h2-primary; -->
-<!--               background: none; -->
-<!--               border: none; -->
-<!--               cursor: pointer; -->
-<!--               color: $white; -->
-<!--             } -->
-<!--           } -->
-<!---->
-<!--           @include xs { -->
-<!--             gap: 1rem; -->
-<!--           } -->
-<!--         } -->
-<!---->
-<!--         .card-body { -->
-<!--           padding: 0 1rem; -->
-<!--           text-align: left; -->
-<!--           display: none; -->
-<!--           flex-flow: column; -->
-<!--           justify-content: center; -->
-<!---->
-<!--           @include xs { -->
-<!--             flex-flow: column; -->
-<!--           } -->
-<!--           @include sm { -->
-<!--             flex-flow: column; -->
-<!--             @include center; -->
-<!--           } -->
-<!--           @include md { -->
-<!--             flex-flow: column; -->
-<!--             @include center; -->
-<!--           } -->
-<!--           @include lg { -->
-<!--             flex-flow: column; -->
-<!--             @include center; -->
-<!--           } -->
-<!--           @include xl { -->
-<!--             flex-flow: row; -->
-<!--           } -->
-<!---->
-<!--           .card-right__content { -->
-<!--             padding: 0 1rem; -->
-<!--             max-width: 50em; -->
-<!---->
-<!--             @include xs { -->
-<!--               text-align: center; -->
-<!--               a { -->
-<!--                 margin: 1rem auto; -->
-<!--               } -->
-<!--             } -->
-<!--             @include sm { -->
-<!--               text-align: center; -->
-<!--               a { -->
-<!--                 margin: 1rem auto; -->
-<!--               } -->
-<!--             } -->
-<!--             @include md { -->
-<!--               a { -->
-<!--                 margin: 1rem auto; -->
-<!--               } -->
-<!--             } -->
-<!---->
-<!--             a { -->
-<!--               @include btn-primary; -->
-<!--               width: 100px; -->
-<!--             } -->
-<!--           } -->
-<!--         } -->
-<!--       } -->
-<!---->
-<!--       @include xs { -->
-<!--         width: 100%; -->
-<!--       } -->
-<!--       @include sm { -->
-<!--         width: 100%; -->
-<!--       } -->
-<!--       @include md { -->
-<!--         width: 90%; -->
-<!--       } -->
-<!--     } -->
-<!---->
-<!--     .calendar-wrapper { -->
-<!--       @include center; -->
-<!---->
-<!--       @include xs { -->
-<!--         width: 800px; -->
-<!--         height: 600px; -->
-<!--         margin: auto; -->
-<!--       } -->
-<!--       @include sm { -->
-<!--         width: 800px; -->
-<!--         height: 600px; -->
-<!--         margin: auto; -->
-<!--       } -->
-<!--       @include md { -->
-<!--         width: 800px; -->
-<!--         height: 600px; -->
-<!--         margin: auto; -->
-<!--       } -->
-<!--       @include lg { -->
-<!--         width: 800px; -->
-<!--         height: 600px; -->
-<!--         margin: auto; -->
-<!--       } -->
-<!--       @include xl { -->
-<!--         width: 800px; -->
-<!--         height: 600px; -->
-<!--         margin: auto; -->
-<!--       } -->
-<!--     } -->
-<!--   } -->
-<!-- </style> -->
