@@ -4,15 +4,24 @@
   import type { HeroType } from '$/types';
   import { enhance } from '$app/forms';
 
+  export let heroData: HeroType;
+
   const fields = [
-    { text: 'Title', type: 'text', required: true, length: 5, value: 'title', data: '' },
+    {
+      text: 'Title',
+      type: 'text',
+      required: true,
+      length: 5,
+      value: 'title',
+      data: heroData.title ?? '',
+    },
     {
       text: 'Content - what will the body say',
       type: 'textarea',
       required: true,
       length: 5,
       value: 'content',
-      data: '',
+      data: heroData.content ?? '',
     },
     {
       text: 'Link - must start with "https://www."',
@@ -20,7 +29,7 @@
       required: false,
       length: 15,
       value: 'link',
-      data: '',
+      data: heroData.link ?? '',
     },
     {
       text: 'Image - jpg or png only',
@@ -30,7 +39,14 @@
       value: 'image',
       data: '',
     },
-    { text: 'Video link', type: 'text', required: false, length: 0, value: 'video', data: '' },
+    {
+      text: 'Video link',
+      type: 'text',
+      required: false,
+      length: 0,
+      value: 'video',
+      data: heroData.video ?? '',
+    },
     {
       text: 'PDF - will display as a link',
       type: 'file',
@@ -89,12 +105,14 @@
   }
 </script>
 
-<section class="admin-frontpage">
-  <h2>Homepage News Section</h2>
-  <p>Would you like to update the homepage news section found at the top of the page?</p>
-  <p>Required fields have a red border.</p>
-  <p>After editing click 'preview' to view your changes before submitting.</p>
-  <form method="POST" use:enhance>
+<section class="admin-frontpage center component">
+  <h2 class="h2-primary mb-4">Homepage News Section</h2>
+  <p class="p-primary">
+    Would you like to update the homepage news section found at the top of the page?
+  </p>
+  <p class="p-primary my-4">Required fields have a red border.</p>
+  <p class="p-primary">After editing click 'preview' to view your changes before submitting.</p>
+  <form class="center mt-8 flex flex-col" method="POST" use:enhance>
     {#each fields as field}
       <label for={field.value}>{field.text}</label>
       {#if field.type === 'textarea'}
@@ -102,16 +120,16 @@
           bind:value={field.data}
           name={field.value}
           minlength={field.length}
-          class="area"
+          class="area my-4 min-h-[200px] w-[600px] rounded-lg px-4 text-primary-600"
           required={field.required}
-          style={field.required ? 'border: 2px solid red' : ''}
+          style={field.required ? 'border: 1px solid red' : ''}
         />
       {:else if field.type === 'image'}
         <input
           bind:value={field.data}
           name={field.value}
           type="file"
-          class="file"
+          class="file my-4"
           accept="image/jpeg, image/png"
           required={field.required}
           style={field.required ? 'border: 2px solid red' : ''}
@@ -121,7 +139,7 @@
           bind:value={field.data}
           name={field.value}
           type="file"
-          class="file"
+          class="file my-4"
           accept="application/pdf"
           required={field.required}
           style={field.required ? 'border: 2px solid red' : ''}
@@ -132,15 +150,17 @@
           name={field.value}
           type="text"
           minlength={field.length}
-          class="text"
+          class="text my-4 w-[600px] rounded-lg px-4 text-primary-600"
           required={field.required}
           style={field.required ? 'border: 2px solid red' : ''}
         />
       {/if}
     {/each}
-    <button on:click|preventDefault={handlePreview}>Preview</button>
+    <button class="variant-filled-surface btn px-3 py-1" on:click|preventDefault={handlePreview}
+      >Preview</button
+    >
     {#if data.title}
-      <h2 class="preview">Preview</h2>
+      <h2 class="preview h2-primary mt-8">Preview</h2>
       <p>Does this look correct?</p>
       <p>Placholder images are used.</p>
       <div class="preview-wrapper">
@@ -148,57 +168,11 @@
       </div>
     {/if}
     {#if preview}
-      <button formaction="/admin?/hero" on:click={submitHandler}>Submit</button>
+      <button
+        class="variant-filled-surface btn mt-6 px-3 py-1"
+        formaction="/admin?/hero"
+        on:click={submitHandler}>Submit</button
+      >
     {/if}
   </form>
 </section>
-
-<!-- <style lang="scss"> -->
-<!--   section { -->
-<!--     @include component; -->
-<!--     background: none; -->
-<!---->
-<!--     .preview { -->
-<!--       @include h2-primary; -->
-<!--       border-top: 1px solid $gray; -->
-<!--       margin-top: 2rem; -->
-<!--       padding-top: 2rem; -->
-<!--     } -->
-<!---->
-<!--     .preview-wrapper { -->
-<!--       margin-top: 1rem; -->
-<!--       border: 1px solid $gray; -->
-<!--       border-radius: 5px; -->
-<!--     } -->
-<!---->
-<!--     h2 { -->
-<!--       @include h2-primary; -->
-<!--     } -->
-<!---->
-<!--     form { -->
-<!--       display: flex; -->
-<!--       flex-flow: column; -->
-<!--       width: 50%; -->
-<!--       margin: auto; -->
-<!---->
-<!--       textarea { -->
-<!--         min-height: 20rem; -->
-<!--       } -->
-<!---->
-<!--       input { -->
-<!--         height: 1.5rem; -->
-<!--       } -->
-<!---->
-<!--       label { -->
-<!--         margin-top: 1rem; -->
-<!--       } -->
-<!---->
-<!--       button { -->
-<!--         @include btn-primary; -->
-<!--         width: 10rem; -->
-<!--         margin: 1rem auto; -->
-<!--         background-color: rgba($color: $gray, $alpha: 0.5); -->
-<!--       } -->
-<!--     } -->
-<!--   } -->
-<!-- </style> -->

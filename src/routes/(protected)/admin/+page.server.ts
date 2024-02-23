@@ -19,10 +19,24 @@ export async function load() {
     'pantryneeds',
     'pantrycalendar',
   ];
+
+  let hero: HeroType = { title: 'Not found', content: 'Not found' };
+
+  const heroData = await prismaClient.hero.findUnique({
+    where: {
+      id: '9d5a8c19-6464-4763-b532-2817c4bb2033',
+    },
+  });
+
+  if (heroData) {
+    hero = heroData as HeroType;
+  }
+
   if (users) {
     return {
       users,
       links,
+      hero,
     };
   }
   // eslint-disable-next-line @typescript-eslint/no-throw-literal

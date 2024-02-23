@@ -73,6 +73,7 @@ export type AdminPageType = {
     settings: { approved: boolean };
   }[];
   links: string[];
+  hero: HeroType;
 };
 
 export type CalendarEvent = {

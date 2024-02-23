@@ -6,13 +6,13 @@
   import { signOut } from '@auth/sveltekit/client';
   import Users from '$/components/admin/Users.svelte';
   import Frontpage from '$/components/admin/Frontpage.svelte';
-  import type { AdminPageType } from '$/types';
   import Newsletters from '$/components/admin/Newsletters.svelte';
   import Calendar from '$/components/admin/Calendar.svelte';
   import Blog from '$/components/admin/Blog.svelte';
   import Supper from '$/components/admin/Supper.svelte';
   import Needs from '$/components/admin/Needs.svelte';
   import PantryCalendar from '$/components/admin/PantryCalendar.svelte';
+  import type { AdminPageType } from '$/types';
 
   seo.set({
     title: 'CN - Admin',
@@ -54,27 +54,35 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
-<section class="admin">
-  <nav>
+<section class="admin center min-h-full w-full pl-[10rem]">
+  <nav class="fixed left-0 top-0 h-full w-[10rem] bg-surface-500 py-8">
     <button on:click={() => signOut()}>
-      <p>Logout</p>
+      <p class="p-primary my-3 capitalize">Logout</p>
     </button>
-    <button><a href="/">To website...</a></button>
+    <button class="p-primary my-3 w-full capitalize"><a href="/">To website...</a></button>
     {#each data.links as link}
-      <button on:click={() => handleNavClick(link)}>
+      <button
+        class="p-primary variant-filled-primary btn my-3 w-[90%] p-2 capitalize"
+        on:click={() => handleNavClick(link)}
+      >
         {link}
       </button>
     {/each}
   </nav>
-  <div class="admin-body">
-    <h1>Administration Page</h1>
+</section>
+
+<section class="admin-wrapper ml-[10rem]">
+  <div class="admin-head center border-b-2 py-4">
+    <h1 class="h1-primary">Administration Page</h1>
+  </div>
+  <div class="admin-body h-screen">
     {#if $page.data.session?.user?.settings.manager && links.admins}
       <Users data={data.users} />
     {:else if !$page.data.session?.user?.settings.manager && links.admins}
       <p>You do not have access to this page</p>
     {/if}
     {#if links.frontpage}
-      <Frontpage />
+      <Frontpage heroData={data.hero} />
     {/if}
     {#if links.newsletters}
       <Newsletters />
@@ -96,46 +104,3 @@
     {/if}
   </div>
 </section>
-
-<!-- <style lang="scss"> -->
-<!--   section { -->
-<!--     @include center; -->
-<!--     min-height: 100vh; -->
-<!---->
-<!--     nav { -->
-<!--       position: fixed; -->
-<!--       width: 10rem; -->
-<!--       height: 100vh; -->
-<!--       z-index: 2; -->
-<!--       top: 0; -->
-<!--       background-color: rgba($color: $gray, $alpha: 0.6); -->
-<!--       padding: 2rem 0; -->
-<!---->
-<!--       button, -->
-<!--       a { -->
-<!--         @include p; -->
-<!--         background: none; -->
-<!--         border: none; -->
-<!--         text-transform: capitalize; -->
-<!--         font-size: 24px; -->
-<!--         color: $white; -->
-<!--         margin: 0.8rem 0; -->
-<!--         text-decoration: none; -->
-<!--         width: 100%; -->
-<!---->
-<!--         &:hover { -->
-<!--           color: $light-blue; -->
-<!--         } -->
-<!--       } -->
-<!--     } -->
-<!---->
-<!--     .admin-body { -->
-<!--       padding-left: 10rem; -->
-<!--       h1 { -->
-<!--         @include h1-primary; -->
-<!--         background-color: $white; -->
-<!--         color: $deep-blue; -->
-<!--       } -->
-<!--     } -->
-<!--   } -->
-<!-- </style> -->
