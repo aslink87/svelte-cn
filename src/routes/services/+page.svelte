@@ -18,103 +18,57 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
-<section class="pantry" id="pantry" data-testid="pantry">
-  <h1>Food Panty Assistance</h1>
+<section class="pantry center component pt-8" id="pantry" data-testid="pantry">
+  <h1 class="h1-primary mb-8">Food Panty Assistance</h1>
   <ul>
     {#each data.pantry as item}
       <li>
-        <h2>{item.title}</h2>
-        <p>{item.content}</p>
+        <h2 class="h2-primary mb-6">{item.title}</h2>
+        <p class="p-primary mb-8">{item.content}</p>
       </li>
     {/each}
   </ul>
 </section>
 
-<section class="financial" id="financial" data-testid="financial">
-  <h1>Financial Assistance</h1>
+<section
+  class="financial center component bg-surface-500/60"
+  id="financial"
+  data-testid="financial"
+>
+  <h1 class="h1-primary mb-8">Financial Assistance</h1>
   <ul>
     {#each data.financial as item}
       {#if item.title}
-        <h2 class="title">{item.title}</h2>
+        <h2 class="title h2-primary mb-6">{item.title}</h2>
       {/if}
       {#if item.subtitle}
-        <h2>{item.subtitle}</h2>
+        <h2 class="h2-primary mb-6">{item.subtitle}</h2>
       {/if}
       {#if item.list}
-        <ul>
+        <ul class="mb-6">
           {#each item.list as list}
-            <li>{list}</li>
+            <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">{list}</li>
           {/each}
         </ul>
       {/if}
       {#if item.content}
-        <p>{item.content}</p>
+        <p class="p-primary mb-8">{item.content}</p>
       {/if}
     {/each}
   </ul>
 </section>
 
-<section class="community" data-testid="community">
-  <h1>Community Assistance Programs</h1>
+<section class="community center component" data-testid="community">
+  <h1 class="h1-primary mb-8">Community Assistance Programs</h1>
   <ul>
-    <h2>{data.community.title}</h2>
+    <h2 class="h2-primary">{data.community.title}</h2>
     {#each data.community.list as item}
-      <li>
-        <a href={item.link} target="_blank" rel="noopener noreferrer">{item.caption}</a>
-        <p>{item.content}</p>
+      <li class="my-8">
+        <a class="underline" href={item.link} target="_blank" rel="noopener noreferrer"
+          >{item.caption}</a
+        >
+        <p class="p-primary">{item.content}</p>
       </li>
     {/each}
   </ul>
 </section>
-
-<!-- <style lang="scss"> -->
-<!--   section { -->
-<!--     @include center; -->
-<!--     padding: 2rem 1rem; -->
-<!---->
-<!--     h1 { -->
-<!--       @include h1-primary; -->
-<!--     } -->
-<!---->
-<!--     h2 { -->
-<!--       @include h2-primary; -->
-<!--       margin-top: 1rem; -->
-<!--     } -->
-<!---->
-<!--     ul { -->
-<!--       @include ul; -->
-<!--     } -->
-<!---->
-<!--     p { -->
-<!--       @include p; -->
-<!--     } -->
-<!--   } -->
-<!---->
-<!--   .financial { -->
-<!--     @include component; -->
-<!--     background-color: rgba($color: $gray, $alpha: 0.6); -->
-<!---->
-<!--     h2 { -->
-<!--       margin-top: 2rem; -->
-<!--     } -->
-<!---->
-<!--     li { -->
-<!--       text-align: left; -->
-<!--       list-style-type: disc; -->
-<!--       max-width: 50rem; -->
-<!--       margin: 0.7rem auto; -->
-<!--     } -->
-<!--   } -->
-<!---->
-<!--   .community { -->
-<!--     h2 { -->
-<!--       margin-bottom: 1rem; -->
-<!--     } -->
-<!--     li { -->
-<!--       margin-top: 1.5rem; -->
-<!--     } -->
-<!--     a { -->
-<!--       @include a; -->
-<!--     } -->
-<!--   } -->
-<!-- </style> -->
