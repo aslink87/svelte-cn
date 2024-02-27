@@ -2,11 +2,33 @@
 <html lang="en">
   <head>
     <link rel="icon" href="/images/handLogo.png" />
+    <link
+      rel="preload"
+      href="%sveltekit.assets%/fonts/Inter-Regular.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="%sveltekit.assets%/fonts/Inter-SemiBold.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="%sveltekit.assets%/fonts/Inter-Italic.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
     %sveltekit.head%
   </head>
-  <body data-sveltekit-preload-data="hover">
+  <body data-sveltekit-preload-data="hover" data-theme="custom-theme">
     <div style="display: contents">%sveltekit.body%</div>
   </body>
 </html>

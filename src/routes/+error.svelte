@@ -2,28 +2,16 @@
   import { page } from '$app/stores';
 </script>
 
-<div class="error">
+<section class="error component center flex h-[100vh] flex-col flex-wrap">
   {#if $page?.error?.message}
-    <h1>{$page.error.message}</h1>
+    <h1 class="h1-primary">{$page.error.message}</h1>
   {/if}
-  <img src="/images/shockedCat.jpg" alt="Surprised cat" />
-</div>
-
-<style lang="scss">
-  .error {
-    height: 100vh;
-    display: grid;
-    gap: var(--spacing-32);
-    place-content: center;
-    place-items: center;
-    color: $white;
-  }
-
-  img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid $white;
-  }
-</style>
+  <img
+    class="my-8 h-[200px] w-[200px] rounded-lg border-2 border-white object-cover"
+    src="/images/shockedCat.jpg"
+    alt="Surprised cat"
+  />
+  <button class="variant-filled-surface btn mt-4 px-3 py-1">
+    <a data-sveltekit-reload href="/admin"> Back to safety... </a>
+  </button>
+</section>

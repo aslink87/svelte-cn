@@ -1,6 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import type { CalendarEvent } from '$/types';
+  // @ts-expect-error no-type-def
+  import Calendar from '@event-calendar/core';
+  // @ts-expect-error no-type-def
+  import List from '@event-calendar/list';
+  import type { CalendarEvent, CalendarEventSource, CalendarTheme } from '$/types';
 
   onMount(async () => {
     await initializeGapi();
@@ -33,7 +37,6 @@
           })
           .then((response: { result: { items: CalendarEvent[] } } | null) => {
             if (response && response.result.items.length > 0) events = response.result.items;
-            console.log(events[0]);
           });
       })
       .catch((error: unknown) => {
@@ -45,54 +48,67 @@
   // @ts-ignore
   const initializeGapi = async () => gapi.load('client', start);
   /* eslint-enable no-undef */
+
+  const plugins = [List];
+  const options = {
+    view: 'listMonth',
+    eventSources: [
+      {
+        events: async () => {
+          return addEvents();
+        },
+      },
+    ],
+    slotMinTime: '08:00:00',
+    slotMaxTime: '20:00:00',
+    eventBackgroundColor: '#041f40',
+    eventClassNames: 'ec-event',
+    firstDay: 1,
+    hiddenDays: [0, 6],
+    locale: 'en',
+    slotDuration: '00:60:00',
+    slotHeight: 40,
+    eventColor: '#041f40',
+    theme: (theme: CalendarTheme) => ({
+      ...theme,
+      dayHead: 'ec-header-day',
+      daySide: 'ec-header-side',
+    }),
+  };
+
+  function addEvents() {
+    return parseEvent(events);
+  }
+
+  function parseEvent(eventsArr: CalendarEvent[]): CalendarEventSource[] {
+    return eventsArr.map((event) => {
+      return {
+        id: event.etag,
+        start: event.start.dateTime,
+        end: event.end.dateTime,
+        title: {
+          html: `
+					<a
+					href=${event.htmlLink}
+					data-sveltekit-preload-data
+					target="_blank"
+					class="variant-glass btn p-2 p-primary">
+					${event.summary}
+					</a>`,
+        },
+      };
+    });
+  }
 </script>
 
 <svelte:head>
   <script src="https://apis.google.com/js/api.js" on:load={initializeGapi}></script>
 </svelte:head>
 
-<section class="calendar" data-testid="hero">
-  <div class="google-api-wrapper">
-    {#each events as event}
-      <div class="google-api-card">
-        <div class="google-api-card-content">
-          <p>{event.summary}</p>
-        </div>
-      </div>
-    {/each}
-  </div>
-</section>
-
-<style lang="scss">
-  .google-api-wrapper {
-    display: grid;
-    grid-auto-flow: row;
-    width: 80%;
-    margin: auto;
-    padding: 2rem;
-    gap: 2rem;
-
-    .google-api-card {
-      margin: auto;
-      width: 600px;
-      height: 200px;
-      border-radius: 20px;
-      background-color: $white;
-      box-shadow:
-        -6px -6px 20px rgba($deep-blue, 0.5),
-        6px 6px 20px rgba($deep-blue, 0.2);
-      text-align: center;
-
-      .google-api-card-content {
-        background-color: $white;
-        border-radius: 20px;
-        position: relative;
-        text-align: center;
-        display: flex;
-        width: 100%;
-        height: 100%;
-        color: $deep-blue;
-      }
-    }
-  }
-</style>
+<div class="google-api-wrapper">
+  {#if events.length > 0}
+    <div class="calendar-wrapper p-primary">
+      <Calendar {plugins} {options} id={1} class="ec" />
+    </div>
+  {/if}
+</div>

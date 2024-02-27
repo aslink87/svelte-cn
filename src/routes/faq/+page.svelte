@@ -15,38 +15,14 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
-<section class="faq" data-testid="faq">
-  <h1>Frequently Asked Questions</h1>
+<section class="faq center component pt-8" data-testid="faq">
+  <h1 class="h1-primary">Frequently Asked Questions</h1>
   <ul>
     {#each data.data as item}
-      <li>
-        <h2>{item.title}</h2>
-        <p>{item.content}</p>
+      <li class="pt-12">
+        <h2 class="h2-primary mb-4">{item.title}</h2>
+        <p class="p-primary">{item.content}</p>
       </li>
     {/each}
   </ul>
 </section>
-
-<style lang="scss">
-  .faq {
-    @include center;
-    padding: 2rem 1rem;
-
-    h1 {
-      @include h1-primary;
-    }
-
-    h2 {
-      @include h2-primary;
-      margin-top: 1rem;
-    }
-
-    ul {
-      @include ul;
-
-      li {
-        margin-top: 3rem;
-      }
-    }
-  }
-</style>

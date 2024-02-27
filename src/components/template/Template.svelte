@@ -8,9 +8,9 @@
   {/each}
 </section>
 
-<style lang="scss">
-  section {
-    @include component;
-    background: $gray;
-  }
-</style>
+<!-- <style lang="scss"> -->
+<!--   section { -->
+<!--     @include component; -->
+<!--     background: $gray; -->
+<!--   } -->
+<!-- </style> -->

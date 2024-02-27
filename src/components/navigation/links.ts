@@ -15,6 +15,7 @@ export const navLinks = [
     mobile: true,
     mobileOnly: false,
     dropdown: [
+      { name: 'About Us', path: '/about' },
       { name: 'Newsletter', path: '/newsletter' },
       { name: 'Calendar', path: '/calendar' },
       { name: 'FAQs', path: '/faq' },
@@ -36,7 +37,10 @@ export const navLinks = [
     auth: false,
     mobile: true,
     mobileOnly: false,
-    dropdown: [{ name: 'Church Partners', path: '/churches' }],
+    dropdown: [
+      { name: 'How to Help', path: '/donate' },
+      { name: 'Church Partners', path: '/churches' },
+    ],
   },
   {
     name: 'Calendar',

@@ -2,7 +2,8 @@ import fs from 'fs/promises';
 import path from 'path';
 import { error, type RequestEvent } from '@sveltejs/kit';
 import prismaClient from '$lib/db.server';
-import type { BlogType, CalendarType, HeroType, NewsletterType } from '$/types';
+import type { BlogType, CalendarType, HeroType, NeedsType, NewsletterType } from '$/types';
+import type { Actions } from './$types';
 
 export async function load() {
   const users = await prismaClient.user.findMany({
@@ -19,10 +20,51 @@ export async function load() {
     'pantryneeds',
     'pantrycalendar',
   ];
+
+  let hero: HeroType = { title: 'Not found', content: 'Not found' };
+
+  const heroData = await prismaClient.hero.findUnique({
+    where: {
+      id: '9d5a8c19-6464-4763-b532-2817c4bb2033',
+    },
+  });
+
+  if (heroData) {
+    hero = heroData as HeroType;
+  }
+
+  let calendar: CalendarType = { content: 'Not found' };
+  const calendarData = await prismaClient.calendar.findFirst();
+
+  if (calendarData) {
+    calendar = calendarData as CalendarType;
+  }
+
+  let needs: NeedsType = {
+    id: '',
+    item0: '',
+    item1: '',
+    item2: '',
+    item3: '',
+    item4: '',
+    item5: '',
+    item6: '',
+    item7: '',
+    item8: '',
+    item9: '',
+  };
+  const needsData = await prismaClient.needs.findFirst();
+  if (needsData) {
+    needs = needsData;
+  }
+
   if (users) {
     return {
       users,
       links,
+      hero,
+      calendar,
+      needs,
     };
   }
   // eslint-disable-next-line @typescript-eslint/no-throw-literal
@@ -30,8 +72,9 @@ export async function load() {
 }
 
 export const actions = {
-  hero: async ({ request }: RequestEvent) => {
+  hero: async ({ request }: RequestEvent): Promise<{ success: boolean }> => {
     const data = await request.formData();
+
     const submitData: HeroType = {
       title: data.get('title')?.toString().trim() ?? '',
       content: data.get('content')?.toString().trim() ?? '',
@@ -81,14 +124,14 @@ export const actions = {
         data: submitData,
       });
 
-      return { message: 'success' };
+      return { success: true };
 
       // eslint-disable-next-line
     } catch (e: any) {
       const env: string = import.meta.env.MODE;
       // eslint-disable-next-line no-console
       if (env === 'development') console.log(e.message);
-      return { message: 'failed' };
+      return { success: false };
     }
   },
 
@@ -152,14 +195,14 @@ export const actions = {
         data: newsletter3,
       });
 
-      return { message: 'success' };
+      return { success: true };
 
       // eslint-disable-next-line
     } catch (e: any) {
       const env: string = import.meta.env.MODE;
       // eslint-disable-next-line no-console
       if (env === 'development') console.log(e.message);
-      return { message: 'failed' };
+      return { success: false };
     }
   },
 
@@ -196,14 +239,14 @@ export const actions = {
         data: submitData,
       });
 
-      return { message: 'success' };
+      return { success: true };
 
       // eslint-disable-next-line
     } catch (e: any) {
       const env: string = import.meta.env.MODE;
       // eslint-disable-next-line no-console
       if (env === 'development') console.log(e.message);
-      return { message: 'failed' };
+      return { success: false };
     }
   },
 
@@ -241,14 +284,14 @@ export const actions = {
         data: submitData,
       });
 
-      return { message: 'success' };
+      return { success: true };
 
       // eslint-disable-next-line
     } catch (e: any) {
       const env: string = import.meta.env.MODE;
       // eslint-disable-next-line no-console
       if (env === 'development') console.log(e.message);
-      return { message: 'failed' };
+      return { success: false };
     }
   },
 
@@ -283,19 +326,20 @@ export const actions = {
         data: submitData,
       });
 
-      return { message: 'success' };
+      return { success: true };
 
       // eslint-disable-next-line
     } catch (e: any) {
       const env: string = import.meta.env.MODE;
       // eslint-disable-next-line no-console
       if (env === 'development') console.log(e.message);
-      return { message: 'failed' };
+      return { success: false };
     }
   },
 
   needs: async ({ request }: RequestEvent) => {
     const data = await request.formData();
+
     const submitData = {
       item0: data.get('item0')?.toString().trim() ?? '',
       item1: data.get('item1')?.toString().trim() ?? '',
@@ -315,14 +359,14 @@ export const actions = {
         data: submitData,
       });
 
-      return { message: 'success' };
+      return { success: true };
 
       // eslint-disable-next-line
     } catch (e: any) {
       const env: string = import.meta.env.MODE;
       // eslint-disable-next-line no-console
       if (env === 'development') console.log(e.message);
-      return { message: 'failed' };
+      return { success: true };
     }
   },
 
@@ -356,14 +400,14 @@ export const actions = {
         data: submitData,
       });
 
-      return { message: 'success' };
+      return { success: true };
 
       // eslint-disable-next-line
     } catch (e: any) {
       const env: string = import.meta.env.MODE;
       // eslint-disable-next-line no-console
       if (env === 'development') console.log(e.message);
-      return { message: 'failed' };
+      return { success: false };
     }
   },
-};
+} satisfies Actions;

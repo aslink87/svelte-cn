@@ -1,6 +1,8 @@
 <script lang="ts">
-  import { updated } from '$lib/stores/Admin';
   import { enhance } from '$app/forms';
+  import FeedbackRender from './FeedbackRender.svelte';
+
+  export let form: { success: boolean } | null;
 
   const fields = [
     {
@@ -27,17 +29,13 @@
 
     preview = true;
   }
-
-  function submitHandler() {
-    updated.set(true);
-  }
 </script>
 
-<section class="admin-frontpage">
-  <h2>Quartlery Food Pantry Calendar</h2>
-  <p>Would you like to update the food pantry calendar image?</p>
-  <p>Image should be in landscape orientation.</p>
-  <form method="POST" use:enhance>
+<section class="admin-frontpage center component">
+  <h2 class="h2-primary mb-4">Quartlery Food Pantry Calendar</h2>
+  <p class="p-primary">Would you like to update the food pantry calendar image?</p>
+  <p class="p-primary">Image should be in landscape orientation.</p>
+  <form class="center mt-8 flex flex-col" action="admin?/pantrycalendar" method="POST" use:enhance>
     {#each fields as field}
       <label for={field.value}>{field.text}</label>
       <input
@@ -49,42 +47,30 @@
         required={field.required}
       />
     {/each}
-    <button on:click|preventDefault={handlePreview}>Continue?</button>
+    <button
+      class="variant-filled-surface btn mt-4 px-3 py-1"
+      on:click|preventDefault={handlePreview}>Preview</button
+    >
+    {#if data.img}
+      <div
+        class="preview-wrapper center mt-8 flex w-[80%] max-w-[50em] flex-col flex-wrap rounded-lg border-2 border-white p-6"
+      >
+        <img
+          class="mx-auto h-full w-[90%] max-w-[700px] rounded-lg sm:w-[80%]"
+          src="/images/placeholder.jpg"
+          alt="placeholder"
+        />
+      </div>
+    {/if}
     {#if preview}
-      <button formaction="/admin?/pantrycalendar" on:click={submitHandler}>Submit</button>
+      <button
+        class="variant-filled-surface btn mt-6 px-3 py-1"
+        disabled={typeof form?.success === 'boolean'}
+        type="submit">Submit</button
+      >
+    {/if}
+    {#if form}
+      <FeedbackRender {form} />
     {/if}
   </form>
 </section>
-
-<style lang="scss">
-  section {
-    @include component;
-    background: none;
-
-    h2 {
-      @include h2-primary;
-    }
-
-    form {
-      display: flex;
-      flex-flow: column;
-      width: 50%;
-      margin: auto;
-
-      input {
-        height: 1.5rem;
-      }
-
-      label {
-        margin-top: 1rem;
-      }
-
-      button {
-        @include btn-primary;
-        width: 10rem;
-        margin: 1rem auto;
-        background-color: rgba($color: $gray, $alpha: 0.5);
-      }
-    }
-  }
-</style>

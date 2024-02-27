@@ -60,7 +60,7 @@ export async function load() {
       { title: 'Plainwell School Rep', name: 'Matt Montange' },
       { title: 'Otsego School Rep', name: 'Jeff Hasse' },
       { title: 'Business Support', name: 'Karen Darby' },
-      { title: 'Business Support', name: 'Aaron Mithcell' },
+      { title: 'Business Support', name: 'Aaron Mitchell' },
       { title: 'Executive Director', name: 'Terri Shaler' },
     ],
     resourceDevelopment: [
@@ -126,6 +126,12 @@ export async function load() {
       name: 'Debbie Woodstock',
       title: 'Pantry Assistant',
       content: 'Debbie maintains the food pantry',
+    },
+    {
+      img: '/images/staff/ralph.jpg',
+      name: 'Ralph Woodstock',
+      title: 'Building and Grounds Trustee',
+      content: 'Ralph maintains and improves CN buildings and grounds',
     },
     {
       img: '/images/staff/adam.png',

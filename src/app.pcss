@@ -1,0 +1,56 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Inter-Regular;
+  src: url('/fonts/Inter-Regular.otf');
+}
+@font-face {
+  font-family: Inter-Bold;
+  src: url('/fonts/Inter-Bold.otf');
+}
+@font-face {
+  font-family: Inter-Italic;
+  src: url('/fonts/Inter-Italic.otf');
+}
+
+@layer components {
+  .btn-primary {
+    @apply variant-filled-primary btn btn-sm bg-primary-500/70 text-white shadow-none hover:text-white;
+  }
+  .center {
+    @apply items-center justify-center text-center;
+  }
+  .p-primary {
+    @apply mx-auto max-w-[50em] text-sm sm:text-base lg:text-lg;
+  }
+  .h1-primary {
+    @apply mx-auto max-w-[60em] text-2xl font-bold lg:text-4xl;
+  }
+  .h2-primary {
+    @apply mx-auto max-w-[60em] text-xl font-bold lg:text-2xl;
+  }
+  .component {
+    @apply center mx-3 my-3 rounded-lg p-3 sm:p-8;
+  }
+}
+
+:root [data-theme='custom-theme'] {
+  --bright-blue: #0f70e9;
+  --light-blue: #6979c1;
+  --deep-blue: #041f3f;
+  --dark-blue: #07336a;
+  --yellow: #dbd22f;
+  --teal: #70a5c6;
+  --white: white;
+  --cream: #f2e5d4;
+  --wine: #6a0733;
+  --green: #336a07;
+  --black: #010a15;
+  --gray: #5c7793;
+  --warning: red;
+  --theme-font-family-base: Inter-Regular, sans-serif;
+  --theme-font-family-heading: Inter-Bold, sans-serif;
+}
