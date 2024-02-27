@@ -3,6 +3,7 @@ import path from 'path';
 import { error, type RequestEvent } from '@sveltejs/kit';
 import prismaClient from '$lib/db.server';
 import type { BlogType, CalendarType, HeroType, NeedsType, NewsletterType } from '$/types';
+import type { Actions } from './$types';
 
 export async function load() {
   const users = await prismaClient.user.findMany({
@@ -71,7 +72,7 @@ export async function load() {
 }
 
 export const actions = {
-  hero: async ({ request }: RequestEvent) => {
+  hero: async ({ request }: RequestEvent): Promise<{ success: boolean }> => {
     const data = await request.formData();
     const submitData: HeroType = {
       title: data.get('title')?.toString().trim() ?? '',
@@ -118,18 +119,18 @@ export const actions = {
 
     try {
       await prismaClient.hero.update({
-        where: { id: '9d5a8c19-6464-4763-b532-2817c4bb2033' },
+        where: { id: '9d5a8c19-6464-4763-b532-2817c4bb2033a' },
         data: submitData,
       });
 
-      return { message: 'success' };
+      return { success: true };
 
       // eslint-disable-next-line
     } catch (e: any) {
       const env: string = import.meta.env.MODE;
       // eslint-disable-next-line no-console
       if (env === 'development') console.log(e.message);
-      return { message: 'failed' };
+      return { success: false };
     }
   },
 
@@ -193,14 +194,14 @@ export const actions = {
         data: newsletter3,
       });
 
-      return { message: 'success' };
+      return { success: true };
 
       // eslint-disable-next-line
     } catch (e: any) {
       const env: string = import.meta.env.MODE;
       // eslint-disable-next-line no-console
       if (env === 'development') console.log(e.message);
-      return { message: 'failed' };
+      return { success: false };
     }
   },
 
@@ -237,14 +238,14 @@ export const actions = {
         data: submitData,
       });
 
-      return { message: 'success' };
+      return { success: true };
 
       // eslint-disable-next-line
     } catch (e: any) {
       const env: string = import.meta.env.MODE;
       // eslint-disable-next-line no-console
       if (env === 'development') console.log(e.message);
-      return { message: 'failed' };
+      return { success: false };
     }
   },
 
@@ -282,14 +283,14 @@ export const actions = {
         data: submitData,
       });
 
-      return { message: 'success' };
+      return { success: true };
 
       // eslint-disable-next-line
     } catch (e: any) {
       const env: string = import.meta.env.MODE;
       // eslint-disable-next-line no-console
       if (env === 'development') console.log(e.message);
-      return { message: 'failed' };
+      return { success: false };
     }
   },
 
@@ -324,19 +325,20 @@ export const actions = {
         data: submitData,
       });
 
-      return { message: 'success' };
+      return { success: true };
 
       // eslint-disable-next-line
     } catch (e: any) {
       const env: string = import.meta.env.MODE;
       // eslint-disable-next-line no-console
       if (env === 'development') console.log(e.message);
-      return { message: 'failed' };
+      return { success: false };
     }
   },
 
   needs: async ({ request }: RequestEvent) => {
     const data = await request.formData();
+
     const submitData = {
       item0: data.get('item0')?.toString().trim() ?? '',
       item1: data.get('item1')?.toString().trim() ?? '',
@@ -356,14 +358,14 @@ export const actions = {
         data: submitData,
       });
 
-      return { message: 'success' };
+      return { success: true };
 
       // eslint-disable-next-line
     } catch (e: any) {
       const env: string = import.meta.env.MODE;
       // eslint-disable-next-line no-console
       if (env === 'development') console.log(e.message);
-      return { message: 'failed' };
+      return { success: true };
     }
   },
 
@@ -397,14 +399,14 @@ export const actions = {
         data: submitData,
       });
 
-      return { message: 'success' };
+      return { success: true };
 
       // eslint-disable-next-line
     } catch (e: any) {
       const env: string = import.meta.env.MODE;
       // eslint-disable-next-line no-console
       if (env === 'development') console.log(e.message);
-      return { message: 'failed' };
+      return { success: false };
     }
   },
-};
+} satisfies Actions;

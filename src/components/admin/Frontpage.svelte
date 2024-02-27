@@ -1,11 +1,11 @@
 <script lang="ts">
   import Hero from '../hero/Hero.svelte';
-  import { updated } from '$lib/stores/Admin';
   import type { HeroType } from '$/types';
   import { enhance } from '$app/forms';
+  import FeedbackRender from './FeedbackRender.svelte';
 
   export let heroData: HeroType;
-  let visible: boolean = false;
+  export let form: { success: boolean } | null;
 
   const fields = [
     {
@@ -100,11 +100,6 @@
 
     preview = true;
   }
-
-  function submitHandler() {
-    updated.set(true);
-    visible = true;
-  }
 </script>
 
 <section class="admin-frontpage center component">
@@ -114,7 +109,7 @@
   </p>
   <p class="p-primary my-4">Required fields have a red border.</p>
   <p class="p-primary">After editing click 'preview' to view your changes before submitting.</p>
-  <form class="center mt-8 flex flex-col" method="POST" use:enhance>
+  <form class="center mt-8 flex flex-col" action="admin?/hero" method="POST" use:enhance>
     {#each fields as field}
       <label for={field.value}>{field.text}</label>
       {#if field.type === 'textarea'}
@@ -174,18 +169,12 @@
     {#if preview}
       <button
         class="variant-filled-surface btn mt-6 px-3 py-1"
-        disabled={visible}
-        formaction="/admin?/hero"
-        on:click={submitHandler}>Submit</button
+        disabled={typeof form?.success === 'boolean'}
+        type="submit">Submit</button
       >
     {/if}
-    {#if visible}
-      <aside class="alert variant-ghost mt-6 text-white">
-        <div class="alert-message">
-          <h3 class="h3">Success</h3>
-          <p>Successfully updated frontpage data!</p>
-        </div>
-      </aside>
+    {#if form}
+      <FeedbackRender {form} />
     {/if}
   </form>
 </section>

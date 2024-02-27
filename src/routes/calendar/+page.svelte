@@ -155,7 +155,7 @@
         >
           {#if card.img}
             <img
-              class="mx-auto w-[90%] max-w-[700px] rounded-lg sm:w-[80%]"
+              class="mx-auto w-[90%] max-w-[500px] rounded-lg object-cover sm:w-[80%]"
               src={card.img}
               alt={card.alt}
             />

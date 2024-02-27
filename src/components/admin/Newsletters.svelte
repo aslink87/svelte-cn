@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { updated } from '$lib/stores/Admin';
   import { enhance } from '$app/forms';
   import Newsletters from '../../routes/newsletter/+page.svelte';
   import type { NewsletterType } from '$/types';
+  import FeedbackRender from './FeedbackRender.svelte';
 
-  let visible: boolean = false;
+  export let form: { success: boolean } | null;
 
   // initialize values
   const newsletter1 = {
@@ -56,11 +56,6 @@
 
     preview = true;
   }
-
-  function submitHandler() {
-    updated.set(true);
-    visible = true;
-  }
 </script>
 
 <section class="admin-frontpage center component">
@@ -84,7 +79,7 @@
     previous two E-News.
   </p>
   <p class="p-primary">Would you like to update these?</p>
-  <form class="center mt-8 flex flex-col" method="POST" use:enhance>
+  <form class="center mt-8 flex flex-col" action="admin?/newsletters" method="POST" use:enhance>
     <div class="input-wrapper">
       <p class="p-primary">Most Recent Newsletter</p>
       <label for="title1">Title</label>
@@ -159,18 +154,12 @@
     {#if preview}
       <button
         class="variant-filled-surface btn mt-6 px-3 py-1"
-        disabled={visible}
-        formaction="/admin?/newsletters"
-        on:click={submitHandler}>Submit</button
+        disabled={typeof form?.success === 'boolean'}
+        type="submit">Submit</button
       >
     {/if}
-    {#if visible}
-      <aside class="alert variant-ghost mt-6 text-white">
-        <div class="alert-message">
-          <h3 class="h3">Success</h3>
-          <p>Successfully updated newsletter data!</p>
-        </div>
-      </aside>
+    {#if form}
+      <FeedbackRender {form} />
     {/if}
   </form>
 </section>

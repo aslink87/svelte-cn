@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { updated } from '$lib/stores/Admin';
   import { enhance } from '$app/forms';
+  import FeedbackRender from './FeedbackRender.svelte';
 
-  let visible: boolean = false;
+  export let form: { success: boolean } | null;
 
   const fields = [
     {
@@ -40,18 +40,13 @@
 
     preview = true;
   }
-
-  function submitHandler() {
-    updated.set(true);
-    visible = true;
-  }
 </script>
 
 <section class="admin-frontpage center component">
   <h2 class="h2-primary mb-4">Soup Supper Calendar</h2>
   <p class="p-primary">Would you like to update the soup supper calendar image?</p>
   <p class="p-primary">Image should be in portrait orientation.</p>
-  <form class="center mt-8 flex flex-col" method="POST" use:enhance>
+  <form class="center mt-8 flex flex-col" action="admin?/supper" method="POST" use:enhance>
     {#each fields as field}
       <label for={field.value}>{field.text}</label>
       {#if field.type === 'image'}
@@ -91,18 +86,12 @@
     {#if preview}
       <button
         class="variant-filled-surface btn mt-6 px-3 py-1"
-        disabled={visible}
-        formaction="/admin?/supper"
-        on:click={submitHandler}>Submit</button
+        disabled={typeof form?.success === 'boolean'}
+        type="submit">Submit</button
       >
     {/if}
-    {#if visible}
-      <aside class="alert variant-ghost mt-6 text-white">
-        <div class="alert-message">
-          <h3 class="h3">Success</h3>
-          <p>Successfully updated soup supper image!</p>
-        </div>
-      </aside>
+    {#if form}
+      <FeedbackRender {form} />
     {/if}
   </form>
 </section>

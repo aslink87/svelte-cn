@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { updated } from '$lib/stores/Admin';
   import { enhance } from '$app/forms';
+  import FeedbackRender from './FeedbackRender.svelte';
 
-  let visible: boolean = false;
+  export let form: { success: boolean } | null;
 
   const fields = [
     {
@@ -29,18 +29,13 @@
 
     preview = true;
   }
-
-  function submitHandler() {
-    updated.set(true);
-    visible = true;
-  }
 </script>
 
 <section class="admin-frontpage center component">
   <h2 class="h2-primary mb-4">Quartlery Food Pantry Calendar</h2>
   <p class="p-primary">Would you like to update the food pantry calendar image?</p>
   <p class="p-primary">Image should be in landscape orientation.</p>
-  <form class="center mt-8 flex flex-col gap-4" method="POST" use:enhance>
+  <form class="center mt-8 flex flex-col" action="admin?/pantrycalendar" method="POST" use:enhance>
     {#each fields as field}
       <label for={field.value}>{field.text}</label>
       <input
@@ -61,8 +56,8 @@
         class="preview-wrapper center mt-8 flex w-[80%] max-w-[50em] flex-col flex-wrap rounded-lg border-2 border-white p-6"
       >
         <img
-          class="mx-auto h-full w-[90%] max-w-[250px] rounded-lg sm:w-[80%]"
-          src="/images/placeholderVert.jpg"
+          class="mx-auto h-full w-[90%] max-w-[700px] rounded-lg sm:w-[80%]"
+          src="/images/placeholder.jpg"
           alt="placeholder"
         />
       </div>
@@ -70,18 +65,12 @@
     {#if preview}
       <button
         class="variant-filled-surface btn mt-6 px-3 py-1"
-        disabled={visible}
-        formaction="/admin?/pantrycalendar"
-        on:click={submitHandler}>Submit</button
+        disabled={typeof form?.success === 'boolean'}
+        type="submit">Submit</button
       >
     {/if}
-    {#if visible}
-      <aside class="alert variant-ghost mt-6 text-white">
-        <div class="alert-message">
-          <h3 class="h3">Success</h3>
-          <p>Successfully updated pantry calendar!</p>
-        </div>
-      </aside>
+    {#if form}
+      <FeedbackRender {form} />
     {/if}
   </form>
 </section>

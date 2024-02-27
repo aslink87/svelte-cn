@@ -1,8 +1,8 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import Seo from '../../SEO.svelte';
   import { seo } from '$lib/stores/Seo';
   import { page } from '$app/stores';
-  import { updated } from '$lib/stores/Admin';
   import { signOut } from '@auth/sveltekit/client';
   import Users from '$/components/admin/Users.svelte';
   import Frontpage from '$/components/admin/Frontpage.svelte';
@@ -19,14 +19,8 @@
     description: 'Admin Page for Christian Neighbors',
   });
 
-  // subsribe to updated store, when a child has been updated successfully reload the page
-  updated.subscribe((val) => {
-    if (val === true) {
-      setTimeout(() => {
-        // eslint-disable-next-line no-restricted-globals
-        location.reload();
-      }, 2000);
-    }
+  onMount(() => {
+    window.scrollTo(0, 0);
   });
 
   const links = {
@@ -50,6 +44,7 @@
   }
 
   export let data: AdminPageType;
+  export let form: { success: boolean } | null;
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
@@ -81,25 +76,25 @@
       <p>You do not have access to this page</p>
     {/if}
     {#if links.frontpage}
-      <Frontpage heroData={data.hero} />
+      <Frontpage heroData={data.hero} {form} />
     {/if}
     {#if links.newsletters}
-      <Newsletters />
+      <Newsletters {form} />
     {/if}
     {#if links.calendar}
-      <Calendar calendarData={data.calendar} />
+      <Calendar calendarData={data.calendar} {form} />
     {/if}
     {#if links.blog}
-      <Blog />
+      <Blog {form} />
     {/if}
     {#if links.supper}
-      <Supper />
+      <Supper {form} />
     {/if}
     {#if links.pantryneeds}
-      <Needs needsData={data.needs} />
+      <Needs needsData={data.needs} {form} />
     {/if}
     {#if links.pantrycalendar}
-      <PantryCalendar />
+      <PantryCalendar {form} />
     {/if}
   </div>
 </section>

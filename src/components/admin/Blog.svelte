@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { updated } from '$lib/stores/Admin';
-  import type { BlogType } from '$/types';
   import { enhance } from '$app/forms';
+  import FeedbackRender from './FeedbackRender.svelte';
+  import type { BlogType } from '$/types';
 
-  let visible: boolean = false;
+  export let form: { success: boolean } | null;
 
   const fields = [
     { text: 'Author', type: 'text', required: true, length: 2, value: 'author', data: '' },
@@ -71,11 +71,6 @@
 
     preview = true;
   }
-
-  function submitHandler() {
-    updated.set(true);
-    visible = true;
-  }
 </script>
 
 <section class="admin-frontpage center component">
@@ -83,7 +78,7 @@
   <p class="p-primary">Would you like to add a blog entry?</p>
   <p class="p-primary">Required fields have a red border.</p>
   <p class="p-primary">After editing click 'preview' to view your changes before submitting.</p>
-  <form class="center mt-8 flex flex-col" method="POST" use:enhance>
+  <form class="center mt-8 flex flex-col" action="admin?/blog" method="POST" use:enhance>
     {#each fields as field}
       <label for={field.value}>{field.text}</label>
       {#if field.type === 'textarea'}
@@ -142,18 +137,12 @@
     {#if preview}
       <button
         class="variant-filled-surface btn mt-6 px-3 py-1"
-        disabled={visible}
-        formaction="/admin?/blog"
-        on:click={submitHandler}>Submit</button
+        disabled={typeof form?.success === 'boolean'}
+        type="submit">Submit</button
       >
     {/if}
-    {#if visible}
-      <aside class="alert variant-ghost mt-6 text-white">
-        <div class="alert-message">
-          <h3 class="h3">Success</h3>
-          <p>Successfully added blog entry!</p>
-        </div>
-      </aside>
+    {#if form}
+      <FeedbackRender {form} />
     {/if}
   </form>
 </section>
