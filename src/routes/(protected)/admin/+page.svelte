@@ -88,7 +88,7 @@
       <Newsletters />
     {/if}
     {#if links.calendar}
-      <Calendar />
+      <Calendar calendarData={data.calendar} />
     {/if}
     {#if links.blog}
       <Blog />
@@ -97,7 +97,7 @@
       <Supper />
     {/if}
     {#if links.pantryneeds}
-      <Needs />
+      <Needs needsData={data.needs} />
     {/if}
     {#if links.pantrycalendar}
       <PantryCalendar />

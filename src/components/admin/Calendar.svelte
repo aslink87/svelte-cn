@@ -3,8 +3,17 @@
   import type { CalendarType } from '$/types';
   import { enhance } from '$app/forms';
 
+  export let calendarData: CalendarType;
+
   const fields = [
-    { text: 'Content', type: 'textarea', required: true, length: 20, value: 'content', data: '' },
+    {
+      text: 'Content',
+      type: 'textarea',
+      required: true,
+      length: 20,
+      value: 'content',
+      data: calendarData.content,
+    },
     {
       text: 'Image - jpg or png only',
       type: 'image',
@@ -72,12 +81,14 @@
   }
 </script>
 
-<section class="admin-frontpage">
-  <h2>Calendar Top Section</h2>
-  <p>Would you like to update the calendar news section found at the top of the page?</p>
-  <p>Required fields have a red border.</p>
-  <p>After editing click 'preview' to view your changes before submitting.</p>
-  <form method="POST" use:enhance>
+<section class="admin-frontpage center component">
+  <h2 class="h2-primary mb-4">Calendar Top Section</h2>
+  <p class="p-primary">
+    Would you like to update the calendar news section found at the top of the page?
+  </p>
+  <p class="p-primary">Required fields have a red border.</p>
+  <p class="p-primary">After editing click 'preview' to view your changes before submitting.</p>
+  <form class="center mt-8 flex flex-col" method="POST" use:enhance>
     {#each fields as field}
       <label for={field.value}>{field.text}</label>
       {#if field.type === 'textarea'}
@@ -85,7 +96,7 @@
           bind:value={field.data}
           name={field.value}
           minlength={field.length}
-          class="area"
+          class="area my-4 min-h-[200px] w-[600px] rounded-lg px-4 text-primary-600"
           required={field.required}
           style={field.required ? 'border: 2px solid red' : ''}
         />
@@ -94,7 +105,7 @@
           bind:value={field.data}
           name={field.value}
           type="file"
-          class="file"
+          class="file my-4"
           accept="image/jpeg, image/png"
           required={field.required}
           style={field.required ? 'border: 2px solid red' : ''}
@@ -105,28 +116,34 @@
           name={field.value}
           type="text"
           minlength={field.length}
-          class="text"
+          class="text my-4 w-[600px] rounded-lg px-4 text-primary-600"
           required={field.required}
           style={field.required ? 'border: 2px solid red' : ''}
         />
       {/if}
     {/each}
-    <button on:click|preventDefault={handlePreview}>Preview</button>
+    <button class="variant-filled-surface btn px-3 py-1" on:click|preventDefault={handlePreview}
+      >Preview</button
+    >
     {#if data.content}
-      <h2 class="preview">Preview</h2>
-      <p>Does this look correct?</p>
-      <p>Placeholder images are used.</p>
-      <div class="preview-wrapper">
-        <h1>Upcoming Events</h1>
+      <h2 class="preview h2-primary mt-8">Preview</h2>
+      <p class="p-primary">Does this look correct?</p>
+      <p class="p-primary">Placeholder images are used.</p>
+      <div
+        class="preview-wrapper center mt-8 flex w-[80%] max-w-[50em] flex-col flex-wrap rounded-lg border-2 border-white p-6"
+      >
+        <h1 class="h1-primary mb-8 mt-6">Upcoming Events</h1>
         <div class="dynamic">
           {#if previewData.content}
             {#if previewData.img}
               <img src={previewData.img} alt={previewData.alt} />
             {/if}
             <div class="preview-content">
-              <p>{previewData.content}</p>
+              <p class="p-primary my-6 whitespace-pre">{previewData.content}</p>
               {#if previewData.link}
-                <a href={previewData.link}>{previewData.link.split('.').slice(1).join('.')}</a>
+                <a class="p-primary underline" href={previewData.link}
+                  >{previewData.link.split('.').slice(1).join('.')}</a
+                >
               {/if}
             </div>
           {/if}
@@ -134,98 +151,11 @@
       </div>
     {/if}
     {#if preview}
-      <button formaction="/admin?/calendar" on:click={submitHandler}>Submit</button>
+      <button
+        class="variant-filled-surface btn mt-6 px-3 py-1"
+        formaction="/admin?/calendar"
+        on:click={submitHandler}>Submit</button
+      >
     {/if}
   </form>
 </section>
-
-<!-- <style lang="scss"> -->
-<!--   section { -->
-<!--     @include component; -->
-<!--     background: none; -->
-<!---->
-<!--     .preview { -->
-<!--       @include h2-primary; -->
-<!--       border-top: 1px solid $gray; -->
-<!--       margin-top: 2rem; -->
-<!--       padding-top: 2rem; -->
-<!--     } -->
-<!---->
-<!--     .preview-wrapper { -->
-<!--       margin-top: 1rem; -->
-<!--       border: 1px solid $gray; -->
-<!--       border-radius: 5px; -->
-<!---->
-<!--       .dynamic { -->
-<!--         @include component; -->
-<!--         background-color: rgba($color: $gray, $alpha: 0.6); -->
-<!--         display: flex; -->
-<!--         flex-flow: column; -->
-<!--         flex-wrap: wrap; -->
-<!--         margin-bottom: 3rem; -->
-<!---->
-<!--         a { -->
-<!--           @include a; -->
-<!--           margin: auto; -->
-<!--         } -->
-<!--       } -->
-<!--       .preview-content { -->
-<!--         padding: 0 1rem; -->
-<!--         max-width: 50em; -->
-<!---->
-<!--         @include xs { -->
-<!--           text-align: center; -->
-<!--           a { -->
-<!--             margin: 1rem auto; -->
-<!--           } -->
-<!--         } -->
-<!--         @include sm { -->
-<!--           text-align: center; -->
-<!--           a { -->
-<!--             margin: 1rem auto; -->
-<!--           } -->
-<!--         } -->
-<!--         @include md { -->
-<!--           a { -->
-<!--             margin: 1rem auto; -->
-<!--           } -->
-<!--         } -->
-<!---->
-<!--         a { -->
-<!--           @include btn-primary; -->
-<!--           width: 100px; -->
-<!--         } -->
-<!--       } -->
-<!--     } -->
-<!---->
-<!--     h2 { -->
-<!--       @include h2-primary; -->
-<!--     } -->
-<!---->
-<!--     form { -->
-<!--       display: flex; -->
-<!--       flex-flow: column; -->
-<!--       width: 50%; -->
-<!--       margin: auto; -->
-<!---->
-<!--       textarea { -->
-<!--         min-height: 20rem; -->
-<!--       } -->
-<!---->
-<!--       input { -->
-<!--         height: 1.5rem; -->
-<!--       } -->
-<!---->
-<!--       label { -->
-<!--         margin-top: 1rem; -->
-<!--       } -->
-<!---->
-<!--       button { -->
-<!--         @include btn-primary; -->
-<!--         width: 10rem; -->
-<!--         margin: 1rem auto; -->
-<!--         background-color: rgba($color: $gray, $alpha: 0.5); -->
-<!--       } -->
-<!--     } -->
-<!--   } -->
-<!-- </style> -->

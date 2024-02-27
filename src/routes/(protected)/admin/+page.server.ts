@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { error, type RequestEvent } from '@sveltejs/kit';
 import prismaClient from '$lib/db.server';
-import type { BlogType, CalendarType, HeroType, NewsletterType } from '$/types';
+import type { BlogType, CalendarType, HeroType, NeedsType, NewsletterType } from '$/types';
 
 export async function load() {
   const users = await prismaClient.user.findMany({
@@ -32,11 +32,38 @@ export async function load() {
     hero = heroData as HeroType;
   }
 
+  let calendar: CalendarType = { content: 'Not found' };
+  const calendarData = await prismaClient.calendar.findFirst();
+
+  if (calendarData) {
+    calendar = calendarData as CalendarType;
+  }
+
+  let needs: NeedsType = {
+    id: '',
+    item0: '',
+    item1: '',
+    item2: '',
+    item3: '',
+    item4: '',
+    item5: '',
+    item6: '',
+    item7: '',
+    item8: '',
+    item9: '',
+  };
+  const needsData = await prismaClient.needs.findFirst();
+  if (needsData) {
+    needs = needsData;
+  }
+
   if (users) {
     return {
       users,
       links,
       hero,
+      calendar,
+      needs,
     };
   }
   // eslint-disable-next-line @typescript-eslint/no-throw-literal

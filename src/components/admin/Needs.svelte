@@ -1,18 +1,91 @@
 <script lang="ts">
   import { updated } from '$lib/stores/Admin';
   import { enhance } from '$app/forms';
+  import type { NeedsType } from '$/types';
+
+  export let needsData: NeedsType;
 
   const fields = [
-    { text: 'Item', type: 'text', required: false, length: 3, value: 'item0', data: '' },
-    { text: 'Item', type: 'text', required: false, length: 3, value: 'item1', data: '' },
-    { text: 'Item', type: 'text', required: false, length: 3, value: 'item2', data: '' },
-    { text: 'Item', type: 'text', required: false, length: 3, value: 'item3', data: '' },
-    { text: 'Item', type: 'text', required: false, length: 3, value: 'item4', data: '' },
-    { text: 'Item', type: 'text', required: false, length: 3, value: 'item5', data: '' },
-    { text: 'Item', type: 'text', required: false, length: 3, value: 'item6', data: '' },
-    { text: 'Item', type: 'text', required: false, length: 3, value: 'item7', data: '' },
-    { text: 'Item', type: 'text', required: false, length: 3, value: 'item8', data: '' },
-    { text: 'Item', type: 'text', required: false, length: 3, value: 'item9', data: '' },
+    {
+      text: 'Item',
+      type: 'text',
+      required: false,
+      length: 3,
+      value: 'item0',
+      data: needsData.item0 ?? '',
+    },
+    {
+      text: 'Item',
+      type: 'text',
+      required: false,
+      length: 3,
+      value: 'item1',
+      data: needsData.item1 ?? '',
+    },
+    {
+      text: 'Item',
+      type: 'text',
+      required: false,
+      length: 3,
+      value: 'item2',
+      data: needsData.item2 ?? '',
+    },
+    {
+      text: 'Item',
+      type: 'text',
+      required: false,
+      length: 3,
+      value: 'item3',
+      data: needsData.item3 ?? '',
+    },
+    {
+      text: 'Item',
+      type: 'text',
+      required: false,
+      length: 3,
+      value: 'item4',
+      data: needsData.item4 ?? '',
+    },
+    {
+      text: 'Item',
+      type: 'text',
+      required: false,
+      length: 3,
+      value: 'item5',
+      data: needsData.item5 ?? '',
+    },
+    {
+      text: 'Item',
+      type: 'text',
+      required: false,
+      length: 3,
+      value: 'item6',
+      data: needsData.item6 ?? '',
+    },
+    {
+      text: 'Item',
+      type: 'text',
+      required: false,
+      length: 3,
+      value: 'item7',
+      data: needsData.item7 ?? '',
+    },
+    {
+      text: 'Item',
+      type: 'text',
+      required: false,
+      length: 3,
+      value: 'item8',
+      data: needsData.item8 ?? '',
+    },
+    {
+      text: 'Item',
+      type: 'text',
+      required: false,
+      length: 3,
+      value: 'item9',
+      data: needsData.item9 ?? '',
+    },
   ];
 
   // data to be sent to the server
@@ -80,12 +153,12 @@
   }
 </script>
 
-<section class="admin-frontpage">
-  <h2>Pantry Needs List</h2>
-  <p>Would you like to update the pantry needs list?</p>
-  <p>All fields are optional, fill them out from top to bottom as needed.</p>
-  <p>After editing click 'preview' to view your changes before submitting.</p>
-  <form method="POST" use:enhance>
+<section class="admin-frontpage center component">
+  <h2 class="h2-primary mb-4">Pantry Needs List</h2>
+  <p class="p-primary">Would you like to update the pantry needs list?</p>
+  <p class="p-primary">All fields are optional, fill them out from top to bottom as needed.</p>
+  <p class="p-primary">After editing click 'preview' to view your changes before submitting.</p>
+  <form class="center mt-8 flex flex-col" method="POST" use:enhance>
     {#each fields as field}
       <label for={field.value}>{field.text}</label>
       <input
@@ -93,16 +166,20 @@
         name={field.value}
         type="text"
         minlength={field.length}
-        class="text"
+        class="text my-4 w-[600px] rounded-lg px-4 text-primary-600"
         required={field.required}
       />
     {/each}
-    <button on:click|preventDefault={handlePreview}>Preview</button>
+    <button class="variant-filled-surface btn px-3 py-1" on:click|preventDefault={handlePreview}
+      >Preview</button
+    >
     {#if previewData.item0}
-      <h2 class="preview">Preview</h2>
-      <p>Does this look correct?</p>
-      <div class="preview-wrapper">
-        <ul class="needs-list">
+      <h2 class="preview h2-primary mt-8">Preview</h2>
+      <p class="p-primary">Does this look correct?</p>
+      <div
+        class="preview-wrapper center mt-8 flex w-[80%] max-w-[50em] flex-col flex-wrap rounded-lg border-2 border-white p-6"
+      >
+        <ul class="needs-list mx-auto my-6 max-w-[30rem] text-left capitalize sm:list-disc">
           {#if previewData.item0}
             <li>{previewData.item0}</li>
           {/if}
@@ -137,67 +214,11 @@
       </div>
     {/if}
     {#if preview}
-      <button formaction="/admin?/needs" on:click={submitHandler}>Submit</button>
+      <button
+        class="variant-filled-surface btn mt-6 px-3 py-1"
+        formaction="/admin?/needs"
+        on:click={submitHandler}>Submit</button
+      >
     {/if}
   </form>
 </section>
-
-<!-- <style lang="scss"> -->
-<!--   section { -->
-<!--     @include component; -->
-<!--     background: none; -->
-<!---->
-<!--     .preview { -->
-<!--       @include h2-primary; -->
-<!--       border-top: 1px solid $gray; -->
-<!--       margin-top: 2rem; -->
-<!--       padding-top: 2rem; -->
-<!--     } -->
-<!---->
-<!--     .preview-wrapper { -->
-<!--       margin-top: 1rem; -->
-<!--       border: 1px solid $gray; -->
-<!--       border-radius: 5px; -->
-<!---->
-<!--       ul { -->
-<!--         @include ul; -->
-<!---->
-<!--         .needs-list { -->
-<!--           li { -->
-<!--             list-style-type: disc; -->
-<!--             text-align: left; -->
-<!--             max-width: 30rem; -->
-<!--             margin: 0.5rem auto; -->
-<!--             text-transform: capitalize; -->
-<!--           } -->
-<!--         } -->
-<!--       } -->
-<!--     } -->
-<!---->
-<!--     h2 { -->
-<!--       @include h2-primary; -->
-<!--     } -->
-<!---->
-<!--     form { -->
-<!--       display: flex; -->
-<!--       flex-flow: column; -->
-<!--       width: 50%; -->
-<!--       margin: auto; -->
-<!---->
-<!--       input { -->
-<!--         height: 1.5rem; -->
-<!--       } -->
-<!---->
-<!--       label { -->
-<!--         margin-top: 1rem; -->
-<!--       } -->
-<!---->
-<!--       button { -->
-<!--         @include btn-primary; -->
-<!--         width: 10rem; -->
-<!--         margin: 1rem auto; -->
-<!--         background-color: rgba($color: $gray, $alpha: 0.5); -->
-<!--       } -->
-<!--     } -->
-<!--   } -->
-<!-- </style> -->

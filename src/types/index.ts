@@ -74,6 +74,9 @@ export type AdminPageType = {
   }[];
   links: string[];
   hero: HeroType;
+  newsletters: NewsletterType[];
+  calendar: CalendarType;
+  needs: NeedsType;
 };
 
 export type CalendarEvent = {
@@ -132,6 +135,20 @@ export type CalendarEventSource = {
   start: string;
   end: string;
   title: { html: string };
+};
+
+export type NeedsType = {
+  id: string;
+  item0: string | null;
+  item1: string | null;
+  item2: string | null;
+  item3: string | null;
+  item4: string | null;
+  item5: string | null;
+  item6: string | null;
+  item7: string | null;
+  item8: string | null;
+  item9: string | null;
 };
 
 export type GapiType = {

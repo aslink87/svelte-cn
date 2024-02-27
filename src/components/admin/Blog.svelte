@@ -75,12 +75,12 @@
   }
 </script>
 
-<section class="admin-frontpage">
-  <h2>Blog Page</h2>
-  <p>Would you like to add a blog entry?</p>
-  <p>Required fields have a red border.</p>
-  <p>After editing click 'preview' to view your changes before submitting.</p>
-  <form method="POST" use:enhance>
+<section class="admin-frontpage center component">
+  <h2 class="h2-primary mb-4">Blog Page</h2>
+  <p class="p-primary">Would you like to add a blog entry?</p>
+  <p class="p-primary">Required fields have a red border.</p>
+  <p class="p-primary">After editing click 'preview' to view your changes before submitting.</p>
+  <form class="center mt-8 flex flex-col" method="POST" use:enhance>
     {#each fields as field}
       <label for={field.value}>{field.text}</label>
       {#if field.type === 'textarea'}
@@ -88,7 +88,7 @@
           bind:value={field.data}
           name={field.value}
           minlength={field.length}
-          class="area"
+          class="area my-4 min-h-[200px] w-[600px] rounded-lg px-4 text-primary-600"
           required={field.required}
           style={field.required ? 'border: 2px solid red' : ''}
         />
@@ -97,7 +97,7 @@
           bind:value={field.data}
           name={field.value}
           type="file"
-          class="file"
+          class="file my-4"
           accept="image/jpeg, image/png"
           required={field.required}
           style={field.required ? 'border: 2px solid red' : ''}
@@ -108,117 +108,40 @@
           name={field.value}
           type="text"
           minlength={field.length}
-          class="text"
+          class="text my-4 w-[600px] rounded-lg px-4 text-primary-600"
           required={field.required}
           style={field.required ? 'border: 2px solid red' : ''}
         />
       {/if}
     {/each}
-    <button on:click|preventDefault={handlePreview}>Preview</button>
+    <button class="variant-filled-surface btn px-3 py-1" on:click|preventDefault={handlePreview}
+      >Preview</button
+    >
     {#if data.content}
-      <h2 class="preview">Preview</h2>
-      <p>Does this look correct?</p>
-      <p>Placeholder images are used.</p>
-      <div class="preview-wrapper">
-        <article class="blog">
+      <h2 class="preview h2-primary mt-8">Preview</h2>
+      <p class="p-primary">Does this look correct?</p>
+      <p class="p-primary">Placeholder images are used.</p>
+      <div
+        class="preview-wrapper center mt-8 flex w-[80%] max-w-[50em] flex-col flex-wrap rounded-lg border-2 border-white p-6"
+      >
+        <article class="blog center px-4 py-8 odd:rounded-lg odd:bg-surface-500/60">
           <header class="blog-header">
-            <p class="blog-meta">
+            <p class="blog-meta p-primary text-sm capitalize">
               Posted by {previewData.author} on {previewData.date}
             </p>
-            <h2>{previewData.title}</h2>
+            <h2 class="h2-primary my-4 capitalize">{previewData.title}</h2>
           </header>
           <img src={previewData.img} alt={previewData.caption} />
-          <p>{previewData.content}</p>
+          <p class="p-primary whitespace-pre">{previewData.content}</p>
         </article>
       </div>
     {/if}
     {#if preview}
-      <button formaction="/admin?/blog" on:click={submitHandler}>Submit</button>
+      <button
+        class="variant-filled-surface btn mt-6 px-3 py-1"
+        formaction="/admin?/blog"
+        on:click={submitHandler}>Submit</button
+      >
     {/if}
   </form>
 </section>
-
-<!-- <style lang="scss"> -->
-<!--   section { -->
-<!--     @include component; -->
-<!--     background: none; -->
-<!---->
-<!--     .preview { -->
-<!--       @include h2-primary; -->
-<!--       border-top: 1px solid $gray; -->
-<!--       margin-top: 2rem; -->
-<!--       padding-top: 2rem; -->
-<!--     } -->
-<!---->
-<!--     .preview-wrapper { -->
-<!--       margin-top: 1rem; -->
-<!--       border: 1px solid $gray; -->
-<!--       border-radius: 5px; -->
-<!---->
-<!--       .blog { -->
-<!--         @include center; -->
-<!--         padding: 1rem 0 1rem 0; -->
-<!---->
-<!--         &:nth-child(1) { -->
-<!--           background-color: rgba($color: $gray, $alpha: 0.6); -->
-<!--           border-radius: 5px; -->
-<!--         } -->
-<!---->
-<!--         h2 { -->
-<!--           @include h2-primary; -->
-<!--           text-transform: capitalize; -->
-<!--           margin: 1rem auto; -->
-<!--         } -->
-<!---->
-<!--         p { -->
-<!--           @include p; -->
-<!--           white-space: pre-wrap; -->
-<!--         } -->
-<!---->
-<!--         img { -->
-<!--           margin: 1rem auto; -->
-<!--           max-height: 500px; -->
-<!--           object-fit: scale-down; -->
-<!--           border-radius: 10px; -->
-<!---->
-<!--           @include xs { -->
-<!--             width: 90%; -->
-<!--           } -->
-<!--           @include sm { -->
-<!--             height: 400px; -->
-<!--           } -->
-<!--         } -->
-<!--       } -->
-<!--     } -->
-<!---->
-<!--     h2 { -->
-<!--       @include h2-primary; -->
-<!--     } -->
-<!---->
-<!--     form { -->
-<!--       display: flex; -->
-<!--       flex-flow: column; -->
-<!--       width: 50%; -->
-<!--       margin: auto; -->
-<!---->
-<!--       textarea { -->
-<!--         min-height: 20rem; -->
-<!--       } -->
-<!---->
-<!--       input { -->
-<!--         height: 1.5rem; -->
-<!--       } -->
-<!---->
-<!--       label { -->
-<!--         margin-top: 1rem; -->
-<!--       } -->
-<!---->
-<!--       button { -->
-<!--         @include btn-primary; -->
-<!--         width: 10rem; -->
-<!--         margin: 1rem auto; -->
-<!--         background-color: rgba($color: $gray, $alpha: 0.5); -->
-<!--       } -->
-<!--     } -->
-<!--   } -->
-<!-- </style> -->

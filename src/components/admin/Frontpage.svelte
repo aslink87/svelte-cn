@@ -161,9 +161,11 @@
     >
     {#if data.title}
       <h2 class="preview h2-primary mt-8">Preview</h2>
-      <p>Does this look correct?</p>
-      <p>Placholder images are used.</p>
-      <div class="preview-wrapper">
+      <p class="p-primary">Does this look correct?</p>
+      <p class="p-primary">Placholder images are used.</p>
+      <div
+        class="preview-wrapper center mt-8 flex w-[80%] max-w-[50em] flex-col flex-wrap rounded-lg border-2 border-white p-6"
+      >
         <Hero data={previewData} />
       </div>
     {/if}
