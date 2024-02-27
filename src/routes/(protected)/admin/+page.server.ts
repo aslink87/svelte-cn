@@ -74,6 +74,7 @@ export async function load() {
 export const actions = {
   hero: async ({ request }: RequestEvent): Promise<{ success: boolean }> => {
     const data = await request.formData();
+
     const submitData: HeroType = {
       title: data.get('title')?.toString().trim() ?? '',
       content: data.get('content')?.toString().trim() ?? '',
@@ -119,7 +120,7 @@ export const actions = {
 
     try {
       await prismaClient.hero.update({
-        where: { id: '9d5a8c19-6464-4763-b532-2817c4bb2033a' },
+        where: { id: '9d5a8c19-6464-4763-b532-2817c4bb2033' },
         data: submitData,
       });
 

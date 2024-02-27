@@ -27,6 +27,6 @@
     />
   {/if}
   {#if data?.video}
-    <a href={data.video}>Video Link</a>
+    <a href={data.video} target="_blank">Video Link</a>
   {/if}
 </section>
