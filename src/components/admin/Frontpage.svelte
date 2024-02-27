@@ -5,6 +5,7 @@
   import { enhance } from '$app/forms';
 
   export let heroData: HeroType;
+  let visible: boolean = false;
 
   const fields = [
     {
@@ -102,6 +103,7 @@
 
   function submitHandler() {
     updated.set(true);
+    visible = true;
   }
 </script>
 
@@ -172,9 +174,18 @@
     {#if preview}
       <button
         class="variant-filled-surface btn mt-6 px-3 py-1"
+        disabled={visible}
         formaction="/admin?/hero"
         on:click={submitHandler}>Submit</button
       >
+    {/if}
+    {#if visible}
+      <aside class="alert variant-ghost mt-6 text-white">
+        <div class="alert-message">
+          <h3 class="h3">Success</h3>
+          <p>Successfully updated frontpage data!</p>
+        </div>
+      </aside>
     {/if}
   </form>
 </section>

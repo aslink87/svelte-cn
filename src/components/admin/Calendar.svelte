@@ -4,6 +4,7 @@
   import { enhance } from '$app/forms';
 
   export let calendarData: CalendarType;
+  let visible: boolean = false;
 
   const fields = [
     {
@@ -78,6 +79,7 @@
 
   function submitHandler() {
     updated.set(true);
+    visible = true;
   }
 </script>
 
@@ -154,8 +156,17 @@
       <button
         class="variant-filled-surface btn mt-6 px-3 py-1"
         formaction="/admin?/calendar"
+        disabled={visible}
         on:click={submitHandler}>Submit</button
       >
+    {/if}
+    {#if visible}
+      <aside class="alert variant-ghost mt-6 text-white">
+        <div class="alert-message">
+          <h3 class="h3">Success</h3>
+          <p>Successfully updated calendar data!</p>
+        </div>
+      </aside>
     {/if}
   </form>
 </section>

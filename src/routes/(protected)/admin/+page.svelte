@@ -19,14 +19,13 @@
     description: 'Admin Page for Christian Neighbors',
   });
 
-  // subsribe to updated store, when a child has been updated successfully alert the user and reload the page
+  // subsribe to updated store, when a child has been updated successfully reload the page
   updated.subscribe((val) => {
     if (val === true) {
-      alert('Updated');
       setTimeout(() => {
         // eslint-disable-next-line no-restricted-globals
         location.reload();
-      }, 1000);
+      }, 2000);
     }
   });
 

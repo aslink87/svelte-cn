@@ -3,6 +3,8 @@
   import type { BlogType } from '$/types';
   import { enhance } from '$app/forms';
 
+  let visible: boolean = false;
+
   const fields = [
     { text: 'Author', type: 'text', required: true, length: 2, value: 'author', data: '' },
     { text: 'Date', type: 'text', required: true, length: 10, value: 'date', data: '' },
@@ -72,6 +74,7 @@
 
   function submitHandler() {
     updated.set(true);
+    visible = true;
   }
 </script>
 
@@ -139,9 +142,18 @@
     {#if preview}
       <button
         class="variant-filled-surface btn mt-6 px-3 py-1"
+        disabled={visible}
         formaction="/admin?/blog"
         on:click={submitHandler}>Submit</button
       >
+    {/if}
+    {#if visible}
+      <aside class="alert variant-ghost mt-6 text-white">
+        <div class="alert-message">
+          <h3 class="h3">Success</h3>
+          <p>Successfully added blog entry!</p>
+        </div>
+      </aside>
     {/if}
   </form>
 </section>

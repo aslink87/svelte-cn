@@ -2,6 +2,8 @@
   import { updated } from '$lib/stores/Admin';
   import { enhance } from '$app/forms';
 
+  let visible: boolean = false;
+
   const fields = [
     {
       text: 'Image - jpg or png only',
@@ -30,6 +32,7 @@
 
   function submitHandler() {
     updated.set(true);
+    visible = true;
   }
 </script>
 
@@ -67,9 +70,18 @@
     {#if preview}
       <button
         class="variant-filled-surface btn mt-6 px-3 py-1"
+        disabled={visible}
         formaction="/admin?/pantrycalendar"
         on:click={submitHandler}>Submit</button
       >
+    {/if}
+    {#if visible}
+      <aside class="alert variant-ghost mt-6 text-white">
+        <div class="alert-message">
+          <h3 class="h3">Success</h3>
+          <p>Successfully updated pantry calendar!</p>
+        </div>
+      </aside>
     {/if}
   </form>
 </section>

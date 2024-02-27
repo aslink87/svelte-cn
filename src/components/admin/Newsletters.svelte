@@ -4,6 +4,8 @@
   import Newsletters from '../../routes/newsletter/+page.svelte';
   import type { NewsletterType } from '$/types';
 
+  let visible: boolean = false;
+
   // initialize values
   const newsletter1 = {
     title: '',
@@ -57,6 +59,7 @@
 
   function submitHandler() {
     updated.set(true);
+    visible = true;
   }
 </script>
 
@@ -156,9 +159,18 @@
     {#if preview}
       <button
         class="variant-filled-surface btn mt-6 px-3 py-1"
+        disabled={visible}
         formaction="/admin?/newsletters"
         on:click={submitHandler}>Submit</button
       >
+    {/if}
+    {#if visible}
+      <aside class="alert variant-ghost mt-6 text-white">
+        <div class="alert-message">
+          <h3 class="h3">Success</h3>
+          <p>Successfully updated newsletter data!</p>
+        </div>
+      </aside>
     {/if}
   </form>
 </section>
