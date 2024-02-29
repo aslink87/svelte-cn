@@ -315,7 +315,7 @@ export const actions = {
         `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`,
       );
       await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
-      const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/static', '');
+      const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/uploads', '');
       submitData.img = trimmedFilePath;
     }
 
