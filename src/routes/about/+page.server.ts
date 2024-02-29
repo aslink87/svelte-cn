@@ -63,13 +63,6 @@ export async function load() {
       { title: 'Business Support', name: 'Aaron Mitchell' },
       { title: 'Executive Director', name: 'Terri Shaler' },
     ],
-    resourceDevelopment: [
-      { name: 'Tim Kellog' },
-      { name: 'Edith Reitkerk' },
-      { name: 'Kim Shafer' },
-      { name: 'Terri Shaler' },
-      { name: 'Shannon Zabaldo' },
-    ],
     financeTeam: [
       { name: 'Dorothy Cool' },
       { name: 'Donna Doctor' },
@@ -123,7 +116,7 @@ export async function load() {
     },
     {
       img: '/images/staff/debbie.png',
-      name: 'Debbie Woodstock',
+      name: 'Debbi Woodstock',
       title: 'Pantry Assistant',
       content: 'Debbie maintains the food pantry',
     },

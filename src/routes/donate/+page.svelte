@@ -118,3 +118,14 @@
     {/each}
   </ul>
 </section>
+
+<section class="donate-volunteer center component bg-surface-500/60" data-testid="donate-pantry">
+  <h1 class="h1-primary">Volunteer</h1>
+  <p class="p-primary my-8">
+    If you are interested in volunteering, please fill out our <a
+      class="underline"
+      href="/volunteer-application.pdf"
+      download="volunteer-application">Volunteer Form</a
+    >.
+  </p>
+</section>

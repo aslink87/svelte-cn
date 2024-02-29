@@ -15,7 +15,7 @@ export async function load() {
     {
       title: 'Have a Food Drive!',
       content:
-        'If your group or organization would like to organize a food drive. Or, if you are having a special party (birthday, anniversary, or Christmas) and don’t need gifts your guest may love to celebrate you by bringing food donations in your honor. Email ehoffman@christianneighbors.org for tools and information.',
+        'If your group or organization would like to organize a food drive. Or, if you are having a special party (birthday, anniversary, or Christmas) and don’t need gifts your guest may love to celebrate you by bringing food donations in your honor. Email avanputten@christianneighbors.org for tools and information.',
     },
     {
       title: 'Items We Always Need Are',

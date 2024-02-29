@@ -63,16 +63,6 @@
       </li>
     {/each}
   </ul>
-  <h2 class="h2-primary">Resource Development Team</h2>
-  <ul
-    class="center mx-auto my-12 grid w-full grid-cols-1 justify-around gap-3 p-0 sm:grid-cols-2 lg:w-[80%] xl:grid-cols-3"
-  >
-    {#each data.leadership.resourceDevelopment as item}
-      <li class="p-primary w-[300px] p-5 even:rounded even:bg-surface-500">
-        {item.name}
-      </li>
-    {/each}
-  </ul>
   <h2 class="h2-primary">Finance Team</h2>
   <ul
     class="center mx-auto my-12 grid w-full grid-cols-1 justify-around gap-3 p-0 sm:grid-cols-2 lg:w-[80%] xl:grid-cols-3"
@@ -91,7 +81,6 @@
   data-testid="about-staff"
 >
   <h1 class="h1-primary">Meet the Staff</h1>
-  <!--       gap: 2em 3em; -->
   <ul class="center mx-auto mt-12 flex flex-wrap gap-5 lg:w-[80%]">
     {#each data.staff as item}
       <li class="h-[600px] w-[300px] rounded-xl bg-primary-800 shadow-black sm:h-[650px]">
