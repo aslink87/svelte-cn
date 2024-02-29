@@ -50,20 +50,20 @@
         class="right-container m-8 mx-auto gap-8 max-md:text-xs sm:flex-wrap md:flex md:flex-row"
       >
         <div>
-          <h2>Address</h2>
-          <p>282 12th Street Plainwell, MI 49080 PO Box 53</p>
-          <h2>Phone</h2>
-          <p>1-269-685-4166</p>
-          <h2>Fax</h2>
-          <p>1-269-685-4178</p>
+          <h2 class="font-bold">Address</h2>
+          <p class="mb-2">282 12th Street Plainwell, MI 49080 PO Box 53</p>
+          <h2 class="font-bold">Phone</h2>
+          <p class="mb-2">1-269-685-4166</p>
+          <h2 class="font-bold">Fax</h2>
+          <p class="mb-2">1-269-685-4178</p>
         </div>
         <div>
-          <h2>Hours</h2>
+          <h2 class="font-bold">Hours</h2>
           <p><strong>Mon:</strong> 10-Noon, 4-6</p>
           <p><strong>Tue:</strong> 10-Noon</p>
           <p><strong>Wed:</strong> Closed</p>
           <p><strong>Thu:</strong> 2-5</p>
-          <p><strong>Fri:</strong> Closed</p>
+          <p class="mb-2"><strong>Fri:</strong> Closed</p>
           {#if $page.data.session?.user}
             <button class="text-xs underline" on:click={() => signOut()}>Logout</button>
             <a href="/admin" class="text-xs underline">Admin Page</a>

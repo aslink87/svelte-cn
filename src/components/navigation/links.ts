@@ -35,7 +35,7 @@ export const navLinks = [
     path: '/donate',
     class: 'support',
     auth: false,
-    mobile: true,
+    mobile: false,
     mobileOnly: false,
     dropdown: [
       { name: 'How to Help', path: '/donate' },
