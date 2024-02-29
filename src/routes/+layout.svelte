@@ -21,7 +21,10 @@
 </script>
 
 <Drawer>
-  <section class="mobile-menu bottom-0 top-16 h-full bg-surface-600 text-center" id="mobile-menu">
+  <section
+    class="mobile-menu bottom-0 top-16 h-full overflow-scroll bg-surface-600 text-center"
+    id="mobile-menu"
+  >
     <ul class="flex flex-col flex-wrap px-8 py-16">
       {#each navLinks as link}
         {#if link.mobile}
