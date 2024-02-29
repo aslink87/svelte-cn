@@ -15,6 +15,11 @@ export default defineConfig(({ mode }) => ({
       $fonts: mode === 'production' ? './static/fonts' : '../fonts',
     },
   },
+  server: {
+    fs: {
+      allow: ['..'],
+    },
+  },
   svelte: {
     // ignore unused css selectors - see https://github.com/sveltejs/svelte/issues/1594#issuecomment-546775545
     // eslint-disable-next-line

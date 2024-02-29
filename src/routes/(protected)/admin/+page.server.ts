@@ -310,7 +310,6 @@ export const actions = {
       const image: File = submittedImage;
       const filePath = path.join(
         process.cwd(),
-        'static',
         'uploads',
         'supper',
         `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`,
