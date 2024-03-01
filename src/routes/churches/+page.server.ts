@@ -1,8 +1,13 @@
 import prismaClient from '$lib/db.server';
 
 export async function load() {
-  const calendar = await prismaClient.pantryCalendar.findFirst();
-  if (!calendar) {
+  const pantry = await prismaClient.pantryCalendar.findFirst();
+  if (!pantry) {
+    return null;
+  }
+
+  const supper = await prismaClient.supper.findFirst();
+  if (!supper) {
     return null;
   }
 
@@ -117,5 +122,5 @@ export async function load() {
     },
   ];
 
-  return { calendar, data };
+  return { pantry, supper, data };
 }

@@ -83,7 +83,7 @@ export async function load() {
       ext: 101,
     },
     {
-      img: '/images/staff/eric.png',
+      img: '/images/staff/eric.jpg',
       name: 'Eric Hoffman',
       title: 'Development Coordinator',
       content: 'Contact to have someone speak at your group or for an online donation.',
@@ -125,6 +125,14 @@ export async function load() {
       name: 'Ralph Woodstock',
       title: 'Building and Grounds Trustee',
       content: 'Ralph maintains and improves CN buildings and grounds',
+    },
+    {
+      img: '/images/staff/sharon.jpg',
+      name: 'Sharon Carper',
+      title: 'Senior Citizen & Kitchen Coordinator',
+      content: 'Sharon manages CN activities for seniors and our demo kitchen.',
+      email: 'scarper@christianneighbors.org',
+      ext: 108,
     },
     {
       img: '/images/staff/adam.png',
