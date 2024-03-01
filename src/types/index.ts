@@ -72,7 +72,7 @@ export type AdminPageType = {
     name: string;
     settings: { approved: boolean };
   }[];
-  links: string[];
+  links: { name: string; label: string }[];
   hero: HeroType;
   newsletters: NewsletterType[];
   calendar: CalendarType;

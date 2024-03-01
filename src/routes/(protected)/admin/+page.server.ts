@@ -11,14 +11,13 @@ export async function load() {
   });
 
   const links = [
-    'admins',
-    'frontpage',
-    'newsletters',
-    'calendar',
-    'blog',
-    'supper',
-    'pantryneeds',
-    'pantrycalendar',
+    { name: 'admins', label: 'admins' },
+    { name: 'frontpage', label: 'frontpage' },
+    { name: 'calendar', label: 'calendar' },
+    { name: 'blog', label: 'blog' },
+    { name: 'supper', label: 'supper calendar' },
+    { name: 'pantryneeds', label: 'pantry needs' },
+    { name: 'pantrycalendar', label: 'pantry calendar' },
   ];
 
   let hero: HeroType = { title: 'Not found', content: 'Not found' };

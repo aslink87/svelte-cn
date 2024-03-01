@@ -48,8 +48,8 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
-<section class="admin center min-h-full w-full pl-[10rem]">
-  <nav class="fixed left-0 top-0 h-full w-[10rem] bg-surface-500 py-8">
+<section class="admin center min-h-full w-full pl-[12rem]">
+  <nav class="fixed left-0 top-0 h-full w-[12rem] bg-surface-500 py-8">
     <button on:click={() => signOut()}>
       <p class="p-primary my-3 capitalize">Logout</p>
     </button>
@@ -57,15 +57,15 @@
     {#each data.links as link}
       <button
         class="p-primary variant-filled-primary btn my-3 w-[90%] p-2 capitalize"
-        on:click={() => handleNavClick(link)}
+        on:click={() => handleNavClick(link.name)}
       >
-        {link}
+        {link.label}
       </button>
     {/each}
   </nav>
 </section>
 
-<section class="admin-wrapper ml-[10rem]">
+<section class="admin-wrapper ml-[12rem]">
   <div class="admin-head center border-b-2 py-4">
     <h1 class="h1-primary">Administration Page</h1>
   </div>
