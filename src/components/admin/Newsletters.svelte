@@ -39,17 +39,17 @@
     previewData.newsletters = [
       {
         title: data[0].title,
-        doc: '/images/placeholder.jpg',
+        doc: '/images/placeholderVert.jpg',
         index: 0,
       },
       {
         title: data[1].title,
-        doc: '/images/placeholder.jpg',
+        doc: '/images/placeholderVert.jpg',
         index: 1,
       },
       {
         title: data[2].title,
-        doc: '/images/placeholder.jpg',
+        doc: '/images/placeholderVert.jpg',
         index: 2,
       },
     ];

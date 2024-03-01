@@ -90,13 +90,12 @@ export const actions = {
       const doc: File = submittedDoc;
       const filePath = path.join(
         process.cwd(),
-        'static',
         'uploads',
         'hero',
         `${crypto.randomUUID()}.${(doc as Blob).type.split('/')[1]}`,
       );
       await fs.writeFile(filePath, Buffer.from(await (doc as Blob).arrayBuffer()));
-      const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/static', '');
+      const trimmedFilePath = filePath.replace(process.cwd(), '');
       submitData.doc = trimmedFilePath;
     }
 
@@ -108,13 +107,12 @@ export const actions = {
       const image: File = submittedImage;
       const filePath = path.join(
         process.cwd(),
-        'static',
         'uploads',
         'hero',
         `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`,
       );
       await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
-      const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/static', '');
+      const trimmedFilePath = filePath.replace(process.cwd(), '');
       submitData.image = trimmedFilePath;
     }
 
@@ -143,13 +141,12 @@ export const actions = {
         const docFile: File = doc;
         const filePath = path.join(
           process.cwd(),
-          'static',
           'uploads',
           'newsletters',
           `${crypto.randomUUID()}.${(docFile as Blob).type.split('/')[1]}`,
         );
         await fs.writeFile(filePath, Buffer.from(await (docFile as Blob).arrayBuffer()));
-        const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/static', '');
+        const trimmedFilePath = filePath.replace(process.cwd(), '');
         name.doc = trimmedFilePath;
       }
     }
@@ -223,13 +220,12 @@ export const actions = {
       const image: File = submittedImage;
       const filePath = path.join(
         process.cwd(),
-        'static',
         'uploads',
         'calendar',
         `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`,
       );
       await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
-      const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/static', '');
+      const trimmedFilePath = filePath.replace(process.cwd(), '');
       submitData.img = trimmedFilePath;
     }
 
@@ -269,13 +265,12 @@ export const actions = {
       const image: File = submittedImage;
       const filePath = path.join(
         process.cwd(),
-        'static',
         'uploads',
         'blog',
         `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`,
       );
       await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
-      const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/static', '');
+      const trimmedFilePath = filePath.replace(process.cwd(), '');
       submitData.img = trimmedFilePath;
     }
 
@@ -315,7 +310,7 @@ export const actions = {
         `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`,
       );
       await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
-      const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/uploads', '');
+      const trimmedFilePath = filePath.replace(process.cwd(), '');
       submitData.img = trimmedFilePath;
     }
 
@@ -383,13 +378,12 @@ export const actions = {
       const image: File = submittedImage;
       const filePath = path.join(
         process.cwd(),
-        'static',
         'uploads',
         'pantrycalendar',
         `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`,
       );
       await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
-      const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/static', '');
+      const trimmedFilePath = filePath.replace(process.cwd(), '');
       submitData.img = trimmedFilePath;
     }
 

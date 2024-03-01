@@ -122,15 +122,17 @@
       <div
         class="preview-wrapper center mt-8 flex w-[80%] max-w-[50em] flex-col flex-wrap rounded-lg border-2 border-white p-6"
       >
-        <article class="blog center px-4 py-8 odd:rounded-lg odd:bg-surface-500/60">
+        <article
+          class="blog center flex max-w-[50em] flex-col flex-wrap px-4 py-8 odd:rounded-lg odd:bg-surface-500/60"
+        >
           <header class="blog-header">
             <p class="blog-meta p-primary text-sm capitalize">
               Posted by {previewData.author} on {previewData.date}
             </p>
             <h2 class="h2-primary my-4 capitalize">{previewData.title}</h2>
           </header>
-          <img src={previewData.img} alt={previewData.caption} />
-          <p class="p-primary whitespace-pre">{previewData.content}</p>
+          <img class="mx-auto my-4" src={previewData.img} alt={previewData.caption} />
+          <p class="max-w-90% whitespace-pre-wrap text-wrap text-xs">{previewData.content}</p>
         </article>
       </div>
     {/if}
