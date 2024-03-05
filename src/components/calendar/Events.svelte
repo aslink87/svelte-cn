@@ -50,7 +50,8 @@
           });
       })
       .catch((error: unknown) => {
-        console.log(`Error: ${error}`);
+        const errorString = JSON.stringify(error);
+        console.log(`Error: ${errorString}`);
       });
   };
 
