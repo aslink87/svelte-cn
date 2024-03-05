@@ -13,7 +13,7 @@
   {/if}
   {#if data?.doc}
     <a
-      href={`${import.meta.env.VITE_PUBLIC_URL}${data.doc}`}
+      href={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${data.doc}`}
       data-sveltekit-preload-data
       target="_blank"
       class="variant-glass btn">Click Here</a

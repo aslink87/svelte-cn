@@ -13,7 +13,7 @@
   <aside class="alert variant-ghost-error mt-6 bg-red-500/30 text-white ring-white">
     <div class="alert-message">
       <h3 class="h3">Failure</h3>
-      <p>Failed to update frontpage data!</p>
+      <p>Failed to update data!</p>
     </div>
     <div class="variant-glass alert-actions btn">
       <button class="p-primary"><a data-sveltekit-reload href="/admin">Reload?</a></button>
