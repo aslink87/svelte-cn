@@ -39,7 +39,7 @@
   <div class="supper-calendar center my-4 flex">
     {#if data.supper}
       <img
-        src={data.supper.img}
+        src={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${data.supper.img}`}
         alt="quarterly soup supper calendar"
         style="display: none"
         id="supper"
@@ -52,7 +52,7 @@
   <div class="pantry-calendar center my-4 flex">
     {#if data.pantry}
       <img
-        src={data.pantry.img}
+        src={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${data.pantry.img}`}
         alt="quarterly pantry calendar"
         style="display: none"
         id="pantry"

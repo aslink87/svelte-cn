@@ -29,7 +29,7 @@
         </header>
         <img
           class="mx-auto my-4 w-[90%] max-w-[700px] rounded object-scale-down"
-          src={blog.img}
+          src={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${blog.img}`}
           alt={blog.caption}
         />
         <p class="p-primary whitespace-pre-wrap">{blog.content}</p>

@@ -14,7 +14,7 @@ async function createFilePath(submittedImage: File, dir: string): Promise<string
     `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`,
   );
   await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
-  const trimmedFilePath = filePath.replace(process.cwd(), '');
+  const trimmedFilePath = filePath.replace(process.cwd(), '').replace('/uploads', '');
 
   return trimmedFilePath;
 }

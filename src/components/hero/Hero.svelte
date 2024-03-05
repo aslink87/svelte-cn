@@ -22,7 +22,7 @@
   {#if data?.image}
     <img
       class="hidden max-h-[300px] max-w-[800px] rounded object-scale-down md:flex"
-      src={data.image}
+      src={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${data.image}`}
       alt="Christian Neighbors News"
     />
   {/if}

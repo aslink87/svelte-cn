@@ -55,7 +55,7 @@
   ];
 
   // if soup supper image and alt are provided, update cards
-  if (data.supper?.img) cards[1].img = data.supper.img;
+  if (data.supper?.img) cards[1].img = `${import.meta.env.VITE_PUBLIC_ASSET_URL}${data.supper.img}`;
   if (data.supper?.alt) cards[1].alt = data.supper.alt;
 
   onMount(async () => {
@@ -105,7 +105,7 @@
       {#if data.calendar.img}
         <img
           class="mx-auto my-8 hidden h-[200px] max-w-[700px] rounded object-contain sm:flex md:h-[400px] md:object-cover"
-          src={data.calendar.img}
+          src={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${data.calendar.img}`}
           alt={data.calendar.alt}
         />
       {/if}
