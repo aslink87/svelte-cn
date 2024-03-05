@@ -6,6 +6,8 @@
   import List from '@event-calendar/list';
   import type { CalendarEvent, CalendarEventSource, CalendarTheme } from '$/types';
 
+  export const ssr = false;
+
   onMount(async () => {
     await initializeGapi();
   });
@@ -14,14 +16,17 @@
 
   /* eslint-disable no-undef */
   const start = async () => {
+    const apiKey = `${import.meta.env.VITE_PUBLIC_CALENDAR_API_KEY}`;
+    const clientId = `${import.meta.env.VITE_PUBLIC_CALENDAR_CLIENT_ID}`;
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     gapi.client
       .init({
-        apiKey: 'AIzaSyCzIxIhZvSO9n5L93zddvI3kWD4dML4FME',
+        // apiKey: 'AIzaSyCzIxIhZvSO9n5L93zddvI3kWD4dML4FME',
+        apiKey,
         discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
         scope: 'https://www.googleapis.com/auth/calendar.readonly',
-        clientId: '1082423949853-lvfm382frfh9p68k5aoebq5jid7a1lfd.apps.googleusercontent.com',
+        clientId,
       })
       .then(() => {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -32,11 +37,16 @@
             timeMin: new Date().toISOString(),
             showDeleted: false,
             singleEvents: true,
-            maxResults: 20,
+            maxResults: 30,
             orderBy: 'startTime',
           })
           .then((response: { result: { items: CalendarEvent[] } } | null) => {
-            if (response && response.result.items.length > 0) events = response.result.items;
+            if (response) {
+              const filterPublicEvents = response.result.items.filter(
+                (event: CalendarEvent) => event.visibility === 'public',
+              );
+              events = filterPublicEvents;
+            }
           });
       })
       .catch((error: unknown) => {

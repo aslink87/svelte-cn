@@ -90,6 +90,7 @@ export type CalendarEvent = {
     dateTime: string;
   };
   summary: string;
+  visibility: 'private' | 'public' | undefined;
 };
 
 export type CalendarTheme = {
