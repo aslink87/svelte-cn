@@ -130,10 +130,10 @@
         class="preview-wrapper center mt-8 flex w-[80%] max-w-[50em] flex-col flex-wrap rounded-lg border-2 border-white p-6"
       >
         <h1 class="h1-primary mb-8 mt-6">Upcoming Events</h1>
-        <div class="dynamic">
+        <div class="dynamic center flex flex-col">
           {#if previewData.content}
             {#if previewData.img}
-              <img src={previewData.img} alt={previewData.alt} />
+              <img class="mx-auto" src={previewData.img} alt={previewData.alt} />
             {/if}
             <div class="preview-content">
               <p class="p-primary my-6 whitespace-pre">{previewData.content}</p>

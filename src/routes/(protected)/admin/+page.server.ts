@@ -5,6 +5,20 @@ import prismaClient from '$lib/db.server';
 import type { BlogType, CalendarType, HeroType, NeedsType, NewsletterType } from '$/types';
 import type { Actions } from './$types';
 
+async function createFilePath(submittedImage: File, dir: string): Promise<string> {
+  const image: File = submittedImage;
+  const filePath = path.join(
+    process.cwd(),
+    'uploads',
+    dir,
+    `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`,
+  );
+  await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
+  const trimmedFilePath = filePath.replace(process.cwd(), '');
+
+  return trimmedFilePath;
+}
+
 export async function load() {
   const users = await prismaClient.user.findMany({
     include: { settings: true },
@@ -13,6 +27,7 @@ export async function load() {
   const links = [
     { name: 'admins', label: 'admins' },
     { name: 'frontpage', label: 'frontpage' },
+    { name: 'newsletters', label: 'newsletters' },
     { name: 'calendar', label: 'calendar' },
     { name: 'blog', label: 'blog' },
     { name: 'supper', label: 'supper calendar' },
@@ -86,15 +101,7 @@ export const actions = {
     // if doc is submitted, verify type, save it to the server, and add the path to the database
     const submittedDoc: File | null = data.get('doc') as File;
     if (submittedDoc && submittedDoc.type === 'application/pdf') {
-      const doc: File = submittedDoc;
-      const filePath = path.join(
-        process.cwd(),
-        'uploads',
-        'hero',
-        `${crypto.randomUUID()}.${(doc as Blob).type.split('/')[1]}`,
-      );
-      await fs.writeFile(filePath, Buffer.from(await (doc as Blob).arrayBuffer()));
-      const trimmedFilePath = filePath.replace(process.cwd(), '');
+      const trimmedFilePath = await createFilePath(submittedDoc, 'hero');
       submitData.doc = trimmedFilePath;
     }
 
@@ -103,15 +110,7 @@ export const actions = {
       submittedImage &&
       (submittedImage.type === 'image/jpeg' || submittedImage.type === 'image/png')
     ) {
-      const image: File = submittedImage;
-      const filePath = path.join(
-        process.cwd(),
-        'uploads',
-        'hero',
-        `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`,
-      );
-      await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
-      const trimmedFilePath = filePath.replace(process.cwd(), '');
+      const trimmedFilePath = await createFilePath(submittedImage, 'hero');
       submitData.image = trimmedFilePath;
     }
 
@@ -137,15 +136,7 @@ export const actions = {
 
     async function storeDoc(doc: File, name: NewsletterType) {
       if (doc && doc.type === 'application/pdf') {
-        const docFile: File = doc;
-        const filePath = path.join(
-          process.cwd(),
-          'uploads',
-          'newsletters',
-          `${crypto.randomUUID()}.${(docFile as Blob).type.split('/')[1]}`,
-        );
-        await fs.writeFile(filePath, Buffer.from(await (docFile as Blob).arrayBuffer()));
-        const trimmedFilePath = filePath.replace(process.cwd(), '');
+        const trimmedFilePath = await createFilePath(doc, 'newsletters');
         name.doc = trimmedFilePath;
       }
     }
@@ -216,15 +207,7 @@ export const actions = {
       submittedImage &&
       (submittedImage.type === 'image/jpeg' || submittedImage.type === 'image/png')
     ) {
-      const image: File = submittedImage;
-      const filePath = path.join(
-        process.cwd(),
-        'uploads',
-        'calendar',
-        `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`,
-      );
-      await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
-      const trimmedFilePath = filePath.replace(process.cwd(), '');
+      const trimmedFilePath = await createFilePath(submittedImage, 'calendar');
       submitData.img = trimmedFilePath;
     }
 
@@ -261,15 +244,7 @@ export const actions = {
       submittedImage &&
       (submittedImage.type === 'image/jpeg' || submittedImage.type === 'image/png')
     ) {
-      const image: File = submittedImage;
-      const filePath = path.join(
-        process.cwd(),
-        'uploads',
-        'blog',
-        `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`,
-      );
-      await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
-      const trimmedFilePath = filePath.replace(process.cwd(), '');
+      const trimmedFilePath = await createFilePath(submittedImage, 'blog');
       submitData.img = trimmedFilePath;
     }
 
@@ -301,15 +276,7 @@ export const actions = {
       submittedImage &&
       (submittedImage.type === 'image/jpeg' || submittedImage.type === 'image/png')
     ) {
-      const image: File = submittedImage;
-      const filePath = path.join(
-        process.cwd(),
-        'uploads',
-        'supper',
-        `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`,
-      );
-      await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
-      const trimmedFilePath = filePath.replace(process.cwd(), '');
+      const trimmedFilePath = await createFilePath(submittedImage, 'supper');
       submitData.img = trimmedFilePath;
     }
 
@@ -374,15 +341,7 @@ export const actions = {
       submittedImage &&
       (submittedImage.type === 'image/jpeg' || submittedImage.type === 'image/png')
     ) {
-      const image: File = submittedImage;
-      const filePath = path.join(
-        process.cwd(),
-        'uploads',
-        'pantrycalendar',
-        `${crypto.randomUUID()}.${(image as Blob).type.split('/')[1]}`,
-      );
-      await fs.writeFile(filePath, Buffer.from(await (image as Blob).arrayBuffer()));
-      const trimmedFilePath = filePath.replace(process.cwd(), '');
+      const trimmedFilePath = await createFilePath(submittedImage, 'pantrycalendar');
       submitData.img = trimmedFilePath;
     }
 
