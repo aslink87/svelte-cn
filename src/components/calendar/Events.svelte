@@ -20,7 +20,7 @@
       .init({
         apiKey: 'AIzaSyCzIxIhZvSO9n5L93zddvI3kWD4dML4FME',
         discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
-        scope: 'https://www.googleapis.com/auth/calendar',
+        scope: 'https://www.googleapis.com/auth/calendar.readonly',
         clientId: '1082423949853-lvfm382frfh9p68k5aoebq5jid7a1lfd.apps.googleusercontent.com',
       })
       .then(() => {
@@ -32,7 +32,7 @@
             timeMin: new Date().toISOString(),
             showDeleted: false,
             singleEvents: true,
-            maxResults: 10,
+            maxResults: 20,
             orderBy: 'startTime',
           })
           .then((response: { result: { items: CalendarEvent[] } } | null) => {
