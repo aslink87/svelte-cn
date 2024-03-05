@@ -17,16 +17,12 @@
   /* eslint-disable no-undef */
   const start = async () => {
     const apiKey = `${import.meta.env.VITE_PUBLIC_CALENDAR_API_KEY}`;
-    const clientId = `${import.meta.env.VITE_PUBLIC_CALENDAR_CLIENT_ID}`;
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     gapi.client
       .init({
-        // apiKey: 'AIzaSyCzIxIhZvSO9n5L93zddvI3kWD4dML4FME',
         apiKey,
         discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
-        scope: 'https://www.googleapis.com/auth/calendar.readonly',
-        clientId,
       })
       .then(() => {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
