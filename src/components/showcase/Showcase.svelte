@@ -43,8 +43,8 @@
   />
   <h1 class="h1-primary">What We Do</h1>
   <h2 class="heading h2-primary my-8 rounded-md bg-primary-800">
-    Our Mission is to provide local families in need with Food, Emergency Financial Assistance and
-    Skill Building Education to create Self Sufficiency.
+    Our Mission is to provide local families in need with food, emergency financial assistance,
+    skill-building education, and other resources offering stabilization.
   </h2>
   {#each cards as card}
     <div class="card-wrapper mx-0 my-8 flex h-fit flex-col items-center justify-between">

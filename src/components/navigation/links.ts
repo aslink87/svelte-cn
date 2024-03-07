@@ -67,6 +67,14 @@ export const navLinks = [
     mobileOnly: true,
   },
   {
+    name: 'Blog',
+    path: '/blog',
+    class: 'blog-mobile',
+    auth: false,
+    mobile: true,
+    mobileOnly: true,
+  },
+  {
     name: 'Church Partners',
     path: '/churches',
     class: 'churches',
