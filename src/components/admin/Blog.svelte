@@ -7,7 +7,7 @@
 
   const fields = [
     { text: 'Author', type: 'text', required: true, length: 2, value: 'author', data: '' },
-    { text: 'Date', type: 'text', required: true, length: 10, value: 'date', data: '' },
+    { text: 'Date', type: 'date', required: true, length: 10, value: 'date', data: '' },
     { text: 'Title', type: 'text', required: true, length: 5, value: 'title', data: '' },
     { text: 'Content', type: 'textarea', required: true, length: 15, value: 'content', data: '' },
     {
@@ -97,6 +97,16 @@
           type="file"
           class="file my-4"
           accept="image/jpeg, image/png"
+          required={field.required}
+          style={field.required ? 'border: 2px solid red' : ''}
+        />
+      {:else if field.type === 'date'}
+        <input
+          bind:value={field.data}
+          name={field.value}
+          type="date"
+          minlength={field.length}
+          class="text my-4 w-[600px] rounded-lg px-4 text-primary-600"
           required={field.required}
           style={field.required ? 'border: 2px solid red' : ''}
         />

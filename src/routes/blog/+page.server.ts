@@ -3,7 +3,7 @@ import prismaClient from '$lib/db.server';
 export async function load() {
   const blogs = await prismaClient.blog.findMany({
     orderBy: {
-      id: 'asc',
+      date: 'desc',
     },
   });
   if (!blogs) {
