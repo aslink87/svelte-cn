@@ -132,7 +132,7 @@ export async function load() {
       title: 'Senior Citizen & Kitchen Coordinator',
       content: 'Sharon manages CN activities for seniors and our demo kitchen.',
       email: 'scarper@christianneighbors.org',
-      ext: 108,
+      ext: 107,
     },
     {
       img: '/images/staff/adam.png',
