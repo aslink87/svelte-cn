@@ -25,7 +25,7 @@
         class="mx-auto mt-8 h-[25em] w-full sm:h-[55em] sm:w-[80%]"
         title="E-News Preview"
         type="application/pdf"
-        data={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${enews.doc}`}
+        data={enews.doc}
       />
     </div>
   {/if}
@@ -33,7 +33,7 @@
     <h2 class="h2-primary">Recent Newsletters</h2>
     {#if firstNewsletter}
       <a
-        href={`${import.meta.env.VITE_PUBLIC_URL}${firstNewsletter.doc}`}
+        href={firstNewsletter.doc}
         class="my-4 underline"
         data-sveltekit-preload-data
         target="_blank">{firstNewsletter.title}</a
@@ -41,7 +41,7 @@
     {/if}
     {#if secondNewsletter}
       <a
-        href={`${import.meta.env.VITE_PUBLIC_URL}${secondNewsletter.doc}`}
+        href={secondNewsletter.doc}
         class="my-4 underline"
         data-sveltekit-preload-data
         target="_blank">{secondNewsletter.title}</a

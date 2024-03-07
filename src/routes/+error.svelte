@@ -8,7 +8,7 @@
   {/if}
   <img
     class="my-8 h-[200px] w-[200px] rounded-lg border-2 border-white object-cover"
-    src={`${import.meta.env.VITE_PUBLIC_URL}/images/shockedCat.jpg`}
+    src="/images/shockedCat.jpg"
     alt="Surprised cat"
   />
   <button class="variant-filled-surface btn mt-4 px-3 py-1">
