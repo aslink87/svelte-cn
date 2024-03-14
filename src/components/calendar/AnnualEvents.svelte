@@ -1,11 +1,35 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import type { CalendarType } from '$/types';
+  import type { CalendarEvent } from '$/types';
 
-  export let data: {
-    calendar: CalendarType | null;
-    supper: { img: string; alt: string } | null;
-  };
+  interface SupperEvent {
+    date: string;
+    location: string;
+  }
+
+  export let events: CalendarEvent[] = [];
+  const supperEvents: SupperEvent[] = formatEventDates(events) ?? [];
+
+  function filterEvents(e: CalendarEvent[]) {
+    return e.filter((event: CalendarEvent) => event.summary.toLowerCase().endsWith('supper'));
+  }
+
+  function formatEventDates(eventsArr: CalendarEvent[]) {
+    const suppers = filterEvents(eventsArr);
+
+    if (suppers.length === 0) return [];
+
+    const dates: SupperEvent[] = [];
+
+    suppers.forEach((item) => {
+      const date = new Date(item.start.dateTime);
+      const obj: SupperEvent = { date: date.toLocaleDateString(), location: item.location ?? '' };
+
+      dates.push(obj);
+    });
+
+    return dates;
+  }
 
   interface ICards {
     heading: string;
@@ -14,6 +38,7 @@
     alt?: string;
     link?: string;
     label?: string;
+    data?: SupperEvent[];
   }
 
   const cards: ICards[] = [
@@ -31,9 +56,10 @@
       img: '',
       alt: '',
       content:
-        'Our Soup Suppers are generally held between September through May. They are a fundraising event for Christian Neighbors hosted by our wonderful church partners to raise funds that go directly to our food pantry to help fight hunger within our community. Come enjoy a wonderful meal to help support a great cause! More information can be found on our calendar, in the attached flyer, and on our social media.',
+        'Our Soup Suppers are generally held between September through May. They are a fundraising event for Christian Neighbors hosted by our wonderful church partners to raise funds that go directly to our food pantry to help fight hunger within our community. Come enjoy a wonderful meal to help support a great cause! Here are some upcoming soup suppers:',
       link: '',
       label: '',
+      data: supperEvents,
     },
     {
       heading: 'PATH Walk',
@@ -45,10 +71,6 @@
       label: '',
     },
   ];
-
-  // if soup supper image and alt are provided, update cards
-  if (data.supper?.img) cards[1].img = `${import.meta.env.VITE_PUBLIC_ASSET_URL}${data.supper.img}`;
-  if (data.supper?.alt) cards[1].alt = data.supper.alt;
 
   onMount(async () => {
     const firstCard = document.getElementById('0');
@@ -127,6 +149,24 @@
             <a class="p-primary md:text-md variant-glass btn mt-6 px-2 text-xs" href={card.link}
               >{card.label}</a
             >
+          {/if}
+          {#if events}
+            {#if card.data && card.data.length > 0}
+              <ul class="mt-6">
+                {#each card.data as item}
+                  {#if item.date && item.location}
+                    <li
+                      class="mx-auto w-full rounded-lg p-4 capitalize odd:bg-surface-500/60 md:w-[90%]"
+                    >
+                      <p class="p-primary">Date: {item.date}</p>
+                      <p class="p-primary">Location: {item.location}</p>
+                    </li>
+                  {/if}
+                {/each}
+              </ul>
+            {:else if card.data && card.data.length === 0}
+              <h2 class="h2-primary mt-6">No upcoming suppers...</h2>
+            {/if}
           {/if}
         </div>
       </div>

@@ -43,7 +43,7 @@
             timeMin: new Date().toISOString(),
             showDeleted: false,
             singleEvents: true,
-            maxResults: 40,
+            maxResults: 100,
             orderBy: 'startTime',
           })
           .then((response: { result: { items: CalendarEvent[] } } | null) => {
@@ -105,5 +105,5 @@
 </section>
 
 <section class="calendar-card center component" data-testid="calendar-card">
-  <AnnualEvents {data} />
+  <AnnualEvents {events} />
 </section>
