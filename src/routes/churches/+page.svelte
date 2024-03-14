@@ -61,8 +61,9 @@
   </div>
   <h2 class="h2-primary mb-4">Would you like someone to come speak to your church?</h2>
   <p class="p-primary">
-    Contact <a class="underline" href="mailto:ehoffman@christianneighbors.org">Eric Hoffman</a> or call
-    269-685-4166 ext 100.
+    Contact <a class="underline" href="mailto:ehoffman@christianneighbors.org">Eric Hoffman</a> or
+    call
+    <a href="tel:+12696854166">269-685-4166</a> ext 100.
   </p>
   <h2 class="h2-primary my-4">Our Church Partners</h2>
   <ul>

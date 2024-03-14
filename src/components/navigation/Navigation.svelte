@@ -58,16 +58,28 @@
                 {link.name}
                 {#if link.dropdown && link.dropdown.length > 0}
                   <div
-                    class={`dropdown-${link.name} dd absolute top-14 hidden min-w-44 rounded bg-primary-500 shadow-sm`}
-                    data-testid={`dropdown-${link.name}`}
-                    id={link.name.toLowerCase().split(' ')[0]}
+                    class={`dropdown-${link.name
+                      .split(' ')
+                      .join('-')
+                      .toLowerCase()} dd absolute top-14 hidden min-w-44 rounded bg-primary-500 shadow-sm`}
+                    data-testid={`dropdown-${link.name.split(' ').join('-').toLowerCase()}`}
+                    id={link.class}
                   >
                     {#each link.dropdown as item}
-                      <a
-                        href={item.path}
-                        class="block px-4 py-3 text-left text-sm text-white hover:text-tertiary-500"
-                        >{item.name}</a
-                      >
+                      {#if item.type === 'external'}
+                        <a
+                          href={item.path}
+                          class="block px-4 py-3 text-left text-sm text-white hover:text-tertiary-500"
+                          rel="noopener noreferrer"
+                          target="_blank">{item.name}</a
+                        >
+                      {:else}
+                        <a
+                          href={item.path}
+                          class="block px-4 py-3 text-left text-sm text-white hover:text-tertiary-500"
+                          >{item.name}</a
+                        >
+                      {/if}
                     {/each}
                   </div>
                 {/if}

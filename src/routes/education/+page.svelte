@@ -52,10 +52,10 @@
     >
   </p>
   <p class="p-primary">
-    If you have questions, would like to volunteer, or have ideas for offerings contact Sharon
-    Carper at (269)685-4166 extension 107 or email her at <a
-      class="underline"
-      href="mailto:scarper@christianneighbors.org">scarper@christianneighbors.org</a
+    If you have questions, would like to volunteer, or have ideas for offerings contact Kim Shafer
+    at <a href="tel:+12696854166">(269)685-4166</a> extension 102 or email her at
+    <a class="underline" href="mailto:kshafer@christianneighbors.org"
+      >kshafer@christianneighbors.org</a
     >
   </p>
 </section>

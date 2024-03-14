@@ -30,9 +30,9 @@
       img: '/images/dinnerAuction2.jpg',
       alt: 'Dinner Auction',
       content:
-        'Each year we host a fun Reflection of Hope Auction event that is our main source of funds for emergency relief to prevent homelessness and loss of utilities in our neighborhood.',
-      link: '',
-      label: '',
+        'Each year on the second Thursday in May, we host a fun Reflection of Hope Auction event that is our main source of funds for emergency relief to prevent homelessness and loss of utilities in our neighborhood. For more information email Eric Hoffman.',
+      link: 'mailto:ehoffman@christianneighbors.org',
+      label: 'ehoffman@christianneighbors.org',
     },
     {
       heading: 'Soup Suppers',
@@ -163,7 +163,9 @@
           <div class="card-right__content max-w-[50em] text-center xl:text-left">
             <p class="p-primary">{card.content}</p>
             {#if card.link}
-              <a href={card.link}>{card.link.split('.').slice(1).join('.')}</a>
+              <a class="p-primary md:text-md variant-glass btn mt-6 px-2 text-xs" href={card.link}
+                >{card.label}</a
+              >
             {/if}
           </div>
         </div>

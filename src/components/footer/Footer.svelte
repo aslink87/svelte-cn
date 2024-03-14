@@ -8,7 +8,7 @@
     class="svg flex aspect-[2100/300] flex-col justify-end max-2xl:bg-white 2xl:bg-[url('/images/wavesHand.png')] 2xl:bg-cover 2xl:bg-center"
   >
     <div
-      class="footer-wrapper flex h-fit w-[90%] justify-normal text-primary-500 max-sm:flex-wrap sm:mx-8 md:mt-8"
+      class="footer-wrapper mx-auto flex h-fit w-[90%] justify-normal text-primary-500 max-sm:flex-wrap md:mt-8"
     >
       <div class="spacer 2xl:w-5/12" />
       <div class="left-container m-8 mx-auto flex flex-col flex-wrap 2xl:justify-end">
@@ -51,11 +51,13 @@
       >
         <div>
           <h2 class="font-bold">Address</h2>
-          <p class="mb-2">282 12th Street Plainwell, MI 49080 PO Box 53</p>
+          <p class="mb-2">282 12th Street Plainwell, MI 49080</p>
+          <h2 class="font-bold">Mailing Address</h2>
+          <p class="mb-2">PO Box 53, Plainwell, MI 49080</p>
           <h2 class="font-bold">Phone</h2>
-          <p class="mb-2">1-269-685-4166</p>
+          <a href="tel:+12696854166" class="mb-2">(269)685-4166</a>
           <h2 class="font-bold">Fax</h2>
-          <p class="mb-2">1-269-685-4178</p>
+          <p class="mb-2">(269)685-4178</p>
         </div>
         <div>
           <h2 class="font-bold">Hours</h2>

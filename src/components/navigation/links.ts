@@ -32,14 +32,21 @@ export const navLinks = [
     mobileOnly: false,
   },
   {
-    name: 'Support Us',
+    name: 'Ways to Help',
     path: '/donate',
     class: 'support',
     auth: false,
     mobile: false,
     mobileOnly: false,
     dropdown: [
-      { name: 'How to Help', path: '/donate' },
+      { name: 'Legacy Giving', path: '/donate#donate-legacy' },
+      { name: 'Donate Food', path: '/donate#donate-pantry' },
+      {
+        name: 'Amazon Whishlist',
+        path: 'https://www.amazon.com/hz/wishlist/ls/2XNGDCKBEWI88/ref=nav_wishlist_lists_1?_encoding=UTF8&type=wishlist',
+        type: 'external',
+      },
+      { name: 'Volunteer', path: '/donate#donate-volunteer' },
       { name: 'Church Partners', path: '/churches' },
     ],
   },
