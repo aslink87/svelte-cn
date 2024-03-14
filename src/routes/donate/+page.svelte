@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { enhance } from '$app/forms';
+  import VolunteerForm from '$/components/donate/VolunteerForm.svelte';
   import { seo } from '$lib/stores/Seo';
   import Seo from '../SEO.svelte';
   import { onMount } from 'svelte';
@@ -23,33 +23,6 @@
       gbIframe.style.display = 'inline-block';
     }
   });
-
-  const fields = [
-    {
-      text: 'name *',
-      type: 'text',
-      required: true,
-      length: 5,
-      value: 'name',
-      data: '',
-    },
-    {
-      text: 'phone',
-      type: 'number',
-      required: false,
-      length: 10,
-      value: 'phone',
-      data: '',
-    },
-    {
-      text: 'email',
-      type: 'text',
-      required: false,
-      length: 10,
-      value: 'email',
-      data: '',
-    },
-  ];
 
   interface IData {
     pantry: { title: string; content: string }[];
@@ -165,75 +138,12 @@
   class="donate-unaccepted center component bg-surface-500/60"
   data-testid="donate-unaccepted"
 >
-  <h1 class="h1-primary">Items we dont accept</h1>
-  <h2 class="h2-primary my-8">TODO</h2>
+  <h1 class="h1-primary mb-8">Items we dont accept</h1>
+  <p class="p-primary mb-6">We are not accepting clothing or household item donations.</p>
+  <p class="p-primary">
+    Please contact the Otsego Community Center at <a href="tel:12696944775">(269)694-4775</a> to donate
+    these items.
+  </p>
 </section>
 
-<section
-  class="donate-volunteer center component"
-  id="donate-volunteer"
-  data-testid="donate-pantry"
->
-  <h1 class="h1-primary">Volunteer</h1>
-  <p class="p-primary my-8">
-    Leave your name and either a phone number, email, or both and we'll reach out to you soon.
-    Thanks!
-  </p>
-  <form class="center flex flex-col" method="POST" use:enhance>
-    {#each fields as field}
-      <label class="capitalize" for={field.value}>{field.text}</label>
-      {#if field.text === 'name *'}
-        <input
-          bind:value={field.data}
-          name={field.value}
-          type="text"
-          minlength={field.length}
-          class="my-4 w-[90%] rounded-lg px-4 text-primary-600 sm:w-[400px]"
-          required={field.required}
-        />
-      {:else if field.text === 'phone'}
-        <input
-          bind:value={field.data}
-          name={field.value}
-          type="tel"
-          minlength={field.length}
-          class="my-4 w-[90%] rounded-lg px-4 text-primary-600 sm:w-[400px]"
-          required={field.required}
-        />
-      {:else}
-        <input
-          bind:value={field.data}
-          name={field.value}
-          type="email"
-          minlength={field.length}
-          class="my-4 w-[90%] rounded-lg px-4 text-primary-600 sm:w-[400px]"
-          required={field.required}
-        />
-      {/if}
-    {/each}
-    <button
-      disabled={typeof form?.success === 'boolean'}
-      class="variant-filled-surface btn px-3 py-1">Submit</button
-    >
-  </form>
-  {#if form}
-    {#if form.success}
-      <aside
-        class="alert variant-ghost mx-auto mt-6 flex w-fit flex-col gap-6 bg-green-600/40 text-white ring-white"
-      >
-        <div class="alert-message">
-          <p>Success!</p>
-        </div>
-      </aside>
-    {:else if !form.success}
-      <aside
-        class="alert variant-ghost-error mx-auto mt-6 flex w-fit flex-col bg-red-500/30 text-white ring-white"
-      >
-        <div class="alert-message">
-          <p>Failed to submit! Refresh the page and try again.</p>
-        </div>
-        <button class="variant-glass btn" on:click={() => window.location.reload()}>Reload?</button>
-      </aside>
-    {/if}
-  {/if}
-</section>
+<VolunteerForm {form} />

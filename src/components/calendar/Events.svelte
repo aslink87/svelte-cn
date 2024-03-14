@@ -33,7 +33,7 @@
             timeMin: new Date().toISOString(),
             showDeleted: false,
             singleEvents: true,
-            maxResults: 30,
+            maxResults: 40,
             orderBy: 'startTime',
           })
           .then((response: { result: { items: CalendarEvent[] } } | null) => {
@@ -87,24 +87,26 @@
     return parseEvent(events);
   }
 
-  function parseEvent(eventsArr: CalendarEvent[]): CalendarEventSource[] {
-    return eventsArr.map((event) => {
-      return {
-        id: event.etag,
-        start: event.start.dateTime,
-        end: event.end.dateTime,
-        title: {
-          html: `
-					<a
-					href=${event.htmlLink}
-					data-sveltekit-preload-data
-					target="_blank"
-					class="variant-glass btn p-2 p-primary">
-					${event.summary}
-					</a>`,
-        },
-      };
-    });
+  function parseEvent(eventsArr: CalendarEvent[]): CalendarEventSource[] | null {
+    return eventsArr
+      .filter((event) => event.summary !== 'Office')
+      .map((event) => {
+        return {
+          id: event.etag,
+          start: event.start.dateTime,
+          end: event.end.dateTime,
+          title: {
+            html: `
+            <a
+            href=${event.htmlLink}
+            data-sveltekit-preload-data
+            target="_blank"
+            class="variant-glass btn p-2 p-primary">
+            ${event.summary}
+            </a>`,
+          },
+        };
+      });
   }
 </script>
 
@@ -113,6 +115,10 @@
 </svelte:head>
 
 <div class="google-api-wrapper">
+  <ul class="calendar-legend">
+    <li class="p-primary">DK events are in our demonstration kitchen.</li>
+    <li class="p-primary">LAB events are in our computer lab</li>
+  </ul>
   {#if events.length > 0}
     <div class="calendar-wrapper p-primary">
       <Calendar {plugins} {options} id={1} class="ec" />
