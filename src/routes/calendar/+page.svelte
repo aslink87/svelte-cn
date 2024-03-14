@@ -3,7 +3,8 @@
   import Seo from '../SEO.svelte';
   import Events from '$/components/calendar/Events.svelte';
   import AnnualEvents from '$/components/calendar/AnnualEvents.svelte';
-  import type { CalendarType } from '$/types';
+  import type { CalendarEvent, CalendarType } from '$/types';
+  import { onMount } from 'svelte';
 
   seo.set({
     title: 'CN - Calendar',
@@ -14,7 +15,61 @@
     calendar: CalendarType | null;
     supper: { img: string; alt: string } | null;
   };
+
+  export const ssr = false;
+
+  onMount(async () => {
+    await initializeGapi();
+  });
+
+  let events: CalendarEvent[] = [];
+
+  /* eslint-disable no-undef */
+  const start = async () => {
+    const apiKey = `${import.meta.env.VITE_PUBLIC_CALENDAR_API_KEY}`;
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    gapi.client
+      .init({
+        apiKey,
+        discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+      })
+      .then(() => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        return gapi.client.calendar.events
+          .list({
+            calendarId: 'volunteer@christianneighbors.org',
+            timeMin: new Date().toISOString(),
+            showDeleted: false,
+            singleEvents: true,
+            maxResults: 40,
+            orderBy: 'startTime',
+          })
+          .then((response: { result: { items: CalendarEvent[] } } | null) => {
+            if (response) {
+              const filterPublicEvents = response.result.items.filter(
+                (event: CalendarEvent) => event.visibility === 'public',
+              );
+              events = filterPublicEvents;
+            }
+          });
+      })
+      .catch((error: unknown) => {
+        const errorString = JSON.stringify(error);
+        console.log(`Error: ${errorString}`);
+      });
+  };
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const initializeGapi = async () => gapi.load('client', start);
+  /* eslint-enable no-undef */
 </script>
+
+<svelte:head>
+  <script src="https://apis.google.com/js/api.js" on:load={initializeGapi}></script>
+</svelte:head>
 
 <Seo title={$seo.title} description={$seo.description} />
 
@@ -42,7 +97,11 @@
 </section>
 
 <section class="calendar-items center component bg-surface-500/60" data-testid="calendar-events">
-  <Events />
+  {#if events.length > 0}
+    <Events {events} />
+  {:else}
+    <h2 class="h2-primary">Loading...</h2>
+  {/if}
 </section>
 
 <section class="calendar-card center component" data-testid="calendar-card">
