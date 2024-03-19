@@ -8,7 +8,7 @@
       alt: 'Food Pantry',
       subheading: 'Support Us',
       content:
-        'Our Mission is to provide local families in need with Food, Emergency Financial Assistance and Skill Building Education to create Self Sufficiency.',
+        'There are many ways to support Christian Neighbors. Whether you are interested in volunteering, donating, or sending monetary support, we have many opportunities for you to get involved...',
       link: '/donate',
     },
     {

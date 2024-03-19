@@ -141,8 +141,9 @@
   <h1 class="h1-primary mb-8">Items we dont accept</h1>
   <p class="p-primary mb-6">We are not accepting clothing or household item donations.</p>
   <p class="p-primary">
-    Please contact the Otsego Community Center at <a href="tel:12696944775">(269)694-4775</a> to donate
-    these items.
+    Please contact the SDA Otsego Community Service Center at <a href="tel:12696944775"
+      >(269)694-4775</a
+    > to donate these items.
   </p>
 </section>
 

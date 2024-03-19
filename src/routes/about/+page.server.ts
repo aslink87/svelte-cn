@@ -9,8 +9,8 @@ export async function load() {
       'Christian Neighbors is governed by an all-volunteer board and teams who are carefully selected and diversified in their makeup.',
     ],
     list2: [
+      'Our board of directors care for our mission, strategies, goals, governance and ensure that we operate in compliance with legal & ethical standards.',
       'Our finances are monitored by a Finance Team made up of our board president, treasurer, bookkeeper, CPA, and local business owners.',
-      'Our finances are raised and monitored by the Resource Development Team.',
       'Our Facilities Director and team cares for the building and ground with which the ministry has been greatly blessed.',
       'The Education Resource team oversees our classes and programs to strengthen individuals and community.',
     ],
@@ -52,7 +52,7 @@ export async function load() {
       { title: 'Board President', name: 'Art Hartman' },
       { title: 'Vice President', name: 'Edith Reitkerk' },
       { title: 'Secretary', name: 'Jane Adams' },
-      { title: 'Treasurer', name: 'Timothy Powers' },
+      { title: 'Treasurer', name: 'Tim Powers' },
       { title: 'Facilities Manager', name: 'Larry Hill' },
       { title: 'Education / Resources', name: 'Donna Doctor' },
       { title: 'Pastoral Advisor', name: 'Joe Shaler' },

@@ -42,7 +42,7 @@ export const navLinks = [
       { name: 'Legacy Giving', path: '/donate#donate-legacy' },
       { name: 'Donate Food', path: '/donate#donate-pantry' },
       {
-        name: 'Amazon Whishlist',
+        name: 'Amazon Wishlist',
         path: 'https://www.amazon.com/hz/wishlist/ls/2XNGDCKBEWI88/ref=nav_wishlist_lists_1?_encoding=UTF8&type=wishlist',
         type: 'external',
       },

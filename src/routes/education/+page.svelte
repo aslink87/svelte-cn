@@ -25,6 +25,16 @@
         alt="demo kitchen gathering"
       />
     </div>
+    <div class="md:max-w-96">
+      <img class="rounded-lg object-scale-down" src="/images/lab1.jpg" alt="classroom gathering" />
+    </div>
+    <div class="md:max-w-96">
+      <img
+        class="rounded-lg object-scale-down"
+        src="/images/classroom1.jpg"
+        alt="labroom gathering"
+      />
+    </div>
   </div>
   <p class="p-primary my-4">
     Our classes and programs focus on skill-building and personal development to help our neighbors
@@ -53,8 +63,9 @@
   </p>
   <p class="p-primary">
     If you have questions, would like to volunteer, or have ideas for offerings contact Kim Shafer
-    at <a href="tel:+12696854166">(269)685-4166</a> extension 102 or email her at
-    <a class="underline" href="mailto:kshafer@christianneighbors.org"
+    at <a class="p-primary whitespace-nowrap" href="tel:+12696854166">(269)685-4166</a> extension
+    102 or email her at
+    <a class="p-primary underline" href="mailto:kshafer@christianneighbors.org"
       >kshafer@christianneighbors.org</a
     >
   </p>

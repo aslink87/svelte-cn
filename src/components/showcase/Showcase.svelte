@@ -20,7 +20,7 @@
     },
     {
       heading: 'Education',
-      img: '/images/cnGrads.jpg',
+      img: '/images/lab1.jpg',
       alt: 'Educational Assistance',
       subheading: 'We teach to...',
       content:
