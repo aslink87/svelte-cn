@@ -9,7 +9,7 @@
 
   const plugins = [List];
   const options = {
-    view: 'listMonth',
+    view: 'listWeek',
     eventSources: [
       {
         events: async () => {

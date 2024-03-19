@@ -7,8 +7,17 @@
     location: string;
   }
 
+  interface ICards {
+    heading: string;
+    content: string;
+    img?: string;
+    alt?: string;
+    link?: string;
+    label?: string;
+    data?: SupperEvent[];
+  }
+
   export let events: CalendarEvent[] = [];
-  const supperEvents: SupperEvent[] = formatEventDates(events) ?? [];
 
   function filterEvents(e: CalendarEvent[]) {
     return e.filter((event: CalendarEvent) => event.summary.toLowerCase().endsWith('supper'));
@@ -31,16 +40,6 @@
     return dates;
   }
 
-  interface ICards {
-    heading: string;
-    content: string;
-    img?: string;
-    alt?: string;
-    link?: string;
-    label?: string;
-    data?: SupperEvent[];
-  }
-
   const cards: ICards[] = [
     {
       heading: 'Annual Reflection of Hope Auction',
@@ -59,7 +58,7 @@
         'Our Soup Suppers are generally held between September through May. They are a fundraising event for Christian Neighbors hosted by our wonderful church partners to raise funds that go directly to our food pantry to help fight hunger within our community. Come enjoy a wonderful meal to help support a great cause! Here are some upcoming soup suppers:',
       link: '',
       label: '',
-      data: supperEvents,
+      data: formatEventDates(events),
     },
     {
       heading: 'PATH Walk',
@@ -150,23 +149,19 @@
               >{card.label}</a
             >
           {/if}
-          {#if events}
-            {#if card.data && card.data.length > 0}
-              <ul class="mt-6">
-                {#each card.data as item}
-                  {#if item.date && item.location}
-                    <li
-                      class="mx-auto w-full rounded-lg p-4 capitalize odd:bg-surface-500/60 md:w-[90%]"
-                    >
-                      <p class="p-primary">Date: {item.date}</p>
-                      <p class="p-primary">Location: {item.location}</p>
-                    </li>
-                  {/if}
-                {/each}
-              </ul>
-            {:else if card.data && card.data.length === 0}
-              <h2 class="h2-primary mt-6">No upcoming suppers...</h2>
-            {/if}
+          {#if card.data}
+            <ul class="mt-6">
+              {#each card.data as item}
+                {#if item.date && item.location}
+                  <li
+                    class="mx-auto w-full rounded-lg p-4 capitalize odd:bg-surface-500/60 md:w-[90%]"
+                  >
+                    <p class="p-primary">Date: {item.date}</p>
+                    <p class="p-primary">Location: {item.location}</p>
+                  </li>
+                {/if}
+              {/each}
+            </ul>
           {/if}
         </div>
       </div>

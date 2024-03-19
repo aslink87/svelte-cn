@@ -105,5 +105,9 @@
 </section>
 
 <section class="calendar-card center component" data-testid="calendar-card">
-  <AnnualEvents {events} />
+  {#if events.length > 0}
+    <AnnualEvents {events} />
+  {:else}
+    <h2 class="h2-primary">Loading...</h2>
+  {/if}
 </section>
