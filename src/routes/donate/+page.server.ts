@@ -1,4 +1,11 @@
 import prismaClient from '$lib/db.server';
+import type { RequestEvent } from '@sveltejs/kit';
+
+function sanitizeString(str: string) {
+  str.trim();
+  str.toLocaleLowerCase();
+  return str;
+}
 
 export async function load() {
   const pantry = [
@@ -42,3 +49,44 @@ export async function load() {
 
   return { pantry, legacy, needs };
 }
+
+export const actions = {
+  default: async ({ request }: RequestEvent): Promise<{ success: boolean }> => {
+    const data = await request.formData();
+    // https://docs.google.com/forms/u/2/d/e/1FAIpQLScpfLJJhwg37l-stzPnRjlCVvF1agacr9pd9P0UhHcEC74WdA/formResponse
+    try {
+      const nameId = 'entry.1446272839';
+      const phoneId = 'entry.1222297682';
+      const emailId = 'entry.426107485';
+      const nameValue = data.get('name') as string;
+      const phoneValueValue = data.get('phone') as string;
+      const emailValue = data.get('email') as string;
+      const nameSanitized = sanitizeString(nameValue);
+      const emailSanitized = sanitizeString(emailValue);
+
+      const req = await fetch(
+        `https://docs.google.com/forms/u/2/d/e/1FAIpQLScpfLJJhwg37l-stzPnRjlCVvF1agacr9pd9P0UhHcEC74WdA/formResponse?${nameId}=${nameSanitized}&${phoneId}=${phoneValueValue}&${emailId}=${emailSanitized}`,
+        {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      );
+
+      if (req.status === 200) {
+        return { success: true };
+      }
+
+      return { success: false };
+      // eslint-disable-next-line
+    } catch (e: any) {
+      const env: string = import.meta.env.MODE;
+      // eslint-disable-next-line no-console
+      if (env === 'development') console.log(e.message);
+
+      return { success: false };
+    }
+  },
+};

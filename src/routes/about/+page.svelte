@@ -88,12 +88,16 @@
         <p class="h2-primary my-4 font-bold">{item.name}</p>
         <p class="p-primary">{item.title}</p>
         <p class="content p-primary mx-4 mt-6 text-sm">{item.content}</p>
-        {#if item.email}
-          <a class="variant-glass btn my-6 text-xs" href="mailto:{item.email}">{item.email}</a>
-        {/if}
-        {#if item.ext}
-          <p class="p-primary">(269) 685-4166 ext {item.ext}</p>
-        {/if}
+        <div class="flex flex-col">
+          {#if item.email}
+            <a class="variant-glass btn mx-auto my-6 w-fit text-xs" href="mailto:{item.email}"
+              >{item.email}</a
+            >
+          {/if}
+          {#if item.ext}
+            <a href="tel:+12696854166" class="p-primary">(269) 685-4166 ext {item.ext}</a>
+          {/if}
+        </div>
       </li>
     {/each}
   </ul>

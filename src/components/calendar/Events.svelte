@@ -1,64 +1,15 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   // @ts-expect-error no-type-def
   import Calendar from '@event-calendar/core';
   // @ts-expect-error no-type-def
   import List from '@event-calendar/list';
   import type { CalendarEvent, CalendarEventSource, CalendarTheme } from '$/types';
 
-  export const ssr = false;
-
-  onMount(async () => {
-    await initializeGapi();
-  });
-
-  let events: CalendarEvent[] = [];
-
-  /* eslint-disable no-undef */
-  const start = async () => {
-    const apiKey = `${import.meta.env.VITE_PUBLIC_CALENDAR_API_KEY}`;
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    gapi.client
-      .init({
-        apiKey,
-        discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
-      })
-      .then(() => {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        return gapi.client.calendar.events
-          .list({
-            calendarId: 'volunteer@christianneighbors.org',
-            timeMin: new Date().toISOString(),
-            showDeleted: false,
-            singleEvents: true,
-            maxResults: 30,
-            orderBy: 'startTime',
-          })
-          .then((response: { result: { items: CalendarEvent[] } } | null) => {
-            if (response) {
-              const filterPublicEvents = response.result.items.filter(
-                (event: CalendarEvent) => event.visibility === 'public',
-              );
-              events = filterPublicEvents;
-            }
-          });
-      })
-      .catch((error: unknown) => {
-        const errorString = JSON.stringify(error);
-        console.log(`Error: ${errorString}`);
-      });
-  };
-
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  const initializeGapi = async () => gapi.load('client', start);
-  /* eslint-enable no-undef */
+  export let events: CalendarEvent[] = [];
 
   const plugins = [List];
   const options = {
-    view: 'listMonth',
+    view: 'listWeek',
     eventSources: [
       {
         events: async () => {
@@ -87,32 +38,34 @@
     return parseEvent(events);
   }
 
-  function parseEvent(eventsArr: CalendarEvent[]): CalendarEventSource[] {
-    return eventsArr.map((event) => {
-      return {
-        id: event.etag,
-        start: event.start.dateTime,
-        end: event.end.dateTime,
-        title: {
-          html: `
-					<a
-					href=${event.htmlLink}
-					data-sveltekit-preload-data
-					target="_blank"
-					class="variant-glass btn p-2 p-primary">
-					${event.summary}
-					</a>`,
-        },
-      };
-    });
+  function parseEvent(eventsArr: CalendarEvent[]): CalendarEventSource[] | null {
+    return eventsArr
+      .filter((event) => event.summary !== 'Office')
+      .map((event) => {
+        return {
+          id: event.etag,
+          start: event.start.dateTime,
+          end: event.end.dateTime,
+          title: {
+            html: `
+            <a
+            href=${event.htmlLink}
+            data-sveltekit-preload-data
+            target="_blank"
+            class="variant-glass btn p-2 p-primary">
+            ${event.summary}
+            </a>`,
+          },
+        };
+      });
   }
 </script>
 
-<svelte:head>
-  <script src="https://apis.google.com/js/api.js" on:load={initializeGapi}></script>
-</svelte:head>
-
 <div class="google-api-wrapper">
+  <ul class="calendar-legend">
+    <li class="p-primary">DK events are in our demonstration kitchen.</li>
+    <li class="p-primary">LAB events are in our computer lab</li>
+  </ul>
   {#if events.length > 0}
     <div class="calendar-wrapper p-primary">
       <Calendar {plugins} {options} id={1} class="ec" />

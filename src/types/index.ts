@@ -91,6 +91,7 @@ export type CalendarEvent = {
   };
   summary: string;
   visibility: 'private' | 'public' | undefined;
+  location?: string;
 };
 
 export type CalendarTheme = {

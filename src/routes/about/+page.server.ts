@@ -2,11 +2,10 @@ export async function load() {
   const missionData = {
     title: 'Mission and Oversight',
     subtitle:
-      'Our mission it to provide local families in need with Food, Emergency Financial Assistance and skill building Education to create self-sufficiency.',
+      'Our Mission is to provide local families in need with food, emergency financial assistance, skill-building education, and other resources offering stabilization.',
     list1: [
       'Christian Neighbors has been serving our community since 1983.',
-      'Christian Neighbors is a community agency serving individuals and families in Plainwell, Otsego and Martin school districts.',
-      'We are blessed to have at least 50 Volunteers serve on a weekly basis.',
+      'We are blessed to have at least 50 volunteers serve on a weekly basis.',
       'Christian Neighbors is governed by an all-volunteer board and teams who are carefully selected and diversified in their makeup.',
     ],
     list2: [
@@ -64,7 +63,8 @@ export async function load() {
       { title: 'Executive Director', name: 'Terri Shaler' },
     ],
     financeTeam: [
-      { name: 'Dorothy Cool' },
+      { name: 'Tim Powers' },
+      { name: 'Edith Reitkerk' },
       { name: 'Donna Doctor' },
       { name: 'Art Hartman' },
       { name: 'Larry Wilson' },
@@ -78,7 +78,7 @@ export async function load() {
       name: 'Terri Shaler',
       title: 'Executive Director',
       content:
-        'Over 20yrs of service at Christian Neighbors, Terri is happy to assist with business questions.',
+        'Over 20 years of service at Christian Neighbors, Terri is happy to assist with business questions.',
       email: 'tshaler@christianneighbors.org',
       ext: 101,
     },
@@ -129,7 +129,7 @@ export async function load() {
     {
       img: '/images/staff/sharon.jpg',
       name: 'Sharon Carper',
-      title: 'Senior Citizen & Kitchen Coordinator',
+      title: 'Kitchen Coordinator & Case Manager',
       content: 'Sharon manages CN activities for seniors and our demo kitchen.',
       email: 'scarper@christianneighbors.org',
       ext: 107,
