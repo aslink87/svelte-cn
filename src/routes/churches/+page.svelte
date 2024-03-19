@@ -17,9 +17,7 @@
   export const ssr = false;
 
   export let data: {
-    pantry: {
-      img: string;
-    };
+    img: string;
   };
 
   function displayCalendar(id: string) {
@@ -120,9 +118,9 @@
     >Quarterly Pantry Calendar</button
   >
   <div class="pantry-calendar center my-8 flex">
-    {#if data.pantry}
+    {#if data}
       <img
-        src={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${data.pantry.img}`}
+        src={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${data.img}`}
         alt="quarterly pantry calendar"
         style="display: none"
         id="pantry"

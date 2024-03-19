@@ -9,7 +9,6 @@
   import Newsletters from '$/components/admin/Newsletters.svelte';
   import Calendar from '$/components/admin/Calendar.svelte';
   import Blog from '$/components/admin/Blog.svelte';
-  import Supper from '$/components/admin/Supper.svelte';
   import Needs from '$/components/admin/Needs.svelte';
   import PantryCalendar from '$/components/admin/PantryCalendar.svelte';
   import type { AdminPageType } from '$/types';
@@ -29,7 +28,6 @@
     newsletters: false,
     calendar: false,
     blog: false,
-    supper: false,
     pantryneeds: false,
     pantrycalendar: false,
   };
@@ -86,9 +84,6 @@
     {/if}
     {#if links.blog}
       <Blog {form} />
-    {/if}
-    {#if links.supper}
-      <Supper {form} />
     {/if}
     {#if links.pantryneeds}
       <Needs needsData={data.needs} {form} />
