@@ -8,7 +8,7 @@
   });
 
   interface IData {
-    data: { title: string; content: string }[];
+    data: { title: string; content: string; link?: string }[];
   }
 
   export let data: IData;
@@ -21,7 +21,12 @@
     {#each data.data as item}
       <li class="pt-12">
         <h2 class="h2-primary mb-4">{item.title}</h2>
-        <p class="p-primary">{item.content}</p>
+        <p class="p-primary">
+          {item.content}
+          {#if item.link}
+            <a href={item.link} class="underline"> here.</a>
+          {/if}
+        </p>
       </li>
     {/each}
   </ul>
