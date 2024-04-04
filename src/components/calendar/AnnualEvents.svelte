@@ -62,7 +62,7 @@
     },
     {
       heading: 'PATH Walk',
-      img: '/images/path.jpg',
+      img: '/images/path2.png',
       alt: 'PATH Walk',
       content:
         'Our annual PATH Walk is generally held on the first Sunday in October. Walk rotates each year between Plainwell and Otsego. In addition, participants may choose a virtual walk. We walk to bring awareness to hunger issues and to raise funds to prevent them. Stay tuned to our calendar and social media.',

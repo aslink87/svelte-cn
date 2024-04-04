@@ -34,8 +34,7 @@
     classes: 'text-white',
     action: {
       label: 'Join our Newsletter',
-      response: () =>
-        window.location.assign('https://lp.constantcontactpages.com/su/su4gVlj/mailingList'),
+      response: () => window.open('https://lp.constantcontactpages.com/sl/AyJztNx'),
     },
   };
 

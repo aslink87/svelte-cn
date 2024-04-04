@@ -24,8 +24,6 @@ export async function load() {
       list: [
         'Rental assistance (first month’s rent, security deposit, back rent, eviction)',
         'Utility shut-offs or payments (preventing loss of utilities or loss of winter protection plan, fuel oil or propane)',
-        'Medical payment assistance (doctor visits, vision, dental, some prescriptions)',
-        'Prescription Costs (no pain, narcotic or controlled substances, no exceptions)',
         'Landlord/Utility Vendor Mediation',
         'Referral service to other human services agencies in Allegan County',
       ],
@@ -55,7 +53,7 @@ export async function load() {
       subtitle: '',
       list: [],
       content:
-        'DHHS requires the use of the MI Bridges web site for requesting state emergency relief (SER). Christian Neighbors is a Community Navigation partner with DHHS. We can help you complete the SER application and we can fax any supporting documentation to DHHS for you. Always follow-up with your DHHS case worker to make sure they received all necessary items. Have questions? Call 269-685-4166 ext. 102',
+        'DHHS requires the use of the MI Bridges web site for requesting state emergency relief (SER). Christian Neighbors is a Community Navigation partner with DHHS. We can help you complete the SER application and we can fax any supporting documentation to DHHS for you. Always follow-up with your DHHS case worker to make sure they received all necessary items. Have questions? Call 269-685-4166 ext. 106',
     },
   ];
 

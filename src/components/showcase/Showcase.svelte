@@ -15,7 +15,7 @@
       alt: 'Financial Assistance',
       subheading: 'We help with...',
       content:
-        'Our Mission is to provide local families in need with Food, Emergency Financial Assistance and Skill Building Education to create Self Sufficiency.',
+        'Utility and rental assistance for Plainwell, Otsego and Martin School District residents',
       link: '/services#financial',
     },
     {
