@@ -56,8 +56,8 @@
   <p class="p-primary my-4">
     You can view our current class offerings by checking out our <a
       href="/calendar"
-      class="my-4 underline"
-      target="_blank">calendar</a
+      data-sveltekit-reload
+      class="my-4 underline">calendar</a
     >
   </p>
   <p class="p-primary">
