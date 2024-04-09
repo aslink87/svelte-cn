@@ -30,7 +30,6 @@ export async function load() {
     { name: 'newsletters', label: 'newsletters' },
     { name: 'calendar', label: 'calendar' },
     { name: 'blog', label: 'blog' },
-    { name: 'supper', label: 'supper calendar' },
     { name: 'pantryneeds', label: 'pantry needs' },
     { name: 'pantrycalendar', label: 'pantry calendar' },
   ];
@@ -250,39 +249,6 @@ export const actions = {
 
     try {
       await prismaClient.blog.create({
-        data: submitData,
-      });
-
-      return { success: true };
-
-      // eslint-disable-next-line
-    } catch (e: any) {
-      const env: string = import.meta.env.MODE;
-      // eslint-disable-next-line no-console
-      if (env === 'development') console.log(e.message);
-      return { success: false };
-    }
-  },
-
-  supper: async ({ request }: RequestEvent) => {
-    const data = await request.formData();
-    const submitData = {
-      img: '',
-      alt: data.get('alt')?.toString().trim() ?? '',
-    };
-    // if doc is submitted, verify type, save it to the server, and add the path to the database
-    const submittedImage: File | null = data.get('image') as File;
-    if (
-      submittedImage &&
-      (submittedImage.type === 'image/jpeg' || submittedImage.type === 'image/png')
-    ) {
-      const trimmedFilePath = await createFilePath(submittedImage, 'supper');
-      submitData.img = trimmedFilePath;
-    }
-
-    try {
-      await prismaClient.supper.update({
-        where: { id: 'f943f27c-cd19-43cf-be82-a1fcc0350d24' },
         data: submitData,
       });
 

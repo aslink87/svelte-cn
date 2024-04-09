@@ -54,11 +54,7 @@
     </li>
   </ul>
   <p class="p-primary my-4">
-    You can view our current class offerings by checking out our <a
-      href="/calendar"
-      data-sveltekit-reload
-      class="my-4 underline">calendar</a
-    >
+    You can view our current class offerings by checking out our calendar.
   </p>
   <p class="p-primary">
     If you have questions, would like to volunteer, or have ideas for offerings contact Kim Shafer
