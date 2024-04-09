@@ -80,7 +80,7 @@
 
 <section class="home-lower component" data-testid="home-lower">
   <div class="card-wrapper mx-auto w-[90%]">
-    <div class="card flex flex-col gap-8 bg-transparent xl:flex-row">
+    <div class="card flex flex-col justify-center gap-8 bg-transparent xl:flex-row">
       <ul
         class="card-left xs:max-lg:center xl:justify-left mx-auto my-auto flex w-full flex-col justify-center gap-8 sm:flex-row xl:mx-0 xl:w-[18rem] xl:flex-col"
       >
@@ -105,7 +105,7 @@
       </ul>
       {#each cards as card, index}
         <div
-          class="card-right hidden flex-col items-center px-4 py-0 text-left xl:w-[80%] xl:border-l-2 2xl:flex-row 2xl:items-start"
+          class="card-right hidden max-w-[60rem] flex-col items-center px-4 py-0 text-left xl:w-[80%] xl:border-l-2 2xl:w-[60%] 2xl:flex-row 2xl:items-start"
           id={`${index}`}
         >
           <img

@@ -47,7 +47,7 @@
           <h1 class="h1-primary text-surface-500">Neighbors</h1>
         </a>
       </div>
-      <div class="app-bar-slot-trail flex flex-none items-center space-x-4">
+      <div class="app-bar-slot-trail flex h-16 flex-none items-center space-x-4">
         <ul class="invisible my-auto flex items-center pr-12 lg:visible">
           {#each navLinks as link}
             {#if !link.mobileOnly}
