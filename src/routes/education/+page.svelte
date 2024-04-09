@@ -57,7 +57,6 @@
     You can view our current class offerings by checking out our <a
       href="/calendar"
       class="my-4 underline"
-      data-sveltekit-preload-data
       target="_blank">calendar</a
     >
   </p>
