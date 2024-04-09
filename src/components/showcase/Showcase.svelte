@@ -6,7 +6,7 @@
       alt: 'Food Pantry',
       subheading: 'We provide for...',
       content:
-        'our neighbors by offering healthy food options to help stretch the grocery bill a little further',
+        'Our neighbors by offering healthy food options to help stretch the grocery bill a little further',
       link: '/services#pantry',
     },
     {
