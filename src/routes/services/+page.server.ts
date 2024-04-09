@@ -67,12 +67,12 @@ export async function load() {
           'Pantry, commodities distribution, utility assistance, senior services, weatherization, and early education programs',
       },
       {
-        link: 'http://159.89.50.252/wp-content/uploads/2014/01/Food-Pantry-Brochure.pdf',
+        link: 'https://alleganfoundation.org/allegan-county-food-pantry-collaborative-2/',
         caption: 'Allegan County Food Pantry Brochure – PDF',
         content: '2 page document listing food pantries in Allegan County',
       },
       {
-        link: 'http://www.allegancounty.org/Government/LAC/Index.asp?pt=',
+        link: 'https://www.allegancounty.org/courts-law-enforcement/legal-assistance-center-aclac',
         caption: 'Allegan County Legal Assistance Center',
         content:
           'Assistance with the legal process to residents of Allegan County who cannot afford an attorney',
@@ -83,7 +83,7 @@ export async function load() {
         content: 'For many resources in our community',
       },
       {
-        link: 'https://www.mibridges.michigan.gov/access/',
+        link: 'https://newmibridges.michigan.gov/s/isd-landing-page?language=en_US',
         caption: 'DHHS – MI Bridges',
         content:
           'Check for eligibility, apply for benefits, check your benefits and print documents when needed for proof of assistance',
@@ -94,21 +94,10 @@ export async function load() {
         content: 'Reading program for Allegan County children 0-5. Provides a free book each month',
       },
       {
-        link: 'https://www.intercare.org/locations/pullman/',
-        caption: 'Intercare Pullman – Dental',
-        content: 'Provides low cost dental to the underserved. Serves 6 counties including Allegan',
-      },
-      {
         link: 'https://www.intercare.org/',
         caption: 'Intercare Pullman – Medical',
         content:
           'Provides low cost medical care to the underserved. Serves 6 counties including Allegan',
-      },
-      {
-        link: 'https://kzoodc.org/',
-        caption: 'Kalamazoo Deacons Conference',
-        content:
-          'Provides clothing, furniture, household items, and financial assistance to Southwest Michigan',
       },
       {
         link: 'http://www.loveincnwa.org/',
@@ -196,7 +185,7 @@ export async function load() {
         content: 'Shelter for women who are fleeing domestic violence',
       },
       {
-        link: 'https://onlineservices.michigan.gov/ExpressSOS/CustomerManagement/EligibilityRequirements',
+        link: 'https://www.michigan.gov/sos/all-services/change-of-address',
         caption: 'Update Driver’s License Address',
         content: 'Update your address without making a trip to the Secretary of State',
       },

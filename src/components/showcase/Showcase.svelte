@@ -6,7 +6,7 @@
       alt: 'Food Pantry',
       subheading: 'We provide for...',
       content:
-        'Our Mission is to provide local families in need with Food, Emergency Financial Assistance and Skill Building Education to create Self Sufficiency.',
+        'our neighbors by offering healthy food options to help stretch the grocery bill a little further',
       link: '/services#pantry',
     },
     {
@@ -24,7 +24,7 @@
       alt: 'Educational Assistance',
       subheading: 'We teach to...',
       content:
-        'Help you take control of your financial life, practice budgeting, obtain a GED, and much more.',
+        'Help you take control of your financial life, practice budgeting, obtain a GED, and much more',
       link: '/education',
     },
   ];
