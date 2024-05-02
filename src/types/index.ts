@@ -74,6 +74,7 @@ export type AdminPageType = {
   }[];
   links: { name: string; label: string }[];
   hero: HeroType;
+  blogs: BlogType[];
   newsletters: NewsletterType[];
   calendar: CalendarType;
   needs: NeedsType;

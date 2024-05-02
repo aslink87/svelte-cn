@@ -83,7 +83,7 @@
       <Calendar calendarData={data.calendar} {form} />
     {/if}
     {#if links.blog}
-      <Blog {form} />
+      <Blog blogs={data.blogs} {form} />
     {/if}
     {#if links.pantryneeds}
       <Needs needsData={data.needs} {form} />

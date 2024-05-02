@@ -79,4 +79,6 @@
   </svelte:fragment>
 </AppShell>
 
-<Toast />
+{#if $page.url.pathname !== '/admin'}
+  <Toast />
+{/if}

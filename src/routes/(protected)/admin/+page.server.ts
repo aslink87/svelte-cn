@@ -71,6 +71,18 @@ export async function load() {
     needs = needsData;
   }
 
+  let blogs: BlogType[] = [];
+
+  const blogsData = await prismaClient.blog.findMany({
+    orderBy: {
+      date: 'desc',
+    },
+  });
+
+  if (blogsData) {
+    blogs = blogsData as BlogType[];
+  }
+
   if (users) {
     return {
       users,
@@ -78,6 +90,7 @@ export async function load() {
       hero,
       calendar,
       needs,
+      blogs,
     };
   }
   // eslint-disable-next-line @typescript-eslint/no-throw-literal
@@ -249,6 +262,44 @@ export const actions = {
 
     try {
       await prismaClient.blog.create({
+        data: submitData,
+      });
+
+      return { success: true };
+
+      // eslint-disable-next-line
+    } catch (e: any) {
+      const env: string = import.meta.env.MODE;
+      // eslint-disable-next-line no-console
+      if (env === 'development') console.log(e.message);
+      return { success: false };
+    }
+  },
+
+  blogUpdate: async ({ request }: RequestEvent) => {
+    const data = await request.formData();
+    const Id = data.get('id')?.toString().trim() ?? '';
+    const submitData: BlogType = {
+      author: data.get('author')?.toString().trim() ?? '',
+      date: data.get('date')?.toString().trim() ?? '',
+      title: data.get('title')?.toString().trim() ?? '',
+      content: data.get('content')?.toString().trim() ?? '',
+      img: '',
+      caption: data.get('alt')?.toString().trim() ?? '',
+    };
+
+    const submittedImage: File | null = data.get('image') as File;
+    if (
+      submittedImage &&
+      (submittedImage.type === 'image/jpeg' || submittedImage.type === 'image/png')
+    ) {
+      const trimmedFilePath = await createFilePath(submittedImage, 'blog');
+      submitData.img = trimmedFilePath;
+    }
+
+    try {
+      await prismaClient.blog.update({
+        where: { id: Id },
         data: submitData,
       });
 
