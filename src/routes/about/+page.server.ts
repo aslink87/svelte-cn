@@ -74,13 +74,12 @@ export async function load() {
 
   const staff = [
     {
-      img: '/images/staff/terri.jpg',
-      name: 'Terri Shaler',
+      img: '/images/staff/jennifer.jpg',
+      name: 'Jennifer Collins',
       title: 'Executive Director',
-      content:
-        'Over 20 years of service at Christian Neighbors, Terri is happy to assist with business questions.',
-      email: 'tshaler@christianneighbors.org',
-      ext: 101,
+      content: 'Jennifer is happy to assist with organization questions.',
+      email: 'jcollins@christianneighbors.org',
+      ext: 108,
     },
     {
       img: '/images/staff/eric.jpg',
