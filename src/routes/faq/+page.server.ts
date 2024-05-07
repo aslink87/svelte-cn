@@ -8,17 +8,17 @@ export async function load() {
     {
       title: 'How many individuals does Christian Neighbors serve monthly?',
       content:
-        'We help nearly 1,000 individuals in the Martin, Otsego and Plainwell school districts each month.',
+        'We help nearly 1,000 individuals in the Martin, Otsego and Plainwell School Districts each month.',
     },
     {
       title: 'How is Christian Neighbors funded?',
       content:
-        'The majority of our funds come from community donations – individuals, churches, businesses and others. We also receive limited grant funds from foundations and other agencies. We are a United Way Agency',
+        'The majority of our funds come from community donations – individuals, churches, businesses and others. We also receive limited grant funds from foundations and other agencies. We are a United Way Agency.',
     },
     {
       title: 'What area does Christian Neighbors serve?',
       content:
-        'Food assistance is available for anyone residing in the Otsego or Plainwell school districts, including Alamo and Cooper. Emergency Financial Assistance is offered to residents of the Martin, Otsego, or Plainwell school districts, including Alamo and Cooper. Our Education Resource Center does not have boundaries, anyone is encouraged to participate.',
+        'Food assistance is available for anyone residing in the Otsego or Plainwell school districts, including Alamo and Cooper. Emergency Financial Assistance is offered to residents of the Martin, Otsego, or Plainwell school districts, including Alamo and Cooper. Our Education Resource Center does not have boundaries; anyone is encouraged to participate.',
     },
     {
       title: 'Is Christian Neighbors a religious organization?',
@@ -53,12 +53,12 @@ export async function load() {
     {
       title: 'What is the Education Resource Center all about?',
       content:
-        'Part of our mission is to help build stabilization for families and a stronger community. Our education resource center offers several classes and programs to help with these skills. Some of these offerings include energy savings, credit repair, healthy cooking classes, budgeting skills, Matter of Balance and Organizational classes.',
+        'Part of our mission is to help build stabilization for families and a stronger community. Our Education Resource Center offers several classes and programs to help with these skills. Some of these offerings include energy savings, credit repair, healthy cooking classes, budgeting skills, Matter of Balance and organizational classes.',
     },
     {
       title: 'How does Christian Neighbors address hunger and housing issues on a larger scale?',
       content:
-        'Our case managers stay up to date on policies, resources and programs that help those in need in our area. We participate in several initiative and programs at the local and county levels, including our local planning body, Allegan County Food Pantry Collaborative, Kalamazoo Hunger Free Coalition, Matter of Balance, Emergency Food & Shelter Program, DHHS Navigation and others.',
+        'Our case managers stay up to date on policies, resources and programs that help those in need in our area. We participate in several initiatives and programs at the local and county levels, including our local planning body, Allegan County Food Pantry Collaborative, Kalamazoo Hunger Free Coalition, Matter of Balance, Emergency Food & Shelter Program, DHHS Navigation and others.',
     },
     {
       title: 'Does Christian Neighbors need volunteers?',
@@ -74,7 +74,7 @@ export async function load() {
     {
       title: 'How can I donate to Christian Neighbors?',
       content:
-        'You can support our mission with a donation, or by volunteering your time or expertise. Check out all the ways to give',
+        'You can support our mission with a donation or by volunteering your time or expertise. Check out all the ways to give',
       link: '/donate',
     },
   ];

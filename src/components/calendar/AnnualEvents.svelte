@@ -46,7 +46,7 @@
       img: '/images/dinnerAuction2.jpg',
       alt: 'Dinner Auction',
       content:
-        'Each year on the second Thursday in May, we host a fun Reflection of Hope Auction event that is our main source of funds for emergency relief to prevent homelessness and loss of utilities in our neighborhood. For more information email Eric Hoffman.',
+        'Each year on the second Thursday in May, we host a fun Reflection of Hope Auction event which is our main source of funds for emergency relief to prevent homelessness and loss of utilities in our neighborhood. For more information email Eric Hoffman.',
       link: 'mailto:ehoffman@christianneighbors.org',
       label: 'ehoffman@christianneighbors.org',
     },

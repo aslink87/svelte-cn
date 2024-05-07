@@ -38,19 +38,19 @@
   </div>
   <p class="p-primary my-4">
     Our classes and programs focus on skill-building and personal development to help our neighbors
-    reach stabilization in their life.
+    reach stabilization in their lives.
   </p>
   <p class="p-primary mb-4">
     While our offerings vary throughout the year, we typically offer classes in the following areas:
   </p>
   <ul>
-    <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">Computer Skills</li>
-    <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">Financial Literacy</li>
-    <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">Job Readiness</li>
-    <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">Senior Life Skills</li>
-    <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">Cooking and meal-prep</li>
+    <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">computer skills</li>
+    <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">financial literacy</li>
+    <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">job readiness</li>
+    <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">senior life skills</li>
+    <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">cooking and meal-prep</li>
     <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">
-      Registering for support resources
+      registering for support resources
     </li>
   </ul>
   <p class="p-primary my-4">
