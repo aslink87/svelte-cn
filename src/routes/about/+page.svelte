@@ -59,7 +59,12 @@
   >
     {#each data.leadership.board as item}
       <li class="p-primary w-[300px] p-5 even:rounded even:bg-surface-500">
-        {item.title}: {item.name}
+        <p>
+          {item.title}:
+        </p>
+        <p>
+          {item.name}
+        </p>
       </li>
     {/each}
   </ul>

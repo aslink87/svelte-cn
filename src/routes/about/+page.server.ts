@@ -2,17 +2,17 @@ export async function load() {
   const missionData = {
     title: 'Mission and Oversight',
     subtitle:
-      'Our Mission is to provide local families in need with food, emergency financial assistance, skill-building education, and other resources offering stabilization.',
+      'Our mission is to provide local families in need with food, emergency financial assistance, skill-building education, and other resources offering stabilization.',
     list1: [
       'Christian Neighbors has been serving our community since 1983.',
       'We are blessed to have at least 50 volunteers serve on a weekly basis.',
       'Christian Neighbors is governed by an all-volunteer board and teams who are carefully selected and diversified in their makeup.',
     ],
     list2: [
-      'Our board of directors care for our mission, strategies, goals, governance and ensure that we operate in compliance with legal & ethical standards.',
+      'Our Board of Directors cares for our mission, strategies, goals, governance and ensures that we operate in compliance with legal & ethical standards.',
       'Our finances are monitored by a Finance Team made up of our board president, treasurer, bookkeeper, CPA, and local business owners.',
-      'Our Facilities Director and team cares for the building and ground with which the ministry has been greatly blessed.',
-      'The Education Resource team oversees our classes and programs to strengthen individuals and community.',
+      'Our Facilities Director and team care for the buildings and grounds with which the ministry has been greatly blessed.',
+      'The Education Resource team oversees our classes and programs to strengthen individuals and the community.',
     ],
   };
 
@@ -22,17 +22,17 @@ export async function load() {
       {
         title: 'Being Christian Neighbors',
         content:
-          'Christian Neighbors was founded in 1983 by the local churches to respond to people in need in our community. This allows the churches to minister cooperatively in ways they could not do alone. It is important to keep that long standing connection between the local Churches and Christian Neighbors. Most area churches support Christian Neighbors through their church budget, food donations and community soup suppers. Christian Neighbors stands ready to work with churches and church leaders as they refer people in need.',
+          'Christian Neighbors was founded in 1983 by the local churches in response to people in need in our community. This allowed the churches to minister cooperatively in ways they could not do alone. It is important to keep that long standing connection between the local Churches and Christian Neighbors. Most area churches support Christian Neighbors through their church budget, food donations and community soup suppers. Christian Neighbors stands ready to work with churches and church leaders as they refer people in need.',
       },
       {
         title: 'Being Community Neighbors',
         content:
-          'Christian Neighbors has become a community agency that is supported not only by Churches, but also by individuals and businesses throughout the community who realize that we must take care of others in need. The downturn in the Michigan economy has made an agency like Christian Neighbors essential and it has built a reputation throughout our community as a place where you will be helped when you are in need.',
+          'Christian Neighbors has become a community agency that is supported not only by churches, but also by individuals and businesses throughout the community who realize that we must take care of others in need. The downturn in the Michigan economy has made an agency like Christian Neighbors essential and it has built a reputation throughout our community as a place where you will be helped when you are in need.',
       },
       {
         title: 'Being Cooperative Neighbors',
         content:
-          'Christian Neighbors has built cooperative relationships with Religious, Private, and Governmental Agencies committed to helping those in need. The Christian Neighbor’s Director and staff serve on and lead various task forces throughout our county dealing with hunger, poverty, and homelessness. They have built resources and developed referrals that address all of those concerns, as people come to them with varied needs. When you look at the yearly reports of Christian Neighbors, it is amazing the amount of help they provide, both food and financially.',
+          'Christian Neighbors has built cooperative relationships with religious, private, and governmental agencies committed to helping those in need. The Christian Neighbors Director and staff serve on and lead various task forces throughout our county dealing with hunger, poverty, and homelessness. They have built resources and developed referrals that address all of those concerns as people come to them with varied needs. When you look at the yearly reports of Christian Neighbors, it is amazing the amount of help they provide, both with food and financially.',
       },
       {
         title: 'Being Caring Neighbors',
@@ -117,13 +117,13 @@ export async function load() {
       img: '/images/staff/debbie.png',
       name: 'Debbi Woodstock',
       title: 'Pantry Assistant',
-      content: 'Debbie maintains the food pantry',
+      content: 'Debbie maintains the food pantry.',
     },
     {
       img: '/images/staff/ralph.jpg',
       name: 'Ralph Woodstock',
       title: 'Building and Grounds Trustee',
-      content: 'Ralph maintains and improves CN buildings and grounds',
+      content: 'Ralph maintains and improves CN buildings and grounds.',
     },
     {
       img: '/images/staff/sharon.jpg',

@@ -69,10 +69,10 @@
 >
   <h1 class="h1-primary">Leaving A Legacy</h1>
   <p class="p-primary my-8">
-    Did you know that you can leave a lasting legacy with a meaningful planned gift that cost you
+    Did you know that you can leave a lasting legacy with a meaningful planned gift that costs you
     nothing during your lifetime? Once your family and friends are provided for, we hope you
-    consider a legacy gift that strengthens our community families forever, a part of your life
-    story. Your Legacy gift will help ensure that our services will be available for future
+    consider a legacy gift that strengthens our community families forever as a part of your life
+    story. Your legacy gift will help ensure that our services will be available for future
     generations.
   </p>
   <h2 class="h2-primary mb-4">Ways to Leave a Legacy</h2>
@@ -138,7 +138,7 @@
   class="donate-unaccepted center component bg-surface-500/60"
   data-testid="donate-unaccepted"
 >
-  <h1 class="h1-primary mb-8">Items we dont accept</h1>
+  <h1 class="h1-primary mb-8">Items we do not accept</h1>
   <p class="p-primary mb-6">We are not accepting clothing or household item donations.</p>
   <p class="p-primary">
     Please contact the SDA Otsego Community Service Center at <a href="tel:12696944775"

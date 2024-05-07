@@ -34,7 +34,7 @@ export async function load() {
       subtitle: '',
       list: [],
       content:
-        'When you first contact Christian Neighbors, you will come to our offices and talk to a case manager who will ask some questions about how many people there are in your family, how much money you make and what your current expenses are. You will be asked about any special circumstances that you are going through. We will talk to you about what things you have already tried to do to help yourself and find out what assistance you might be receiving from other sources.',
+        'When you first contact Christian Neighbors, you will come to our offices and talk to a case manager who will ask some questions about how many people there are in your family, how much money you earn and what your current expenses are. You will be asked about any special circumstances that you are going through. We will talk to you about what things you have already tried to do to help yourself and find out what assistance you might be receiving from other sources.',
     },
     {
       title:
@@ -139,7 +139,8 @@ export async function load() {
       {
         link: 'http://www.otsegolibrary.org/',
         caption: 'Otsego District Public Library',
-        content: 'Provides educational resources, classes, and connection opportunities',
+        content:
+          'Provides educational resources, classes, and activities for childrens, teens, and adults.',
       },
       {
         link: 'http://www.assurancewireless.com/',
@@ -161,7 +162,7 @@ export async function load() {
       {
         link: 'http://www.ransomlibrary.org/',
         caption: 'Ransom District Library',
-        content: 'Educational resources and children’s activities',
+        content: 'Educational resources and activities for childrens, teens, and adults.',
       },
       {
         link: 'http://www.otsegosda.org/',
