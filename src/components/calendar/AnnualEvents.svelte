@@ -109,7 +109,7 @@
   }
 </script>
 
-<div class="card-wrapper mx-auto w-[90%]">
+<div class="card-wrapper mx-auto flex justify-center">
   <div class="card flex flex-col gap-8 bg-inherit">
     <ul
       class="card-nav m-auto flex w-[90%] flex-row flex-wrap justify-center gap-4 border-b-2 border-b-white pb-8 text-center"
