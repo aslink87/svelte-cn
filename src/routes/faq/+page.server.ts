@@ -28,7 +28,7 @@ export async function load() {
     {
       title: 'Does Christian Neighbors discriminate against those they serve or hire?',
       content:
-        'Christian Neighbors is committed to a policy of non-discrimination in both its employment practices and the delivery of its program services. This agency will pursue a practice where the education, health and human service needs of residents within our service area are addressed without regard to age, race, religion, gender, sexual orientation, disability, national origin, or any other classification or category.',
+        'Christian Neighbors is committed to a policy of non-discrimination in both its employment practices and the delivery of its program services. This policy applies to staff, volunteers, volunteer board members, and guests (clients). This agency will pursue a practice where the education, health and human service needs of residents within our service area are addressed without regard to age, race, religion, gender, gender identity or expression, sexual orientation, disability, national origin, or any other legally protected status. Further, this policy prohibits job discrimination and ensures equality of opportunity in all aspects of employment.',
     },
     {
       title: 'Is Christian Neighbors a government agency?',
