@@ -52,7 +52,7 @@ export const navLinks = [
   },
   {
     name: 'Calendar',
-    path: '/calendar',
+    path: '/events',
     class: 'calendar-mobile',
     auth: false,
     mobile: true,
