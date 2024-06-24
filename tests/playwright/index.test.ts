@@ -36,8 +36,8 @@ test('newsletter page has correct title', async ({ page }) => {
   expect(title).toBe('CN - Newsletter');
 });
 
-test('calendar page has correct title', async ({ page }) => {
-  await page.goto('/calendar');
+test('events page has correct title', async ({ page }) => {
+  await page.goto('/events');
   const section = page.getByTestId('calendar');
   section.waitFor({ state: 'visible' });
   await expect(section).toBeVisible();

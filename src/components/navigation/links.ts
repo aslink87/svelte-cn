@@ -18,7 +18,7 @@ export const navLinks = [
       { name: 'About Us', path: '/about' },
       { name: 'Education Center', path: '/education' },
       { name: 'Newsletter', path: '/newsletter' },
-      { name: 'Calendar', path: '/calendar' },
+      { name: 'Calendar', path: '/events' },
       { name: 'FAQs', path: '/faq' },
       { name: 'Blog', path: '/blog' },
     ],
