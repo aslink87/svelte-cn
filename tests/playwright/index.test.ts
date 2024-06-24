@@ -38,6 +38,9 @@ test('newsletter page has correct title', async ({ page }) => {
 
 test('calendar page has correct title', async ({ page }) => {
   await page.goto('/calendar');
+  const section = page.getByTestId('calendar');
+  section.waitFor({ state: 'visible' });
+  await expect(section).toBeVisible();
   const title = await page.title();
 
   expect(title).toBe('CN - Calendar');
@@ -59,6 +62,9 @@ test('donate page has correct title', async ({ page }) => {
 
 test('church partners page has correct title', async ({ page }) => {
   await page.goto('/churches');
+  const section = page.getByTestId('churches');
+  section.waitFor({ state: 'visible' });
+  await expect(section).toBeVisible();
   const title = await page.title();
 
   expect(title).toBe('CN - Churches');

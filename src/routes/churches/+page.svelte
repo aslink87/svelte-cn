@@ -14,8 +14,6 @@
     location: string;
   }
 
-  export const ssr = false;
-
   export let data: {
     img: string;
   };
@@ -94,8 +92,10 @@
           });
       })
       .catch((error: unknown) => {
+        const env: string = import.meta.env.MODE;
         const errorString = JSON.stringify(error);
-        console.log(`Error: ${errorString}`);
+        // eslint-disable-next-line no-console
+        if (env === 'development') console.log(`Error: ${errorString}`);
       });
   };
 

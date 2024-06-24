@@ -60,7 +60,7 @@ export async function load() {
       { title: 'Otsego School Rep', name: 'Jeff Hasse' },
       { title: 'Business Support', name: 'Karen Darby' },
       { title: 'Business Support', name: 'Aaron Mitchell' },
-      { title: 'Executive Director', name: 'Terri Shaler' },
+      { title: 'Executive Director', name: 'Jennifer Collins' },
     ],
     financeTeam: [
       { name: 'Tim Powers' },
