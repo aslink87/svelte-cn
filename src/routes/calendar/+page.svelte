@@ -4,7 +4,7 @@
   // import Events from '$/components/calendar/Events.svelte';
   import AnnualEvents from '$/components/calendar/AnnualEvents.svelte';
   import type { CalendarEvent, CalendarType } from '$/types';
-  import { onMount } from 'svelte';
+  // import { onMount } from 'svelte';
 
   seo.set({
     title: 'CN - Calendar',
@@ -16,9 +16,9 @@
     supper: { img: string; alt: string } | null;
   };
 
-  onMount(async () => {
-    await initializeGapi();
-  });
+  // onMount(async () => {
+  //   await initializeGapi();
+  // });
 
   let events: CalendarEvent[] = [];
 
