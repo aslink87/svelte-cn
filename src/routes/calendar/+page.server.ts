@@ -1,6 +1,5 @@
 import prismaClient from '$lib/db.server';
-
-export const ssr = false;
+import { redirect } from '@sveltejs/kit';
 
 export async function load() {
   const calendar = await prismaClient.calendar.findFirst();
@@ -12,6 +11,8 @@ export async function load() {
   if (!supper) {
     return null;
   }
+
+  redirect(308, '/calendar');
 
   return { calendar, supper };
 }
