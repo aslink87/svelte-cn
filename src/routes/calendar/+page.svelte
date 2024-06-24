@@ -1,7 +1,7 @@
 <script lang="ts">
   import { seo } from '$lib/stores/Seo';
   import Seo from '../SEO.svelte';
-  import Events from '$/components/calendar/Events.svelte';
+  // import Events from '$/components/calendar/Events.svelte';
   import AnnualEvents from '$/components/calendar/AnnualEvents.svelte';
   import type { CalendarEvent, CalendarType } from '$/types';
   import { onMount } from 'svelte';
@@ -95,13 +95,13 @@
   </div>
 </section>
 
-<section class="calendar-items center component bg-surface-500/60" data-testid="calendar-events">
-  {#if events.length > 0}
-    <Events {events} />
-  {:else}
-    <h2 class="h2-primary">Loading...</h2>
-  {/if}
-</section>
+<!-- <section class="calendar-items center component bg-surface-500/60" data-testid="calendar-events"> -->
+<!--   {#if events.length > 0} -->
+<!--     <Events {events} /> -->
+<!--   {:else} -->
+<!--     <h2 class="h2-primary">Loading...</h2> -->
+<!--   {/if} -->
+<!-- </section> -->
 
 <section class="calendar-card center component" data-testid="calendar-card">
   {#if events.length > 0}
