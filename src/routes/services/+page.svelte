@@ -28,6 +28,12 @@
       </li>
     {/each}
   </ul>
+  <p class="p-primary">
+    For more details, or if you're seeking food assistance please reach out to Amy VanPutten at <a
+      class="underline"
+      href="mailto:avanputten@christianneighbors.org">avanputten@christianneighbors.org</a
+    >
+  </p>
 </section>
 
 <section
@@ -56,6 +62,12 @@
       {/if}
     {/each}
   </ul>
+  <p class="p-primary">
+    For more details, or if you're seeking financial assistance please reach out to Shannon Zabaldo
+    at <a class="underline" href="mailto:szabaldo@christianneighbors.org"
+      >szabaldo@christianneighbors.org</a
+    >
+  </p>
 </section>
 
 <section class="community center component" data-testid="community">

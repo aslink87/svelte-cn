@@ -36,7 +36,7 @@
       subheading: 'Calendar',
       content:
         "Throughout the year we host many events that may interest you. A few include the Reflection of Hope Auction, PATH Walk, or many Soup Suppers. To see what's upcoming view our calendar...",
-      link: '/calendar',
+      link: '/events',
     },
   ];
 
