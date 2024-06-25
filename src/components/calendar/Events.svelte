@@ -41,6 +41,7 @@
   function parseEvent(eventsArr: CalendarEvent[]): CalendarEventSource[] | null {
     return eventsArr
       .filter((event) => event.summary !== 'Office')
+      .filter((event) => !event.summary.includes('Closed'))
       .map((event) => {
         return {
           id: event.etag,

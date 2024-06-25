@@ -16,8 +16,6 @@
     supper: { img: string; alt: string } | null;
   };
 
-  export const ssr = false;
-
   onMount(async () => {
     await initializeGapi();
   });
@@ -37,27 +35,28 @@
       .then(() => {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        return gapi.client.calendar.events
-          .list({
-            calendarId: 'volunteer@christianneighbors.org',
-            timeMin: new Date().toISOString(),
-            showDeleted: false,
-            singleEvents: true,
-            maxResults: 100,
-            orderBy: 'startTime',
-          })
-          .then((response: { result: { items: CalendarEvent[] } } | null) => {
-            if (response) {
-              const filterPublicEvents = response.result.items.filter(
-                (event: CalendarEvent) => event.visibility === 'public',
-              );
-              events = filterPublicEvents;
-            }
-          });
+        return gapi.client.calendar.events.list({
+          calendarId: 'volunteer@christianneighbors.org',
+          timeMin: new Date().toISOString(),
+          showDeleted: false,
+          singleEvents: true,
+          maxResults: 100,
+          orderBy: 'startTime',
+        });
+      })
+      .then((response: { result: { items: CalendarEvent[] } } | null) => {
+        if (response) {
+          const filterPublicEvents = response.result.items.filter(
+            (event: CalendarEvent) => event.visibility === 'public',
+          );
+          events = filterPublicEvents;
+        }
       })
       .catch((error: unknown) => {
+        const env: string = import.meta.env.MODE;
         const errorString = JSON.stringify(error);
-        console.log(`Error: ${errorString}`);
+        // eslint-disable-next-line no-console
+        if (env === 'development') console.log(`Error: ${errorString}`);
       });
   };
 
