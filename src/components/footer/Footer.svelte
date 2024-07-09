@@ -45,6 +45,12 @@
           </a>
         </div>
         <p class="text-sm">Christian Neighbors, ©2024</p>
+        <a
+          class="mx-auto text-sm underline"
+          href={`${import.meta.env.VITE_PUBLIC_ASSET_URL}/privacy-policy.pdf`}
+          data-sveltekit-preload-data
+          target="_blank">See Our Privacy Policy</a
+        >
       </div>
       <div
         class="right-container m-8 mx-auto gap-8 max-md:text-xs sm:flex-wrap md:flex md:flex-row"
