@@ -14,7 +14,7 @@
 
   seo.set({
     title: 'Christian Neighbors',
-    description: 'Christian Neighbors',
+    description: 'Providing food, financial, and educational assistance to our neighbors in need',
   });
 </script>
 
