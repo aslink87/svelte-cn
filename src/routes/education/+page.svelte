@@ -12,7 +12,10 @@
 <section class="education component center flex flex-col pt-8" data-testid="education">
   <h1 class="h1-primary mb-8">Education Resource Center</h1>
   <p class="p-primary mb-4">
-    There's a lot going on in the new Education Resource Center at Christian Neighbors.
+    All programs, classes, and services offered at the Christian Neighbors Education Resource Center
+    (ERC) are free of charge and open to the entire community, regardless of income or resources.
+    Our vision for the ERC is to connect community members through shared learning and life
+    experiences.
   </p>
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
     <div class="md:max-w-96">
@@ -54,7 +57,8 @@
     </li>
   </ul>
   <p class="p-primary my-4">
-    You can view our current class offerings by checking out our calendar.
+    You can view our current class offerings by checking out our
+    <a class="underline" href="/events">calendar.</a>
   </p>
   <p class="p-primary">
     If you have questions, would like to volunteer, or have ideas for offerings contact Kim Shafer
@@ -63,5 +67,28 @@
     <a class="p-primary underline" href="mailto:kshafer@christianneighbors.org"
       >kshafer@christianneighbors.org</a
     >
+  </p>
+  <h2 class="h2-primary mb-6 mt-12">Resource Workshop</h2>
+  <p class="p-primary">
+    Every week the computer lab at CN is available to you for your personal use. This independent
+    time is great for working on any number of things that you'd like to accomplish. We have fast
+    internet, new computers, printers, and friendly folks on hand to provide assistance if needed.
+  </p>
+  <ul class="my-6">
+    <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">
+      Perhaps you'd like some help making sure you're signed up for any benefits available to you?
+      We can assist with that!
+    </li>
+    <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">
+      Maybe you'd like a calm place to get some schoolwork done? We have room here for you!
+    </li>
+    <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">
+      Or you'd like to polish the resume? Or search and apply for a new job? Stop by and we'll help
+      you prepare for success!
+    </li>
+  </ul>
+  <p class="p-primary">
+    Sometimes we even have themed Resource Workshop days. Including: how to earn your GED/Diploma,
+    Medicare/Medicaid reenrollment, Home Heating Credit assistance, and more.
   </p>
 </section>

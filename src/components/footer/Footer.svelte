@@ -47,7 +47,7 @@
         <p class="text-sm">Christian Neighbors, ©2024</p>
         <a
           class="mx-auto text-sm underline"
-          href={`${import.meta.env.VITE_PUBLIC_ASSET_URL}/privacy-policy.pdf`}
+          href={`${import.meta.env.VITE_PUBLIC_ASSET_URL}/privacy-policy-v11.pdf`}
           data-sveltekit-preload-data
           target="_blank">See Our Privacy Policy</a
         >
