@@ -70,9 +70,10 @@
   </p>
   <h2 class="h2-primary mb-6 mt-12">Resource Workshop</h2>
   <p class="p-primary">
-    Every week the computer lab at CN is available to you for your personal use. This independent
-    time is great for working on any number of things that you'd like to accomplish. We have fast
-    internet, new computers, printers, and friendly folks on hand to provide assistance if needed.
+    Every Monday from 10am-12pm, the computer lab at CN is available to you for your personal use.
+    This independent time is great for working on any number of things that you'd like to
+    accomplish. We have fast internet, new computers, printers, and friendly folks on hand to
+    provide assistance if needed.
   </p>
   <ul class="my-6">
     <li class="p-primary mx-2 my-1 list-disc text-left sm:mx-auto">
