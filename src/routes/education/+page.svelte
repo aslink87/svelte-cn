@@ -68,7 +68,9 @@
       >kshafer@christianneighbors.org</a
     >
   </p>
-  <h2 class="h2-primary mb-6 mt-12">Resource Workshop</h2>
+</section>
+<section class="resource-workshop component mb-0 h-fit bg-surface-500/60">
+  <h2 class="h2-primary mb-6">Resource Workshop</h2>
   <p class="p-primary">
     Every Monday from 10am-12pm, the computer lab at CN is available to you for your personal use.
     This independent time is great for working on any number of things that you'd like to
