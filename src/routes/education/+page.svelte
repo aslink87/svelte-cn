@@ -28,16 +28,13 @@
         alt="demo kitchen gathering"
       />
     </div>
-    <div class="md:max-w-96">
-      <img class="rounded-lg object-scale-down" src="/images/lab1.jpg" alt="classroom gathering" />
-    </div>
-    <div class="md:max-w-96">
-      <img
-        class="rounded-lg object-scale-down"
-        src="/images/classroom1.jpg"
-        alt="labroom gathering"
-      />
-    </div>
+    <!-- <div class="md:max-w-96"> -->
+    <!--   <img -->
+    <!--     class="rounded-lg object-scale-down" -->
+    <!--     src="/images/classroom1.jpg" -->
+    <!--     alt="labroom gathering" -->
+    <!--   /> -->
+    <!-- </div> -->
   </div>
   <p class="p-primary my-4">
     Our classes and programs focus on skill-building and personal development to help our neighbors
@@ -69,7 +66,10 @@
     >
   </p>
 </section>
-<section class="resource-workshop component mb-0 h-fit bg-surface-500/60">
+<section
+  class="resource-workshop component center flex flex-col bg-surface-500/60 pt-8"
+  data-testid="resource-workshop"
+>
   <h2 class="h2-primary mb-6">Resource Workshop</h2>
   <p class="p-primary">
     Every Monday from 10am-12pm, the computer lab at CN is available to you for your personal use.
@@ -94,4 +94,12 @@
     Sometimes we even have themed Resource Workshop days. Including: how to earn your GED/Diploma,
     Medicare/Medicaid reenrollment, Home Heating Credit assistance, and more.
   </p>
+  <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+    <div class="md:max-w-96">
+      <img class="rounded-lg object-scale-down" src="/images/lab1.jpg" alt="classroom gathering" />
+    </div>
+    <div class="md:max-w-96">
+      <img class="rounded-lg object-scale-down" src="/images/lab3.jpg" alt="classroom gathering" />
+    </div>
+  </div>
 </section>
