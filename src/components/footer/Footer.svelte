@@ -1,6 +1,7 @@
 <script lang="ts">
   import { signIn, signOut } from '@auth/sveltekit/client';
   import { page } from '$app/stores';
+  import PDF from '$lib/privacy-policy.pdf';
 </script>
 
 <footer data-testid="footer" class="bg-primary-800">
@@ -45,11 +46,8 @@
           </a>
         </div>
         <p class="text-sm">Christian Neighbors, ©2024</p>
-        <a
-          class="mx-auto text-sm underline"
-          href={`${import.meta.env.VITE_PUBLIC_ASSET_URL}/privacy-policy-v11.pdf`}
-          data-sveltekit-preload-data
-          target="_blank">See Our Privacy Policy</a
+        <a class="mx-auto text-sm underline" href={PDF} data-sveltekit-preload-data target="_blank"
+          >See Our Privacy Policy</a
         >
       </div>
       <div
