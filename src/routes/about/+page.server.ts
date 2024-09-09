@@ -84,7 +84,7 @@ export async function load() {
     {
       img: '/images/staff/eric.jpg',
       name: 'Eric Hoffman',
-      title: 'Development Coordinator',
+      title: 'Fund Development & Volunteer Manager',
       content: 'Contact to have someone speak at your group or for an online donation.',
       email: 'ehoffman@christianneighbors.org',
       ext: 100,
@@ -92,7 +92,7 @@ export async function load() {
     {
       img: '/images/staff/kim.jpg',
       name: 'Kim Shafer',
-      title: 'Housing Program Director',
+      title: 'Program Director',
       content: 'Kim oversees our housing and homeless program.',
       email: 'kshafer@christianneighbors.org',
       ext: 102,
@@ -100,7 +100,7 @@ export async function load() {
     {
       img: '/images/staff/shannon.jpg',
       name: 'Shannon Zabaldo',
-      title: 'Housing Specialist',
+      title: 'Financial Case Manager',
       content: 'Shannon can be contacted for financial assistance.',
       email: 'szabaldo@christianneighbors.org',
       ext: 106,
@@ -122,13 +122,13 @@ export async function load() {
     {
       img: '/images/staff/ralph.jpg',
       name: 'Ralph Woodstock',
-      title: 'Building and Grounds Trustee',
+      title: 'Building & Maintenance Coordinator',
       content: 'Ralph maintains and improves CN buildings and grounds.',
     },
     {
       img: '/images/staff/sharon.jpg',
       name: 'Sharon Carper',
-      title: 'Kitchen Coordinator & Case Manager',
+      title: 'Kitchen & Program Coordinator',
       content: 'Sharon manages CN activities for seniors and our demo kitchen.',
       email: 'scarper@christianneighbors.org',
       ext: 107,

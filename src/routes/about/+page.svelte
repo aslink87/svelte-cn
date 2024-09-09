@@ -88,20 +88,22 @@
   <h1 class="h1-primary">Meet the Staff</h1>
   <ul class="center mx-auto mt-12 flex flex-wrap gap-5 lg:w-[80%]">
     {#each data.staff as item}
-      <li class="h-[600px] w-[300px] rounded-xl bg-primary-800 shadow-black sm:h-[650px]">
+      <li class="h-[600px] w-[300px] rounded-xl bg-primary-800 shadow-black sm:h-[700px]">
         <img class="w-full rounded-t-xl" src={item.img} alt={item.name} />
-        <p class="h2-primary my-4 font-bold">{item.name}</p>
-        <p class="p-primary">{item.title}</p>
-        <p class="content p-primary mx-4 mt-6 text-sm">{item.content}</p>
-        <div class="flex flex-col">
-          {#if item.email}
-            <a class="variant-glass btn mx-auto my-6 w-fit text-xs" href="mailto:{item.email}"
-              >{item.email}</a
-            >
-          {/if}
-          {#if item.ext}
-            <a href="tel:+12696854166" class="p-primary">(269) 685-4166 ext {item.ext}</a>
-          {/if}
+        <div class="px-2">
+          <p class="h2-primary my-4 font-bold">{item.name}</p>
+          <p class="p-primary">{item.title}</p>
+          <p class="content p-primary mx-4 mt-6 text-sm">{item.content}</p>
+          <div class="flex flex-col">
+            {#if item.email}
+              <a class="variant-glass btn mx-auto my-6 w-fit text-xs" href="mailto:{item.email}"
+                >{item.email}</a
+              >
+            {/if}
+            {#if item.ext}
+              <a href="tel:+12696854166" class="p-primary">(269) 685-4166 ext {item.ext}</a>
+            {/if}
+          </div>
         </div>
       </li>
     {/each}
