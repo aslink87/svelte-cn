@@ -89,6 +89,7 @@ export type CalendarEvent = {
   htmlLink: string;
   start: {
     dateTime: string;
+    date?: string;
   };
   summary: string;
   visibility: 'private' | 'public' | undefined;

@@ -42,6 +42,7 @@
     return eventsArr
       .filter((event) => event.summary !== 'Office')
       .filter((event) => !event.summary.includes('Closed'))
+      .filter((event) => !event.start.date)
       .map((event) => {
         return {
           id: event.etag,

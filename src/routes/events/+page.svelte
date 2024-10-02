@@ -25,6 +25,8 @@
   /* eslint-disable no-undef */
   const start = async () => {
     const apiKey = `${import.meta.env.VITE_PUBLIC_CALENDAR_API_KEY}`;
+    const nowString = new Date().toISOString();
+
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     gapi.client
@@ -37,7 +39,7 @@
         // @ts-ignore
         return gapi.client.calendar.events.list({
           calendarId: 'volunteer@christianneighbors.org',
-          timeMin: new Date().toISOString(),
+          timeMin: nowString,
           showDeleted: false,
           singleEvents: true,
           maxResults: 100,
