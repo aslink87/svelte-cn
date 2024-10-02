@@ -10,8 +10,11 @@
 
 <Seo title={$seo.title} description={$seo.description} />
 <section class="education component center flex flex-col pt-8" data-testid="education">
-  <h1 class="h1-primary mb-8">Education Resource Center</h1>
-  <p class="p-primary mb-4">
+  <h1 class="h1-primary">Education Resource Center</h1>
+  <div class="md:max-w-112">
+    <img class="rounded-lg object-scale-down" src="/images/erc-pill.png" alt="erc logo" />
+  </div>
+  <p class="p-primary my-4">
     All programs, classes, and services offered at the Christian Neighbors Education Resource Center
     (ERC) are free of charge and open to the entire community, regardless of income or resources.
     Our vision for the ERC is to connect community members through shared learning and life

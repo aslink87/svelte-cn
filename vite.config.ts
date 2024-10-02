@@ -19,6 +19,7 @@ export default defineConfig(({ mode }) => ({
     fs: {
       allow: ['..'],
     },
+    host: true,
   },
   svelte: {
     // ignore unused css selectors - see https://github.com/sveltejs/svelte/issues/1594#issuecomment-546775545
