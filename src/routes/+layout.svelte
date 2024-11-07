@@ -1,5 +1,6 @@
 <script lang="ts">
   import '../app.pcss';
+  import { onMount } from 'svelte';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import {
@@ -18,6 +19,7 @@
 
   initializeStores();
   const drawerStore = getDrawerStore();
+  let href = '';
 
   function openDrawer() {
     drawerStore.open();
@@ -39,7 +41,32 @@
   };
 
   const toastStore = getToastStore();
-  toastStore.trigger(t);
+
+  const toastSpanish: ToastSettings = {
+    message: '',
+    autohide: false,
+    background: 'bg-surface-600',
+    classes: 'text-white',
+    action: {
+      label: 'Spanish',
+      response: () => {
+        const env: string = import.meta.env.MODE;
+        if (env === 'development') window.location.assign(`${href}/spanish`);
+        if (env !== 'development') window.location.assign('https://christianneighbors.org/spanish');
+      },
+    },
+  };
+
+  onMount(() => {
+    href = window.location.origin;
+    const path = window.location.href;
+    const langPref = window.navigator.language;
+    if (langPref === 'es' && !path.includes('spanish')) {
+      toastStore.trigger(toastSpanish);
+    } else {
+      toastStore.trigger(t);
+    }
+  });
 </script>
 
 <Drawer>

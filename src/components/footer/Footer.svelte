@@ -2,6 +2,13 @@
   import { signIn, signOut } from '@auth/sveltekit/client';
   import { page } from '$app/stores';
   import PDF from '$lib/privacy-policy.pdf';
+  import { onMount } from 'svelte';
+
+  let href = '';
+
+  onMount(() => {
+    href = window.location.origin;
+  });
 </script>
 
 <footer data-testid="footer" class="bg-primary-800">
@@ -70,13 +77,18 @@
           <p><strong>Wed:</strong> Closed</p>
           <p><strong>Thu:</strong> 2-5</p>
           <p class="mb-2"><strong>Fri:</strong> Closed</p>
-          {#if $page.data.session?.user}
-            <button class="text-xs underline" on:click={() => signOut()}>Logout</button>
-            <a href="/admin" class="text-xs underline">Admin Page</a>
-            <p class="text-xs">Thanks for logging in {$page.data.session.user.name}</p>
-          {:else}
-            <button class="text-xs" on:click={() => signIn('google')}>Login</button>
-          {/if}
+          <div class="flex flex-col">
+            <a href={`${href}/spanish`} class="text-xs underline">Español</a>
+            <div>
+              {#if $page.data.session?.user}
+                <button class="text-xs underline" on:click={() => signOut()}>Logout</button>
+                <a href="/admin" class="text-xs underline">Admin Page</a>
+                <p class="text-xs">Thanks for logging in {$page.data.session.user.name}</p>
+              {:else}
+                <button class="text-xs" on:click={() => signIn('google')}>Login</button>
+              {/if}
+            </div>
+          </div>
         </div>
       </div>
     </div>

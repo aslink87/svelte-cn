@@ -120,12 +120,6 @@ export async function load() {
       content: 'Debbie maintains the food pantry.',
     },
     {
-      img: '/images/staff/ralph.jpg',
-      name: 'Ralph Woodstock',
-      title: 'Building & Maintenance Coordinator',
-      content: 'Ralph maintains and improves CN buildings and grounds.',
-    },
-    {
       img: '/images/staff/sharon.jpg',
       name: 'Sharon Carper',
       title: 'Kitchen & Program Coordinator',
