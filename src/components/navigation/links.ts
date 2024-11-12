@@ -21,6 +21,7 @@ export const navLinks = [
       { name: 'Calendar', path: '/events' },
       { name: 'FAQs', path: '/faq' },
       { name: 'Blog', path: '/blog' },
+      { name: 'Español', path: '/spanish' },
     ],
   },
   {
