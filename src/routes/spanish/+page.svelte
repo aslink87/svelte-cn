@@ -94,7 +94,7 @@
     Hablaremos con usted sobre las cosas que ya ha intentado hacer para ayudarse a sí mismo y
     averiguaremos qué ayuda podría estar recibiendo de otras fuentes.
   </p>
-  <h2 class="h2-primary my-6">Horas de asistencia financiera:</h2>
+  <h2 class="h2-primary my-6">Horarios de asistencia financiera:</h2>
   <div class="mb-4 flex flex-col gap-3">
     <div>
       <h3 class="h2-primary">Martes</h3>

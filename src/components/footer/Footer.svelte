@@ -56,6 +56,7 @@
         <a class="mx-auto text-sm underline" href={PDF} data-sveltekit-preload-data target="_blank"
           >See Our Privacy Policy</a
         >
+        <a href={`${href}/spanish`} class="btn mx-auto mt-2 w-24 bg-primary-200 p-1">Español</a>
       </div>
       <div
         class="right-container m-8 mx-auto gap-8 max-md:text-xs sm:flex-wrap md:flex md:flex-row"
@@ -78,7 +79,6 @@
           <p><strong>Thu:</strong> 2-5</p>
           <p class="mb-2"><strong>Fri:</strong> Closed</p>
           <div class="flex flex-col">
-            <a href={`${href}/spanish`} class="text-xs underline">Español</a>
             <div>
               {#if $page.data.session?.user}
                 <button class="text-xs underline" on:click={() => signOut()}>Logout</button>

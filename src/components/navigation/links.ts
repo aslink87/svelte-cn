@@ -98,4 +98,12 @@ export const navLinks = [
     mobile: true,
     mobileOnly: true,
   },
+  {
+    name: 'Español',
+    path: '/spanish',
+    class: 'spanish',
+    auth: false,
+    mobile: true,
+    mobileOnly: true,
+  },
 ];
