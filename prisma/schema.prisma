@@ -121,3 +121,11 @@ model Blog {
   img         String?
   caption     String?
 }
+
+// postings route
+model Posting {
+  id          String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String
+  link        String
+  index       Int @unique @default(autoincrement())
+}

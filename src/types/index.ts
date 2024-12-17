@@ -167,3 +167,9 @@ export type GapiType = {
   load: unknown;
   list: unknown;
 };
+
+export type PostingType = {
+  title: string;
+  link: string;
+  index: number;
+};

@@ -2,7 +2,14 @@ import fs from 'fs/promises';
 import path from 'path';
 import { error, type RequestEvent } from '@sveltejs/kit';
 import prismaClient from '$lib/db.server';
-import type { BlogType, CalendarType, HeroType, NeedsType, NewsletterType } from '$/types';
+import type {
+  BlogType,
+  CalendarType,
+  HeroType,
+  NeedsType,
+  NewsletterType,
+  PostingType,
+} from '$/types';
 import type { Actions } from './$types';
 
 async function createFilePath(submittedImage: File, dir: string): Promise<string> {
@@ -32,6 +39,7 @@ export async function load() {
     { name: 'blog', label: 'blog' },
     { name: 'pantryneeds', label: 'pantry needs' },
     { name: 'pantrycalendar', label: 'pantry calendar' },
+    { name: 'posting', label: 'PDF Posting' },
   ];
 
   let hero: HeroType = { title: 'Not found', content: 'Not found' };
@@ -366,6 +374,39 @@ export const actions = {
       await prismaClient.pantryCalendar.update({
         where: { id: '1925576b-6fde-44f7-8201-76b1ccdfe2f7' },
         data: submitData,
+      });
+
+      return { success: true };
+
+      // eslint-disable-next-line
+    } catch (e: any) {
+      const env: string = import.meta.env.MODE;
+      // eslint-disable-next-line no-console
+      if (env === 'development') console.log(e.message);
+      return { success: false };
+    }
+  },
+
+  posting: async ({ request }: RequestEvent) => {
+    const data = await request.formData();
+
+    async function storeDoc(doc: File, name: PostingType) {
+      if (doc && doc.type === 'application/pdf') {
+        const trimmedFilePath = await createFilePath(doc, 'posting');
+        name.link = trimmedFilePath;
+      }
+    }
+    const postingBlob: PostingType = {
+      title: data.get('title')?.toString().trim() ?? '',
+      link: '',
+      index: 1,
+    };
+    const submittedPosting: File | null = data.get('link') as File;
+    await storeDoc(submittedPosting, postingBlob);
+    try {
+      await prismaClient.posting.update({
+        where: { index: 1 },
+        data: postingBlob,
       });
 
       return { success: true };

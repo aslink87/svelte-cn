@@ -1,17 +1,18 @@
 <script lang="ts">
+  import Blog from '$/components/admin/Blog.svelte';
+  import Calendar from '$/components/admin/Calendar.svelte';
+  import Frontpage from '$/components/admin/Frontpage.svelte';
+  import Needs from '$/components/admin/Needs.svelte';
+  import Newsletters from '$/components/admin/Newsletters.svelte';
+  import PantryCalendar from '$/components/admin/PantryCalendar.svelte';
+  import Posting from '$/components/admin/Posting.svelte';
+  import Users from '$/components/admin/Users.svelte';
+  import type { AdminPageType } from '$/types';
+  import { page } from '$app/stores';
+  import { seo } from '$lib/stores/Seo';
+  import { signOut } from '@auth/sveltekit/client';
   import { onMount } from 'svelte';
   import Seo from '../../SEO.svelte';
-  import { seo } from '$lib/stores/Seo';
-  import { page } from '$app/stores';
-  import { signOut } from '@auth/sveltekit/client';
-  import Users from '$/components/admin/Users.svelte';
-  import Frontpage from '$/components/admin/Frontpage.svelte';
-  import Newsletters from '$/components/admin/Newsletters.svelte';
-  import Calendar from '$/components/admin/Calendar.svelte';
-  import Blog from '$/components/admin/Blog.svelte';
-  import Needs from '$/components/admin/Needs.svelte';
-  import PantryCalendar from '$/components/admin/PantryCalendar.svelte';
-  import type { AdminPageType } from '$/types';
 
   seo.set({
     title: 'CN - Admin',
@@ -30,6 +31,7 @@
     blog: false,
     pantryneeds: false,
     pantrycalendar: false,
+    posting: false,
   };
 
   // when the user clicks a nav button, set all links to false and the clicked link to true
@@ -90,6 +92,12 @@
     {/if}
     {#if links.pantrycalendar}
       <PantryCalendar {form} />
+    {/if}
+    {#if links.pantrycalendar}
+      <PantryCalendar {form} />
+    {/if}
+    {#if links.posting}
+      <Posting {form} />
     {/if}
   </div>
 </section>
