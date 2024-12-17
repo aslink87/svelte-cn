@@ -7,6 +7,7 @@ import { seed as supperSeed } from './supper';
 import { seed as pantryCalendarSeed } from './pantrycalendar';
 import { seed as blogSeed } from './blog';
 import { seed as needsSeed } from './needs';
+import { seed as postingSeed } from './posting';
 
 const prismaClient = new PrismaClient();
 
@@ -20,6 +21,7 @@ async function main() {
     await pantryCalendarSeed(prismaClient);
     await blogSeed(prismaClient);
     await needsSeed(prismaClient);
+    await postingSeed(prismaClient);
   } catch (e) {
     console.log(e);
     exitStatus = 1;
