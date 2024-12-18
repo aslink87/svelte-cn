@@ -390,24 +390,23 @@ export const actions = {
   posting: async ({ request }: RequestEvent) => {
     const data = await request.formData();
 
-    const submitData: PostingType = {
+    async function storeDoc(doc: File, name: PostingType) {
+      if (doc && doc.type === 'application/pdf') {
+        const trimmedFilePath = await createFilePath(doc, 'posting');
+        name.link = trimmedFilePath;
+      }
+    }
+    const postingBlob: PostingType = {
       title: data.get('title')?.toString().trim() ?? '',
       link: '',
       index: 1,
     };
-    const submittedImage: File | null = data.get('image') as File;
-    if (
-      submittedImage &&
-      (submittedImage.type === 'image/jpeg' || submittedImage.type === 'image/png')
-    ) {
-      const trimmedFilePath = await createFilePath(submittedImage, 'posting');
-      submitData.link = `/uploads${trimmedFilePath}`;
-    }
-
+    const submittedPosting: File | null = data.get('link') as File;
+    await storeDoc(submittedPosting, postingBlob);
     try {
       await prismaClient.posting.update({
         where: { index: 1 },
-        data: submitData,
+        data: postingBlob,
       });
 
       return { success: true };
