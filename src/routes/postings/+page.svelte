@@ -21,11 +21,10 @@
   {#if data && data.posting}
     <div class="posting-wrapper mx-auto my-8 w-full max-w-[60em] sm:w-[90%]">
       <h2 class="h2-primary mt-8 capitalize">{data.posting.title}</h2>
-      <object
+      <iframe
         class="mx-auto mt-8 h-[25em] w-full sm:h-[55em] sm:w-[80%]"
         title="Christian Neighbors Postings"
-        type="application/pdf"
-        data={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${data.posting.link}`}
+        src={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${data.posting.link}`}
       />
     </div>
   {:else}
