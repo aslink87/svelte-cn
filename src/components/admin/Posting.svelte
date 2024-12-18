@@ -41,23 +41,23 @@
 <section class="admin-posting center component">
   <h2 class="h2-primary mb-4">Posting Section</h2>
   <p class="p-primary">
-    This section allows you to submit a PDF that isn't referred to within the website. However, it
-    will be stored with the site and you can use the link as a nice way to share to PDF.
+    This section allows you to submit an image that isn't referred to within the website. However,
+    it will be stored with the site and you can use the link as a nice way to share it.
   </p>
   <p class="p-primary">
-    A typical usecase would be if you want to share a PDF on social media but it doesn't need to be
-    referred to on the website home page.
+    A typical usecase would be if you want to share a job posting on social media but it doesn't
+    need to be referred to on the website home page.
   </p>
   <p class="p-primary">
-    You'll be asked to provide a title for the document that will be visible on the website.
+    You'll be asked to provide a title for the image that will be visible on the website.
   </p>
   <p class="p-primary">
-    Basically, it's a route that will show your PDF that isn't linked anywhere else on the website
+    Basically, it's a route that will show your image that isn't linked anywhere else on the website
   </p>
-  <p class="p-primary">Would you like to update this PDF?</p>
+  <p class="p-primary">Would you like to update this image?</p>
   <form class="center mt-8 flex flex-col" action="admin?/posting" method="POST" use:enhance>
     <div class="input-wrapper">
-      <p class="p-primary">Choose one PDF</p>
+      <p class="p-primary">Choose one image</p>
       <label for="title1">Title</label>
       <input
         bind:value={doc.title}
@@ -66,13 +66,13 @@
         minlength="5"
         class="text my-4 w-[600px] rounded-lg px-4 text-primary-600"
       />
-      <label for="doc1">PDF</label>
+      <label for="doc1">Image</label>
       <input
         bind:value={doc.link}
-        name="link"
+        name="image"
         type="file"
         class="file my-4"
-        accept="application/pdf"
+        accept="image/jpeg, image/png"
       />
     </div>
     <button
