@@ -20,7 +20,7 @@ export const navLinks = [
       { name: 'Newsletter', path: '/newsletter' },
       { name: 'Calendar', path: '/events' },
       { name: 'FAQs', path: '/faq' },
-      { name: 'Blog', path: '/blog' },
+      { name: 'Blog', path: '/blogs' },
       { name: 'Español', path: '/spanish' },
     ],
   },
