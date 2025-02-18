@@ -6,6 +6,6 @@ const app = express();
 
 app.use(handler);
 
-app.listen(5173, () => {
-  console.log('listening on port 5173');
+app.listen(4173, () => {
+  console.log('listening on port 4173');
 });
