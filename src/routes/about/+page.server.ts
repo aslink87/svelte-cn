@@ -114,12 +114,6 @@ export async function load() {
       ext: 103,
     },
     {
-      img: '/images/staff/debbie.png',
-      name: 'Debbi Woodstock',
-      title: 'Pantry Assistant',
-      content: 'Debbie maintains the food pantry.',
-    },
-    {
       img: '/images/staff/sharon.jpg',
       name: 'Sharon Carper',
       title: 'Kitchen & Program Coordinator',
@@ -134,6 +128,24 @@ export async function load() {
       content: 'Adam manages the technology infrastructure and develops internal software.',
       email: 'adam@slinkman.net',
       ext: 109,
+    },
+    {
+      img: '/images/staff/cari.png',
+      name: 'Cari Dyer',
+      title: 'Demonstration Kitchen & Program Assistant',
+      content: 'Cari assists in our Education Resource Center programs',
+    },
+    {
+      img: '/images/staff/wendy.png',
+      name: 'Wendy Gauthier',
+      title: 'Pantry Assistant',
+      content: 'Wendy is a huge help in maintaining the food pantry.',
+    },
+    {
+      img: '/images/staff/taylor.png',
+      name: 'Taylor Seibert',
+      title: 'Administrative Assistant',
+      content: 'Taylor uses her skills to help in a variety of office tasks',
     },
   ];
 

@@ -93,7 +93,7 @@
         <div class="px-2">
           <p class="h2-primary my-4 font-bold">{item.name}</p>
           <p class="p-primary">{item.title}</p>
-          <p class="content p-primary mx-4 mt-6 text-sm">{item.content}</p>
+          <p class="content p-primary mx-4 mt-6 text-xs sm:text-sm">{item.content}</p>
           <div class="flex flex-col">
             {#if item.email}
               <a class="variant-glass btn mx-auto my-6 w-fit text-xs" href="mailto:{item.email}"
