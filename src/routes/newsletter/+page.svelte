@@ -24,7 +24,7 @@
       <iframe
         class="mx-auto mt-8 h-[25em] w-full sm:h-[55em] sm:w-[80%]"
         title="E-News Preview"
-        src={enews.doc}
+        src={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${enews.doc}`}
       ></iframe>
     </div>
   {/if}
@@ -32,7 +32,7 @@
     <h2 class="h2-primary">Recent Newsletters</h2>
     {#if firstNewsletter}
       <a
-        href={firstNewsletter.doc}
+        href={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${firstNewsletter.doc}`}
         class="my-4 underline"
         data-sveltekit-preload-data
         target="_blank">{firstNewsletter.title}</a
@@ -40,7 +40,7 @@
     {/if}
     {#if secondNewsletter}
       <a
-        href={secondNewsletter.doc}
+        href={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${secondNewsletter.doc}`}
         class="my-4 underline"
         data-sveltekit-preload-data
         target="_blank">{secondNewsletter.title}</a
