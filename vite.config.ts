@@ -1,9 +1,10 @@
 import { resolve } from 'path';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import { assetsPlugin } from './assets-mw';
 
 export default defineConfig(({ mode }) => ({
-  plugins: [sveltekit()],
+  plugins: [sveltekit(), assetsPlugin()],
   test: {
     include: ['src/**/*.{test,spec}.{js,ts}', 'tests/*.{test,spec}.{js,ts}'],
     globals: true,

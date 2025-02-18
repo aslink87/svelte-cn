@@ -119,7 +119,6 @@
           >Annual Reflection of Hope Auction</button
         >
       </li>
-      <li />
       <li>
         <button class="selector h2-primary" id="5" on:click={() => handleClick(1)}
           >Soup Suppers</button

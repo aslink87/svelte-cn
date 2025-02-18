@@ -18,7 +18,7 @@
     <div
       class="footer-wrapper mx-auto flex h-fit w-[90%] justify-normal text-primary-500 max-sm:flex-wrap md:mt-8"
     >
-      <div class="spacer 2xl:w-5/12" />
+      <div class="spacer 2xl:w-5/12"></div>
       <div class="left-container m-8 mx-auto flex flex-col flex-wrap 2xl:justify-end">
         <div class="icon-wrapper mb-4 flex justify-center gap-4">
           <a

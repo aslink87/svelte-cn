@@ -24,8 +24,8 @@
       <iframe
         class="mx-auto mt-8 h-[25em] w-full sm:h-[55em] sm:w-[80%]"
         title="E-News Preview"
-        src={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${enews.doc}`}
-      />
+        src={enews.doc}
+      ></iframe>
     </div>
   {/if}
   <div class="newsletter-links mt-4 flex flex-col flex-wrap border-t-2 border-t-white pt-4">

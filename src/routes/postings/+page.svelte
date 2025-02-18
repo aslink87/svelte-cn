@@ -25,7 +25,7 @@
         class="mx-auto mt-8 h-[25em] w-full sm:h-[55em] sm:w-[80%]"
         title="Christian Neighbors Postings"
         src={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${data.posting.link}`}
-      />
+      ></iframe>
     </div>
   {:else}
     <div class="h-[100vh]">
