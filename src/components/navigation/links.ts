@@ -85,7 +85,7 @@ export const navLinks = [
   },
   {
     name: 'Blog',
-    path: '/blog',
+    path: '/blogs',
     class: 'blog-mobile',
     auth: false,
     mobile: true,

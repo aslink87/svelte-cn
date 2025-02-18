@@ -71,7 +71,7 @@ test('church partners page has correct title', async ({ page }) => {
 });
 
 test('blog page has correct title', async ({ page }) => {
-  await page.goto('/blog');
+  await page.goto('/blogs');
   const title = await page.title();
 
   expect(title).toBe('CN - Blog');
