@@ -21,12 +21,11 @@
   {#if enews}
     <div class="e-news mx-auto my-8 w-full max-w-[60em] sm:w-[90%]">
       <h2 class="h2-primary mt-8 capitalize">{enews.title}</h2>
-      <object
+      <iframe
         class="mx-auto mt-8 h-[25em] w-full sm:h-[55em] sm:w-[80%]"
         title="E-News Preview"
-        type="application/pdf"
-        data={enews.doc}
-      />
+        src={enews.doc}
+      ></iframe>
     </div>
   {/if}
   <div class="newsletter-links mt-4 flex flex-col flex-wrap border-t-2 border-t-white pt-4">

@@ -92,10 +92,13 @@
             on:click={handleMobileToggle}
             id="mobile-toggle"
             class="m-auto flex h-10 cursor-pointer flex-col justify-evenly border-none bg-none"
+            aria-label="mobile toggle"
           >
-            <span id="top-bar" class="h-[3px] w-8 bg-primary-900 transition-all ease-linear" />
-            <span id="center-bar" class="h-[3px] w-8 bg-primary-900 transition-all ease-linear" />
-            <span id="bottom-bar" class="h-[3px] w-8 bg-primary-900 transition-all ease-linear" />
+            <span id="top-bar" class="h-[3px] w-8 bg-primary-900 transition-all ease-linear"></span>
+            <span id="center-bar" class="h-[3px] w-8 bg-primary-900 transition-all ease-linear"
+            ></span>
+            <span id="bottom-bar" class="h-[3px] w-8 bg-primary-900 transition-all ease-linear"
+            ></span>
           </button>
         </div>
       </div>

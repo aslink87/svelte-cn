@@ -57,7 +57,7 @@
           class="area my-4 min-h-[200px] min-w-[50em] rounded-lg px-4 text-primary-600"
           required={true}
           style="border: 2px solid red"
-        />
+        ></textarea>
       {:else if key === 'caption'}
         <label class="capitalize" for={key}>{key}</label>
         <input

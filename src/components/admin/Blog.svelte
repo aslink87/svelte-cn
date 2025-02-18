@@ -103,7 +103,7 @@
           class="area my-4 min-h-[200px] min-w-[50em] rounded-lg px-4 text-primary-600"
           required={field.required}
           style={field.required ? 'border: 2px solid red' : ''}
-        />
+        ></textarea>
       {:else if field.type === 'image'}
         <input
           bind:value={field.data}
