@@ -49,7 +49,7 @@
       <iframe
         class="mx-auto mt-8 h-[25em] w-full sm:h-[55em] sm:w-[80%]"
         title="E-News Preview"
-        src={`https://docs.google.com/gview?url=${pdfUrl}&embedded=true`}
+        src={pdfUrl}
       ></iframe>
     </div>
   {/if}
