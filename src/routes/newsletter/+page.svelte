@@ -24,7 +24,9 @@
       <iframe
         class="mx-auto mt-8 h-[25em] w-full sm:h-[55em] sm:w-[80%]"
         title="E-News Preview"
-        src={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${enews.doc}`}
+        src={`https://docs.google.com/gview?url=${import.meta.env.VITE_PUBLIC_ASSET_URL}${
+          enews.doc
+        }&embedded=true`}
       ></iframe>
     </div>
   {/if}
