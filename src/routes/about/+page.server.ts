@@ -2,7 +2,7 @@ export async function load() {
   const missionData = {
     title: 'Mission and Oversight',
     subtitle:
-      'Our mission is to provide local families in need with food, emergency financial assistance, skill-building education, and other resources offering stabilization.',
+      'We provide a safe place for people in our community who need food, rent and utility assistance, education, or other resources to help create stability in their lives.',
     list1: [
       'Christian Neighbors has been serving our community since 1983.',
       'We are blessed to have at least 50 volunteers serve on a weekly basis.',
