@@ -15,7 +15,7 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
-<section class="faq center component pt-8" data-testid="faq">
+<section class="faq center component pt-16 sm:pt-8" data-testid="faq">
   <h1 class="h1-primary">Frequently Asked Questions</h1>
   <ul>
     {#each data.data as item}

@@ -16,7 +16,7 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
-<section class="postings center component min-h-[100vh] pt-8" data-testid="postings">
+<section class="postings center component min-h-[100vh] pt-16 sm:pt-8" data-testid="postings">
   <h1 class="h1-primary">Christian Neighbors Postings</h1>
   {#if data && data.posting}
     <div class="posting-wrapper mx-auto my-8 w-full max-w-[60em] sm:w-[90%]">

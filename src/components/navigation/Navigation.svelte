@@ -37,11 +37,19 @@
   <div class="app-bar bg-surface-100-800-token flex h-16 flex-col space-y-4 px-4 shadow-2xl">
     <div class="app-bar-row-main my-auto grid grid-cols-[auto_1fr_auto] items-center gap-4">
       <div class="app-bar-slot-lead flex items-center space-x-4">
-        <a class="img-container my-auto w-12" href="/">
-          <img loading="lazy" src="/images/logo.png" alt="Christian Neighbors logo" />
+        <a
+          class="img-container bg-surface-100-800-token absolute left-2 top-2 m-0 flex h-28 w-28 rounded-full p-1"
+          href="/"
+        >
+          <img
+            class="w-[100%]"
+            loading="lazy"
+            src="/images/logo1EDIT.svg"
+            alt="Christian Neighbors logo"
+          />
         </a>
       </div>
-      <div class="app-bar-slot-default invisible flex items-center space-x-4 lg:visible">
+      <div class="app-bar-slot-default invisible flex items-center space-x-4 xl:visible">
         <a class="branding mx-auto flex items-center gap-2 text-2xl" href="/">
           <h1 class="h1-primary text-primary-600">Christian</h1>
           <h1 class="h1-primary text-surface-500">Neighbors</h1>

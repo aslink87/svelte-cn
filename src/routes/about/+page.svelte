@@ -24,7 +24,7 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
-<section class="about-mission center component pt-8" data-testid="about-mission">
+<section class="about-mission center component pt-16 sm:pt-8" data-testid="about-mission">
   <h1 class="h1-primary">{data.missionData.title}</h1>
   <h2 class="h2-primary mt-6">{data.missionData.subtitle}</h2>
   <ul class="first-list mt-8 list-disc text-left">

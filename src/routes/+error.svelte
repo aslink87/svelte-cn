@@ -2,7 +2,7 @@
   import { page } from '$app/stores';
 </script>
 
-<section class="error component center flex h-[100vh] flex-col flex-wrap">
+<section class="error component center flex h-[100vh] flex-col flex-wrap pt-16 sm:pt-8">
   {#if $page?.error?.message}
     <h1 class="h1-primary">{$page.error.message}</h1>
   {/if}

@@ -4,7 +4,7 @@
   export let data: HeroType;
 </script>
 
-<section class="hero center flex flex-col flex-wrap gap-8 pt-8" data-testid="hero">
+<section class="hero center flex flex-col flex-wrap gap-8 pt-16 sm:pt-8" data-testid="hero">
   <h1 class="h1-primary">Latest News</h1>
   <h2 class="h2-primary">{data.title}</h2>
   <p class="p-primary whitespace-pre-wrap">{data.content}</p>

@@ -18,7 +18,7 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
-<section class="pantry center component pt-8" id="pantry" data-testid="pantry">
+<section class="pantry center component pt-16 sm:pt-8" id="pantry" data-testid="pantry">
   <h1 class="h1-primary mb-8">Food Pantry Assistance</h1>
   <ul>
     {#each data.pantry as item}

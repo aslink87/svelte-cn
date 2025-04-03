@@ -9,7 +9,7 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
-<section class="spanish center component pt-8" data-testid="spanish">
+<section class="spanish center component pt-16 sm:pt-8" data-testid="spanish">
   <h1 class="h1-primary mb-8">Asistencia de depensa de alimentos</h1>
   <p class="p-primary">
     Los clientes pueden comprar en la despensa de alimentos una vez por mes calendario y recibirán

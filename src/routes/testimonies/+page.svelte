@@ -16,7 +16,11 @@
 
 <Seo title={$seo.title} description={$seo.description} />
 
-<section class="testimonies center component pt-8" id="testimonies" data-testid="testimonies">
+<section
+  class="testimonies center component pt-16 sm:pt-8"
+  id="testimonies"
+  data-testid="testimonies"
+>
   <h1 class="h1-primary mb-8">{data.data.title}</h1>
   <ul>
     {#each data.data.items as item}

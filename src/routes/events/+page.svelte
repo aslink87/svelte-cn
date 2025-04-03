@@ -74,7 +74,7 @@
 
 <Seo title={$seo.title} description={$seo.description} />
 
-<section class="calendar center component pt-8" data-testid="calendar">
+<section class="calendar center component pt-16 sm:pt-8" data-testid="calendar">
   <h1 class="h1-primary">Upcoming Events</h1>
   <div class="dynamic component">
     {#if data.calendar}

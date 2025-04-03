@@ -47,7 +47,7 @@
 
 <Seo title={$seo.title} description={$seo.description} />
 
-<section class="donate-widget center flex flex-col pt-8" data-testid="donate-widget">
+<section class="donate-widget center flex flex-col pt-16 sm:pt-8" data-testid="donate-widget">
   <h1 class="h1-primary">Donate to Christian Neighbors</h1>
   <div class="py-4 md:w-[420px]">
     <givebutter-widget id="pX5oZj" class="gb-frame"></givebutter-widget>

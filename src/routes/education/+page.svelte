@@ -9,7 +9,7 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
-<section class="education component center flex flex-col pt-8" data-testid="education">
+<section class="education component center flex flex-col pt-16 sm:pt-8" data-testid="education">
   <h1 class="h1-primary">Education Resource Center</h1>
   <div class="md:max-w-112">
     <img class="rounded-lg object-scale-down" src="/images/erc-pill.png" alt="erc logo" />

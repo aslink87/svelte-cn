@@ -111,7 +111,10 @@
 
 <Seo title={$seo.title} description={$seo.description} />
 
-<section class="churches component center flex min-h-[100vh] flex-col pt-8" data-testid="churches">
+<section
+  class="churches component center flex min-h-[100vh] flex-col pt-16 sm:pt-8"
+  data-testid="churches"
+>
   <h1 class="h1-primary mb-8">Church Partners</h1>
   <h2 class="h2-primary mb-4">Important Calendars</h2>
   <button class="variant-glass btn" on:click={() => displayCalendar('pantry')}

@@ -36,7 +36,7 @@
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
-<section class="newsletter center component pt-8" data-testid="newsletter">
+<section class="newsletter center component pt-16 sm:pt-8" data-testid="newsletter">
   <h1 class="h1-primary">What's Happening</h1>
   {#if isLoading}
     <div class="center flex h-[25em] sm:h-[55em]">
