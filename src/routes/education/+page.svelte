@@ -22,13 +22,19 @@
   </p>
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
     <div class="md:max-w-96">
-      <img class="rounded-lg object-scale-down" src="/images/erc1.jpg" alt="classroom gathering" />
+      <img
+        class="rounded-lg object-scale-down"
+        src="/images/erc1.jpg"
+        alt="classroom gathering"
+        loading="lazy"
+      />
     </div>
     <div class="md:max-w-96">
       <img
         class="rounded-lg object-scale-down"
         src="/images/erc2.jpg"
         alt="demo kitchen gathering"
+        loading="lazy"
       />
     </div>
     <!-- <div class="md:max-w-96"> -->
@@ -99,10 +105,20 @@
   </p>
   <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
     <div class="md:max-w-96">
-      <img class="rounded-lg object-scale-down" src="/images/lab1.jpg" alt="classroom gathering" />
+      <img
+        class="rounded-lg object-scale-down"
+        src="/images/lab1.jpg"
+        alt="classroom gathering"
+        loading="lazy"
+      />
     </div>
     <div class="md:max-w-96">
-      <img class="rounded-lg object-scale-down" src="/images/lab3.jpg" alt="classroom gathering" />
+      <img
+        class="rounded-lg object-scale-down"
+        src="/images/lab3.jpg"
+        alt="classroom gathering"
+        loading="lazy"
+      />
     </div>
   </div>
 </section>
