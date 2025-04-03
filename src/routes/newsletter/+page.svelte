@@ -22,17 +22,6 @@
   const enews = data.newsletters.filter((n) => n.index === 0).at(0);
   const firstNewsletter = data.newsletters.filter((n) => n.index === 1).at(0);
   const secondNewsletter = data.newsletters.filter((n) => n.index === 2).at(0);
-
-  const env: string = import.meta.env.MODE;
-  let pdfUrl: string;
-  if (env === 'development') {
-    pdfUrl =
-      'https://christianneighbors.org/assets/newsletters/a635e2f0-e4ab-4955-be6e-ed3ef95e532e.pdf';
-  } else if (enews) {
-    pdfUrl = `https://docs.google.com/gview?url=${import.meta.env.VITE_PUBLIC_ASSET_URL}${
-      enews.doc
-    }&embedded=true`;
-  }
 </script>
 
 <Seo title={$seo.title} description={$seo.description} />
@@ -49,7 +38,7 @@
       <iframe
         class="mx-auto mt-8 h-[25em] w-full sm:h-[55em] sm:w-[80%]"
         title="E-News Preview"
-        src={pdfUrl}
+        src={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${enews.doc}`}
       ></iframe>
     </div>
   {/if}
