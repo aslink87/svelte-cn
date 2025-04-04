@@ -24,7 +24,7 @@
     <div class="md:max-w-96">
       <img
         class="rounded-lg object-scale-down"
-        src="/images/erc1.jpg"
+        src="/images/erc1EDIT.jpg"
         alt="classroom gathering"
         loading="lazy"
       />

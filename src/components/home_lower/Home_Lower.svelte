@@ -13,7 +13,7 @@
     },
     {
       heading: 'Testimonies',
-      img: '/images/briggs.png',
+      img: '/images/briggsEDIT.jpg',
       alt: 'Food Pantry',
       subheading: 'Testimonies',
       content:

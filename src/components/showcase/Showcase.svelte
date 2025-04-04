@@ -38,7 +38,7 @@
   <img
     style="transform: translateY({y * 0.2}px)"
     class="banner pointer-events-none absolute mx-5 my-2 hidden h-[90%] w-[80%] rounded-2xl object-cover opacity-20 lg:flex lg:w-[90%]"
-    src="/images/foodbank.png"
+    src="/images/foodbankEDIT.jpg"
     alt="Christian Neighbors"
   />
   <h1 class="h1-primary">What We Do</h1>
