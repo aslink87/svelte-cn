@@ -26,6 +26,11 @@
         title="Christian Neighbors Postings"
         src={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${data.posting.link}`}
       ></iframe>
+      <a
+        class="underline"
+        href={`${import.meta.env.VITE_PUBLIC_ASSET_URL}${data.posting.link}`}
+        download="christian-neighbors-posting.pdf">Download</a
+      >
     </div>
   {:else}
     <div class="h-[100vh]">
