@@ -135,7 +135,7 @@ export async function load() {
     },
     {
       img: '/images/staff/marci.jpg',
-      name: 'Marci Zuniga',
+      name: 'Maci Zuniga',
       title: 'Office & Program Assistant',
       content: 'Marci uses her skills to help in a variety of office tasks',
       email: 'assistant@christianneighbors.org',
