@@ -122,14 +122,6 @@ export async function load() {
       ext: 107,
     },
     {
-      img: '/images/staff/adam.png',
-      name: 'Adam Slinkman',
-      title: 'IT Manager',
-      content: 'Adam manages the technology infrastructure and develops internal software.',
-      email: 'adam@slinkman.net',
-      ext: 109,
-    },
-    {
       img: '/images/staff/cari.png',
       name: 'Cari Dyer',
       title: 'Demonstration Kitchen & Program Assistant',
@@ -142,10 +134,11 @@ export async function load() {
       content: 'Wendy is a huge help in maintaining the food pantry.',
     },
     {
-      img: '/images/staff/taylor.png',
-      name: 'Taylor Seibert',
-      title: 'Administrative Assistant',
-      content: 'Taylor uses her skills to help in a variety of office tasks',
+      img: '/images/staff/marci.jpg',
+      name: 'Marci Zuniga',
+      title: 'Office & Program Assistant',
+      content: 'Marci uses her skills to help in a variety of office tasks',
+      email: 'assistant@christianneighbors.org',
     },
   ];
 
